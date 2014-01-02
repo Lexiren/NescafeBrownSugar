@@ -26,8 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
+    
+    //hide navigation
+    [self.navigationController setNavigationBarHidden:YES];}
 
 - (void)didReceiveMemoryWarning
 {
