@@ -1,5 +1,5 @@
 //
-//  NBSViewController.h
+//  NBSInstructionsViewController.h
 //  NescafeBrownSugar
 //
 //  Created by Lexiren on 1/2/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NBSViewController : UIViewController
+@interface NBSInstructionsViewController : UIViewController
 
 @end

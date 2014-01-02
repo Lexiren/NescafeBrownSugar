@@ -15,13 +15,14 @@
 		8432C3F318757F3E005C26B8 /* NBSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432C3F218757F3E005C26B8 /* NBSAppDelegate.m */; };
 		8432C3F618757F3E005C26B8 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8432C3F418757F3E005C26B8 /* Main_iPhone.storyboard */; };
 		8432C3F918757F3E005C26B8 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8432C3F718757F3E005C26B8 /* Main_iPad.storyboard */; };
-		8432C3FC18757F3E005C26B8 /* NBSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432C3FB18757F3E005C26B8 /* NBSViewController.m */; };
 		8432C3FE18757F3E005C26B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8432C3FD18757F3E005C26B8 /* Images.xcassets */; };
 		8432C40518757F3E005C26B8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432C40418757F3E005C26B8 /* XCTest.framework */; };
 		8432C40618757F3E005C26B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432C3E218757F3E005C26B8 /* Foundation.framework */; };
 		8432C40718757F3E005C26B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432C3E618757F3E005C26B8 /* UIKit.framework */; };
 		8432C40F18757F3E005C26B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8432C40D18757F3E005C26B8 /* InfoPlist.strings */; };
 		8432C41118757F3E005C26B8 /* NescafeBrownSugarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432C41018757F3E005C26B8 /* NescafeBrownSugarTests.m */; };
+		8432C4241875924A005C26B8 /* NBSInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432C4231875924A005C26B8 /* NBSInstructionsViewController.m */; };
+		8432C42818759402005C26B8 /* NBSInstructionsContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432C42718759402005C26B8 /* NBSInstructionsContentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,14 +48,16 @@
 		8432C3F218757F3E005C26B8 /* NBSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBSAppDelegate.m; sourceTree = "<group>"; };
 		8432C3F518757F3E005C26B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		8432C3F818757F3E005C26B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		8432C3FA18757F3E005C26B8 /* NBSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBSViewController.h; sourceTree = "<group>"; };
-		8432C3FB18757F3E005C26B8 /* NBSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBSViewController.m; sourceTree = "<group>"; };
 		8432C3FD18757F3E005C26B8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8432C40318757F3E005C26B8 /* NescafeBrownSugarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NescafeBrownSugarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8432C40418757F3E005C26B8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8432C40C18757F3E005C26B8 /* NescafeBrownSugarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NescafeBrownSugarTests-Info.plist"; sourceTree = "<group>"; };
 		8432C40E18757F3E005C26B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8432C41018757F3E005C26B8 /* NescafeBrownSugarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NescafeBrownSugarTests.m; sourceTree = "<group>"; };
+		8432C4221875924A005C26B8 /* NBSInstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSInstructionsViewController.h; path = "View Controllers/Instructions/NBSInstructionsViewController.h"; sourceTree = "<group>"; };
+		8432C4231875924A005C26B8 /* NBSInstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSInstructionsViewController.m; path = "View Controllers/Instructions/NBSInstructionsViewController.m"; sourceTree = "<group>"; };
+		8432C42618759402005C26B8 /* NBSInstructionsContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSInstructionsContentViewController.h; path = "Instructions Content/NBSInstructionsContentViewController.h"; sourceTree = "<group>"; };
+		8432C42718759402005C26B8 /* NBSInstructionsContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSInstructionsContentViewController.m; path = "Instructions Content/NBSInstructionsContentViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +121,8 @@
 				8432C3F218757F3E005C26B8 /* NBSAppDelegate.m */,
 				8432C3F418757F3E005C26B8 /* Main_iPhone.storyboard */,
 				8432C3F718757F3E005C26B8 /* Main_iPad.storyboard */,
-				8432C3FA18757F3E005C26B8 /* NBSViewController.h */,
-				8432C3FB18757F3E005C26B8 /* NBSViewController.m */,
+				8432C4291875AA57005C26B8 /* Model */,
+				8432C41A18758B30005C26B8 /* View Controllers */,
 				8432C3FD18757F3E005C26B8 /* Images.xcassets */,
 				8432C3E918757F3E005C26B8 /* Supporting Files */,
 			);
@@ -153,6 +156,48 @@
 				8432C40D18757F3E005C26B8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8432C41A18758B30005C26B8 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8432C42A1875AA7E005C26B8 /* Base */,
+				8432C41B18758BEC005C26B8 /* Instructions */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8432C41B18758BEC005C26B8 /* Instructions */ = {
+			isa = PBXGroup;
+			children = (
+				8432C4251875928C005C26B8 /* Instructions Content */,
+				8432C4221875924A005C26B8 /* NBSInstructionsViewController.h */,
+				8432C4231875924A005C26B8 /* NBSInstructionsViewController.m */,
+			);
+			name = Instructions;
+			sourceTree = "<group>";
+		};
+		8432C4251875928C005C26B8 /* Instructions Content */ = {
+			isa = PBXGroup;
+			children = (
+				8432C42618759402005C26B8 /* NBSInstructionsContentViewController.h */,
+				8432C42718759402005C26B8 /* NBSInstructionsContentViewController.m */,
+			);
+			name = "Instructions Content";
+			sourceTree = "<group>";
+		};
+		8432C4291875AA57005C26B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8432C42A1875AA7E005C26B8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,8 +300,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8432C3F318757F3E005C26B8 /* NBSAppDelegate.m in Sources */,
-				8432C3FC18757F3E005C26B8 /* NBSViewController.m in Sources */,
 				8432C3EF18757F3E005C26B8 /* main.m in Sources */,
+				8432C4241875924A005C26B8 /* NBSInstructionsViewController.m in Sources */,
+				8432C42818759402005C26B8 /* NBSInstructionsContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +523,7 @@
 				8432C41618757F3E005C26B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8432C41718757F3E005C26B8 /* Build configuration list for PBXNativeTarget "NescafeBrownSugarTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +532,7 @@
 				8432C41918757F3E005C26B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
