@@ -13,6 +13,7 @@
 #define kNBSInstructionsFirstPageIndex 0
 
 @interface NBSInstructionsViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (nonatomic, strong) UIPageViewController *pageViewController;
 @end
 
@@ -63,6 +64,15 @@
 }
 
 #pragma mark - UIPageViewControllerDelegate
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
+{
+    return kNBSInstructionsCount;
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+{
+    return kNBSInstructionsFirstPageIndex;
+}
 
 #pragma mark - UIPageViewControllerDataSource
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController

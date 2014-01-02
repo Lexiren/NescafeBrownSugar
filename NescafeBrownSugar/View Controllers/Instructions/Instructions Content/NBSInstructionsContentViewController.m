@@ -38,7 +38,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.indexLabel.text = [NSString stringWithFormat:@"%d", self.pageIndex];
+    self.indexLabel.text = [NSString stringWithFormat:@"%d", self.pageIndex+1];
 }
 
 @end
