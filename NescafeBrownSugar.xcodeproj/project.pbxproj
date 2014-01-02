@@ -39,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06D72EC31875F568003B3762 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8432C3DF18757F3D005C26B8 /* NescafeBrownSugar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NescafeBrownSugar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8432C3E218757F3E005C26B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8432C3E418757F3E005C26B8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,6 +118,7 @@
 		8432C3E118757F3E005C26B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06D72EC31875F568003B3762 /* CoreLocation.framework */,
 				8432C3E218757F3E005C26B8 /* Foundation.framework */,
 				8432C3E418757F3E005C26B8 /* CoreGraphics.framework */,
 				8432C3E618757F3E005C26B8 /* UIKit.framework */,

@@ -1,0 +1,1 @@
+../../Vkontakte-iOS-SDK-v2/Project/Vkontakte-iOS-SDK-v2.0/Libraries/Helpers/NSData+toBase64.h
