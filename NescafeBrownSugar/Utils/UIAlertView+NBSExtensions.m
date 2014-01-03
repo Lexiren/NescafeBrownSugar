@@ -32,7 +32,7 @@
 }
 
 + (void)showComingSoonAlert {
-    [UIAlertView showSimpleAlertWithTitle:@"Coming Soon!" message:nil];
+    [UIAlertView showSimpleAlertWithTitle:@"Under development." message:nil];
 }
 
 + (void)showErrorAlertWithError:(NSError *)error

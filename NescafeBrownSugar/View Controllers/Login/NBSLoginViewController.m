@@ -7,9 +7,10 @@
 //
 
 #import "NBSLoginViewController.h"
-#import <DMActivityInstagram.h>
+#import "NBSSocialManager.h"
 
-@interface NBSLoginViewController ()
+@interface NBSLoginViewController () <UIDocumentInteractionControllerDelegate>
+@property (nonatomic, retain) UIDocumentInteractionController *docInteractionController;
 
 @end
 
@@ -36,7 +37,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-    
+
+#pragma mark - social maganer getter
+- (NBSSocialManager *)socialManager {
+    return [NBSSocialManager sharedManager];
+}
+
 #pragma mark - IBActions
 - (IBAction)didPressFacebookButton:(UIButton *)sender {
 }
@@ -45,27 +51,59 @@
 }
 
 - (IBAction)didPressInstagramButton:(UIButton *)sender {
-    //check for instagram
-    NSURL *instagramURL = [NSURL URLWithString:@"instagram://app"];
-    if (![[UIApplication sharedApplication] canOpenURL:instagramURL]) {
-        [UIAlertView showSimpleAlertWithTitle:@"Cannot find instagram app on your device!"
-                                      message:@"You need first to install instagram app into your device"];
-        return;
-    }
-
-// if instagram present
-    DMActivityInstagram *instagramActivity = [[DMActivityInstagram alloc] init];
-    
-    NSString *shareText = @"This is some test tect to share";
-    NSURL *shareURL = [NSURL URLWithString:@"instagram://"];
-    UIImage *testImage = [UIImage imageNamed:@"test_rabbit.jpg"];
-    NSArray *activityItems = @[testImage, shareText, shareURL];
-    
-    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:@[instagramActivity]];
-    [self presentViewController:activityController animated:YES completion:nil];
+    [UIAlertView showComingSoonAlert];
 }
     
 - (IBAction)didPressSkipButton:(UIButton *)sender {
 }
+
+
+#pragma mark - move it to Social Manager
+
+- (void)instagramShareImage:(UIImage *)imageToShare {
+    //check is instagram instaled
+    if (![self isInstagramInstalled]) {
+        [UIAlertView showSimpleAlertWithTitle:@"Cannot find instagram app on your device!"
+                                      message:@"You need first to install instagram app into your device"];
+        return;
+    }
+    //if installed
+    CGRect rect = CGRectMake(0 ,0 , 0, 0);
+    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, self.view.opaque, 0.0);
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIGraphicsEndImageContext();
     
+    //path for storing temp image file
+    NSString  *imageFilePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/test.igo"];
+    //delete file if it's already exist
+    [[NSFileManager defaultManager] removeItemAtPath:imageFilePath error:nil];
+    //write image to file
+    [UIImagePNGRepresentation(imageToShare) writeToFile:imageFilePath atomically:YES];
+    //file url for temp image
+    NSURL *imageFileURL = [NSURL fileURLWithPath:imageFilePath];
+    
+    //create and setup document interaction controller
+    self.docInteractionController = [self setupControllerWithURL:imageFileURL usingDelegate:self];
+    //show document interaction controller
+    [self.docInteractionController presentOpenInMenuFromRect:rect inView:self.view animated:YES ];
+}
+
+- (BOOL)isInstagramInstalled {
+    NSURL *instagramURL = [NSURL URLWithString:@"instagram://app"];
+    return [[UIApplication sharedApplication] canOpenURL:instagramURL];
+}
+
+- (UIDocumentInteractionController *)setupControllerWithURL:(NSURL *)fileURL
+                                              usingDelegate:(id<UIDocumentInteractionControllerDelegate>)interactionDelegate
+{
+    
+    UIDocumentInteractionController *interactionController = [UIDocumentInteractionController interactionControllerWithURL: fileURL];
+    interactionController.delegate = interactionDelegate;
+    interactionController.UTI = @"com.instagram.exclusivegram";
+
+    return interactionController;
+}
+
+
+
 @end

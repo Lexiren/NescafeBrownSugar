@@ -7,12 +7,7 @@
 //
 
 @interface NBSSocialManager : NSObject
-
 //init
 + (NBSSocialManager *)sharedManager;
-
-//login
-- (void)instagramLoginWithCompletion:(NBSCompletionBlock)completion;
-
 
 @end
