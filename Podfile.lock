@@ -1,4 +1,5 @@
 PODS:
+  - DMActivityInstagram (0.0.3)
   - Facebook-iOS-SDK (3.11.0)
   - instagram-ios-sdk (0.0.1):
     - SBJson (= 2.2.3)
@@ -6,11 +7,13 @@ PODS:
   - Vkontakte-iOS-SDK-v2 (2.7.5)
 
 DEPENDENCIES:
+  - DMActivityInstagram (= 0.0.3)
   - Facebook-iOS-SDK (~> 3.11)
   - instagram-ios-sdk (= 0.0.1)
   - Vkontakte-iOS-SDK-v2 (~> 2.7)
 
 SPEC CHECKSUMS:
+  DMActivityInstagram: 5d1f78803b9c5bb0fe582fdc4ca199e6d9e4316b
   Facebook-iOS-SDK: 2eb12f9ed04f3d3956f0a4fb0e4e60c824dcd101
   instagram-ios-sdk: b337c659943d061bb51cedfa280ff95f68dbe08c
   SBJson: 853798c5de11f6c88d754d12cbe7ef413e1ec65e

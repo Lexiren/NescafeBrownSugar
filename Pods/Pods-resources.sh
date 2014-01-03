@@ -41,6 +41,11 @@ install_resource()
       ;;
   esac
 }
+install_resource "DMActivityInstagram/DMActivityInstagram/instagram.png"
+install_resource "DMActivityInstagram/DMActivityInstagram/instagram@2x.png"
+install_resource "DMActivityInstagram/DMActivityInstagram/instagram~ipad.png"
+install_resource "DMActivityInstagram/DMActivityInstagram/instagram~ipad@2x.png"
+install_resource "DMActivityInstagram/DMActivityInstagram/DMResizerViewController.xib"
 install_resource "Facebook-iOS-SDK/src/FBUserSettingsViewResources.bundle"
 
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

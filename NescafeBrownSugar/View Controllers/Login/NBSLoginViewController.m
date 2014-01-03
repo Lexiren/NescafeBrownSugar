@@ -7,6 +7,7 @@
 //
 
 #import "NBSLoginViewController.h"
+#import <DMActivityInstagram.h>
 
 @interface NBSLoginViewController ()
 
@@ -44,6 +45,24 @@
 }
 
 - (IBAction)didPressInstagramButton:(UIButton *)sender {
+    //check for instagram
+    NSURL *instagramURL = [NSURL URLWithString:@"instagram://app"];
+    if (![[UIApplication sharedApplication] canOpenURL:instagramURL]) {
+        [UIAlertView showSimpleAlertWithTitle:@"Cannot find instagram app on your device!"
+                                      message:@"You need first to install instagram app into your device"];
+        return;
+    }
+
+// if instagram present
+    DMActivityInstagram *instagramActivity = [[DMActivityInstagram alloc] init];
+    
+    NSString *shareText = @"This is some test tect to share";
+    NSURL *shareURL = [NSURL URLWithString:@"instagram://"];
+    UIImage *testImage = [UIImage imageNamed:@"test_rabbit.jpg"];
+    NSArray *activityItems = @[testImage, shareText, shareURL];
+    
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:@[instagramActivity]];
+    [self presentViewController:activityController animated:YES completion:nil];
 }
     
 - (IBAction)didPressSkipButton:(UIButton *)sender {
