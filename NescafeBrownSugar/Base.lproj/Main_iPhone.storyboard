@@ -91,7 +91,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="KOz-Ym-LPK" kind="push" identifier="pushLoginScreen" id="76T-6J-hmH"/>
+                                    <segue destination="KOz-Ym-LPK" kind="push" identifier="LoginScreenPushSegue" id="76T-6J-hmH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -203,6 +203,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYR-nP-EbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="864" y="58"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Xru-dt-30n">
+            <objects>
+                <viewController id="PTI-la-V1a" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MBE-3y-bgd"/>
+                        <viewControllerLayoutGuide type="bottom" id="les-jJ-UOl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C4a-7I-H9U">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N1r-eg-036" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1271" y="59"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
