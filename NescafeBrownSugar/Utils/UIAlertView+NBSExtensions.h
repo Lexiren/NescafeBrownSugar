@@ -12,6 +12,7 @@
 
 + (void)showComingSoonAlert;
 + (void)showErrorAlertWithMessage:(NSString *)message;
++ (void)showErrorAlertWithError:(NSError *)error;
 + (void)showSimpleAlertWithTitle:(NSString *)title;
 + (void)showSimpleAlertWithMessage:(NSString *)message;
 + (void)showSimpleAlertWithTitle:(NSString *)title message:(NSString *)message;

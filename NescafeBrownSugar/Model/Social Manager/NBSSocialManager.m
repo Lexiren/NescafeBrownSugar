@@ -15,6 +15,7 @@
 
 //instagram
 @property (nonatomic, strong) NSString *instagramAppID;
+
 @property (nonatomic, strong) Instagram *instagram;
 @property (nonatomic, copy) NBSCompletionBlock instagramLoginCompletion;
 
@@ -96,4 +97,7 @@
     NSLog(@"Instagram session was invalidated");
 }
 */
+
+
+
 @end

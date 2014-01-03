@@ -14,7 +14,7 @@
     [[[UIAlertView alloc] initWithTitle:title
                                 message:message
                                delegate:nil
-                      cancelButtonTitle:@"OK"
+                      cancelButtonTitle:NSLocalizedString(@"OKButton", nil)
                       otherButtonTitles:nil] show];
 }
 
@@ -27,11 +27,20 @@
 }
 
 + (void)showErrorAlertWithMessage:(NSString *)message {
-    [UIAlertView showSimpleAlertWithTitle:@"Error" message:message];
+    [UIAlertView showSimpleAlertWithTitle:NSLocalizedString(@"ErrorDisplayTitle", nil)
+                                  message:message];
 }
 
 + (void)showComingSoonAlert {
     [UIAlertView showSimpleAlertWithTitle:@"Coming Soon!" message:nil];
+}
+
++ (void)showErrorAlertWithError:(NSError *)error
+{
+    if (error)
+    {
+        [UIAlertView showErrorAlertWithMessage:error.localizedDescription];
+    }
 }
 
 @end

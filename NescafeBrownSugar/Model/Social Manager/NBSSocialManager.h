@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 COXO. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface NBSSocialManager : NSObject
 
 //init
