@@ -35,7 +35,7 @@
     //move page view controller to first page
     NBSInstructionsContentViewController *firstPage = [self viewControllerAtIndex:kNBSInstructionsFirstPageIndex];
     if (firstPage) {
-        [self.pageViewController setViewControllers:@[ firstPage ]
+        [self.pageViewController setViewControllers:@[firstPage]
                                           direction:UIPageViewControllerNavigationDirectionForward
                                            animated:NO
                                          completion:^(BOOL finished) {
