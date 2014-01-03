@@ -8,6 +8,7 @@
 
 #import "NBSLoginViewController.h"
 #import "NBSSocialManager.h"
+#import "NBSSocialManager+Vkontakte.h"
 
 @interface NBSLoginViewController () <UIDocumentInteractionControllerDelegate>
 @property (nonatomic, retain) UIDocumentInteractionController *docInteractionController;
@@ -48,6 +49,7 @@
 }
 
 - (IBAction)didPressVkontakteButton:(UIButton *)sender {
+    [[self socialManager] vkontakteLoginWithCompletion:nil];
 }
 
 - (IBAction)didPressInstagramButton:(UIButton *)sender {

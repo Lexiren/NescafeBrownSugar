@@ -6,3 +6,7 @@
   Copyright (c) 2014 COXO. All rights reserved.
 */
 
+"ErrorDisplayTitle" = "Error";
+"OKButton" = "OK";
+
+"VkontakteTokenRenewalFailedMessage" = "Vkontakte was not authorized";
