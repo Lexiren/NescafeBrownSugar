@@ -13,5 +13,6 @@
 @property (nonatomic, strong) NSString *instagramAccessToken;
 
 + (NBSUser *)currentUser;
+- (BOOL)isLogged;
 
 @end

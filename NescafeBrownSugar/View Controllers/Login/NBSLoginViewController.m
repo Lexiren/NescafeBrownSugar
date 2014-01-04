@@ -12,10 +12,12 @@
 
 @interface NBSLoginViewController () <UIDocumentInteractionControllerDelegate>
 @property (nonatomic, retain) UIDocumentInteractionController *docInteractionController;
-
+@property (nonatomic, copy) NBSCompletionBlock loginCompletionBlock;
 @end
 
 @implementation NBSLoginViewController
+
+#pragma mark - init
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,12 +28,31 @@
     return self;
 }
 
+- (void)setupCallbackBlocks {
+    self.loginCompletionBlock = ^(BOOL success, NSError *error) {
+        if (success) {
+            //TODO: perform segue with user info screen
+        } else {
+            DLog(@"Login Completion Error: %@", error ? error.description : @"No error description");
+        }
+    };
+}
+
+#pragma mark - view life cycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //init completion blocks
+    [self setupCallbackBlocks];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     //hide navigation
-    [self.navigationController setNavigationBarHidden:YES];}
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -49,63 +70,11 @@
 }
 
 - (IBAction)didPressVkontakteButton:(UIButton *)sender {
-    [[self socialManager] vkontakteLoginWithCompletion:nil];
-}
-
-- (IBAction)didPressInstagramButton:(UIButton *)sender {
-    [UIAlertView showComingSoonAlert];
+    [[self socialManager] vkontakteLoginWithCompletion:self.loginCompletionBlock];
 }
     
 - (IBAction)didPressSkipButton:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"ImagesCollectionScreenPushSegue" sender:self];
 }
-
-
-#pragma mark - move it to Social Manager
-
-- (void)instagramShareImage:(UIImage *)imageToShare {
-    //check is instagram instaled
-    if (![self isInstagramInstalled]) {
-        [UIAlertView showSimpleAlertWithTitle:@"Cannot find instagram app on your device!"
-                                      message:@"You need first to install instagram app into your device"];
-        return;
-    }
-    //if installed
-    CGRect rect = CGRectMake(0 ,0 , 0, 0);
-    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, self.view.opaque, 0.0);
-    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIGraphicsEndImageContext();
-    
-    //path for storing temp image file
-    NSString  *imageFilePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/test.igo"];
-    //delete file if it's already exist
-    [[NSFileManager defaultManager] removeItemAtPath:imageFilePath error:nil];
-    //write image to file
-    [UIImagePNGRepresentation(imageToShare) writeToFile:imageFilePath atomically:YES];
-    //file url for temp image
-    NSURL *imageFileURL = [NSURL fileURLWithPath:imageFilePath];
-    
-    //create and setup document interaction controller
-    self.docInteractionController = [self setupControllerWithURL:imageFileURL usingDelegate:self];
-    //show document interaction controller
-    [self.docInteractionController presentOpenInMenuFromRect:rect inView:self.view animated:YES ];
-}
-
-- (BOOL)isInstagramInstalled {
-    NSURL *instagramURL = [NSURL URLWithString:@"instagram://app"];
-    return [[UIApplication sharedApplication] canOpenURL:instagramURL];
-}
-
-- (UIDocumentInteractionController *)setupControllerWithURL:(NSURL *)fileURL
-                                              usingDelegate:(id<UIDocumentInteractionControllerDelegate>)interactionDelegate
-{
-    
-    UIDocumentInteractionController *interactionController = [UIDocumentInteractionController interactionControllerWithURL: fileURL];
-    interactionController.delegate = interactionDelegate;
-    interactionController.UTI = @"com.instagram.exclusivegram";
-
-    return interactionController;
-}
-
-
 
 @end

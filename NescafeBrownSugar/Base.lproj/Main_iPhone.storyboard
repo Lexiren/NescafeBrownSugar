@@ -54,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmf-4B-Lty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1246" y="-623"/>
+            <point key="canvasLocation" x="1349" y="-623"/>
         </scene>
         <!--Instructions View Controller-->
         <scene sceneID="riL-hQ-6sX">
@@ -73,7 +73,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="wo0-5P-YGn" kind="embed" identifier="FillInstructionsContainer" id="ePe-ER-68I"/>
+                                    <segue destination="wo0-5P-YGn" kind="embed" identifier="FillInstructionsContainerSegue" id="ePe-ER-68I"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8Q-2r-EB2">
@@ -146,10 +146,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAb-qr-8sW">
                                 <rect key="frame" x="60" y="220" width="200" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.9210972046" blue="0.79919491519999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Facebook">
-                                    <color key="titleColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -159,27 +159,14 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZX-EL-nJv">
                                 <rect key="frame" x="60" y="284" width="200" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.9210972046" blue="0.79919491519999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Vkontakte">
-                                    <color key="titleColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didPressVkontakteButton:" destination="KOz-Ym-LPK" eventType="touchUpInside" id="CRU-Mv-DXX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chI-jB-Xkv">
-                                <rect key="frame" x="60" y="348" width="200" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Instagram">
-                                    <color key="titleColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressInstagramButton:" destination="KOz-Ym-LPK" eventType="touchUpInside" id="Slm-MU-lsk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTp-z7-Ysy">
@@ -199,15 +186,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="pXQ-fH-WoZ"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="PTI-la-V1a" kind="push" identifier="ImagesCollectionScreenPushSegue" id="VyZ-p2-t0h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYR-nP-EbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="864" y="58"/>
         </scene>
-        <!--View Controller-->
+        <!--Images Collection View Controller - Choose an image-->
         <scene sceneID="Xru-dt-30n">
             <objects>
-                <viewController id="PTI-la-V1a" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImagesCollectionScreen" title="Choose an image" id="PTI-la-V1a" customClass="NBSImagesCollectionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MBE-3y-bgd"/>
                         <viewControllerLayoutGuide type="bottom" id="les-jJ-UOl"/>
@@ -215,12 +205,68 @@
                     <view key="view" contentMode="scaleToFill" id="C4a-7I-H9U">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Y7z-4S-Dra">
+                                <rect key="frame" x="5" y="5" width="310" height="558"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="oeo-cK-g1K">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="khO-Rg-9gO" customClass="NBSImageCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8F9-iS-Q7p">
+                                                    <rect key="frame" x="5" y="5" width="90" height="90"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="0.92109720459983246" blue="0.79919491518127128" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="8F9-iS-Q7p" secondAttribute="trailing" constant="5" id="2lB-WM-cXV"/>
+                                            <constraint firstAttribute="bottom" secondItem="8F9-iS-Q7p" secondAttribute="bottom" constant="5" id="3Km-Dp-nhl"/>
+                                            <constraint firstItem="8F9-iS-Q7p" firstAttribute="leading" secondItem="khO-Rg-9gO" secondAttribute="leading" constant="5" id="9c9-bG-wjK"/>
+                                            <constraint firstItem="8F9-iS-Q7p" firstAttribute="top" secondItem="khO-Rg-9gO" secondAttribute="top" constant="5" id="Pe0-dP-GdB"/>
+                                        </constraints>
+                                        <size key="customSize" width="100" height="100"/>
+                                        <connections>
+                                            <outlet property="imageThumbView" destination="8F9-iS-Q7p" id="EIr-PB-R2e"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="PTI-la-V1a" id="srh-ze-nqB"/>
+                                    <outlet property="delegate" destination="PTI-la-V1a" id="bTK-Wz-Rny"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.62286750639999999" green="0.3307832275" blue="0.035889891219999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Y7z-4S-Dra" firstAttribute="top" secondItem="C4a-7I-H9U" secondAttribute="top" constant="5" id="ALF-Es-jS2"/>
+                            <constraint firstItem="Y7z-4S-Dra" firstAttribute="leading" secondItem="C4a-7I-H9U" secondAttribute="leading" constant="5" id="FHT-VK-iSM"/>
+                            <constraint firstAttribute="bottom" secondItem="Y7z-4S-Dra" secondAttribute="bottom" constant="5" id="j67-j1-Jno"/>
+                            <constraint firstAttribute="trailing" secondItem="Y7z-4S-Dra" secondAttribute="trailing" constant="5" id="usn-SF-pDa"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="34U-qu-15k"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Y7z-4S-Dra" id="JdD-r7-qse"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1r-eg-036" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1271" y="59"/>
+            <point key="canvasLocation" x="1816" y="58"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

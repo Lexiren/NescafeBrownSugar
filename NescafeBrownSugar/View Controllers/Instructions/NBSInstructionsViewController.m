@@ -19,6 +19,8 @@
 
 @implementation NBSInstructionsViewController
 
+#pragma mark - init
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -27,6 +29,8 @@
     }
     return self;
 }
+
+#pragma mark -  view life cycle
 
 - (void)viewDidLoad
 {
@@ -42,9 +46,12 @@
             
         }];
     }
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     //hide navigation
-    [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,7 +61,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"FillInstructionsContainer"]) {
+    if ([segue.identifier isEqualToString:@"FillInstructionsContainerSegue"]) {
         self.pageViewController = (UIPageViewController *)segue.destinationViewController;
         [self addChildViewController:self.pageViewController];
         [self.pageViewController didMoveToParentViewController:self];
@@ -64,6 +71,7 @@
 }
 
 #pragma mark - UIPageViewControllerDelegate
+
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
 {
     return kNBSInstructionsCount;
@@ -75,6 +83,7 @@
 }
 
 #pragma mark - UIPageViewControllerDataSource
+
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
     NSUInteger index = ((NBSInstructionsContentViewController*) viewController).pageIndex;
