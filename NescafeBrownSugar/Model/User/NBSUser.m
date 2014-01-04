@@ -32,4 +32,9 @@
     return sharedInstance;
 }
 
+- (BOOL)isLogged {
+    
+    return NO;
+}
+
 @end

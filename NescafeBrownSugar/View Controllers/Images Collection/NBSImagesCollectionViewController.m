@@ -8,6 +8,7 @@
 
 #import "NBSImagesCollectionViewController.h"
 #import "NBSImageCollectionViewCell.h"
+#import "NBSNavigationController.h"
 
 @interface NBSImagesCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -46,6 +47,9 @@
     [super viewWillAppear:animated];
     //show navigation bar
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    if ([self.navigationController isKindOfClass:[NBSNavigationController class]]) {
+        self.navigationItem.rightBarButtonItem = [(NBSNavigationController *)self.navigationController customRightBarButton];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,6 +80,13 @@
     cell.imageThumbView.image = [UIImage imageNamed:[self.sourceImagesNames objectAtIndex:indexPath.row]];
     
     return cell;
+}
+
+#pragma mark - UICollectionViewDelegate 
+
+- (void)collectionView:(UICollectionView *)collectionView
+didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
 }
 
 @end

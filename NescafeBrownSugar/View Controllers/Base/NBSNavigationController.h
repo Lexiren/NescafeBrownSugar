@@ -10,4 +10,6 @@
 
 @interface NBSNavigationController : UINavigationController
 
+- (UIBarButtonItem *)customRightBarButton;
+
 @end

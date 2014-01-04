@@ -27,6 +27,10 @@
 		845069131876E8080087FD3F /* NBSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 845069121876E8080087FD3F /* NBSUser.m */; };
 		845069171877281D0087FD3F /* test_rabbit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845069161877281D0087FD3F /* test_rabbit.jpg */; };
 		8450691A18774EE60087FD3F /* NBSSocialManager+Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450691918774EE60087FD3F /* NBSSocialManager+Facebook.m */; };
+		8450691E1877747C0087FD3F /* NBSImagesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450691D1877747C0087FD3F /* NBSImagesCollectionViewController.m */; };
+		845069211877795D0087FD3F /* UIView+NIB.m in Sources */ = {isa = PBXBuildFile; fileRef = 845069201877795D0087FD3F /* UIView+NIB.m */; };
+		8450692418777A800087FD3F /* NBSImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450692318777A800087FD3F /* NBSImageCollectionViewCell.m */; };
+		8450692E187792260087FD3F /* NBSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450692D187792260087FD3F /* NBSNavigationController.m */; };
 		84AB90BD1875FF2E005EEBE5 /* NBSSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AB90BC1875FF2E005EEBE5 /* NBSSocialManager.m */; };
 		84FAA7FE1875EC410007FB03 /* UIAlertView+NBSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FAA7FD1875EC410007FB03 /* UIAlertView+NBSExtensions.m */; };
 		84FAA8021875EC690007FB03 /* NBSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FAA8011875EC690007FB03 /* NBSLoginViewController.m */; };
@@ -76,6 +80,14 @@
 		845069161877281D0087FD3F /* test_rabbit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_rabbit.jpg; sourceTree = "<group>"; };
 		8450691818774EE60087FD3F /* NBSSocialManager+Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NBSSocialManager+Facebook.h"; path = "Model/Social Manager/NBSSocialManager+Facebook.h"; sourceTree = "<group>"; };
 		8450691918774EE60087FD3F /* NBSSocialManager+Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NBSSocialManager+Facebook.m"; path = "Model/Social Manager/NBSSocialManager+Facebook.m"; sourceTree = "<group>"; };
+		8450691C1877747C0087FD3F /* NBSImagesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSImagesCollectionViewController.h; path = "View Controllers/Images Collection/NBSImagesCollectionViewController.h"; sourceTree = "<group>"; };
+		8450691D1877747C0087FD3F /* NBSImagesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSImagesCollectionViewController.m; path = "View Controllers/Images Collection/NBSImagesCollectionViewController.m"; sourceTree = "<group>"; };
+		8450691F1877795D0087FD3F /* UIView+NIB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+NIB.h"; path = "Utils/UIView+NIB.h"; sourceTree = "<group>"; };
+		845069201877795D0087FD3F /* UIView+NIB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+NIB.m"; path = "Utils/UIView+NIB.m"; sourceTree = "<group>"; };
+		8450692218777A800087FD3F /* NBSImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSImageCollectionViewCell.h; path = "View Controllers/Images Collection/NBSImageCollectionViewCell.h"; sourceTree = "<group>"; };
+		8450692318777A800087FD3F /* NBSImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSImageCollectionViewCell.m; path = "View Controllers/Images Collection/NBSImageCollectionViewCell.m"; sourceTree = "<group>"; };
+		8450692C187792260087FD3F /* NBSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSNavigationController.h; path = "View Controllers/Base/NBSNavigationController.h"; sourceTree = "<group>"; };
+		8450692D187792260087FD3F /* NBSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSNavigationController.m; path = "View Controllers/Base/NBSNavigationController.m"; sourceTree = "<group>"; };
 		84AB90BB1875FF2E005EEBE5 /* NBSSocialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSSocialManager.h; path = "Model/Social Manager/NBSSocialManager.h"; sourceTree = "<group>"; };
 		84AB90BC1875FF2E005EEBE5 /* NBSSocialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSSocialManager.m; path = "Model/Social Manager/NBSSocialManager.m"; sourceTree = "<group>"; };
 		84AB90BE1875FFB0005EEBE5 /* NBSTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NBSTypes.h; path = Utils/NBSTypes.h; sourceTree = "<group>"; };
@@ -157,6 +169,7 @@
 				8432C3F718757F3E005C26B8 /* Main_iPad.storyboard */,
 				8432C4291875AA57005C26B8 /* Model */,
 				8432C41A18758B30005C26B8 /* View Controllers */,
+				84506927187790EA0087FD3F /* Common Views */,
 				84FAA7FB1875EBAB0007FB03 /* Utils */,
 				8432C3FD18757F3E005C26B8 /* Images.xcassets */,
 				8432C3E918757F3E005C26B8 /* Supporting Files */,
@@ -200,6 +213,8 @@
 				8432C42A1875AA7E005C26B8 /* Base */,
 				8432C41B18758BEC005C26B8 /* Instructions */,
 				84FAA7FF1875EC690007FB03 /* Login */,
+				8450691B187771A30087FD3F /* Images Collection */,
+				8450693018779AB60087FD3F /* Share preview screen */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -226,6 +241,8 @@
 		8432C42A1875AA7E005C26B8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				8450692C187792260087FD3F /* NBSNavigationController.h */,
+				8450692D187792260087FD3F /* NBSNavigationController.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -237,6 +254,31 @@
 				845069121876E8080087FD3F /* NBSUser.m */,
 			);
 			name = User;
+			sourceTree = "<group>";
+		};
+		8450691B187771A30087FD3F /* Images Collection */ = {
+			isa = PBXGroup;
+			children = (
+				8450691C1877747C0087FD3F /* NBSImagesCollectionViewController.h */,
+				8450691D1877747C0087FD3F /* NBSImagesCollectionViewController.m */,
+				8450692218777A800087FD3F /* NBSImageCollectionViewCell.h */,
+				8450692318777A800087FD3F /* NBSImageCollectionViewCell.m */,
+			);
+			name = "Images Collection";
+			sourceTree = "<group>";
+		};
+		84506927187790EA0087FD3F /* Common Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Common Views";
+			sourceTree = "<group>";
+		};
+		8450693018779AB60087FD3F /* Share preview screen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Share preview screen";
 			sourceTree = "<group>";
 		};
 		84AB90BA1875FC67005EEBE5 /* Social Manager */ = {
@@ -258,6 +300,8 @@
 				84FAA7FC1875EC410007FB03 /* UIAlertView+NBSExtensions.h */,
 				84FAA7FD1875EC410007FB03 /* UIAlertView+NBSExtensions.m */,
 				84AB90BE1875FFB0005EEBE5 /* NBSTypes.h */,
+				8450691F1877795D0087FD3F /* UIView+NIB.h */,
+				845069201877795D0087FD3F /* UIView+NIB.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -422,12 +466,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8450691A18774EE60087FD3F /* NBSSocialManager+Facebook.m in Sources */,
+				8450692418777A800087FD3F /* NBSImageCollectionViewCell.m in Sources */,
+				8450692E187792260087FD3F /* NBSNavigationController.m in Sources */,
 				8432C3F318757F3E005C26B8 /* NBSAppDelegate.m in Sources */,
 				8432C3EF18757F3E005C26B8 /* main.m in Sources */,
 				84FAA7FE1875EC410007FB03 /* UIAlertView+NBSExtensions.m in Sources */,
 				8432C4241875924A005C26B8 /* NBSInstructionsViewController.m in Sources */,
 				84FAA8021875EC690007FB03 /* NBSLoginViewController.m in Sources */,
 				84AB90BD1875FF2E005EEBE5 /* NBSSocialManager.m in Sources */,
+				8450691E1877747C0087FD3F /* NBSImagesCollectionViewController.m in Sources */,
+				845069211877795D0087FD3F /* UIView+NIB.m in Sources */,
 				845069131876E8080087FD3F /* NBSUser.m in Sources */,
 				067B15D618773C5C0037DCE3 /* NBSSocialManager+Vkontakte.m in Sources */,
 				84FAA8061875EC840007FB03 /* NBSInstructionsContentViewController.m in Sources */,

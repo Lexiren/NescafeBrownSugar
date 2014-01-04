@@ -7,6 +7,8 @@
 //
 
 #import "NBSNavigationController.h"
+#import "NBSUser.h"
+#import "NBSLoginViewController.h"
 
 @interface NBSNavigationController ()
 
@@ -33,6 +35,36 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - custom navigation buttons
+
+- (UIBarButtonItem *)customRightBarButton {
+    NBSUser *user = [NBSUser currentUser];
+    
+    if ([user isLogged]) {
+        //TODO: maybe return image view with avatar
+        return nil;
+    }
+    return [self loginBarButton];
+}
+
+- (UIBarButtonItem *)loginBarButton {
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"login"
+                                                               style:UIBarButtonItemStyleBordered
+                                                              target:self
+                                                              action:@selector(didTapLoginButton:)];
+    return button;
+}
+
+- (void)didTapLoginButton:(id)sender {
+    for (UIViewController *vc in self.viewControllers) {
+        if ([vc isKindOfClass:[NBSLoginViewController class]]) {
+            [self popToViewController:vc animated:YES];
+            return;
+        }
+    }
+    [UIAlertView showErrorAlertWithMessage:@"Navigation Controller didn't find UILoginViewController in navigation hierarhy"];
 }
 
 @end
