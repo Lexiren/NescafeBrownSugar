@@ -58,13 +58,18 @@
 }
 
 - (void)didTapLoginButton:(id)sender {
-    for (UIViewController *vc in self.viewControllers) {
-        if ([vc isKindOfClass:[NBSLoginViewController class]]) {
-            [self popToViewController:vc animated:YES];
-            return;
-        }
-    }
-    [UIAlertView showErrorAlertWithMessage:@"Navigation Controller didn't find UILoginViewController in navigation hierarhy"];
+//    for (UIViewController *vc in self.viewControllers) {
+//        if ([vc isKindOfClass:[NBSLoginViewController class]]) {
+//            [self popToViewController:vc animated:YES];
+//            return;
+//        }
+//    }
+//    [UIAlertView showErrorAlertWithMessage:@"Navigation Controller didn't find UILoginViewController in navigation hierarhy"];
+    NBSLoginViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    
+    [self presentViewController:controller animated:YES completion:^{
+        
+    }];
 }
 
 @end

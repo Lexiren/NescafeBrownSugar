@@ -21,4 +21,5 @@
     #import <Foundation/Foundation.h>
     #import "NBSTypes.h"
     #import "UIAlertView+NBSExtensions.h"
+    #import "NBSCommonDefines.h"
 #endif

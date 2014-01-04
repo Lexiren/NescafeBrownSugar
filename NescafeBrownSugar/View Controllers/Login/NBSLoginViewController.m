@@ -29,9 +29,16 @@
 }
 
 - (void)setupCallbackBlocks {
+    __weak NBSLoginViewController *weakself = self;
     self.loginCompletionBlock = ^(BOOL success, NSError *error) {
         if (success) {
-            //TODO: perform segue with user info screen
+            if (weakself.presentingViewController) {
+                [weakself.presentingViewController dismissViewControllerAnimated:YES completion:^{
+                    
+                }];
+            } else {
+                //TODO: perform segue with user info screen
+            }
         } else {
             DLog(@"Login Completion Error: %@", error ? error.description : @"No error description");
         }
@@ -74,7 +81,13 @@
 }
     
 - (IBAction)didPressSkipButton:(UIButton *)sender {
-    [self performSegueWithIdentifier:@"ImagesCollectionScreenPushSegue" sender:self];
+    if (!self.presentingViewController) {
+        [self performSegueWithIdentifier:@"ImagesCollectionScreenPushSegue" sender:self];
+    } else {
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    }
 }
 
 @end

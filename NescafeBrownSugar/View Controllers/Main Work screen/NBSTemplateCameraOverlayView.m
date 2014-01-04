@@ -1,20 +1,14 @@
 //
-//  NBSImageCollectionViewCell.m
+//  NBSTemplateCameraOverlayView.m
 //  NescafeBrownSugar
 //
 //  Created by Lexiren on 1/4/14.
 //  Copyright (c) 2014 COXO. All rights reserved.
 //
 
-#import "NBSImageCollectionViewCell.h"
+#import "NBSTemplateCameraOverlayView.h"
 
-@interface NBSImageCollectionViewCell ()
-
-@property (nonatomic, strong) UIColor *bgColorNib;
-
-@end
-
-@implementation NBSImageCollectionViewCell
+@implementation NBSTemplateCameraOverlayView
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -23,15 +17,6 @@
         // Initialization code
     }
     return self;
-}
-
-- (void)awakeFromNib {
-    self.bgColorNib = self.backgroundColor;
-}
-
-- (void)setHighlighted:(BOOL)highlighted {
-    [super setHighlighted:highlighted];
-    self.backgroundColor = (highlighted) ? [UIColor whiteColor] : self.bgColorNib;
 }
 
 /*

@@ -8,12 +8,14 @@
 
 #import "NBSImagesCollectionViewController.h"
 #import "NBSImageCollectionViewCell.h"
-#import "NBSNavigationController.h"
+#import "UIViewController+NBSNavigationItems.h"
+#import "NBSMainWorkViewController.h"
 
 @interface NBSImagesCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (nonatomic, strong) NSArray *sourceImagesNames;
+@property (nonatomic, assign) NSString *selectedTemplateImageName;
 
 @end
 
@@ -46,16 +48,22 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     //show navigation bar
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    if ([self.navigationController isKindOfClass:[NBSNavigationController class]]) {
-        self.navigationItem.rightBarButtonItem = [(NBSNavigationController *)self.navigationController customRightBarButton];
-    }
+//    [self setupCustomNavigationBarItems];
+    [self.navigationController setNavigationBarHidden:NO];
+    self.title = @"Choose an image";
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"MainWorkScreenPushSegue"]) {
+        NBSMainWorkViewController *controller = (NBSMainWorkViewController *)segue.destinationViewController;
+        controller.templateImage = [UIImage imageNamed:self.selectedTemplateImageName];
+    }
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -65,7 +73,6 @@
 {
     return self.sourceImagesNames.count;
 }
-
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -85,8 +92,11 @@
 #pragma mark - UICollectionViewDelegate 
 
 - (void)collectionView:(UICollectionView *)collectionView
-didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    self.selectedTemplateImageName = self.sourceImagesNames[indexPath.row];
+    [self performSegueWithIdentifier:@"MainWorkScreenPushSegue" sender:self];
 }
 
 @end

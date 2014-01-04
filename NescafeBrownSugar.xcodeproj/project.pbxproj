@@ -31,6 +31,12 @@
 		845069211877795D0087FD3F /* UIView+NIB.m in Sources */ = {isa = PBXBuildFile; fileRef = 845069201877795D0087FD3F /* UIView+NIB.m */; };
 		8450692418777A800087FD3F /* NBSImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450692318777A800087FD3F /* NBSImageCollectionViewCell.m */; };
 		8450692E187792260087FD3F /* NBSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450692D187792260087FD3F /* NBSNavigationController.m */; };
+		845069341878231B0087FD3F /* NBSMainWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845069331878231B0087FD3F /* NBSMainWorkViewController.m */; };
+		8450693B187859230087FD3F /* NBSTemplateCameraOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450693A187859230087FD3F /* NBSTemplateCameraOverlayView.m */; };
+		8450693D187859350087FD3F /* NBSTemplateCameraOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8450693C187859350087FD3F /* NBSTemplateCameraOverlayView.xib */; };
+		8450694018785E6A0087FD3F /* UIViewController+NBSNavigationItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450693F18785E6A0087FD3F /* UIViewController+NBSNavigationItems.m */; };
+		84506942187863760087FD3F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84506941187863760087FD3F /* MobileCoreServices.framework */; };
+		84506945187867720087FD3F /* NBSSharePreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84506944187867720087FD3F /* NBSSharePreviewController.m */; };
 		84AB90BD1875FF2E005EEBE5 /* NBSSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AB90BC1875FF2E005EEBE5 /* NBSSocialManager.m */; };
 		84FAA7FE1875EC410007FB03 /* UIAlertView+NBSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FAA7FD1875EC410007FB03 /* UIAlertView+NBSExtensions.m */; };
 		84FAA8021875EC690007FB03 /* NBSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FAA8011875EC690007FB03 /* NBSLoginViewController.m */; };
@@ -88,6 +94,17 @@
 		8450692318777A800087FD3F /* NBSImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSImageCollectionViewCell.m; path = "View Controllers/Images Collection/NBSImageCollectionViewCell.m"; sourceTree = "<group>"; };
 		8450692C187792260087FD3F /* NBSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSNavigationController.h; path = "View Controllers/Base/NBSNavigationController.h"; sourceTree = "<group>"; };
 		8450692D187792260087FD3F /* NBSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSNavigationController.m; path = "View Controllers/Base/NBSNavigationController.m"; sourceTree = "<group>"; };
+		845069321878231B0087FD3F /* NBSMainWorkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSMainWorkViewController.h; path = "View Controllers/Main Work screen/NBSMainWorkViewController.h"; sourceTree = "<group>"; };
+		845069331878231B0087FD3F /* NBSMainWorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSMainWorkViewController.m; path = "View Controllers/Main Work screen/NBSMainWorkViewController.m"; sourceTree = "<group>"; };
+		84506935187854310087FD3F /* NBSCommonDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NBSCommonDefines.h; path = Utils/NBSCommonDefines.h; sourceTree = "<group>"; };
+		84506939187859230087FD3F /* NBSTemplateCameraOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSTemplateCameraOverlayView.h; path = "View Controllers/Main Work screen/NBSTemplateCameraOverlayView.h"; sourceTree = "<group>"; };
+		8450693A187859230087FD3F /* NBSTemplateCameraOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSTemplateCameraOverlayView.m; path = "View Controllers/Main Work screen/NBSTemplateCameraOverlayView.m"; sourceTree = "<group>"; };
+		8450693C187859350087FD3F /* NBSTemplateCameraOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NBSTemplateCameraOverlayView.xib; path = "View Controllers/Main Work screen/NBSTemplateCameraOverlayView.xib"; sourceTree = "<group>"; };
+		8450693E18785E6A0087FD3F /* UIViewController+NBSNavigationItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+NBSNavigationItems.h"; path = "Utils/UIViewController+NBSNavigationItems.h"; sourceTree = "<group>"; };
+		8450693F18785E6A0087FD3F /* UIViewController+NBSNavigationItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+NBSNavigationItems.m"; path = "Utils/UIViewController+NBSNavigationItems.m"; sourceTree = "<group>"; };
+		84506941187863760087FD3F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		84506943187867720087FD3F /* NBSSharePreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSSharePreviewController.h; path = "View Controllers/Share preview screen/NBSSharePreviewController.h"; sourceTree = "<group>"; };
+		84506944187867720087FD3F /* NBSSharePreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSSharePreviewController.m; path = "View Controllers/Share preview screen/NBSSharePreviewController.m"; sourceTree = "<group>"; };
 		84AB90BB1875FF2E005EEBE5 /* NBSSocialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSSocialManager.h; path = "Model/Social Manager/NBSSocialManager.h"; sourceTree = "<group>"; };
 		84AB90BC1875FF2E005EEBE5 /* NBSSocialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSSocialManager.m; path = "Model/Social Manager/NBSSocialManager.m"; sourceTree = "<group>"; };
 		84AB90BE1875FFB0005EEBE5 /* NBSTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NBSTypes.h; path = Utils/NBSTypes.h; sourceTree = "<group>"; };
@@ -106,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84506942187863760087FD3F /* MobileCoreServices.framework in Frameworks */,
 				8432C3E518757F3E005C26B8 /* CoreGraphics.framework in Frameworks */,
 				8432C3E718757F3E005C26B8 /* UIKit.framework in Frameworks */,
 				8432C3E318757F3E005C26B8 /* Foundation.framework in Frameworks */,
@@ -149,6 +167,7 @@
 		8432C3E118757F3E005C26B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84506941187863760087FD3F /* MobileCoreServices.framework */,
 				06D72EC31875F568003B3762 /* CoreLocation.framework */,
 				8432C3E218757F3E005C26B8 /* Foundation.framework */,
 				8432C3E418757F3E005C26B8 /* CoreGraphics.framework */,
@@ -214,6 +233,7 @@
 				8432C41B18758BEC005C26B8 /* Instructions */,
 				84FAA7FF1875EC690007FB03 /* Login */,
 				8450691B187771A30087FD3F /* Images Collection */,
+				84506931187822DA0087FD3F /* Main Work screen */,
 				8450693018779AB60087FD3F /* Share preview screen */,
 			);
 			name = "View Controllers";
@@ -277,8 +297,22 @@
 		8450693018779AB60087FD3F /* Share preview screen */ = {
 			isa = PBXGroup;
 			children = (
+				84506943187867720087FD3F /* NBSSharePreviewController.h */,
+				84506944187867720087FD3F /* NBSSharePreviewController.m */,
 			);
 			name = "Share preview screen";
+			sourceTree = "<group>";
+		};
+		84506931187822DA0087FD3F /* Main Work screen */ = {
+			isa = PBXGroup;
+			children = (
+				845069321878231B0087FD3F /* NBSMainWorkViewController.h */,
+				845069331878231B0087FD3F /* NBSMainWorkViewController.m */,
+				84506939187859230087FD3F /* NBSTemplateCameraOverlayView.h */,
+				8450693A187859230087FD3F /* NBSTemplateCameraOverlayView.m */,
+				8450693C187859350087FD3F /* NBSTemplateCameraOverlayView.xib */,
+			);
+			name = "Main Work screen";
 			sourceTree = "<group>";
 		};
 		84AB90BA1875FC67005EEBE5 /* Social Manager */ = {
@@ -299,9 +333,12 @@
 			children = (
 				84FAA7FC1875EC410007FB03 /* UIAlertView+NBSExtensions.h */,
 				84FAA7FD1875EC410007FB03 /* UIAlertView+NBSExtensions.m */,
+				84506935187854310087FD3F /* NBSCommonDefines.h */,
 				84AB90BE1875FFB0005EEBE5 /* NBSTypes.h */,
 				8450691F1877795D0087FD3F /* UIView+NIB.h */,
 				845069201877795D0087FD3F /* UIView+NIB.m */,
+				8450693E18785E6A0087FD3F /* UIViewController+NBSNavigationItems.h */,
+				8450693F18785E6A0087FD3F /* UIViewController+NBSNavigationItems.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -414,6 +451,7 @@
 				067B15E5187749600037DCE3 /* Localizable.strings in Resources */,
 				8432C3FE18757F3E005C26B8 /* Images.xcassets in Resources */,
 				845069171877281D0087FD3F /* test_rabbit.jpg in Resources */,
+				8450693D187859350087FD3F /* NBSTemplateCameraOverlayView.xib in Resources */,
 				8432C3F618757F3E005C26B8 /* Main_iPhone.storyboard in Resources */,
 				8432C3ED18757F3E005C26B8 /* InfoPlist.strings in Resources */,
 			);
@@ -466,6 +504,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8450691A18774EE60087FD3F /* NBSSocialManager+Facebook.m in Sources */,
+				8450694018785E6A0087FD3F /* UIViewController+NBSNavigationItems.m in Sources */,
+				84506945187867720087FD3F /* NBSSharePreviewController.m in Sources */,
 				8450692418777A800087FD3F /* NBSImageCollectionViewCell.m in Sources */,
 				8450692E187792260087FD3F /* NBSNavigationController.m in Sources */,
 				8432C3F318757F3E005C26B8 /* NBSAppDelegate.m in Sources */,
@@ -478,6 +518,8 @@
 				845069211877795D0087FD3F /* UIView+NIB.m in Sources */,
 				845069131876E8080087FD3F /* NBSUser.m in Sources */,
 				067B15D618773C5C0037DCE3 /* NBSSocialManager+Vkontakte.m in Sources */,
+				845069341878231B0087FD3F /* NBSMainWorkViewController.m in Sources */,
+				8450693B187859230087FD3F /* NBSTemplateCameraOverlayView.m in Sources */,
 				84FAA8061875EC840007FB03 /* NBSInstructionsContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
