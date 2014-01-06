@@ -39,13 +39,7 @@
 
 #pragma mark - custom navigation buttons
 
-- (UIBarButtonItem *)customRightBarButton {
-    NBSUser *user = [NBSUser currentUser];
-    
-    if ([user isLogged]) {
-        //TODO: maybe return image view with avatar
-        return nil;
-    }
+- (UIBarButtonItem *)customRightBarButton {    
     return [self loginBarButton];
 }
 

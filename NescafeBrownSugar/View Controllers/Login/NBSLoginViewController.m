@@ -9,10 +9,12 @@
 #import "NBSLoginViewController.h"
 #import "NBSSocialManager.h"
 #import "NBSSocialManager+Vkontakte.h"
+#import "NBSSocialManager+Facebook.h"
+#import "NBSImagesCollectionViewController.h"
+#import "NBSLoginSuccessfullyViewController.h"
 
-@interface NBSLoginViewController () <UIDocumentInteractionControllerDelegate>
-@property (nonatomic, retain) UIDocumentInteractionController *docInteractionController;
-@property (nonatomic, copy) NBSCompletionBlock loginCompletionBlock;
+@interface NBSLoginViewController ()
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *spinner;
 @end
 
 @implementation NBSLoginViewController
@@ -28,30 +30,10 @@
     return self;
 }
 
-- (void)setupCallbackBlocks {
-    __weak NBSLoginViewController *weakself = self;
-    self.loginCompletionBlock = ^(BOOL success, NSError *error) {
-        if (success) {
-            if (weakself.presentingViewController) {
-                [weakself.presentingViewController dismissViewControllerAnimated:YES completion:^{
-                    
-                }];
-            } else {
-                //TODO: perform segue with user info screen
-            }
-        } else {
-            DLog(@"Login Completion Error: %@", error ? error.description : @"No error description");
-        }
-    };
-}
-
 #pragma mark - view life cycle
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    //init completion blocks
-    [self setupCallbackBlocks];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -61,32 +43,55 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - social maganer getter
-- (NBSSocialManager *)socialManager {
-    return [NBSSocialManager sharedManager];
-}
-
 #pragma mark - IBActions
+
 - (IBAction)didPressFacebookButton:(UIButton *)sender {
+    self.view.userInteractionEnabled = NO;
+    [self.spinner startAnimating];
+    [[NBSSocialManager sharedManager] facebookLoginWithCompletion:^(BOOL success, NSError *error) {
+        self.view.userInteractionEnabled = YES;
+        [self.spinner stopAnimating];
+        
+        if (success) {
+            NBSLoginSuccessfullyViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:kNBSLoginSuccessfullyVCIdentifier];
+            controller.loginType = NBSLoginTypeFacebook;
+            [self.navigationController pushViewController:controller animated:YES];
+        } else {
+            if (error) {
+                [UIAlertView showErrorAlertWithError:error];
+            } else {
+                [UIAlertView showSimpleAlertWithMessage:NSLocalizedString(@"FacebookTokenRenewalFailedMessage", nil)];
+            }
+        }
+    }];
 }
 
 - (IBAction)didPressVkontakteButton:(UIButton *)sender {
-    [[self socialManager] vkontakteLoginWithCompletion:self.loginCompletionBlock];
+    self.view.userInteractionEnabled = NO;
+    [self.spinner startAnimating];
+    [[NBSSocialManager sharedManager] vkontakteLoginWithCompletion:^(BOOL success, NSError *error) {
+        self.view.userInteractionEnabled = YES;
+        [self.spinner stopAnimating];
+        
+        if (success) {
+            NBSLoginSuccessfullyViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:kNBSLoginSuccessfullyVCIdentifier];
+            controller.loginType = NBSLoginTypeVkontakte;
+            [self.navigationController pushViewController:controller animated:YES];
+        } else {
+            if (error) {
+                [UIAlertView showErrorAlertWithError:error];
+            } else {
+                [UIAlertView showSimpleAlertWithMessage:NSLocalizedString(@"VkontakteTokenRenewalFailedMessage", nil)];
+            }
+        }
+    }];
 }
     
 - (IBAction)didPressSkipButton:(UIButton *)sender {
     if (!self.presentingViewController) {
-        [self performSegueWithIdentifier:@"ImagesCollectionScreenPushSegue" sender:self];
+        [self performSegueWithIdentifier:kNBSImagesCollectionVCPushSegue sender:self];
     } else {
-        [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
-            
-        }];
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     }
 }
 

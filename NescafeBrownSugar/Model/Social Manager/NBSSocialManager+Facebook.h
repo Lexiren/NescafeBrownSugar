@@ -11,5 +11,9 @@
 @interface NBSSocialManager (Facebook)
 
 - (void)facebookLoginWithCompletion:(NBSCompletionBlock)completion;
+- (BOOL)isFacebookLoggedIn;
+
+- (void)getFacebookUserDataWithCompletion:(NBSCompletionBlockWithUserData)completion;
+
 
 @end

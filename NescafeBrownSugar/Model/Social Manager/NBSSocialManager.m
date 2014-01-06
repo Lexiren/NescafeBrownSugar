@@ -24,4 +24,19 @@
     return sharedInstance;
 }
 
+- (void)performLoginCompletionWithSuccess:(BOOL)success error:(NSError *)error {
+    if (self.loginCompletion) {
+        self.loginCompletion(success, error);
+        self.loginCompletion = nil;
+    }
+}
+
+- (void)performUserDataCompletionWithSuccess:(BOOL)success
+                                       error:(NSError *)error
+                                        user:(NBSUser *)user {
+    if (self.userDataCompletion) {
+        self.userDataCompletion(success, error, user);
+        self.userDataCompletion = nil;
+    }
+}
 @end

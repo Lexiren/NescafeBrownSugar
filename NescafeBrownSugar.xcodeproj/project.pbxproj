@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		067B15D618773C5C0037DCE3 /* NBSSocialManager+Vkontakte.m in Sources */ = {isa = PBXBuildFile; fileRef = 067B15D518773C5C0037DCE3 /* NBSSocialManager+Vkontakte.m */; };
 		067B15E5187749600037DCE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 067B15E3187749600037DCE3 /* Localizable.strings */; };
+		067B15FD187829F00037DCE3 /* NBSLoginSuccessfullyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067B15FC187829F00037DCE3 /* NBSLoginSuccessfullyViewController.m */; };
 		8432C3E318757F3E005C26B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432C3E218757F3E005C26B8 /* Foundation.framework */; };
 		8432C3E518757F3E005C26B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432C3E418757F3E005C26B8 /* CoreGraphics.framework */; };
 		8432C3E718757F3E005C26B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432C3E618757F3E005C26B8 /* UIKit.framework */; };
@@ -61,6 +62,8 @@
 		067B15E618774B3F0037DCE3 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		067B15E918774C0C0037DCE3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		067B15FA187767310037DCE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		067B15FB187829F00037DCE3 /* NBSLoginSuccessfullyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBSLoginSuccessfullyViewController.h; sourceTree = "<group>"; };
+		067B15FC187829F00037DCE3 /* NBSLoginSuccessfullyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBSLoginSuccessfullyViewController.m; sourceTree = "<group>"; };
 		06D72EC31875F568003B3762 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8432C3DF18757F3D005C26B8 /* NescafeBrownSugar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NescafeBrownSugar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8432C3E218757F3E005C26B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -348,6 +351,8 @@
 			children = (
 				84FAA8001875EC690007FB03 /* NBSLoginViewController.h */,
 				84FAA8011875EC690007FB03 /* NBSLoginViewController.m */,
+				067B15FB187829F00037DCE3 /* NBSLoginSuccessfullyViewController.h */,
+				067B15FC187829F00037DCE3 /* NBSLoginSuccessfullyViewController.m */,
 			);
 			name = Login;
 			path = "View Controllers/Login";
@@ -509,6 +514,7 @@
 				8450692418777A800087FD3F /* NBSImageCollectionViewCell.m in Sources */,
 				8450692E187792260087FD3F /* NBSNavigationController.m in Sources */,
 				8432C3F318757F3E005C26B8 /* NBSAppDelegate.m in Sources */,
+				067B15FD187829F00037DCE3 /* NBSLoginSuccessfullyViewController.m in Sources */,
 				8432C3EF18757F3E005C26B8 /* main.m in Sources */,
 				84FAA7FE1875EC410007FB03 /* UIAlertView+NBSExtensions.m in Sources */,
 				8432C4241875924A005C26B8 /* NBSInstructionsViewController.m in Sources */,

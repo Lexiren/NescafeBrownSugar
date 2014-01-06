@@ -8,10 +8,13 @@
 
 #import "NBSSocialManager.h"
 #import "VKConnector.h"
+#import "VKRequest.h"
 
-@interface NBSSocialManager (Vkontakte) <VKConnectorDelegate>
+@interface NBSSocialManager (Vkontakte) <VKConnectorDelegate, VKRequestDelegate>
 
 - (void)vkontakteLoginWithCompletion:(NBSCompletionBlock)completion;
+- (BOOL)isVkontakteLoggedIn;
 
+- (void)getVkontakteUserDataWithCompletion:(NBSCompletionBlockWithUserData)completion;
 
 @end

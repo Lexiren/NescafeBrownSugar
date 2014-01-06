@@ -9,11 +9,15 @@
 #ifndef NescafeBrownSugar_NBSTypes_h
 #define NescafeBrownSugar_NBSTypes_h
 
-typedef void (^NBSCompletionBlockWithData)(BOOL success, NSError* error, id data);
-typedef void (^NBSCompletionBlock)(BOOL success, NSError* error);
+@class NBSUser;
+
+typedef void (^NBSCompletionBlockWithData)(BOOL success, NSError *error, id data);
+typedef void (^NBSCompletionBlock)(BOOL success, NSError *error);
 typedef void (^NBSSuccessCompletionBlock)();
 typedef void (^NBSSuccessWithDataCompletionBlock)(id data);
 typedef void (^NBSFailureCompletionBlock)(NSError *error);
 typedef void (^NBSButtonTapHandlerBlock)(UIButton *sender);
+
+typedef void (^NBSCompletionBlockWithUserData)(BOOL success, NSError *error, NBSUser *user);
 
 #endif

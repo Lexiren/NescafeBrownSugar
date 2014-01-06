@@ -10,3 +10,4 @@
 "OKButton" = "OK";
 
 "VkontakteTokenRenewalFailedMessage" = "Vkontakte was not authorized";
+"FacebookTokenRenewalFailedMessage" = "Facebook was not authorized";

@@ -199,14 +199,20 @@
                                     <action selector="didPressSkipButton:" destination="KOz-Ym-LPK" eventType="touchUpInside" id="6iC-Yo-aq1"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ypj-Mq-T9s">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.62286750639999999" green="0.3307832275" blue="0.035889891219999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="ypj-Mq-T9s" secondAttribute="centerY" id="5XZ-nq-9Ff"/>
                             <constraint firstAttribute="centerX" secondItem="aTp-z7-Ysy" secondAttribute="centerX" id="Gtf-bN-zDv"/>
                             <constraint firstAttribute="centerX" secondItem="iju-0Z-25j" secondAttribute="centerX" id="NRc-1h-S7G"/>
                             <constraint firstAttribute="centerX" secondItem="QAb-qr-8sW" secondAttribute="centerX" id="QnD-2v-3Yt"/>
                             <constraint firstAttribute="bottom" secondItem="aTp-z7-Ysy" secondAttribute="bottom" constant="60" id="ZJb-UR-moX"/>
                             <constraint firstItem="QAb-qr-8sW" firstAttribute="top" secondItem="iju-0Z-25j" secondAttribute="bottom" constant="60" id="Zix-gu-5Al"/>
+                            <constraint firstAttribute="centerX" secondItem="ypj-Mq-T9s" secondAttribute="centerX" id="ZpJ-kU-k65"/>
                             <constraint firstAttribute="centerX" secondItem="sZX-EL-nJv" secondAttribute="centerX" id="e0A-BD-D9w"/>
                             <constraint firstAttribute="centerY" secondItem="sZX-EL-nJv" secondAttribute="centerY" constant="-25" id="f9i-rC-KY5"/>
                             <constraint firstAttribute="centerY" secondItem="QAb-qr-8sW" secondAttribute="centerY" constant="39" id="hNT-EH-hkF"/>
@@ -216,12 +222,105 @@
                     <navigationItem key="navigationItem" id="pXQ-fH-WoZ"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <segue destination="PTI-la-V1a" kind="push" identifier="ImagesCollectionScreenPushSegue" id="VyZ-p2-t0h"/>
+                        <outlet property="spinner" destination="ypj-Mq-T9s" id="OZf-Tk-DSl"/>
+                        <segue destination="PTI-la-V1a" kind="push" identifier="ImagesCollectionVCPushSegue" id="VyZ-p2-t0h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYR-nP-EbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="864" y="58"/>
+        </scene>
+        <!--Login Successfully View Controller-->
+        <scene sceneID="kpb-4V-r4w">
+            <objects>
+                <viewController storyboardIdentifier="LoginSuccessfullyVC" id="BJ4-jy-p5R" customClass="NBSLoginSuccessfullyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QqB-Fh-sx1"/>
+                        <viewControllerLayoutGuide type="bottom" id="SFz-X7-2cS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Zh-NK-NLn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="70W-9b-YJx">
+                                <rect key="frame" x="100" y="130" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="9S9-qp-Zza"/>
+                                    <constraint firstAttribute="width" constant="120" id="lAZ-YC-HQn"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gt-hh-SU1" customClass="FBProfilePictureView">
+                                <rect key="frame" x="100" y="130" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="5ys-Bi-W8z"/>
+                                    <constraint firstAttribute="width" constant="120" id="GbO-uG-04l"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8Z-yn-COS">
+                                <rect key="frame" x="160" y="273" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hh4-J1-B6k">
+                                <rect key="frame" x="160" y="276" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfo-dE-O2s">
+                                <rect key="frame" x="60" y="469" width="200" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="eFq-HI-Ebq"/>
+                                    <constraint firstAttribute="height" constant="50" id="wf2-yJ-V79"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Skip >">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressSkipButton:" destination="KOz-Ym-LPK" eventType="touchUpInside" id="uXK-hE-QPh"/>
+                                    <action selector="didPressSkipButton:" destination="BJ4-jy-p5R" eventType="touchUpInside" id="yix-JE-ZRT"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="NlE-Ul-l3h">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.62286750639999999" green="0.3307832275" blue="0.035889891219999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="9gt-hh-SU1" firstAttribute="top" secondItem="QqB-Fh-sx1" secondAttribute="bottom" constant="110" id="Aab-Re-cDD"/>
+                            <constraint firstItem="70W-9b-YJx" firstAttribute="top" secondItem="QqB-Fh-sx1" secondAttribute="bottom" constant="110" id="ESl-dr-OEP"/>
+                            <constraint firstAttribute="centerX" secondItem="Wfo-dE-O2s" secondAttribute="centerX" id="EuD-yJ-HLb"/>
+                            <constraint firstItem="y8Z-yn-COS" firstAttribute="top" secondItem="70W-9b-YJx" secondAttribute="bottom" constant="23" id="GG4-we-65O"/>
+                            <constraint firstAttribute="centerX" secondItem="70W-9b-YJx" secondAttribute="centerX" id="H4m-cQ-tll"/>
+                            <constraint firstAttribute="centerX" secondItem="y8Z-yn-COS" secondAttribute="centerX" id="JWF-0t-mG4"/>
+                            <constraint firstItem="SFz-X7-2cS" firstAttribute="top" secondItem="Wfo-dE-O2s" secondAttribute="bottom" constant="49" id="dGF-q2-QLS"/>
+                            <constraint firstAttribute="centerX" secondItem="Hh4-J1-B6k" secondAttribute="centerX" id="hGU-Ej-BGc"/>
+                            <constraint firstAttribute="centerX" secondItem="9gt-hh-SU1" secondAttribute="centerX" id="noU-cU-O7P"/>
+                            <constraint firstItem="Hh4-J1-B6k" firstAttribute="top" secondItem="y8Z-yn-COS" secondAttribute="bottom" constant="3" id="zZ6-s4-Cyp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gw6-7Z-cQZ"/>
+                    <connections>
+                        <outlet property="avatarImageView" destination="70W-9b-YJx" id="qVd-h9-jvf"/>
+                        <outlet property="avatarPictureView" destination="9gt-hh-SU1" id="KIS-kf-Fnv"/>
+                        <outlet property="firstNameLabel" destination="y8Z-yn-COS" id="UpC-zr-V2G"/>
+                        <outlet property="lastNameLabel" destination="Hh4-J1-B6k" id="dXI-Y5-kJ2"/>
+                        <outlet property="spinner" destination="NlE-Ul-l3h" id="FlF-7p-sTU"/>
+                        <segue destination="PTI-la-V1a" kind="push" identifier="ImagesCollectionVCPushSegue" id="mwc-sk-Mxp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W9U-fR-CHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1349" y="58"/>
         </scene>
         <!--Images Collection View Controller - Choose an image-->
         <scene sceneID="Xru-dt-30n">
@@ -440,4 +539,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="mwc-sk-Mxp"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -11,3 +11,5 @@
 @interface NBSImagesCollectionViewController : UIViewController
 
 @end
+
+extern NSString *const kNBSImagesCollectionVCPushSegue;
