@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		067B15D618773C5C0037DCE3 /* NBSSocialManager+Vkontakte.m in Sources */ = {isa = PBXBuildFile; fileRef = 067B15D518773C5C0037DCE3 /* NBSSocialManager+Vkontakte.m */; };
 		067B15E5187749600037DCE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 067B15E3187749600037DCE3 /* Localizable.strings */; };
-		067B15FD187829F00037DCE3 /* NBSLoginSuccessfullyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067B15FC187829F00037DCE3 /* NBSLoginSuccessfullyViewController.m */; };
+		067B15FD187829F00037DCE3 /* NBSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067B15FC187829F00037DCE3 /* NBSProfileViewController.m */; };
+		067B1600187B10DB0037DCE3 /* NBSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067B15FF187B10DB0037DCE3 /* NBSRootViewController.m */; };
+		067B1603187B16540037DCE3 /* NBSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067B1602187B16540037DCE3 /* NBSMenuViewController.m */; };
 		8432C3E318757F3E005C26B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432C3E218757F3E005C26B8 /* Foundation.framework */; };
 		8432C3E518757F3E005C26B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432C3E418757F3E005C26B8 /* CoreGraphics.framework */; };
 		8432C3E718757F3E005C26B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432C3E618757F3E005C26B8 /* UIKit.framework */; };
@@ -26,7 +28,6 @@
 		8432C41118757F3E005C26B8 /* NescafeBrownSugarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432C41018757F3E005C26B8 /* NescafeBrownSugarTests.m */; };
 		8432C4241875924A005C26B8 /* NBSInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432C4231875924A005C26B8 /* NBSInstructionsViewController.m */; };
 		845069131876E8080087FD3F /* NBSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 845069121876E8080087FD3F /* NBSUser.m */; };
-		845069171877281D0087FD3F /* test_rabbit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845069161877281D0087FD3F /* test_rabbit.jpg */; };
 		8450691A18774EE60087FD3F /* NBSSocialManager+Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450691918774EE60087FD3F /* NBSSocialManager+Facebook.m */; };
 		8450691E1877747C0087FD3F /* NBSImagesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450691D1877747C0087FD3F /* NBSImagesCollectionViewController.m */; };
 		845069211877795D0087FD3F /* UIView+NIB.m in Sources */ = {isa = PBXBuildFile; fileRef = 845069201877795D0087FD3F /* UIView+NIB.m */; };
@@ -62,8 +63,12 @@
 		067B15E618774B3F0037DCE3 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		067B15E918774C0C0037DCE3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		067B15FA187767310037DCE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		067B15FB187829F00037DCE3 /* NBSLoginSuccessfullyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBSLoginSuccessfullyViewController.h; sourceTree = "<group>"; };
-		067B15FC187829F00037DCE3 /* NBSLoginSuccessfullyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBSLoginSuccessfullyViewController.m; sourceTree = "<group>"; };
+		067B15FB187829F00037DCE3 /* NBSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBSProfileViewController.h; sourceTree = "<group>"; };
+		067B15FC187829F00037DCE3 /* NBSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBSProfileViewController.m; sourceTree = "<group>"; };
+		067B15FE187B10DB0037DCE3 /* NBSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSRootViewController.h; path = "View Controllers/Base/NBSRootViewController.h"; sourceTree = "<group>"; };
+		067B15FF187B10DB0037DCE3 /* NBSRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSRootViewController.m; path = "View Controllers/Base/NBSRootViewController.m"; sourceTree = "<group>"; };
+		067B1601187B16540037DCE3 /* NBSMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSMenuViewController.h; path = "View Controllers/Base/NBSMenuViewController.h"; sourceTree = "<group>"; };
+		067B1602187B16540037DCE3 /* NBSMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSMenuViewController.m; path = "View Controllers/Base/NBSMenuViewController.m"; sourceTree = "<group>"; };
 		06D72EC31875F568003B3762 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8432C3DF18757F3D005C26B8 /* NescafeBrownSugar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NescafeBrownSugar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8432C3E218757F3E005C26B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -86,7 +91,6 @@
 		8432C4231875924A005C26B8 /* NBSInstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSInstructionsViewController.m; path = "View Controllers/Instructions/NBSInstructionsViewController.m"; sourceTree = "<group>"; };
 		845069111876E8080087FD3F /* NBSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSUser.h; path = Model/User/NBSUser.h; sourceTree = "<group>"; };
 		845069121876E8080087FD3F /* NBSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSUser.m; path = Model/User/NBSUser.m; sourceTree = "<group>"; };
-		845069161877281D0087FD3F /* test_rabbit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_rabbit.jpg; sourceTree = "<group>"; };
 		8450691818774EE60087FD3F /* NBSSocialManager+Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NBSSocialManager+Facebook.h"; path = "Model/Social Manager/NBSSocialManager+Facebook.h"; sourceTree = "<group>"; };
 		8450691918774EE60087FD3F /* NBSSocialManager+Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NBSSocialManager+Facebook.m"; path = "Model/Social Manager/NBSSocialManager+Facebook.m"; sourceTree = "<group>"; };
 		8450691C1877747C0087FD3F /* NBSImagesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSImagesCollectionViewController.h; path = "View Controllers/Images Collection/NBSImagesCollectionViewController.h"; sourceTree = "<group>"; };
@@ -184,7 +188,6 @@
 		8432C3E818757F3E005C26B8 /* NescafeBrownSugar */ = {
 			isa = PBXGroup;
 			children = (
-				845069161877281D0087FD3F /* test_rabbit.jpg */,
 				8432C3F118757F3E005C26B8 /* NBSAppDelegate.h */,
 				8432C3F218757F3E005C26B8 /* NBSAppDelegate.m */,
 				8432C3F418757F3E005C26B8 /* Main_iPhone.storyboard */,
@@ -266,6 +269,10 @@
 			children = (
 				8450692C187792260087FD3F /* NBSNavigationController.h */,
 				8450692D187792260087FD3F /* NBSNavigationController.m */,
+				067B15FE187B10DB0037DCE3 /* NBSRootViewController.h */,
+				067B15FF187B10DB0037DCE3 /* NBSRootViewController.m */,
+				067B1601187B16540037DCE3 /* NBSMenuViewController.h */,
+				067B1602187B16540037DCE3 /* NBSMenuViewController.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -351,8 +358,8 @@
 			children = (
 				84FAA8001875EC690007FB03 /* NBSLoginViewController.h */,
 				84FAA8011875EC690007FB03 /* NBSLoginViewController.m */,
-				067B15FB187829F00037DCE3 /* NBSLoginSuccessfullyViewController.h */,
-				067B15FC187829F00037DCE3 /* NBSLoginSuccessfullyViewController.m */,
+				067B15FB187829F00037DCE3 /* NBSProfileViewController.h */,
+				067B15FC187829F00037DCE3 /* NBSProfileViewController.m */,
 			);
 			name = Login;
 			path = "View Controllers/Login";
@@ -455,7 +462,6 @@
 				8432C3F918757F3E005C26B8 /* Main_iPad.storyboard in Resources */,
 				067B15E5187749600037DCE3 /* Localizable.strings in Resources */,
 				8432C3FE18757F3E005C26B8 /* Images.xcassets in Resources */,
-				845069171877281D0087FD3F /* test_rabbit.jpg in Resources */,
 				8450693D187859350087FD3F /* NBSTemplateCameraOverlayView.xib in Resources */,
 				8432C3F618757F3E005C26B8 /* Main_iPhone.storyboard in Resources */,
 				8432C3ED18757F3E005C26B8 /* InfoPlist.strings in Resources */,
@@ -508,19 +514,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				067B1603187B16540037DCE3 /* NBSMenuViewController.m in Sources */,
 				8450691A18774EE60087FD3F /* NBSSocialManager+Facebook.m in Sources */,
 				8450694018785E6A0087FD3F /* UIViewController+NBSNavigationItems.m in Sources */,
 				84506945187867720087FD3F /* NBSSharePreviewController.m in Sources */,
 				8450692418777A800087FD3F /* NBSImageCollectionViewCell.m in Sources */,
 				8450692E187792260087FD3F /* NBSNavigationController.m in Sources */,
 				8432C3F318757F3E005C26B8 /* NBSAppDelegate.m in Sources */,
-				067B15FD187829F00037DCE3 /* NBSLoginSuccessfullyViewController.m in Sources */,
+				067B15FD187829F00037DCE3 /* NBSProfileViewController.m in Sources */,
 				8432C3EF18757F3E005C26B8 /* main.m in Sources */,
 				84FAA7FE1875EC410007FB03 /* UIAlertView+NBSExtensions.m in Sources */,
 				8432C4241875924A005C26B8 /* NBSInstructionsViewController.m in Sources */,
 				84FAA8021875EC690007FB03 /* NBSLoginViewController.m in Sources */,
 				84AB90BD1875FF2E005EEBE5 /* NBSSocialManager.m in Sources */,
 				8450691E1877747C0087FD3F /* NBSImagesCollectionViewController.m in Sources */,
+				067B1600187B10DB0037DCE3 /* NBSRootViewController.m in Sources */,
 				845069211877795D0087FD3F /* UIView+NIB.m in Sources */,
 				845069131876E8080087FD3F /* NBSUser.m in Sources */,
 				067B15D618773C5C0037DCE3 /* NBSSocialManager+Vkontakte.m in Sources */,

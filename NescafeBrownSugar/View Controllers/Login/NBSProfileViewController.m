@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 COXO. All rights reserved.
 //
 
-#import "NBSLoginSuccessfullyViewController.h"
+#import "NBSProfileViewController.h"
 #import "NBSSocialManager.h"
 #import "NBSSocialManager+Facebook.h"
 #import "NBSSocialManager+Vkontakte.h"
@@ -16,7 +16,7 @@
 
 NSString *const kNBSLoginSuccessfullyVCIdentifier = @"LoginSuccessfullyVC";
 
-@interface NBSLoginSuccessfullyViewController ()
+@interface NBSProfileViewController ()
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *spinner;
 @property (nonatomic, weak) IBOutlet UILabel *firstNameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *lastNameLabel;
@@ -24,7 +24,7 @@ NSString *const kNBSLoginSuccessfullyVCIdentifier = @"LoginSuccessfullyVC";
 @property (nonatomic, weak) IBOutlet FBProfilePictureView *avatarPictureView;
 @end
 
-@implementation NBSLoginSuccessfullyViewController
+@implementation NBSProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

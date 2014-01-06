@@ -11,7 +11,7 @@ typedef enum {
     NBSLoginTypeVkontakte
 } NBSLoginType;
 
-@interface NBSLoginSuccessfullyViewController : UIViewController
+@interface NBSProfileViewController : UIViewController
 @property (nonatomic, assign) NBSLoginType loginType;
 @end
 

@@ -1,13 +1,16 @@
 PODS:
   - Facebook-iOS-SDK (3.11.0)
+  - RESideMenu (3.4)
   - Vkontakte-iOS-SDK-v2 (2.7.5)
 
 DEPENDENCIES:
   - Facebook-iOS-SDK (~> 3.11)
+  - RESideMenu (~> 3.4)
   - Vkontakte-iOS-SDK-v2 (~> 2.7)
 
 SPEC CHECKSUMS:
   Facebook-iOS-SDK: 2eb12f9ed04f3d3956f0a4fb0e4e60c824dcd101
+  RESideMenu: d8d6330052e0348718826045b912a1c71748357d
   Vkontakte-iOS-SDK-v2: 91298a513899bd227317f8168e5adfd95a346f5b
 
 COCOAPODS: 0.29.0

@@ -12,4 +12,4 @@
 
 @end
 
-extern NSString *const kNBSImagesCollectionVCPushSegue;
+extern NSString *const kNBSImagesCollectionVCIdentifier;

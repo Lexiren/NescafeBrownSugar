@@ -14,14 +14,16 @@
 
 - (void)facebookLoginWithCompletion:(NBSCompletionBlock)completion {
     self.loginCompletion = completion;
-    [FBSession openActiveSessionWithReadPermissions:@[@"basic_info"]
-                                       allowLoginUI:YES
-                                  completionHandler:^(FBSession *session,
-                                                      FBSessionState status,
-                                                      NSError *error)
-     {
-         [self performLoginCompletionWithSuccess:session.isOpen error:error];
-     }];
+    if (![self isFacebookLoggedIn]) {
+        [FBSession openActiveSessionWithReadPermissions:@[@"basic_info"]
+                                           allowLoginUI:YES
+                                      completionHandler:^(FBSession *session,
+                                                          FBSessionState status,
+                                                          NSError *error)
+         {
+             [self performLoginCompletionWithSuccess:session.isOpen error:error];
+         }];
+    }
 }
 
 - (BOOL)isFacebookLoggedIn {

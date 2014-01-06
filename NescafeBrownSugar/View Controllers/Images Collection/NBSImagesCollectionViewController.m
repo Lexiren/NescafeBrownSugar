@@ -11,7 +11,7 @@
 #import "UIViewController+NBSNavigationItems.h"
 #import "NBSMainWorkViewController.h"
 
-NSString *const kNBSImagesCollectionVCPushSegue = @"ImagesCollectionVCPushSegue";
+NSString *const kNBSImagesCollectionVCIdentifier = @"ImagesCollectionVC";
 
 @interface NBSImagesCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;

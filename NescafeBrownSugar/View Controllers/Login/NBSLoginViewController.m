@@ -11,7 +11,7 @@
 #import "NBSSocialManager+Vkontakte.h"
 #import "NBSSocialManager+Facebook.h"
 #import "NBSImagesCollectionViewController.h"
-#import "NBSLoginSuccessfullyViewController.h"
+#import "NBSProfileViewController.h"
 
 @interface NBSLoginViewController ()
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *spinner;
@@ -53,7 +53,7 @@
         [self.spinner stopAnimating];
         
         if (success) {
-            NBSLoginSuccessfullyViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:kNBSLoginSuccessfullyVCIdentifier];
+            NBSProfileViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:kNBSLoginSuccessfullyVCIdentifier];
             controller.loginType = NBSLoginTypeFacebook;
             [self.navigationController pushViewController:controller animated:YES];
         } else {
@@ -74,7 +74,7 @@
         [self.spinner stopAnimating];
         
         if (success) {
-            NBSLoginSuccessfullyViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:kNBSLoginSuccessfullyVCIdentifier];
+            NBSProfileViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:kNBSLoginSuccessfullyVCIdentifier];
             controller.loginType = NBSLoginTypeVkontakte;
             [self.navigationController pushViewController:controller animated:YES];
         } else {
