@@ -13,6 +13,7 @@
 //#import "NBSImagesCollectionViewController.h"
 #import "NBSProfileViewController.h"
 #import "RESideMenu.h"
+#import "NBSNavigationController.h"
 
 NSString *const kNBSLoginNavigationVCIdentifier = @"RootLoginNavigationVC";
 NSString *const kNBSLoginVCIdentifier = @"LoginVC";
@@ -94,13 +95,11 @@ NSString *const kNBSLoginVCIdentifier = @"LoginVC";
 
 - (void)moveToNextScreenWithLoginType:(NBSLoginType)loginType {
     //TODO: maybe move login type to user?
-    UINavigationController *profileNavigationVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSProfileNavigationVCIdentifier];
-    if ([[profileNavigationVC.viewControllers firstObject] isKindOfClass:[NBSProfileViewController class]]) {
-        [(NBSProfileViewController *)[profileNavigationVC.viewControllers firstObject] setLoginType:loginType];
-    } else {
-        NSAssert(NO, @"wrong navigation: root controller should be NBSProfileVC");
-    }
-    [self.sideMenuViewController setContentViewController:profileNavigationVC animated:YES];
+    NBSProfileViewController *profileVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSProfileVCIdentifier];
+    profileVC.loginType = loginType;
+    NBSNavigationController *navigationController = [[NBSNavigationController alloc] initWithRootViewController:profileVC];
+
+    [self.sideMenuViewController setContentViewController:navigationController animated:YES];
     [self.sideMenuViewController presentMenuViewController];
 }
 

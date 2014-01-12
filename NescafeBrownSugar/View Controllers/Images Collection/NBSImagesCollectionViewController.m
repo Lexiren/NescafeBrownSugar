@@ -52,7 +52,7 @@ NSString *const kNBSPushImageCollectionFromProfileSegueIdentifier = @"pushImageC
     [super viewWillAppear:animated];
     //show navigation bar
 //    [self setupCustomNavigationBarItems];
-    [self.navigationController setNavigationBarHidden:NO];
+    //[self.navigationController setNavigationBarHidden:NO];
     self.title = @"Choose an image";
 }
 

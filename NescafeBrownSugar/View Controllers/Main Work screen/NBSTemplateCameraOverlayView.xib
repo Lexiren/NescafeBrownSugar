@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="05_draw.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Og-Vc-UTi">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C6EB491B-15E8-404B-834F-9E4228C2D106" translatesAutoresizingMaskIntoConstraints="NO" id="3Og-Vc-UTi">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -34,6 +34,10 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgCameraTop" translatesAutoresizingMaskIntoConstraints="NO" id="BAK-WJ-OKX">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
@@ -48,6 +52,7 @@
                 <constraint firstAttribute="trailing" secondItem="3Og-Vc-UTi" secondAttribute="trailing" id="ucL-gE-a5b"/>
                 <constraint firstAttribute="bottom" secondItem="MFF-r9-O79" secondAttribute="bottom" constant="10" id="zm8-4i-hWX"/>
             </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
                 <outlet property="doneButton" destination="MFF-r9-O79" id="01o-VY-b8P"/>
                 <outlet property="templateImageView" destination="hbs-Xi-g8c" id="vHh-sm-x4R"/>
@@ -55,6 +60,23 @@
         </view>
     </objects>
     <resources>
-        <image name="05_draw.png" width="640" height="1136"/>
+        <image name="C6EB491B-15E8-404B-834F-9E4228C2D106" width="640" height="1136">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGPD1YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBMU
+GR4fJSYtMDY5VSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBz
+V05TQ29sb3KAAoAMEiTAAACAA4AKW3s2NDAsIDExMzZ90hUKFhhaTlMub2JqZWN0c6EXgASACdIVChoY
+ohscgAWABoAJEAXTIAohIiMkV05TLmJhc2VbTlMucmVsYXRpdmWAAIAIgAdfENdmaWxlOi8vL0FwcGxp
+Y2F0aW9ucy9YY29kZS5hcHAvQ29udGVudHMvRGV2ZWxvcGVyL1BsYXRmb3Jtcy9pUGhvbmVTaW11bGF0
+b3IucGxhdGZvcm0vRGV2ZWxvcGVyL0xpYnJhcnkvWGNvZGUvUHJpdmF0ZVBsdWdJbnMvSURFSW50ZXJm
+YWNlQnVpbGRlckNvY29hVG91Y2hJbnRlZ3JhdGlvbi5pZGVwbHVnaW4vQ29udGVudHMvUmVzb3VyY2Vz
+L0lCVUlNaXNzaW5nSW1hZ2UudGlmZtInKCkqWiRjbGFzc25hbWVYJGNsYXNzZXNVTlNVUkyiKyxVTlNV
+UkxYTlNPYmplY3TSJyguL1dOU0FycmF5oi4s0zEyCjM0NVdOU1doaXRlXE5TQ29sb3JTcGFjZUQwIDAA
+EAOAC9InKDc4V05TQ29sb3KiNyzSJyg6O1dOU0ltYWdlojosXxAPTlNLZXllZEFyY2hpdmVy0T4/VHJv
+b3SAAQAIABEAGgAjAC0AMgA3AEUASwBWAF0AZABxAHgAgACCAIQAiQCLAI0AmQCeAKkAqwCtAK8AtAC3
+ALkAuwC9AL8AxgDOANoA3ADeAOABugG/AcoB0wHZAdwB4gHrAfAB+AH7AgICCgIXAhwCHgIgAiUCLQIw
+AjUCPQJAAlICVQJaAAAAAAAAAgEAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAlw
+</mutableData>
+        </image>
+        <image name="bgCameraTop" width="320" height="73"/>
     </resources>
 </document>

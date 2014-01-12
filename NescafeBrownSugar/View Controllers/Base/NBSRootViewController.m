@@ -20,6 +20,7 @@
 - (void)awakeFromNib
 {
     //initial main content - help screen
+    self.parallaxEnabled = NO;
     NSString *contentIdentifier = kNBSHelpNavigationVCIdentifier;
     
     // !!!: uncomment next code for showing help only on first launch

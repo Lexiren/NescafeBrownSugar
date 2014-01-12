@@ -33,7 +33,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self setupCustomNavigationBarItems];
+    [self showLeftMenuBarButton:YES];
     
     self.imageView.image = self.previewImage;
 }

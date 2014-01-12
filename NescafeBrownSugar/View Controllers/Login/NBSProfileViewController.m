@@ -38,7 +38,7 @@ NSString *const kNBSProfileNavigationVCIdentifier = @"RootProfileNavigationVC";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     //hide native navigation bar
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    //[self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 #pragma mark - private functions
@@ -47,21 +47,20 @@ NSString *const kNBSProfileNavigationVCIdentifier = @"RootProfileNavigationVC";
     [self.spinner startAnimating];
     
     //TODO: delete this fake
-    self.bgImageView.image = [UIImage imageNamed:@"ProfileBG1"];
 
     self.FBLoginButton.hidden = YES;
     self.VKLoginButton.hidden = YES;
-    self.createPictureButton.hidden = NO;// according galary
     
     switch (self.loginType) {
         case NBSLoginTypeNotLogged: {
             [self.spinner stopAnimating];
             //TODO: fill default data
-            self.bgImageView.image = [UIImage imageNamed:@"ProfileBG0"];
-            self.nameLabel.text = nil;
+            self.nameLabel.text = @"Ви не зареестрованi";
+            self.avatarImageView.hidden = NO;
+            self.avatarImageView.image = [UIImage imageNamed:@"iconUnregisteredUserpic"];
+            self.avatarPictureView.hidden = YES;
             self.FBLoginButton.hidden = NO;
             self.VKLoginButton.hidden = NO;
-            self.createPictureButton.hidden = YES;
         }
             break;
         case NBSLoginTypeFacebook: {
@@ -73,7 +72,9 @@ NSString *const kNBSProfileNavigationVCIdentifier = @"RootProfileNavigationVC";
                      //TODO: fill own gallery
                      self.nameLabel.text = [self fullNameWithFirstName:user.facebookFirstName
                                                               lastName:user.facebookLastName];
+                     self.avatarPictureView.hidden = NO;
                      self.avatarPictureView.profileID = user.facebookUid;
+                     self.avatarImageView.hidden = YES;
                  } else if (error) {
                      [UIAlertView showErrorAlertWithError:error];
                  }
@@ -91,7 +92,10 @@ NSString *const kNBSProfileNavigationVCIdentifier = @"RootProfileNavigationVC";
                                                               lastName:user.vkontakteLastName];
                      NSURL *avatarURL = [NSURL URLWithString:user.vkontakteAvatar];
                      NSData *avatarData = [NSData dataWithContentsOfURL:avatarURL];
+                     self.avatarImageView.hidden = NO;
                      self.avatarImageView.image = [UIImage imageWithData:avatarData];
+                     self.avatarPictureView.hidden = YES;
+
                  } else if (error) {
                      [UIAlertView showErrorAlertWithError:error];
                  }

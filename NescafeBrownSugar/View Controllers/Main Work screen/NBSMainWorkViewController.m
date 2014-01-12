@@ -49,7 +49,7 @@ typedef enum {
 {
     [super viewWillAppear:animated];
     
-    [self setupCustomNavigationBarItems];
+    [self showLeftMenuBarButton:YES];
     
     self.isCameraPresent = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
     if (!_isCameraPresent) {
@@ -125,7 +125,7 @@ typedef enum {
         float imageWidth = floorf(screenSize.width * cameraAspectRatio);
         float scale = ceilf((screenSize.height / imageWidth) * 10.0) / 10.0;
         
-        _imagePicker.cameraViewTransform = CGAffineTransformMakeScale(scale, scale);
+        _imagePicker.cameraViewTransform = CGAffineTransformTranslate(CGAffineTransformMakeScale(scale, scale), 0, 64) ;
         
         [self addChildViewController:_imagePicker];
         [_imagePicker didMoveToParentViewController:self];

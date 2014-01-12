@@ -12,4 +12,6 @@
 
 - (void)setupCustomNavigationBarItems;
 
+- (void)showLeftMenuBarButton:(BOOL)showLeftMenuBarButton;
+
 @end

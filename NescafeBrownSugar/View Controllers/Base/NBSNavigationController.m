@@ -28,15 +28,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIImage *bgAppImage = [UIImage imageNamed:@"bgApp"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:bgAppImage];
-    imageView.frame = self.view.bounds;
-    [self.view addSubview:imageView];
-    for (UIView *v in self.view.subviews) {
-        if (v != imageView) {
-            [self.view bringSubviewToFront:v];
-        }
-    }
+    [self.navigationBar setBackgroundImage:[UIImage new]
+                                                 forBarMetrics:UIBarMetricsDefault];
+    self.navigationBar.shadowImage = [UIImage new];
+    self.navigationBar.translucent = YES;
+    self.view.backgroundColor = [UIColor clearColor];
+    
+    self.navigationBar.titleTextAttributes = @{UITextAttributeTextColor : [UIColor whiteColor], UITextAttributeFont : [UIFont systemFontOfSize:22.]};
+    
+    [self setNavigationBarHidden:NO animated:NO];
 	// Do any additional setup after loading the view.
 }
 
