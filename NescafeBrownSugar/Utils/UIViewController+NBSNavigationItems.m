@@ -42,9 +42,6 @@ static inline CGFloat cpcorrectedInsetValue(CGFloat value)
 
 - (UIButton *)navigateBackButton {
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backButton addTarget:self
-                       action:@selector(leftMenuButtonDidPress:)
-             forControlEvents:UIControlEventTouchUpInside];
     [backButton setImage:[UIImage imageNamed:@"iconBack"]
                     forState:UIControlStateNormal];
     backButton.frame = CGRectMake(0.0, 0.0, 44.0, 44.0);
