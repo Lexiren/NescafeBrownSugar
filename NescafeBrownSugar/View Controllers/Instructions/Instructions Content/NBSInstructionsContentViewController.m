@@ -8,6 +8,9 @@
 
 #import "NBSInstructionsContentViewController.h"
 
+NSString *const kNBSInstructionsFillContentSegueIdentifier = @"InstructionsFillContentSegue";
+NSString *const kNBSInstructionsContentVCIdentifier = @"InstructionsContentVC";
+
 @interface NBSInstructionsContentViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *indexLabel;
 

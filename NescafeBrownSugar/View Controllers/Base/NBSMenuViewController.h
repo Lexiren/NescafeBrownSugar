@@ -9,3 +9,5 @@
 @interface NBSMenuViewController : UIViewController
 
 @end
+
+extern NSString *const kNBSMenuVCIdentifier;

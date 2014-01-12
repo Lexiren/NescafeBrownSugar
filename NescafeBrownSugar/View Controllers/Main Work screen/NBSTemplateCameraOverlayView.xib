@@ -11,6 +11,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="05_draw.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Og-Vc-UTi">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFF-r9-O79">
                     <rect key="frame" x="85" y="518" width="150" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -36,8 +40,12 @@
                 <constraint firstItem="hbs-Xi-g8c" firstAttribute="top" secondItem="qAC-0L-BLH" secondAttribute="top" id="4bJ-Ra-ouZ"/>
                 <constraint firstAttribute="centerX" secondItem="MFF-r9-O79" secondAttribute="centerX" id="9p7-6J-msC"/>
                 <constraint firstItem="MFF-r9-O79" firstAttribute="top" secondItem="hbs-Xi-g8c" secondAttribute="bottom" constant="8" id="ZCM-zI-0fZ"/>
+                <constraint firstItem="3Og-Vc-UTi" firstAttribute="top" secondItem="qAC-0L-BLH" secondAttribute="top" id="di1-im-Z0d"/>
+                <constraint firstItem="3Og-Vc-UTi" firstAttribute="leading" secondItem="qAC-0L-BLH" secondAttribute="leading" id="e8u-CH-kGT"/>
                 <constraint firstItem="hbs-Xi-g8c" firstAttribute="leading" secondItem="qAC-0L-BLH" secondAttribute="leading" id="oeT-zR-vzf"/>
                 <constraint firstAttribute="trailing" secondItem="hbs-Xi-g8c" secondAttribute="trailing" id="phm-wE-lqS"/>
+                <constraint firstAttribute="bottom" secondItem="3Og-Vc-UTi" secondAttribute="bottom" id="szC-md-hSM"/>
+                <constraint firstAttribute="trailing" secondItem="3Og-Vc-UTi" secondAttribute="trailing" id="ucL-gE-a5b"/>
                 <constraint firstAttribute="bottom" secondItem="MFF-r9-O79" secondAttribute="bottom" constant="10" id="zm8-4i-hWX"/>
             </constraints>
             <connections>
@@ -46,4 +54,7 @@
             </connections>
         </view>
     </objects>
+    <resources>
+        <image name="05_draw.png" width="640" height="1136"/>
+    </resources>
 </document>

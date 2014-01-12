@@ -7,6 +7,7 @@
 //
 
 typedef enum {
+    NBSLoginTypeNotLogged,
     NBSLoginTypeFacebook,
     NBSLoginTypeVkontakte
 } NBSLoginType;
@@ -15,4 +16,5 @@ typedef enum {
 @property (nonatomic, assign) NBSLoginType loginType;
 @end
 
-extern NSString *const kNBSLoginSuccessfullyVCIdentifier;
+extern NSString *const kNBSProfileVCIdentifier;
+extern NSString *const kNBSProfileNavigationVCIdentifier;

@@ -8,6 +8,8 @@
 
 #import "NBSMenuViewController.h"
 
+NSString *const kNBSMenuVCIdentifier = @"MenuVC";
+
 @interface NBSMenuViewController ()
 
 @end

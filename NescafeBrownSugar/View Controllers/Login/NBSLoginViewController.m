@@ -10,14 +10,19 @@
 #import "NBSSocialManager.h"
 #import "NBSSocialManager+Vkontakte.h"
 #import "NBSSocialManager+Facebook.h"
-#import "NBSImagesCollectionViewController.h"
+//#import "NBSImagesCollectionViewController.h"
 #import "NBSProfileViewController.h"
+#import "RESideMenu.h"
+
+NSString *const kNBSLoginNavigationVCIdentifier = @"RootLoginNavigationVC";
+NSString *const kNBSLoginVCIdentifier = @"LoginVC";
 
 @interface NBSLoginViewController ()
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *spinner;
 @end
 
 @implementation NBSLoginViewController
+
 
 #pragma mark - init
 
@@ -40,7 +45,7 @@
     [super viewWillAppear:animated];
     
     //hide navigation
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 #pragma mark - IBActions
@@ -53,9 +58,7 @@
         [self.spinner stopAnimating];
         
         if (success) {
-            NBSProfileViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:kNBSLoginSuccessfullyVCIdentifier];
-            controller.loginType = NBSLoginTypeFacebook;
-            [self.navigationController pushViewController:controller animated:YES];
+           [self moveToNextScreenWithLoginType:NBSLoginTypeFacebook];
         } else {
             if (error) {
                 [UIAlertView showErrorAlertWithError:error];
@@ -74,9 +77,7 @@
         [self.spinner stopAnimating];
         
         if (success) {
-            NBSProfileViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:kNBSLoginSuccessfullyVCIdentifier];
-            controller.loginType = NBSLoginTypeVkontakte;
-            [self.navigationController pushViewController:controller animated:YES];
+            [self moveToNextScreenWithLoginType:NBSLoginTypeVkontakte];
         } else {
             if (error) {
                 [UIAlertView showErrorAlertWithError:error];
@@ -88,11 +89,19 @@
 }
     
 - (IBAction)didPressSkipButton:(UIButton *)sender {
-    if (!self.presentingViewController) {
-        [self performSegueWithIdentifier:kNBSImagesCollectionVCPushSegue sender:self];
+    [self moveToNextScreenWithLoginType:NBSLoginTypeNotLogged];
+}
+
+- (void)moveToNextScreenWithLoginType:(NBSLoginType)loginType {
+    //TODO: maybe move login type to user?
+    UINavigationController *profileNavigationVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSProfileNavigationVCIdentifier];
+    if ([[profileNavigationVC.viewControllers firstObject] isKindOfClass:[NBSProfileViewController class]]) {
+        [(NBSProfileViewController *)[profileNavigationVC.viewControllers firstObject] setLoginType:loginType];
     } else {
-        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        NSAssert(NO, @"wrong navigation: root controller should be NBSProfileVC");
     }
+    [self.sideMenuViewController setContentViewController:profileNavigationVC animated:YES];
+    [self.sideMenuViewController presentMenuViewController];
 }
 
 @end

@@ -13,3 +13,4 @@
 @end
 
 extern NSString *const kNBSImagesCollectionVCIdentifier;
+extern NSString *const kNBSPushImageCollectionFromProfileSegueIdentifier;

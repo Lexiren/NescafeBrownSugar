@@ -11,3 +11,6 @@
 @interface NBSInstructionsContentViewController : UIViewController
 @property (nonatomic, assign) NSInteger pageIndex;
 @end
+
+extern NSString *const kNBSInstructionsFillContentSegueIdentifier;
+extern NSString *const kNBSInstructionsContentVCIdentifier;

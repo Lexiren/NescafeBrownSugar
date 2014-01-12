@@ -10,4 +10,9 @@
 
 @interface NBSInstructionsViewController : UIViewController
 
+- (void)setSkipButtonHidden:(BOOL)hidden;
+
 @end
+
+extern NSString *const kNBSHelpNavigationVCIdentifier;
+extern NSString *const kNBSHelpVCIdentifier;

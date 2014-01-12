@@ -12,9 +12,14 @@
 #define kNBSInstructionsCount 5
 #define kNBSInstructionsFirstPageIndex 0
 
+NSString *const kNBSHelpNavigationVCIdentifier = @"RootHelpNavigationVC";
+NSString *const kNBSHelpVCIdentifier = @"HelpVC";
+
+
 @interface NBSInstructionsViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (nonatomic, strong) UIPageViewController *pageViewController;
+@property (weak, nonatomic) IBOutlet UIButton *skipButton;
 @end
 
 @implementation NBSInstructionsViewController
@@ -30,12 +35,24 @@
     return self;
 }
 
+#pragma mark - public
+- (void)setSkipButtonHidden:(BOOL)hidden {
+    self.skipButton.hidden = hidden;
+    [self.view layoutIfNeeded];
+}
+
 #pragma mark -  view life cycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
+//    //hide skip button if we came from main menu
+//    self.skipButton.hidden = !(BOOL)(self.presentingViewController);
+    
+    //setup page controll
+    self.pageControl.numberOfPages = kNBSInstructionsCount;
+    
     //move page view controller to first page
     NBSInstructionsContentViewController *firstPage = [self viewControllerAtIndex:kNBSInstructionsFirstPageIndex];
     if (firstPage) {
@@ -51,7 +68,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     //hide navigation
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,7 +78,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"FillInstructionsContainerSegue"]) {
+    if ([segue.identifier isEqualToString:kNBSInstructionsFillContentSegueIdentifier]) {
         self.pageViewController = (UIPageViewController *)segue.destinationViewController;
         [self addChildViewController:self.pageViewController];
         [self.pageViewController didMoveToParentViewController:self];
@@ -72,21 +89,22 @@
 
 #pragma mark - UIPageViewControllerDelegate
 
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
+- (void)pageViewController:(UIPageViewController *)viewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
 {
-    return kNBSInstructionsCount;
-}
-
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
-{
-    return kNBSInstructionsFirstPageIndex;
+    if (!completed){return;}
+    
+    //find index of current page
+    NBSInstructionsContentViewController *currentInstructionsContentViewController =
+        (NBSInstructionsContentViewController *)[self.pageViewController.viewControllers lastObject];
+    //update page controll
+    self.pageControl.currentPage = currentInstructionsContentViewController.pageIndex;
 }
 
 #pragma mark - UIPageViewControllerDataSource
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    NSUInteger index = ((NBSInstructionsContentViewController*) viewController).pageIndex;
+    NSUInteger index = ((NBSInstructionsContentViewController *) viewController).pageIndex;
     
     if (index == NSNotFound) {
         DLog(@"wrong index for current page controller");
@@ -104,7 +122,7 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
        viewControllerAfterViewController:(UIViewController *)viewController
 {
-    NSUInteger index = ((NBSInstructionsContentViewController*) viewController).pageIndex;
+    NSUInteger index = ((NBSInstructionsContentViewController *) viewController).pageIndex;
     
     if (index == NSNotFound) {
         DLog(@"wrong index for current page controller");
@@ -126,7 +144,7 @@
     }
     
     //create a new page and setup source data.
-    NBSInstructionsContentViewController *instructionsContentPage = [self.storyboard instantiateViewControllerWithIdentifier:@"InstructionsContentViewController"];
+    NBSInstructionsContentViewController *instructionsContentPage = [self.storyboard instantiateViewControllerWithIdentifier:kNBSInstructionsContentVCIdentifier];
     instructionsContentPage.pageIndex = index;
     
     return instructionsContentPage;

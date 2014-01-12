@@ -12,6 +12,7 @@
 #import "NBSMainWorkViewController.h"
 
 NSString *const kNBSImagesCollectionVCIdentifier = @"ImagesCollectionVC";
+NSString *const kNBSPushImageCollectionFromProfileSegueIdentifier = @"pushImageCollectionFromProfileSegue";
 
 @interface NBSImagesCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;

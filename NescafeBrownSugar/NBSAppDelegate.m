@@ -13,8 +13,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [self setupCustomAppearance];
     return YES;
+}
+
+//TODO:finish custom navigation
+- (void)setupCustomAppearance {
+    [[UINavigationBar appearance] setBackgroundColor:[UIColor clearColor]];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -10,4 +10,8 @@
 
 @interface NBSLoginViewController : UIViewController
 
+
 @end
+
+extern NSString *const kNBSLoginNavigationVCIdentifier;
+extern NSString *const kNBSLoginVCIdentifier;

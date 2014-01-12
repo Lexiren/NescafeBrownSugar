@@ -28,6 +28,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIImage *bgAppImage = [UIImage imageNamed:@"bgApp"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:bgAppImage];
+    imageView.frame = self.view.bounds;
+    [self.view addSubview:imageView];
+    for (UIView *v in self.view.subviews) {
+        if (v != imageView) {
+            [self.view bringSubviewToFront:v];
+        }
+    }
 	// Do any additional setup after loading the view.
 }
 
