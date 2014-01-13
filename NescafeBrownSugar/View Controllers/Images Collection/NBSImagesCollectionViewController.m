@@ -11,13 +11,20 @@
 #import "UIViewController+NBSNavigationItems.h"
 #import "NBSMainWorkViewController.h"
 
+#define kNBSTemplateImagesBaseName @"image_"
+#define kNBSTemplateIconsBaseName @"icon_"
+#define kNBSTemplateIndexDigitsCount 2
+#define kNBSTemplatesNumber 50
+#define kNBSTemplatesFirstNumber 1
+
 NSString *const kNBSImagesCollectionVCIdentifier = @"ImagesCollectionVC";
 NSString *const kNBSPushImageCollectionFromProfileSegueIdentifier = @"pushImageCollectionFromProfileSegue";
 
-@interface NBSImagesCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface NBSImagesCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
-@property (nonatomic, strong) NSArray *sourceImagesNames;
+//@property (nonatomic, strong) NSArray *sourceImagesNames;
 @property (nonatomic, assign) NSString *selectedTemplateImageName;
 
 @end
@@ -35,25 +42,65 @@ NSString *const kNBSPushImageCollectionFromProfileSegueIdentifier = @"pushImageC
     return self;
 }
 
-- (void)setupSource {
-    //fill source array with images' names here
-    self.sourceImagesNames = @[@"butterfly", @"fenix", @"panda"];
+// TODO: possibly need to move it to UIImage+NBSTemplate
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+- (NSString *)iconNameForImageWithIndex:(int)index {
+    return [self imageNameForImageWithBaseName:kNBSTemplateIconsBaseName
+                              indexDigitsCount:kNBSTemplateIndexDigitsCount
+                                         index:index];
 }
+
+- (NSString *)templateNameForImageWithIndex:(int)index {
+    return [self imageNameForImageWithBaseName:kNBSTemplateImagesBaseName
+                              indexDigitsCount:kNBSTemplateIndexDigitsCount
+                                         index:index];
+}
+
+- (NSString *)imageNameForImageWithBaseName:(NSString *)baseName
+                           indexDigitsCount:(int)digitsCount
+                                      index:(int)index
+{
+    NSNumberFormatter *formatter = [NSNumberFormatter new];
+    formatter.numberStyle = NSNumberFormatterNoStyle;
+    formatter.minimumIntegerDigits = digitsCount;
+    NSString *number = [formatter stringFromNumber:@(index)];
+    NSString *imageName = [baseName stringByAppendingString:number];
+    
+    return imageName;
+}
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+//- (void)setupSource {
+//    //fill source array with images' names here
+//    self.sourceImagesNames = @[@"butterfly", @"fenix", @"panda"];
+//    
+//    NSMutableArray *iconsMutableArray = [NSMutableArray array];
+//    NSNumberFormatter *formatter = [NSNumberFormatter new];
+//    formatter.numberStyle = NSNumberFormatterNoStyle;
+//    formatter.minimumIntegerDigits = kNBSTemplateIndexDigitsCount;
+//    
+//    for (int i = kNBSTemplatesFirstNumber; i < kNBSTemplatesNumber; ++i) {
+//        NSString *number = [formatter stringFromNumber:@(i)];
+//        UIImage *image = [UIImage imageNamed:[kNBSTemplateIconsBaseName stringByAppendingString:number]];
+//        NSAssert(image, @"wrong award animation initialization, image cannot be nil");
+//        [iconsMutableArray addObject:image];
+//    }
+//
+//    self.sourceImagesNames = iconsMutableArray;
+//}
 
 #pragma mark - view life cycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupSource];
+//    [self setupSource];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    //show navigation bar
-//    [self setupCustomNavigationBarItems];
-    //[self.navigationController setNavigationBarHidden:NO];
-    self.title = @"Choose an image";
+    self.pageControl.numberOfPages = floor(self.collectionView.contentSize.width / self.collectionView.frame.size.width) + 1;
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,12 +116,20 @@ NSString *const kNBSPushImageCollectionFromProfileSegueIdentifier = @"pushImageC
     }
 }
 
+#pragma mark - UIScrollViewDelegate
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSInteger currentIndex = self.collectionView.contentOffset.x / self.collectionView.frame.size.width;
+    self.pageControl.currentPage = currentIndex;
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section
 {
-    return self.sourceImagesNames.count;
+//    return self.sourceImagesNames.count;
+    return kNBSTemplatesNumber;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -87,7 +142,8 @@ NSString *const kNBSPushImageCollectionFromProfileSegueIdentifier = @"pushImageC
 
     NSAssert(cell, @"We was wrong - cell is nil in images collection view");
     
-    cell.imageThumbView.image = [UIImage imageNamed:[self.sourceImagesNames objectAtIndex:indexPath.row]];
+    int iconIndex = indexPath.row + kNBSTemplatesFirstNumber; //calculate real index of icon for index path
+    cell.imageThumbView.image = [UIImage imageNamed:[self iconNameForImageWithIndex:iconIndex]];
     
     return cell;
 }
@@ -98,7 +154,8 @@ NSString *const kNBSPushImageCollectionFromProfileSegueIdentifier = @"pushImageC
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];
-    self.selectedTemplateImageName = self.sourceImagesNames[indexPath.row];
+    int templateRealIndex = indexPath.row + kNBSTemplatesFirstNumber;
+    self.selectedTemplateImageName = [self templateNameForImageWithIndex:templateRealIndex];
     [self performSegueWithIdentifier:@"MainWorkScreenPushSegue" sender:self];
 }
 

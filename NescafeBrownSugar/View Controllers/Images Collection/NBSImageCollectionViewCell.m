@@ -31,7 +31,7 @@
 
 - (void)setHighlighted:(BOOL)highlighted {
     [super setHighlighted:highlighted];
-    self.backgroundColor = (highlighted) ? [UIColor whiteColor] : self.bgColorNib;
+    self.alpha = (highlighted) ? 0.5 : 1.0;
 }
 
 /*
