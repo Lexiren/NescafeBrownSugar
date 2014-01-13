@@ -196,12 +196,12 @@
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="4" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Yf1-e4-4IE">
-                                <rect key="frame" x="0.0" y="151" width="176" height="200"/>
+                                <rect key="frame" x="0.0" y="152" width="176" height="199"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="176" id="CNT-OF-UsU"/>
-                                    <constraint firstAttribute="height" constant="200" id="fw6-yT-DJP"/>
+                                    <constraint firstAttribute="height" constant="199" id="fw6-yT-DJP"/>
                                 </constraints>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -569,8 +569,6 @@
                                     <constraint firstItem="LrJ-MJ-pmC" firstAttribute="top" secondItem="0jS-aW-eOK" secondAttribute="bottom" id="ns1-H6-LvS"/>
                                     <constraint firstAttribute="trailing" secondItem="CHZ-7Z-QAW" secondAttribute="trailing" id="pNl-lL-4TX"/>
                                     <constraint firstItem="CHZ-7Z-QAW" firstAttribute="leading" secondItem="isP-rd-meX" secondAttribute="leading" id="qcz-I2-44n"/>
-                                    <constraint firstAttribute="centerY" secondItem="LrJ-MJ-pmC" secondAttribute="centerY" constant="-65.5" id="s0D-PZ-36U"/>
-                                    <constraint firstAttribute="centerY" secondItem="n3n-zU-u1z" secondAttribute="centerY" constant="3.5" id="tmG-U0-iZg"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoAboutNeskafe" translatesAutoresizingMaskIntoConstraints="NO" id="mIn-Dj-RbC">
@@ -1432,21 +1430,11 @@
     </scenes>
     <resources>
         <image name="bgApp" width="320" height="568"/>
-        <image name="bgApp" width="320" height="568"/>
-        <image name="bgApp" width="320" height="568"/>
-        <image name="bgApp" width="320" height="568"/>
-        <image name="bgApp" width="320" height="568"/>
-        <image name="bgApp" width="320" height="568"/>
         <image name="bgMenu" width="320" height="568"/>
         <image name="bgUserpic" width="145" height="145"/>
         <image name="defaultUserAvatar" width="125" height="125"/>
         <image name="loginFbBtn" width="193" height="48"/>
-        <image name="loginFbBtn" width="193" height="48"/>
         <image name="loginVkBtn" width="193" height="48"/>
-        <image name="loginVkBtn" width="193" height="48"/>
-        <image name="logoAboutNeskafe" width="177" height="34"/>
-        <image name="logoAboutNeskafe" width="177" height="34"/>
-        <image name="logoAboutNeskafe" width="177" height="34"/>
         <image name="logoAboutNeskafe" width="177" height="34"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

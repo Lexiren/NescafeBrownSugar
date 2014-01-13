@@ -14,7 +14,7 @@
 #define kNBSTemplateImagesBaseName @"image_"
 #define kNBSTemplateIconsBaseName @"icon_"
 #define kNBSTemplateIndexDigitsCount 2
-#define kNBSTemplatesNumber 50
+#define kNBSTemplatesNumber 40
 #define kNBSTemplatesFirstNumber 1
 
 NSString *const kNBSImagesCollectionVCIdentifier = @"ImagesCollectionVC";
@@ -100,7 +100,7 @@ NSString *const kNBSPushImageCollectionFromProfileSegueIdentifier = @"pushImageC
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.pageControl.numberOfPages = floor(self.collectionView.contentSize.width / self.collectionView.frame.size.width) + 1;
+    self.pageControl.numberOfPages = floor(self.collectionView.contentSize.width / self.collectionView.frame.size.width);
 }
 
 - (void)didReceiveMemoryWarning
