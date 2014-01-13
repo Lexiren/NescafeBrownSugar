@@ -45,8 +45,8 @@ NSString *const kNBSLoginVCIdentifier = @"LoginVC";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    //hide navigation
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    //hide navigation back button
+    [self.navigationItem setHidesBackButton:YES];
 }
 
 #pragma mark - IBActions
