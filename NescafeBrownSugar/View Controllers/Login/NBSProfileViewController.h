@@ -6,14 +6,7 @@
 //  Copyright (c) 2014 COXO. All rights reserved.
 //
 
-typedef enum {
-    NBSLoginTypeNotLogged,
-    NBSLoginTypeFacebook,
-    NBSLoginTypeVkontakte
-} NBSLoginType;
-
 @interface NBSProfileViewController : UIViewController
-@property (nonatomic, assign) NBSLoginType loginType;
 @end
 
 extern NSString *const kNBSProfileVCIdentifier;

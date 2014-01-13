@@ -75,8 +75,8 @@
 		067B15E618774B3F0037DCE3 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		067B15E918774C0C0037DCE3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		067B15FA187767310037DCE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		067B15FB187829F00037DCE3 /* NBSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBSProfileViewController.h; sourceTree = "<group>"; };
-		067B15FC187829F00037DCE3 /* NBSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBSProfileViewController.m; sourceTree = "<group>"; };
+		067B15FB187829F00037DCE3 /* NBSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSProfileViewController.h; path = "View Controllers/Login/NBSProfileViewController.h"; sourceTree = "<group>"; };
+		067B15FC187829F00037DCE3 /* NBSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSProfileViewController.m; path = "View Controllers/Login/NBSProfileViewController.m"; sourceTree = "<group>"; };
 		067B15FE187B10DB0037DCE3 /* NBSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSRootViewController.h; path = "View Controllers/Base/NBSRootViewController.h"; sourceTree = "<group>"; };
 		067B15FF187B10DB0037DCE3 /* NBSRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSRootViewController.m; path = "View Controllers/Base/NBSRootViewController.m"; sourceTree = "<group>"; };
 		067B1601187B16540037DCE3 /* NBSMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSMenuViewController.h; path = "View Controllers/Base/NBSMenuViewController.h"; sourceTree = "<group>"; };
@@ -175,6 +175,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06F41F3A188478B4002B2055 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				067B15FB187829F00037DCE3 /* NBSProfileViewController.h */,
+				067B15FC187829F00037DCE3 /* NBSProfileViewController.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		8432C3D618757F3D005C26B8 = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +280,7 @@
 		8432C41A18758B30005C26B8 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				06F41F3A188478B4002B2055 /* Profile */,
 				8432C42A1875AA7E005C26B8 /* Base */,
 				8432C41B18758BEC005C26B8 /* Instructions */,
 				84FAA7FF1875EC690007FB03 /* Login */,
@@ -394,8 +404,6 @@
 			children = (
 				84FAA8001875EC690007FB03 /* NBSLoginViewController.h */,
 				84FAA8011875EC690007FB03 /* NBSLoginViewController.m */,
-				067B15FB187829F00037DCE3 /* NBSProfileViewController.h */,
-				067B15FC187829F00037DCE3 /* NBSProfileViewController.m */,
 			);
 			name = Login;
 			path = "View Controllers/Login";

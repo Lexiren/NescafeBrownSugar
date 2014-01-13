@@ -20,11 +20,12 @@ NSString *const kNBSProfileNavigationVCIdentifier = @"RootProfileNavigationVC";
 @interface NBSProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *spinner;
-@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *avatarImageView;
 @property (nonatomic, weak) IBOutlet FBProfilePictureView *avatarPictureView;
-@property (weak, nonatomic) IBOutlet UIButton *VKLoginButton;
-@property (weak, nonatomic) IBOutlet UIButton *FBLoginButton;
+
+@property (nonatomic, strong) IBOutlet UILabel *nameLabel;
+@property (nonatomic, strong) IBOutlet UIView *loginSubview;
+
 @property (weak, nonatomic) IBOutlet UIButton *createPictureButton;
 @end
 
@@ -32,13 +33,8 @@ NSString *const kNBSProfileNavigationVCIdentifier = @"RootProfileNavigationVC";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.loginSubview.hidden = YES;
     [self reloadData];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    //hide native navigation bar
-    //[self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 #pragma mark - private functions
@@ -46,63 +42,50 @@ NSString *const kNBSProfileNavigationVCIdentifier = @"RootProfileNavigationVC";
 - (void)reloadData {
     [self.spinner startAnimating];
     
-    //TODO: delete this fake
-
-    self.FBLoginButton.hidden = YES;
-    self.VKLoginButton.hidden = YES;
-    
-    switch (self.loginType) {
-        case NBSLoginTypeNotLogged: {
-            [self.spinner stopAnimating];
-            //TODO: fill default data
-            self.nameLabel.text = @"Ви не зареестрованi";
-            self.avatarImageView.hidden = NO;
-            self.avatarImageView.image = [UIImage imageNamed:@"iconUnregisteredUserpic"];
-            self.avatarPictureView.hidden = YES;
-            self.FBLoginButton.hidden = NO;
-            self.VKLoginButton.hidden = NO;
-        }
-            break;
-        case NBSLoginTypeFacebook: {
-            [[NBSSocialManager sharedManager] getFacebookUserDataWithCompletion:
-             ^(BOOL success, NSError *error, NBSUser *user)
-             {
-                 [self.spinner stopAnimating];
-                 if (success) {
-                     //TODO: fill own gallery
-                     self.nameLabel.text = [self fullNameWithFirstName:user.facebookFirstName
-                                                              lastName:user.facebookLastName];
-                     self.avatarPictureView.hidden = NO;
-                     self.avatarPictureView.profileID = user.facebookUid;
-                     self.avatarImageView.hidden = YES;
-                 } else if (error) {
-                     [UIAlertView showErrorAlertWithError:error];
-                 }
-             }];
-        }
-            break;
-        case NBSLoginTypeVkontakte: {
-            [[NBSSocialManager sharedManager] getVkontakteUserDataWithCompletion:
-             ^(BOOL success, NSError *error, NBSUser *user)
-             {
-                 [self.spinner stopAnimating];
-                 if (success) {
-                     //TODO: fill own gallery
-                     self.nameLabel.text = [self fullNameWithFirstName:user.vkontakteFirstName
-                                                              lastName:user.vkontakteLastName];
-                     NSURL *avatarURL = [NSURL URLWithString:user.vkontakteAvatar];
-                     NSData *avatarData = [NSData dataWithContentsOfURL:avatarURL];
-                     self.avatarImageView.hidden = NO;
-                     self.avatarImageView.image = [UIImage imageWithData:avatarData];
-                     self.avatarPictureView.hidden = YES;
-
-                 } else if (error) {
-                     [UIAlertView showErrorAlertWithError:error];
-                 }
-             }];
-        }
-            break;
-            
+    NBSSocialManager *sharedManager = [NBSSocialManager sharedManager];
+    if ([sharedManager isFacebookLoggedIn]) {
+        [sharedManager getFacebookUserDataWithCompletion:
+         ^(BOOL success, NSError *error, NBSUser *user)
+         {
+             [self.spinner stopAnimating];
+             if (success) {
+                 //TODO: fill own gallery
+                 self.nameLabel.text = [self fullNameWithFirstName:user.facebookFirstName
+                                                          lastName:user.facebookLastName];
+                 self.avatarPictureView.hidden = NO;
+                 self.avatarPictureView.profileID = user.facebookUid;
+                 self.avatarImageView.hidden = YES;
+                 self.loginSubview.hidden = YES;
+             } else if (error) {
+                 [UIAlertView showErrorAlertWithError:error];
+             }
+         }];
+    } else if ([sharedManager isVkontakteLoggedIn]) {
+        [sharedManager getVkontakteUserDataWithCompletion:
+         ^(BOOL success, NSError *error, NBSUser *user)
+         {
+             [self.spinner stopAnimating];
+             if (success) {
+                 //TODO: fill own gallery
+                 self.nameLabel.text = [self fullNameWithFirstName:user.vkontakteFirstName
+                                                          lastName:user.vkontakteLastName];
+                 NSURL *avatarURL = [NSURL URLWithString:user.vkontakteAvatar];
+                 NSData *avatarData = [NSData dataWithContentsOfURL:avatarURL];
+                 self.avatarImageView.hidden = NO;
+                 self.avatarImageView.image = [UIImage imageWithData:avatarData];
+                 self.avatarPictureView.hidden = YES;
+                 self.loginSubview.hidden = YES;
+             } else if (error) {
+                 [UIAlertView showErrorAlertWithError:error];
+             }
+         }];
+    } else {
+        [self.spinner stopAnimating];
+        self.nameLabel.text = @"Ви не зареестрованi";
+        self.avatarImageView.hidden = NO;
+        self.avatarImageView.image = [UIImage imageNamed:@"iconUnregisteredUserpic"];
+        self.avatarPictureView.hidden = YES;
+        self.loginSubview.hidden = NO;
     }
 }
 
@@ -128,7 +111,6 @@ NSString *const kNBSProfileNavigationVCIdentifier = @"RootProfileNavigationVC";
         [self.spinner stopAnimating];
         
         if (success) {
-            self.loginType = NBSLoginTypeFacebook;
             [self reloadData];
         } else {
             if (error) {
@@ -149,7 +131,6 @@ NSString *const kNBSProfileNavigationVCIdentifier = @"RootProfileNavigationVC";
         [self.spinner stopAnimating];
         
         if (success) {
-            self.loginType = NBSLoginTypeVkontakte;
             [self reloadData];
         } else {
             if (error) {

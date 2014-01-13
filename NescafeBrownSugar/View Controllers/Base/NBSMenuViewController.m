@@ -53,7 +53,6 @@ NSString *const kNBSMenuVCIdentifier = @"MenuVC";
         case 0:
         {
             NBSProfileViewController *profileVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSProfileVCIdentifier];
-            profileVC.loginType = NBSLoginTypeNotLogged;
             viewController = profileVC;
         }
             break;

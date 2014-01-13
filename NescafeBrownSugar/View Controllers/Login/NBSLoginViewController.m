@@ -59,7 +59,7 @@ NSString *const kNBSLoginVCIdentifier = @"LoginVC";
         [self.spinner stopAnimating];
         
         if (success) {
-           [self moveToNextScreenWithLoginType:NBSLoginTypeFacebook];
+           [self moveToNextScreen];
         } else {
             if (error) {
                 [UIAlertView showErrorAlertWithError:error];
@@ -78,7 +78,7 @@ NSString *const kNBSLoginVCIdentifier = @"LoginVC";
         [self.spinner stopAnimating];
         
         if (success) {
-            [self moveToNextScreenWithLoginType:NBSLoginTypeVkontakte];
+            [self moveToNextScreen];
         } else {
             if (error) {
                 [UIAlertView showErrorAlertWithError:error];
@@ -90,13 +90,12 @@ NSString *const kNBSLoginVCIdentifier = @"LoginVC";
 }
     
 - (IBAction)didPressSkipButton:(UIButton *)sender {
-    [self moveToNextScreenWithLoginType:NBSLoginTypeNotLogged];
+    [self moveToNextScreen];
 }
 
-- (void)moveToNextScreenWithLoginType:(NBSLoginType)loginType {
+- (void)moveToNextScreen {
     //TODO: maybe move login type to user?
     NBSProfileViewController *profileVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSProfileVCIdentifier];
-    profileVC.loginType = loginType;
     NBSNavigationController *navigationController = [[NBSNavigationController alloc] initWithRootViewController:profileVC];
 
     [self.sideMenuViewController setContentViewController:navigationController animated:YES];
