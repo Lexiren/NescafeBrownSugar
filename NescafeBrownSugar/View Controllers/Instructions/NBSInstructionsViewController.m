@@ -12,7 +12,6 @@
 #define kNBSInstructionsCount 5
 #define kNBSInstructionsFirstPageIndex 0
 
-NSString *const kNBSHelpNavigationVCIdentifier = @"RootHelpNavigationVC";
 NSString *const kNBSHelpVCIdentifier = @"HelpVC";
 
 

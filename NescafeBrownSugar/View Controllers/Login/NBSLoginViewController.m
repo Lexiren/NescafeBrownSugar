@@ -10,12 +10,11 @@
 #import "NBSSocialManager.h"
 #import "NBSSocialManager+Vkontakte.h"
 #import "NBSSocialManager+Facebook.h"
-//#import "NBSImagesCollectionViewController.h"
+#import "UIViewController+NBSNavigationItems.h"
 #import "NBSProfileViewController.h"
 #import "RESideMenu.h"
 #import "NBSNavigationController.h"
 
-NSString *const kNBSLoginNavigationVCIdentifier = @"RootLoginNavigationVC";
 NSString *const kNBSLoginVCIdentifier = @"LoginVC";
 
 @interface NBSLoginViewController ()
@@ -96,6 +95,7 @@ NSString *const kNBSLoginVCIdentifier = @"LoginVC";
 - (void)moveToNextScreen {
     //TODO: maybe move login type to user?
     NBSProfileViewController *profileVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSProfileVCIdentifier];
+    [profileVC showLeftMenuBarButton:YES];
     NBSNavigationController *navigationController = [[NBSNavigationController alloc] initWithRootViewController:profileVC];
 
     [self.sideMenuViewController setContentViewController:navigationController animated:YES];

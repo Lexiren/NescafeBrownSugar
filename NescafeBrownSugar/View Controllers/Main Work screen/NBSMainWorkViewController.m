@@ -13,10 +13,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "NBSSharePreviewController.h"
 
-typedef enum {
-    NBSImagePickerModeWork,
-    NBSImagePickerModeDone
-} NBSImagePickerMode;
+NSString *const kNBSPushMainWorkControllerSegueIdentifier = @"MainWorkControllerPushSegue";
 
 @interface NBSMainWorkViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -33,7 +30,7 @@ typedef enum {
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        if ( kNBSiOSVersionLess(@"7.0") ) self.wantsFullScreenLayout = NO;
+        if ( NBS_iOSVersionLessThan(@"7.0") ) self.wantsFullScreenLayout = NO;
     }
     return self;
 }
@@ -91,7 +88,7 @@ typedef enum {
     switch (mode) {
         case NBSImagePickerModeWork: {
             self.imagePicker.showsCameraControls = NO;
-            self.imagePicker.cameraOverlayView = [self cameraOverlayWithTemplateImage:self.templateImage
+            self.imagePicker.cameraOverlayView = [self cameraOverlayWithTemplateImage:self.sourceImage
                                                                            doneAction:@selector(didTapDoneButton:)];
         }
             break;

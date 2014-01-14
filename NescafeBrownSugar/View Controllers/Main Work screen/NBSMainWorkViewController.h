@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    NBSImagePickerModeWork = 0,
+    NBSImagePickerModeDone = 1
+} NBSImagePickerMode;
+
 @interface NBSMainWorkViewController : UIViewController
 
-@property (nonatomic, strong) UIImage *templateImage;
+@property (nonatomic, strong) UIImage *sourceImage;
+@property (nonatomic, assign) NBSImagePickerMode mode;
 
 @end
+
+extern NSString *const kNBSPushMainWorkControllerSegueIdentifier;

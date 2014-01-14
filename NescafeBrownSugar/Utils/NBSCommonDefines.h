@@ -10,13 +10,16 @@
 #define NescafeBrownSugar_NBSCommonDefines_h
 
 // iOS version check-functions defines
-#define kNBSiOSVersionEqual(v)           ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
-#define kNBSiOSVersionGreater(v)         ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
-#define kNBSiOSVersionGreaterOrEqual(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
-#define kNBSiOSVersionLess(v)            ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
-#define kNBSiOSVersionLessOrEqual(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+#define NBS_iOSVersionEqualTo(v)           ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define NBS_iOSVersionGreaterThan(v)         ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define NBS_iOSVersionGreaterOrEqualTo(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define NBS_iOSVersionLessThan(v)            ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define NBS_iOSVersionLessOrEqualTo(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 // iOS version check-functions defines
 
+// ---- screen size defines ---- //
+#define NBS_IsDeviceScreenSize4Inch ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+// ---- screen size defines ---- //
 
 // app launch
 #define kNBSNotFirstAppLaunchUserDefaultsKey @"NotFirstAppLaunchDefaultsKey"

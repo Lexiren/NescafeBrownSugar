@@ -10,4 +10,3 @@
 @end
 
 extern NSString *const kNBSProfileVCIdentifier;
-extern NSString *const kNBSProfileNavigationVCIdentifier;

@@ -14,5 +14,4 @@
 
 @end
 
-extern NSString *const kNBSHelpNavigationVCIdentifier;
 extern NSString *const kNBSHelpVCIdentifier;

@@ -8,7 +8,7 @@
 
 #import "NBSMenuViewController.h"
 #import "NBSProfileViewController.h"
-#import "NBSImagesCollectionViewController.h"
+#import "NBSImagesCollectionContainerViewController.h"
 #import "UIViewController+RESideMenu.h"
 #import "RESideMenu.h"
 #import "NBSNavigationController.h"
@@ -58,7 +58,7 @@ NSString *const kNBSMenuVCIdentifier = @"MenuVC";
             break;
         case 1:
         {
-            NBSImagesCollectionViewController *imagesCollectionVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSImagesCollectionVCIdentifier];
+            NBSImagesCollectionContainerViewController *imagesCollectionVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSImagesCollectionVCIdentifier];
             viewController = imagesCollectionVC;
         }
             break;

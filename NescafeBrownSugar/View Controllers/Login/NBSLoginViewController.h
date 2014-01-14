@@ -13,5 +13,4 @@
 
 @end
 
-extern NSString *const kNBSLoginNavigationVCIdentifier;
 extern NSString *const kNBSLoginVCIdentifier;

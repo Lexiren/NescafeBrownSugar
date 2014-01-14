@@ -16,7 +16,7 @@
 
 static inline CGFloat cpcorrectedInsetValue(CGFloat value)
 {
-    return SYSTEM_VERSION_LESS_THAN(@"7.0") ? value : value - kCPInsetCorrectionValue;
+    return NBS_iOSVersionLessThan(@"7.0") ? value : value - kCPInsetCorrectionValue;
 }
 
 @implementation UIViewController (NBSNavigationItems)

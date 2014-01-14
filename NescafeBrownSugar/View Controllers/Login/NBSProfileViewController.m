@@ -11,11 +11,10 @@
 #import "NBSSocialManager+Facebook.h"
 #import "NBSSocialManager+Vkontakte.h"
 #import "FBProfilePictureView.h"
-#import "NBSImagesCollectionViewController.h"
+#import "NBSImagesCollectionContainerViewController.h"
 #import "NBSUser.h"
 
 NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
-NSString *const kNBSProfileNavigationVCIdentifier = @"RootProfileNavigationVC";
 
 @interface NBSProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
@@ -101,7 +100,7 @@ NSString *const kNBSProfileNavigationVCIdentifier = @"RootProfileNavigationVC";
 
 - (IBAction)didPressCreatePictureButton:(UIButton *)sender {
     //push images collections
-    [self performSegueWithIdentifier:kNBSPushImageCollectionFromProfileSegueIdentifier sender:self];
+//    [self performSegueWithIdentifier:kNBSPushImageCollectionFromProfileSegueIdentifier sender:self];
 }
 
 - (IBAction)didPressFBLoginButton:(id)sender {
