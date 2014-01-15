@@ -19,6 +19,7 @@ NSString *const kNBSHelpVCIdentifier = @"HelpVC";
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (nonatomic, strong) UIPageViewController *pageViewController;
 @property (weak, nonatomic) IBOutlet UIButton *skipButton;
+@property (assign, nonatomic) BOOL isSkipButtonShoudBeHidden;
 @end
 
 @implementation NBSInstructionsViewController
@@ -36,8 +37,7 @@ NSString *const kNBSHelpVCIdentifier = @"HelpVC";
 
 #pragma mark - public
 - (void)setSkipButtonHidden:(BOOL)hidden {
-    self.skipButton.hidden = hidden;
-    [self.view layoutIfNeeded];
+    self.isSkipButtonShoudBeHidden = hidden;
 }
 
 #pragma mark -  view life cycle
@@ -66,8 +66,8 @@ NSString *const kNBSHelpVCIdentifier = @"HelpVC";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    //hide navigation
-//    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    //hide skip button
+    self.skipButton.hidden = _isSkipButtonShoudBeHidden;
 }
 
 - (void)didReceiveMemoryWarning
