@@ -13,3 +13,5 @@
 @property (nonatomic, strong) UIImage *previewImage;
 
 @end
+
+extern NSString *const kNBSShareVCPushSegueIdentifier;

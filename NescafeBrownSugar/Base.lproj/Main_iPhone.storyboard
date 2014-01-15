@@ -1327,7 +1327,7 @@
         <!--Main Work View Controller - Намалюй за ескізом-->
         <scene sceneID="gOT-L1-F6w">
             <objects>
-                <viewController id="o9H-xF-jYh" customClass="NBSMainWorkViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DrawingMainWorkVCIdentifier" id="o9H-xF-jYh" customClass="NBSMainWorkViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="omP-cy-T66"/>
                         <viewControllerLayoutGuide type="bottom" id="bRc-Ay-Tzj"/>
@@ -1346,12 +1346,124 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="Намалюй за ескізом" id="2vR-p7-dl3"/>
                     <connections>
-                        <segue destination="fXd-PO-XRa" kind="push" identifier="ShareScreenPushSegue" id="tPX-Vn-ArU"/>
+                        <segue destination="Aqr-bn-i1o" kind="push" identifier="PhotoMainWorkVCPushSegue" id="p5F-DL-IEt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZU-6F-mCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="936" y="50"/>
+        </scene>
+        <!--Main Work View Controller - Сфотографуй-->
+        <scene sceneID="cFo-jj-63j">
+            <objects>
+                <viewController storyboardIdentifier="PhotoMainWorkVCIdentifier" id="Aqr-bn-i1o" customClass="NBSMainWorkViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lDC-LT-r1X"/>
+                        <viewControllerLayoutGuide type="bottom" id="LxW-QY-cAo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mxf-Zb-9th">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgApp" translatesAutoresizingMaskIntoConstraints="NO" id="C0O-1c-EdG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="C0O-1c-EdG" secondAttribute="bottom" id="2av-AR-Sdi"/>
+                            <constraint firstItem="C0O-1c-EdG" firstAttribute="leading" secondItem="Mxf-Zb-9th" secondAttribute="leading" id="AvJ-bc-ee9"/>
+                            <constraint firstItem="C0O-1c-EdG" firstAttribute="top" secondItem="Mxf-Zb-9th" secondAttribute="top" id="W8Z-no-KrN"/>
+                            <constraint firstAttribute="trailing" secondItem="C0O-1c-EdG" secondAttribute="trailing" id="n5H-it-fv9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Сфотографуй" id="PpW-2F-bxT"/>
+                    <connections>
+                        <segue destination="Aos-5s-0RB" kind="push" identifier="PreviewPhotoVCPushSegue" id="0hg-tI-Ql6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cc0-0B-OST" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1436" y="50"/>
+        </scene>
+        <!--Photo Preview Controller - Ваш малюнок-->
+        <scene sceneID="7fT-op-ZH9">
+            <objects>
+                <viewController storyboardIdentifier="PhotoPreviewControllerIdentifier" id="Aos-5s-0RB" customClass="NBSPhotoPreviewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tOk-Gb-BLe"/>
+                        <viewControllerLayoutGuide type="bottom" id="85M-2T-cgA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JSH-gV-ExQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G9U-T8-g6k">
+                                <rect key="frame" x="20" y="142" width="280" height="284"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="284" id="5B3-Jv-vZI"/>
+                                    <constraint firstAttribute="width" constant="280" id="Dz4-H3-qLB"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoWithStick" translatesAutoresizingMaskIntoConstraints="NO" id="LX6-2Q-u7X">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="568" id="AfI-tA-nWx"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwS-RP-sYl">
+                                <rect key="frame" x="40" y="488" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Перезняти">
+                                    <color key="titleColor" red="1" green="0.9210972046" blue="0.79919491519999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapRetakeButton:" destination="Aos-5s-0RB" eventType="touchUpInside" id="qJH-RW-Zi6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbz-7K-ZfG">
+                                <rect key="frame" x="196" y="488" width="91" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Продовжити">
+                                    <color key="titleColor" red="1" green="0.9210972046" blue="0.79919491519999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapConfirmButton:" destination="Aos-5s-0RB" eventType="touchUpInside" id="5iH-5o-MWk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="LX6-2Q-u7X" secondAttribute="trailing" id="4pX-v6-t7r"/>
+                            <constraint firstItem="G9U-T8-g6k" firstAttribute="centerX" secondItem="LX6-2Q-u7X" secondAttribute="centerX" id="Cu3-Vv-HgB"/>
+                            <constraint firstItem="bwS-RP-sYl" firstAttribute="leading" secondItem="JSH-gV-ExQ" secondAttribute="leading" constant="40" id="DXF-P7-pq1"/>
+                            <constraint firstItem="tbz-7K-ZfG" firstAttribute="centerY" secondItem="bwS-RP-sYl" secondAttribute="centerY" id="SIb-mw-7Zf"/>
+                            <constraint firstAttribute="trailing" secondItem="tbz-7K-ZfG" secondAttribute="trailing" constant="33" id="UH6-V6-Utq"/>
+                            <constraint firstItem="LX6-2Q-u7X" firstAttribute="leading" secondItem="JSH-gV-ExQ" secondAttribute="leading" id="Yc9-J2-1mM"/>
+                            <constraint firstAttribute="bottom" secondItem="tbz-7K-ZfG" secondAttribute="bottom" constant="50" id="asK-ja-rju"/>
+                            <constraint firstItem="G9U-T8-g6k" firstAttribute="centerY" secondItem="LX6-2Q-u7X" secondAttribute="centerY" id="kiI-Wg-7OT"/>
+                            <constraint firstItem="tbz-7K-ZfG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bwS-RP-sYl" secondAttribute="trailing" constant="8" symbolic="YES" id="nNP-G1-XLw"/>
+                            <constraint firstAttribute="centerY" secondItem="LX6-2Q-u7X" secondAttribute="centerY" id="oMr-WZ-5aS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ваш малюнок" id="4g2-dA-0ci"/>
+                    <connections>
+                        <outlet property="buttonsBottomSpaceConstraint" destination="asK-ja-rju" id="7Ho-1j-Eic"/>
+                        <outlet property="photoImageView" destination="G9U-T8-g6k" id="deK-ih-ohx"/>
+                        <segue destination="fXd-PO-XRa" kind="push" identifier="ShareVCPushSegue" id="UYa-BL-ZuT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nkg-gt-1b0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1952" y="50"/>
         </scene>
         <!--Share Preview Controller-->
         <scene sceneID="h6e-b8-jhJ">
@@ -1434,7 +1546,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xce-Qf-ulc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1427" y="50"/>
+            <point key="canvasLocation" x="2435" y="50"/>
         </scene>
     </scenes>
     <resources>
@@ -1445,6 +1557,7 @@
         <image name="loginFbBtn" width="193" height="48"/>
         <image name="loginVkBtn" width="193" height="48"/>
         <image name="logoAboutNeskafe" width="177" height="34"/>
+        <image name="photoWithStick" width="320" height="568"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

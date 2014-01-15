@@ -9,6 +9,8 @@
 #import "NBSSharePreviewController.h"
 #import "UIViewController+NBSNavigationItems.h"
 
+NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
+
 @interface NBSSharePreviewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 

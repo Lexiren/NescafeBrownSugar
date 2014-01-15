@@ -10,7 +10,8 @@
 
 typedef enum {
     NBSImagePickerModeWork = 0,
-    NBSImagePickerModeDone = 1
+    NBSImagePickerModePhoto = 1,
+    NBSImagePickerModePreview = 2
 } NBSImagePickerMode;
 
 @interface NBSMainWorkViewController : UIViewController
@@ -21,3 +22,4 @@ typedef enum {
 @end
 
 extern NSString *const kNBSPushMainWorkControllerSegueIdentifier;
+extern NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier;

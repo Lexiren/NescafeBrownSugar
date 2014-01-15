@@ -63,8 +63,10 @@ NSString *const kNBSMenuVCIdentifier = @"MenuVC";
         }
             break;
         case 2:
+            [UIAlertView showComingSoonAlert];
             break;
         case 3:
+            [UIAlertView showComingSoonAlert];
             break;
         default:
             break;

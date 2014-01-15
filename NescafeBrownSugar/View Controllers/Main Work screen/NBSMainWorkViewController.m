@@ -9,11 +9,14 @@
 #import "NBSMainWorkViewController.h"
 #import "UIView+NIB.h"
 #import "NBSTemplateCameraOverlayView.h"
+#import "NBSPhotoCameraOverlay.h"
 #import "UIViewController+NBSNavigationItems.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "NBSSharePreviewController.h"
+#import "NBSPhotoPreviewController.h"
 
 NSString *const kNBSPushMainWorkControllerSegueIdentifier = @"MainWorkControllerPushSegue";
+NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWorkVCPushSegue";
 
 @interface NBSMainWorkViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -31,6 +34,7 @@ NSString *const kNBSPushMainWorkControllerSegueIdentifier = @"MainWorkController
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         if ( NBS_iOSVersionLessThan(@"7.0") ) self.wantsFullScreenLayout = NO;
+        self.mode = NBSImagePickerModeWork;
     }
     return self;
 }
@@ -53,13 +57,14 @@ NSString *const kNBSPushMainWorkControllerSegueIdentifier = @"MainWorkController
         [UIAlertView showErrorAlertWithMessage:@"This device has no camera"];
     } else {
         self.imagePicker.view.frame = self.view.bounds;
-        [self setImagePickerMode:NBSImagePickerModeWork];
+        [self setupImagePickerCameraAndOverlay];
         [self.view addSubview: self.imagePicker.view];
     }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
+    self.imagePicker.delegate = nil;
     self.imagePicker = nil;
 }
 
@@ -79,30 +84,55 @@ NSString *const kNBSPushMainWorkControllerSegueIdentifier = @"MainWorkController
     if ([segue.identifier isEqualToString:@"ShareScreenPushSegue"]) {
         NBSSharePreviewController *controller = (NBSSharePreviewController *)segue.destinationViewController;
         controller.previewImage = self.pickedImage;
+    } else if ([segue.identifier isEqualToString:kNBSPushPhotoMainWorkControllerSegueIdentifier]) {
+        NBSMainWorkViewController *controller = (NBSMainWorkViewController *)segue.destinationViewController;
+        controller.mode = NBSImagePickerModePhoto;
+    } else if ([segue.identifier isEqualToString:kNBSPreviewPhotoVCPushSegueIdentifier]) {
+        NBSPhotoPreviewController *controller = (NBSPhotoPreviewController *)segue.destinationViewController;
+        controller.photo = self.pickedImage;
     }
 }
 
 #pragma mark - 
+- (void)setupImagePickerCameraAndOverlay {
+    // scale camera view to fill all screen
+    // Device's screen size (ignoring rotation intentionally):
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    
+    // iOS is going to calculate a size which constrains the 4:3 aspect ratio to the screen size.
+    float cameraAspectRatio = 4.0 / 3.0;
+    float imageWidth = floorf(screenSize.width * cameraAspectRatio);
+    float scale = ceilf((screenSize.height / imageWidth) * 10.0) / 10.0;
+    
+    _imagePicker.cameraViewTransform = CGAffineTransformTranslate(CGAffineTransformMakeScale(scale, scale), 0, 64);
 
-- (void)setImagePickerMode:(NBSImagePickerMode)mode {
-    switch (mode) {
+
+    UIView *overlayView = nil;
+
+    switch (self.mode) {
         case NBSImagePickerModeWork: {
-            self.imagePicker.showsCameraControls = NO;
-            UIView *overlayView = [self cameraOverlayWithTemplateImage:self.sourceImage
-                                                            doneAction:@selector(didTapDoneButton:)];
-            overlayView.frame = self.imagePicker.view.bounds;
-            self.imagePicker.cameraOverlayView = overlayView;
+            overlayView = [self templateCameraOverlayWithFrame:self.imagePicker.view.bounds
+                                                 templateImage:self.sourceImage
+                                                    doneAction:@selector(didTapDoneButton:)];
         }
             break;
-        case NBSImagePickerModeDone: {
-            self.imagePicker.cameraOverlayView = nil;
-            self.imagePicker.showsCameraControls = YES;
+        case NBSImagePickerModePhoto: {
+            overlayView = [self photoCameraOverlayWithFrame:self.imagePicker.view.bounds
+                                             snapshotAction:@selector(didTapShapshotButton:)];
+        }
+            break;
+            
+        case NBSImagePickerModePreview: {
+            
         }
             break;
             
         default:
             break;
     }
+    self.imagePicker.showsCameraControls = NO;
+    self.imagePicker.cameraOverlayView = overlayView;
+
 }
 
 - (UIImagePickerController *)imagePicker {
@@ -115,25 +145,19 @@ NSString *const kNBSPushMainWorkControllerSegueIdentifier = @"MainWorkController
         _imagePicker.toolbarHidden = YES;
         _imagePicker.mediaTypes = @[ (NSString *) kUTTypeImage];
         
-        // scale camera view to fill all screen
-        // Device's screen size (ignoring rotation intentionally):
-        CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-        
-        // iOS is going to calculate a size which constrains the 4:3 aspect ratio to the screen size.
-        float cameraAspectRatio = 4.0 / 3.0;
-        float imageWidth = floorf(screenSize.width * cameraAspectRatio);
-        float scale = ceilf((screenSize.height / imageWidth) * 10.0) / 10.0;
-        
-        _imagePicker.cameraViewTransform = CGAffineTransformTranslate(CGAffineTransformMakeScale(scale, scale), 0, 64) ;
-        
         [self addChildViewController:_imagePicker];
         [_imagePicker didMoveToParentViewController:self];
     }
     return _imagePicker;
 }
 
-- (UIView *)cameraOverlayWithTemplateImage:(UIImage *)template doneAction:(SEL)action {
-    NBSTemplateCameraOverlayView *overlay = [NBSTemplateCameraOverlayView loadViewFromNIB];
+#pragma mark - overlays
+
+- (UIView *)templateCameraOverlayWithFrame:(CGRect)frame
+                             templateImage:(UIImage *)template
+                                doneAction:(SEL)action
+{
+    NBSTemplateCameraOverlayView *overlay = [NBSTemplateCameraOverlayView loadViewFromNIBWithFrame:frame];
     overlay.templateImageView.image = template;
     [overlay.doneButton addTarget:self
                            action:action
@@ -141,15 +165,22 @@ NSString *const kNBSPushMainWorkControllerSegueIdentifier = @"MainWorkController
     return overlay;
 }
 
+- (UIView *)photoCameraOverlayWithFrame:(CGRect)frame snapshotAction:(SEL)action {
+    NBSPhotoCameraOverlay *overlay = [NBSPhotoCameraOverlay loadViewFromNIBWithFrame:frame];
+    [overlay.snapshotButton addTarget:self
+                               action:action
+                     forControlEvents:UIControlEventTouchUpInside];
+    return overlay;
+}
+
 #pragma mark - IBActions
 
 - (void)didTapDoneButton:(id)sender {
-    if (self.isCameraPresent) {
-        [self setImagePickerMode:NBSImagePickerModeDone];
-    } else {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-    
+    [self performSegueWithIdentifier:kNBSPushPhotoMainWorkControllerSegueIdentifier sender:self];
+}
+
+- (void)didTapShapshotButton:(id)sender {
+    [self.imagePicker takePicture];
 }
 
 #pragma mark - UIImagePickerDelegate
@@ -158,7 +189,7 @@ NSString *const kNBSPushMainWorkControllerSegueIdentifier = @"MainWorkController
 didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     self.pickedImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-    [self performSegueWithIdentifier:@"ShareScreenPushSegue" sender:self];
+    [self performSegueWithIdentifier:kNBSPreviewPhotoVCPushSegueIdentifier sender:self];
 }
 
 

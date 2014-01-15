@@ -13,6 +13,9 @@
 		067B1600187B10DB0037DCE3 /* NBSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067B15FF187B10DB0037DCE3 /* NBSRootViewController.m */; };
 		067B1603187B16540037DCE3 /* NBSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067B1602187B16540037DCE3 /* NBSMenuViewController.m */; };
 		842C7AEC188582CA004CBA0C /* NBSImageCollectionContentPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C7AEB188582CA004CBA0C /* NBSImageCollectionContentPageController.m */; };
+		842C7AF11886F83C004CBA0C /* NBSPhotoCameraOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C7AF01886F83C004CBA0C /* NBSPhotoCameraOverlay.m */; };
+		842C7AF31886F850004CBA0C /* NBSPhotoCameraOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842C7AF21886F850004CBA0C /* NBSPhotoCameraOverlay.xib */; };
+		842C7AF61886FFC1004CBA0C /* NBSPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C7AF51886FFC1004CBA0C /* NBSPhotoPreviewController.m */; };
 		8432C3E318757F3E005C26B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432C3E218757F3E005C26B8 /* Foundation.framework */; };
 		8432C3E518757F3E005C26B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432C3E418757F3E005C26B8 /* CoreGraphics.framework */; };
 		8432C3E718757F3E005C26B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432C3E618757F3E005C26B8 /* UIKit.framework */; };
@@ -86,6 +89,11 @@
 		06D72EC31875F568003B3762 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		842C7AEA188582CA004CBA0C /* NBSImageCollectionContentPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSImageCollectionContentPageController.h; path = "View Controllers/Images Collection/NBSImageCollectionContentPageController.h"; sourceTree = "<group>"; };
 		842C7AEB188582CA004CBA0C /* NBSImageCollectionContentPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSImageCollectionContentPageController.m; path = "View Controllers/Images Collection/NBSImageCollectionContentPageController.m"; sourceTree = "<group>"; };
+		842C7AEF1886F83C004CBA0C /* NBSPhotoCameraOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSPhotoCameraOverlay.h; path = "View Controllers/Main Work screen/NBSPhotoCameraOverlay.h"; sourceTree = "<group>"; };
+		842C7AF01886F83C004CBA0C /* NBSPhotoCameraOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSPhotoCameraOverlay.m; path = "View Controllers/Main Work screen/NBSPhotoCameraOverlay.m"; sourceTree = "<group>"; };
+		842C7AF21886F850004CBA0C /* NBSPhotoCameraOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NBSPhotoCameraOverlay.xib; path = "View Controllers/Main Work screen/NBSPhotoCameraOverlay.xib"; sourceTree = "<group>"; };
+		842C7AF41886FFC1004CBA0C /* NBSPhotoPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSPhotoPreviewController.h; path = "View Controllers/Main Work screen/NBSPhotoPreviewController.h"; sourceTree = "<group>"; };
+		842C7AF51886FFC1004CBA0C /* NBSPhotoPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSPhotoPreviewController.m; path = "View Controllers/Main Work screen/NBSPhotoPreviewController.m"; sourceTree = "<group>"; };
 		8432C3DF18757F3D005C26B8 /* NescafeBrownSugar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NescafeBrownSugar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8432C3E218757F3E005C26B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8432C3E418757F3E005C26B8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -188,6 +196,26 @@
 				067B15FC187829F00037DCE3 /* NBSProfileViewController.m */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		842C7AED1886F6FA004CBA0C /* Template Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				84506939187859230087FD3F /* NBSTemplateCameraOverlayView.h */,
+				8450693A187859230087FD3F /* NBSTemplateCameraOverlayView.m */,
+				8450693C187859350087FD3F /* NBSTemplateCameraOverlayView.xib */,
+			);
+			name = "Template Overlay";
+			sourceTree = "<group>";
+		};
+		842C7AEE1886F705004CBA0C /* Photo Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				842C7AEF1886F83C004CBA0C /* NBSPhotoCameraOverlay.h */,
+				842C7AF01886F83C004CBA0C /* NBSPhotoCameraOverlay.m */,
+				842C7AF21886F850004CBA0C /* NBSPhotoCameraOverlay.xib */,
+			);
+			name = "Photo Overlay";
 			sourceTree = "<group>";
 		};
 		8432C3D618757F3D005C26B8 = {
@@ -373,9 +401,10 @@
 			children = (
 				845069321878231B0087FD3F /* NBSMainWorkViewController.h */,
 				845069331878231B0087FD3F /* NBSMainWorkViewController.m */,
-				84506939187859230087FD3F /* NBSTemplateCameraOverlayView.h */,
-				8450693A187859230087FD3F /* NBSTemplateCameraOverlayView.m */,
-				8450693C187859350087FD3F /* NBSTemplateCameraOverlayView.xib */,
+				842C7AEE1886F705004CBA0C /* Photo Overlay */,
+				842C7AED1886F6FA004CBA0C /* Template Overlay */,
+				842C7AF41886FFC1004CBA0C /* NBSPhotoPreviewController.h */,
+				842C7AF51886FFC1004CBA0C /* NBSPhotoPreviewController.m */,
 			);
 			name = "Main Work screen";
 			sourceTree = "<group>";
@@ -533,6 +562,7 @@
 				8432C3FE18757F3E005C26B8 /* Images.xcassets in Resources */,
 				8450693D187859350087FD3F /* NBSTemplateCameraOverlayView.xib in Resources */,
 				8432C3F618757F3E005C26B8 /* Main_iPhone.storyboard in Resources */,
+				842C7AF31886F850004CBA0C /* NBSPhotoCameraOverlay.xib in Resources */,
 				84EF43581882C0A200E029AC /* 02_enter.jpg in Resources */,
 				84EF435A1882C0A200E029AC /* 04_choose-image.jpg in Resources */,
 				8432C3ED18757F3E005C26B8 /* InfoPlist.strings in Resources */,
@@ -593,6 +623,7 @@
 				8450692418777A800087FD3F /* NBSImageCollectionViewCell.m in Sources */,
 				8450692E187792260087FD3F /* NBSNavigationController.m in Sources */,
 				8432C3F318757F3E005C26B8 /* NBSAppDelegate.m in Sources */,
+				842C7AF61886FFC1004CBA0C /* NBSPhotoPreviewController.m in Sources */,
 				067B15FD187829F00037DCE3 /* NBSProfileViewController.m in Sources */,
 				8432C3EF18757F3E005C26B8 /* main.m in Sources */,
 				84FAA7FE1875EC410007FB03 /* UIAlertView+NBSExtensions.m in Sources */,
@@ -603,6 +634,7 @@
 				845069211877795D0087FD3F /* UIView+NIB.m in Sources */,
 				845069131876E8080087FD3F /* NBSUser.m in Sources */,
 				842C7AEC188582CA004CBA0C /* NBSImageCollectionContentPageController.m in Sources */,
+				842C7AF11886F83C004CBA0C /* NBSPhotoCameraOverlay.m in Sources */,
 				067B15D618773C5C0037DCE3 /* NBSSocialManager+Vkontakte.m in Sources */,
 				845069341878231B0087FD3F /* NBSMainWorkViewController.m in Sources */,
 				8450693B187859230087FD3F /* NBSTemplateCameraOverlayView.m in Sources */,
@@ -756,8 +788,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Iryna Vasylyeva (86C4E82F6G)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Iryna Vasylyeva (86C4E82F6G)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NescafeBrownSugar/NescafeBrownSugar-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
