@@ -12,6 +12,7 @@
 #import "UIViewController+RESideMenu.h"
 #import "RESideMenu.h"
 #import "NBSNavigationController.h"
+#import "NBSInstructionsViewController.h"
 #import "UIViewController+NBSNavigationItems.h"
 
 NSString *const kNBSMenuVCIdentifier = @"MenuVC";
@@ -65,8 +66,11 @@ NSString *const kNBSMenuVCIdentifier = @"MenuVC";
         case 2:
             [UIAlertView showComingSoonAlert];
             break;
-        case 3:
-            [UIAlertView showComingSoonAlert];
+        case 3: {
+            NBSInstructionsViewController *helpVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSHelpVCIdentifier];
+            [helpVC setSkipButtonHidden:YES];
+            viewController = helpVC;
+        }
             break;
         default:
             break;
