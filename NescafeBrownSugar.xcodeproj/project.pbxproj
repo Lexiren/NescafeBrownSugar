@@ -487,9 +487,6 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = COXO;
 				TargetAttributes = {
-					8432C3DE18757F3D005C26B8 = {
-						DevelopmentTeam = G5EG5T3U3L;
-					};
 					8432C40218757F3E005C26B8 = {
 						TestTargetID = 8432C3DE18757F3D005C26B8;
 					};
@@ -767,7 +764,8 @@
 				INFOPLIST_FILE = "NescafeBrownSugar/NescafeBrownSugar-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "F7E86D9E-F4B2-4FAA-A5EF-760BBE21A68E";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -789,7 +787,8 @@
 				INFOPLIST_FILE = "NescafeBrownSugar/NescafeBrownSugar-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E35101A8-F37E-4BC9-AD95-9057A5580D26";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};

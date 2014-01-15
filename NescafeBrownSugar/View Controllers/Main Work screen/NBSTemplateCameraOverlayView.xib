@@ -11,22 +11,34 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hbs-Xi-g8c">
-                    <rect key="frame" x="0.0" y="64" width="320" height="446"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hbs-Xi-g8c" userLabel="Template Image View">
+                    <rect key="frame" x="0.0" y="73" width="320" height="406"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgCameraTop" translatesAutoresizingMaskIntoConstraints="NO" id="BAK-WJ-OKX">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgCameraTop" translatesAutoresizingMaskIntoConstraints="NO" id="BAK-WJ-OKX">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="73" id="uL8-0K-D86"/>
+                    </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgCameraBottom" translatesAutoresizingMaskIntoConstraints="NO" id="pap-ft-cbw">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgCameraBottom" translatesAutoresizingMaskIntoConstraints="NO" id="pap-ft-cbw">
                     <rect key="frame" x="0.0" y="479" width="320" height="89"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="89" id="DKc-vs-ooc"/>
+                    </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKf-nG-F9I">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKf-nG-F9I">
                     <rect key="frame" x="130" y="493" width="61" height="61"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="61" id="NKx-7o-fqd"/>
+                        <constraint firstAttribute="width" constant="61" id="tDW-WH-g7f"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" image="iconDrowFinished">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,6 +46,20 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="pap-ft-cbw" firstAttribute="top" secondItem="hbs-Xi-g8c" secondAttribute="bottom" id="DPn-VR-pM6"/>
+                <constraint firstItem="QKf-nG-F9I" firstAttribute="centerX" secondItem="pap-ft-cbw" secondAttribute="centerX" id="EDL-RS-EEH"/>
+                <constraint firstItem="hbs-Xi-g8c" firstAttribute="top" secondItem="BAK-WJ-OKX" secondAttribute="bottom" id="Fxp-nq-BjM"/>
+                <constraint firstAttribute="trailing" secondItem="BAK-WJ-OKX" secondAttribute="trailing" id="GxC-62-1GP"/>
+                <constraint firstItem="BAK-WJ-OKX" firstAttribute="top" secondItem="qAC-0L-BLH" secondAttribute="top" id="LHI-em-MCk"/>
+                <constraint firstAttribute="bottom" secondItem="pap-ft-cbw" secondAttribute="bottom" id="MpP-et-c4Y"/>
+                <constraint firstItem="pap-ft-cbw" firstAttribute="leading" secondItem="qAC-0L-BLH" secondAttribute="leading" id="P9J-rc-p7m"/>
+                <constraint firstAttribute="trailing" secondItem="hbs-Xi-g8c" secondAttribute="trailing" id="c2X-OD-ucP"/>
+                <constraint firstAttribute="trailing" secondItem="pap-ft-cbw" secondAttribute="trailing" id="gaL-w5-5Fc"/>
+                <constraint firstItem="hbs-Xi-g8c" firstAttribute="leading" secondItem="qAC-0L-BLH" secondAttribute="leading" id="k6X-WV-xhI"/>
+                <constraint firstItem="QKf-nG-F9I" firstAttribute="centerY" secondItem="pap-ft-cbw" secondAttribute="centerY" id="lwO-MD-x5O"/>
+                <constraint firstItem="BAK-WJ-OKX" firstAttribute="leading" secondItem="qAC-0L-BLH" secondAttribute="leading" id="xwP-47-mfb"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
                 <outlet property="doneButton" destination="QKf-nG-F9I" id="HZw-dY-6gF"/>

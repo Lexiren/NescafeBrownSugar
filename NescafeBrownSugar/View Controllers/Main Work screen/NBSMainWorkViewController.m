@@ -88,8 +88,10 @@ NSString *const kNBSPushMainWorkControllerSegueIdentifier = @"MainWorkController
     switch (mode) {
         case NBSImagePickerModeWork: {
             self.imagePicker.showsCameraControls = NO;
-            self.imagePicker.cameraOverlayView = [self cameraOverlayWithTemplateImage:self.sourceImage
-                                                                           doneAction:@selector(didTapDoneButton:)];
+            UIView *overlayView = [self cameraOverlayWithTemplateImage:self.sourceImage
+                                                            doneAction:@selector(didTapDoneButton:)];
+            overlayView.frame = self.imagePicker.view.bounds;
+            self.imagePicker.cameraOverlayView = overlayView;
         }
             break;
         case NBSImagePickerModeDone: {
