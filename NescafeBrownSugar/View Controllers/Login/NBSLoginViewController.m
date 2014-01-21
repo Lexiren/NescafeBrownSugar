@@ -93,13 +93,15 @@ NSString *const kNBSLoginVCIdentifier = @"LoginVC";
 }
 
 - (void)moveToNextScreen {
-    //TODO: maybe move login type to user?
-    NBSProfileViewController *profileVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSProfileVCIdentifier];
-    [profileVC showLeftMenuBarButton:YES];
-    NBSNavigationController *navigationController = [[NBSNavigationController alloc] initWithRootViewController:profileVC];
-
-    [self.sideMenuViewController setContentViewController:navigationController animated:YES];
-    [self.sideMenuViewController presentMenuViewController];
+//    //TODO: maybe move login type to user?
+//    NBSProfileViewController *profileVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSProfileVCIdentifier];
+//    [profileVC showLeftMenuBarButton:YES];
+//    NBSNavigationController *navigationController = [[NBSNavigationController alloc] initWithRootViewController:profileVC];
+//
+//    [self.sideMenuViewController setContentViewController:navigationController animated:YES];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
+        [self.sideMenuViewController presentMenuViewController];
+    }];
 }
 
 @end

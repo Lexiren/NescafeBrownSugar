@@ -38,6 +38,10 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
     self.avatarImageView.layer.masksToBounds = YES;
     self.avatarPictureView.layer.cornerRadius = self.avatarPictureView.frame.size.width/2;
     self.avatarPictureView.layer.masksToBounds = YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self reloadData];
 }
 
@@ -87,7 +91,7 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
         [self.spinner stopAnimating];
         self.nameLabel.text = @"Ви не зареестрованi";
         self.avatarImageView.hidden = NO;
-        self.avatarImageView.image = [UIImage imageNamed:@"iconUnregisteredUserpic"];
+        self.avatarImageView.image = [UIImage imageNamed:@"defaultUserAvatar"];
         self.avatarPictureView.hidden = YES;
         self.loginSubview.hidden = NO;
     }

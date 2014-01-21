@@ -8,11 +8,15 @@
 
 #import "NBSSharePreviewController.h"
 #import "UIViewController+NBSNavigationItems.h"
+#import "NBSSocialManager+Facebook.h"
+#import "NBSSocialManager+Vkontakte.h"
 
 NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
 
 @interface NBSSharePreviewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UISwitch *shareFBSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *shareVKSwitch;
 
 @end
 
@@ -38,6 +42,9 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
     [self showLeftMenuBarButton:YES];
     
     self.imageView.image = self.previewImage;
+    NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
+    self.shareFBSwitch.on = [socialManager isFacebookLoggedIn];
+    self.shareVKSwitch.on = [socialManager isVkontakteLoggedIn];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,17 +54,13 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
 }
 
 #pragma mark - IBActions
-
-- (IBAction)didTapFacebookShare:(id)sender {
-    [UIAlertView showComingSoonAlert];
+- (IBAction)didTapOkButton:(id)sender {
+    //TODO:Share
+}
+- (IBAction)didChangeStateShareVKSwitch:(id)sender {
 }
 
-- (IBAction)didTapVkontakteShare:(id)sender {
-    [UIAlertView showComingSoonAlert];
-}
-
-- (IBAction)didTapInstagramShare:(id)sender {
-    [UIAlertView showComingSoonAlert];
+- (IBAction)didChangeStateShareFBSwitch:(UISwitch *)sender {
 }
 
 @end

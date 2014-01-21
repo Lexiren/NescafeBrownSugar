@@ -49,6 +49,8 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    //do not allow auto lock
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
     
     [self showLeftMenuBarButton:YES];
     
@@ -66,6 +68,9 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
     [super viewDidDisappear:animated];
     self.imagePicker.delegate = nil;
     self.imagePicker = nil;
+    
+    //allow auto lock
+    [UIApplication sharedApplication].idleTimerDisabled = NO;
 }
 
 // Will have no effect in ios6 -- see [-init] for that option
@@ -95,28 +100,30 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
 
 #pragma mark - 
 - (void)setupImagePickerCameraAndOverlay {
-    // scale camera view to fill all screen
-    // Device's screen size (ignoring rotation intentionally):
-    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-    
-    // iOS is going to calculate a size which constrains the 4:3 aspect ratio to the screen size.
-    float cameraAspectRatio = 4.0 / 3.0;
-    float imageWidth = floorf(screenSize.width * cameraAspectRatio);
-    float scale = ceilf((screenSize.height / imageWidth) * 10.0) / 10.0;
-    
-    _imagePicker.cameraViewTransform = CGAffineTransformTranslate(CGAffineTransformMakeScale(scale, scale), 0, 64);
-
-
     UIView *overlayView = nil;
 
     switch (self.mode) {
         case NBSImagePickerModeWork: {
+            // scale camera view to fill all screen
+            // Device's screen size (ignoring rotation intentionally):
+            CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+            
+            // iOS is going to calculate a size which constrains the 4:3 aspect ratio to the screen size.
+            float cameraAspectRatio = 4.0 / 3.0;
+            float imageWidth = floorf(screenSize.width * cameraAspectRatio);
+            float scale = ceilf((screenSize.height / imageWidth) * 10.0) / 10.0;
+            
+            _imagePicker.cameraViewTransform = CGAffineTransformTranslate(CGAffineTransformMakeScale(scale, scale), 0, 64);
+
+            
             overlayView = [self templateCameraOverlayWithFrame:self.imagePicker.view.bounds
                                                  templateImage:self.sourceImage
                                                     doneAction:@selector(didTapDoneButton:)];
         }
             break;
         case NBSImagePickerModePhoto: {
+            _imagePicker.cameraViewTransform = CGAffineTransformMakeTranslation(0, 64);
+            
             overlayView = [self photoCameraOverlayWithFrame:self.imagePicker.view.bounds
                                              snapshotAction:@selector(didTapShapshotButton:)];
         }

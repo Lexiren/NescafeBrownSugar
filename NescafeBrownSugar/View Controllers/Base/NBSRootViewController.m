@@ -9,7 +9,7 @@
 #import "NBSRootViewController.h"
 #import "NBSMenuViewController.h"
 #import "NBSInstructionsViewController.h"
-#import "NBSLoginViewController.h"
+#import "NBSProfileViewController.h"
 #import "NBSNavigationController.h"
 #import "UIViewController+NBSNavigationItems.h"
 
@@ -23,28 +23,38 @@
 {
     //initial main content - help screen
     self.parallaxEnabled = NO;
-    NSString *contentIdentifier = kNBSHelpVCIdentifier;
     
-    // !!!: uncomment next code for showing help only on first launch
-    
-//    //if it is first app launch - then main contant - help screen else - login screen
-//    BOOL isNotFirstAppLogin = [[NSUserDefaults standardUserDefaults] boolForKey:kNBSNotFirstAppLaunchUserDefaultsKey];
-//    if (isNotFirstAppLogin) contentIdentifier = kNBSLoginVCIdentifier;
-//    else {
-//        //if it is first app launch - set flag to YES
-//        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kNBSNotFirstAppLaunchUserDefaultsKey];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
-//    }
-
-    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:contentIdentifier];
-
+    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:kNBSProfileVCIdentifier];
     NBSNavigationController *navigationViewController = [[NBSNavigationController alloc] initWithRootViewController:viewController];
-    [viewController showLeftMenuBarButton:NO];
+    [viewController showLeftMenuBarButton:YES];
     self.contentViewController = navigationViewController;
     
-    //main menu - menu
     self.menuViewController = [self.storyboard instantiateViewControllerWithIdentifier:kNBSMenuVCIdentifier];
-
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    //if it is first app launch - then main contant - help screen else - login screen
+    if ([self isNotFirstAppLogin]) {
+        [self presentMenuViewController];
+    } else {
+        UIViewController *helpViewController = [self.storyboard instantiateViewControllerWithIdentifier:kNBSHelpVCIdentifier];
+        NBSNavigationController *navigationViewController = [[NBSNavigationController alloc] initWithRootViewController:helpViewController];
+        [helpViewController showLeftMenuBarButton:NO];
+        [self presentViewController:navigationViewController
+                                                  animated:NO
+                                                completion:^{
+                             
+                                                }];
+        
+        //if it is first app launch - set flag to YES
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kNBSNotFirstAppLaunchUserDefaultsKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
+
+- (BOOL)isNotFirstAppLogin {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:kNBSNotFirstAppLaunchUserDefaultsKey];
+}
 @end

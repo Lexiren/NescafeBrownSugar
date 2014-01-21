@@ -45,6 +45,8 @@
 		847A86CA1884901E00884965 /* NBSTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 847A86C91884901E00884965 /* NBSTemplate.m */; };
 		847A86CD1884A0B700884965 /* NBSImagesCollectionContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847A86CC1884A0B700884965 /* NBSImagesCollectionContainerViewController.m */; };
 		84AB90BD1875FF2E005EEBE5 /* NBSSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AB90BC1875FF2E005EEBE5 /* NBSSocialManager.m */; };
+		84B07DD8188D962B00D98EA2 /* UIImage+NBSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B07DD7188D962B00D98EA2 /* UIImage+NBSExtensions.m */; };
+		84B07DDB188D96C700D98EA2 /* UIView+NBSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B07DDA188D96C700D98EA2 /* UIView+NBSExtensions.m */; };
 		84EF43561882C0A200E029AC /* 00_menu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF434A1882C0A200E029AC /* 00_menu.jpg */; };
 		84EF43571882C0A200E029AC /* 01_help.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF434B1882C0A200E029AC /* 01_help.jpg */; };
 		84EF43581882C0A200E029AC /* 02_enter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF434C1882C0A200E029AC /* 02_enter.jpg */; };
@@ -141,6 +143,10 @@
 		84AB90BB1875FF2E005EEBE5 /* NBSSocialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSSocialManager.h; path = "Model/Social Manager/NBSSocialManager.h"; sourceTree = "<group>"; };
 		84AB90BC1875FF2E005EEBE5 /* NBSSocialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSSocialManager.m; path = "Model/Social Manager/NBSSocialManager.m"; sourceTree = "<group>"; };
 		84AB90BE1875FFB0005EEBE5 /* NBSTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NBSTypes.h; path = Utils/NBSTypes.h; sourceTree = "<group>"; };
+		84B07DD6188D962B00D98EA2 /* UIImage+NBSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+NBSExtensions.h"; path = "Utils/UIImage+NBSExtensions.h"; sourceTree = "<group>"; };
+		84B07DD7188D962B00D98EA2 /* UIImage+NBSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+NBSExtensions.m"; path = "Utils/UIImage+NBSExtensions.m"; sourceTree = "<group>"; };
+		84B07DD9188D96C700D98EA2 /* UIView+NBSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+NBSExtensions.h"; path = "Utils/UIView+NBSExtensions.h"; sourceTree = "<group>"; };
+		84B07DDA188D96C700D98EA2 /* UIView+NBSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+NBSExtensions.m"; path = "Utils/UIView+NBSExtensions.m"; sourceTree = "<group>"; };
 		84EF434A1882C0A200E029AC /* 00_menu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00_menu.jpg; sourceTree = "<group>"; };
 		84EF434B1882C0A200E029AC /* 01_help.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01_help.jpg; sourceTree = "<group>"; };
 		84EF434C1882C0A200E029AC /* 02_enter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02_enter.jpg; sourceTree = "<group>"; };
@@ -442,6 +448,10 @@
 				845069201877795D0087FD3F /* UIView+NIB.m */,
 				8450693E18785E6A0087FD3F /* UIViewController+NBSNavigationItems.h */,
 				8450693F18785E6A0087FD3F /* UIViewController+NBSNavigationItems.m */,
+				84B07DD6188D962B00D98EA2 /* UIImage+NBSExtensions.h */,
+				84B07DD7188D962B00D98EA2 /* UIImage+NBSExtensions.m */,
+				84B07DD9188D96C700D98EA2 /* UIView+NBSExtensions.h */,
+				84B07DDA188D96C700D98EA2 /* UIView+NBSExtensions.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -630,12 +640,14 @@
 				8432C4241875924A005C26B8 /* NBSInstructionsViewController.m in Sources */,
 				84FAA8021875EC690007FB03 /* NBSLoginViewController.m in Sources */,
 				84AB90BD1875FF2E005EEBE5 /* NBSSocialManager.m in Sources */,
+				84B07DDB188D96C700D98EA2 /* UIView+NBSExtensions.m in Sources */,
 				067B1600187B10DB0037DCE3 /* NBSRootViewController.m in Sources */,
 				845069211877795D0087FD3F /* UIView+NIB.m in Sources */,
 				845069131876E8080087FD3F /* NBSUser.m in Sources */,
 				842C7AEC188582CA004CBA0C /* NBSImageCollectionContentPageController.m in Sources */,
 				842C7AF11886F83C004CBA0C /* NBSPhotoCameraOverlay.m in Sources */,
 				067B15D618773C5C0037DCE3 /* NBSSocialManager+Vkontakte.m in Sources */,
+				84B07DD8188D962B00D98EA2 /* UIImage+NBSExtensions.m in Sources */,
 				845069341878231B0087FD3F /* NBSMainWorkViewController.m in Sources */,
 				8450693B187859230087FD3F /* NBSTemplateCameraOverlayView.m in Sources */,
 				84FAA8061875EC840007FB03 /* NBSInstructionsContentViewController.m in Sources */,
@@ -743,7 +755,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "F7E86D9E-F4B2-4FAA-A5EF-760BBE21A68E";
+				PROVISIONING_PROFILE = "8B5F2FC0-0F96-49D0-97A2-25929F63DC61";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -778,7 +790,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "E35101A8-F37E-4BC9-AD95-9057A5580D26";
+				PROVISIONING_PROFILE = "2182A39B-964F-4F70-973E-737840D7B9F4";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
