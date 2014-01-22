@@ -9,6 +9,7 @@
 #import "NBSNavigationController.h"
 #import "NBSUser.h"
 #import "NBSLoginViewController.h"
+#import "NBSDesignAdditions.h"
 
 @interface NBSNavigationController ()
 
@@ -34,7 +35,9 @@
     self.navigationBar.translucent = YES;
     self.view.backgroundColor = [UIColor clearColor];
     
-    self.navigationBar.titleTextAttributes = @{UITextAttributeTextColor : [UIColor whiteColor], UITextAttributeFont : [UIFont systemFontOfSize:22.]};
+    self.navigationBar.titleTextAttributes =
+  @{UITextAttributeTextColor : [UIColor whiteColor],
+    UITextAttributeFont : [UIFont standartLightFontWithSize:22.f]};
     
     [self setNavigationBarHidden:NO animated:NO];
 	// Do any additional setup after loading the view.

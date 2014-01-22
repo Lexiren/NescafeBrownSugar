@@ -6,7 +6,12 @@
   Copyright (c) 2014 COXO. All rights reserved.
 */
 
-"ErrorDisplayTitle" = "Error";
+"ErrorDisplayTitle" = "Помилка";
 "OKButton" = "OK";
 
 "VkontakteTokenRenewalFailedMessage" = "Vkontakte was not authorized";
+
+"MenuProfileTitle" = "Профiль";
+"MenuDrawTitle" = "Намалювати";
+"MenuAboutProjectTitle" = "Про проект";
+"MenuHelpTitle" = "Допомога";

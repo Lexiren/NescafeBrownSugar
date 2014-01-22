@@ -12,6 +12,9 @@
 		067B15FD187829F00037DCE3 /* NBSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067B15FC187829F00037DCE3 /* NBSProfileViewController.m */; };
 		067B1600187B10DB0037DCE3 /* NBSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067B15FF187B10DB0037DCE3 /* NBSRootViewController.m */; };
 		067B1603187B16540037DCE3 /* NBSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067B1602187B16540037DCE3 /* NBSMenuViewController.m */; };
+		06E6A7F2189074B100B1ABD4 /* SansRoundedC.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06E6A7F0189074B100B1ABD4 /* SansRoundedC.otf */; };
+		06E6A7F3189074B100B1ABD4 /* SansRoundedLightC.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06E6A7F1189074B100B1ABD4 /* SansRoundedLightC.otf */; };
+		06E6A7F618907C2E00B1ABD4 /* NBSDesignAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 06E6A7F518907C2E00B1ABD4 /* NBSDesignAdditions.m */; };
 		842C7AEC188582CA004CBA0C /* NBSImageCollectionContentPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C7AEB188582CA004CBA0C /* NBSImageCollectionContentPageController.m */; };
 		842C7AF11886F83C004CBA0C /* NBSPhotoCameraOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C7AF01886F83C004CBA0C /* NBSPhotoCameraOverlay.m */; };
 		842C7AF31886F850004CBA0C /* NBSPhotoCameraOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842C7AF21886F850004CBA0C /* NBSPhotoCameraOverlay.xib */; };
@@ -80,7 +83,6 @@
 		067B15D518773C5C0037DCE3 /* NBSSocialManager+Vkontakte.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NBSSocialManager+Vkontakte.m"; path = "Model/Social Manager/NBSSocialManager+Vkontakte.m"; sourceTree = "<group>"; };
 		067B15E4187749600037DCE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		067B15E618774B3F0037DCE3 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
-		067B15E918774C0C0037DCE3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		067B15FA187767310037DCE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		067B15FB187829F00037DCE3 /* NBSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSProfileViewController.h; path = "View Controllers/Login/NBSProfileViewController.h"; sourceTree = "<group>"; };
 		067B15FC187829F00037DCE3 /* NBSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSProfileViewController.m; path = "View Controllers/Login/NBSProfileViewController.m"; sourceTree = "<group>"; };
@@ -89,6 +91,10 @@
 		067B1601187B16540037DCE3 /* NBSMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSMenuViewController.h; path = "View Controllers/Base/NBSMenuViewController.h"; sourceTree = "<group>"; };
 		067B1602187B16540037DCE3 /* NBSMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSMenuViewController.m; path = "View Controllers/Base/NBSMenuViewController.m"; sourceTree = "<group>"; };
 		06D72EC31875F568003B3762 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		06E6A7F0189074B100B1ABD4 /* SansRoundedC.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SansRoundedC.otf; path = Resources/SansRoundedC.otf; sourceTree = "<group>"; };
+		06E6A7F1189074B100B1ABD4 /* SansRoundedLightC.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SansRoundedLightC.otf; path = Resources/SansRoundedLightC.otf; sourceTree = "<group>"; };
+		06E6A7F418907C2E00B1ABD4 /* NBSDesignAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSDesignAdditions.h; path = Utils/NBSDesignAdditions.h; sourceTree = "<group>"; };
+		06E6A7F518907C2E00B1ABD4 /* NBSDesignAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSDesignAdditions.m; path = Utils/NBSDesignAdditions.m; sourceTree = "<group>"; };
 		842C7AEA188582CA004CBA0C /* NBSImageCollectionContentPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSImageCollectionContentPageController.h; path = "View Controllers/Images Collection/NBSImageCollectionContentPageController.h"; sourceTree = "<group>"; };
 		842C7AEB188582CA004CBA0C /* NBSImageCollectionContentPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSImageCollectionContentPageController.m; path = "View Controllers/Images Collection/NBSImageCollectionContentPageController.m"; sourceTree = "<group>"; };
 		842C7AEF1886F83C004CBA0C /* NBSPhotoCameraOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSPhotoCameraOverlay.h; path = "View Controllers/Main Work screen/NBSPhotoCameraOverlay.h"; sourceTree = "<group>"; };
@@ -195,6 +201,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06E6A7EF1890749C00B1ABD4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				06E6A7F0189074B100B1ABD4 /* SansRoundedC.otf */,
+				06E6A7F1189074B100B1ABD4 /* SansRoundedLightC.otf */,
+				8432C3FD18757F3E005C26B8 /* Images.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		06F41F3A188478B4002B2055 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,7 +297,7 @@
 				8432C41A18758B30005C26B8 /* View Controllers */,
 				84506927187790EA0087FD3F /* Common Views */,
 				84FAA7FB1875EBAB0007FB03 /* Utils */,
-				8432C3FD18757F3E005C26B8 /* Images.xcassets */,
+				06E6A7EF1890749C00B1ABD4 /* Resources */,
 				8432C3E918757F3E005C26B8 /* Supporting Files */,
 			);
 			path = NescafeBrownSugar;
@@ -452,6 +468,8 @@
 				84B07DD7188D962B00D98EA2 /* UIImage+NBSExtensions.m */,
 				84B07DD9188D96C700D98EA2 /* UIView+NBSExtensions.h */,
 				84B07DDA188D96C700D98EA2 /* UIView+NBSExtensions.m */,
+				06E6A7F418907C2E00B1ABD4 /* NBSDesignAdditions.h */,
+				06E6A7F518907C2E00B1ABD4 /* NBSDesignAdditions.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -557,6 +575,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06E6A7F2189074B100B1ABD4 /* SansRoundedC.otf in Resources */,
 				84EF435E1882C0A200E029AC /* 08_share.jpg in Resources */,
 				84EF43611882C0A200E029AC /* 11_unregistered-user.jpg in Resources */,
 				8432C3F918757F3E005C26B8 /* Main_iPad.storyboard in Resources */,
@@ -571,6 +590,7 @@
 				84EF43571882C0A200E029AC /* 01_help.jpg in Resources */,
 				8432C3FE18757F3E005C26B8 /* Images.xcassets in Resources */,
 				8450693D187859350087FD3F /* NBSTemplateCameraOverlayView.xib in Resources */,
+				06E6A7F3189074B100B1ABD4 /* SansRoundedLightC.otf in Resources */,
 				8432C3F618757F3E005C26B8 /* Main_iPhone.storyboard in Resources */,
 				842C7AF31886F850004CBA0C /* NBSPhotoCameraOverlay.xib in Resources */,
 				84EF43581882C0A200E029AC /* 02_enter.jpg in Resources */,
@@ -628,6 +648,7 @@
 				067B1603187B16540037DCE3 /* NBSMenuViewController.m in Sources */,
 				8450691A18774EE60087FD3F /* NBSSocialManager+Facebook.m in Sources */,
 				847A86CD1884A0B700884965 /* NBSImagesCollectionContainerViewController.m in Sources */,
+				06E6A7F618907C2E00B1ABD4 /* NBSDesignAdditions.m in Sources */,
 				8450694018785E6A0087FD3F /* UIViewController+NBSNavigationItems.m in Sources */,
 				84506945187867720087FD3F /* NBSSharePreviewController.m in Sources */,
 				8450692418777A800087FD3F /* NBSImageCollectionViewCell.m in Sources */,
@@ -679,7 +700,6 @@
 			children = (
 				067B15E4187749600037DCE3 /* en */,
 				067B15E618774B3F0037DCE3 /* uk */,
-				067B15E918774C0C0037DCE3 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
