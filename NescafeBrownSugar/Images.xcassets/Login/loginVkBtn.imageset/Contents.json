@@ -1,13 +1,24 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "scale" : "1x"
+      "idiom" : "iphone",
+      "scale" : "1x",
+      "filename" : "loginVk.png"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x",
       "filename" : "loginVk@2x.png"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "filename" : "loginVk-iPad.png"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "filename" : "loginVk-iPad@2x.png"
     }
   ],
   "info" : {

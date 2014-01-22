@@ -1,13 +1,24 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "scale" : "1x"
+      "idiom" : "iphone",
+      "scale" : "1x",
+      "filename" : "photoWithStickForShare.png"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x",
       "filename" : "photoWithStickForShare@2x.png"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "filename" : "photoWithStickForShare-iPad.png"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "filename" : "photoWithStickForShare-iPad@2x.png"
     }
   ],
   "info" : {

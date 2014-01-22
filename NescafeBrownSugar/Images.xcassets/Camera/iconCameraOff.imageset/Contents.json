@@ -1,13 +1,24 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "scale" : "1x"
+      "idiom" : "iphone",
+      "scale" : "1x",
+      "filename" : "iconCameraOff.png"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x",
       "filename" : "iconCameraOff@2x.png"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "filename" : "iconCameraOff-iPad.png"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "filename" : "iconCameraOff-iPad@2x.png"
     }
   ],
   "info" : {
