@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *templateImageView;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
+@property (weak, nonatomic) IBOutlet UIView *whiteImageBGView;
 
 
 @end

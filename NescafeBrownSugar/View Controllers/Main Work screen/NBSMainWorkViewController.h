@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 typedef enum {
-    NBSImagePickerModeWork = 0,
-    NBSImagePickerModePhoto = 1,
-    NBSImagePickerModePreview = 2
+    NBSImagePickerModeCameraDrawing = 0,
+    NBSImagePickerModeWhiteBGDrawing = 1,
+    NBSImagePickerModePhoto = 2
 } NBSImagePickerMode;
 
 @interface NBSMainWorkViewController : UIViewController

@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    NBSNavigationTypeWhite = 0,
+    NBSNavigationTypeBrown,
+} NBSNavigationType;
+
 @interface UIViewController (NBSNavigationItems)
 
-- (void)setupCustomNavigationBarItems;
-
+- (void)setNavigationType:(NBSNavigationType)type;
 - (void)showLeftMenuBarButton:(BOOL)showLeftMenuBarButton;
+- (void)showRightCameraBarButton:(BOOL)showRightCameraBarButton;
 
 @end

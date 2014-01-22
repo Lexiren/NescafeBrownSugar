@@ -34,7 +34,7 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         if ( NBS_iOSVersionLessThan(@"7.0") ) self.wantsFullScreenLayout = NO;
-        self.mode = NBSImagePickerModeWork;
+        self.mode = NBSImagePickerModeCameraDrawing;
     }
     return self;
 }
@@ -53,7 +53,9 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
     [UIApplication sharedApplication].idleTimerDisabled = YES;
     
     [self showLeftMenuBarButton:YES];
-    
+    [self showRightCameraBarButton:(self.mode != NBSImagePickerModePhoto)];
+    [self setNavigationType:((self.mode != NBSImagePickerModeWhiteBGDrawing) ? NBSNavigationTypeWhite : NBSNavigationTypeBrown)];
+
     self.isCameraPresent = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
     if (!_isCameraPresent) {
         [UIAlertView showErrorAlertWithMessage:@"This device has no camera"];
@@ -64,6 +66,11 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self setNavigationType:NBSNavigationTypeWhite];
+}
+
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     self.imagePicker.delegate = nil;
@@ -71,6 +78,29 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
     
     //allow auto lock
     [UIApplication sharedApplication].idleTimerDisabled = NO;
+}
+
+- (void)rightCameraButtonDidPress:(UIButton *)sender {
+    static CGFloat defaultBrightness = 1.0;
+    switch (self.mode) {
+        case NBSImagePickerModeCameraDrawing: {
+            [self setNavigationType:NBSNavigationTypeBrown];
+            self.mode = NBSImagePickerModeWhiteBGDrawing;
+            defaultBrightness = [[UIScreen mainScreen] brightness];
+            [[UIScreen mainScreen] setBrightness:1.0];
+        }
+            break;
+        case NBSImagePickerModeWhiteBGDrawing: {
+            [self setNavigationType:NBSNavigationTypeWhite];
+            self.mode = NBSImagePickerModeCameraDrawing;
+            [[UIScreen mainScreen] setBrightness:defaultBrightness];
+        }
+            break;
+            
+        default:
+            break;
+    }
+    [self setupImagePickerCameraAndOverlay];
 }
 
 // Will have no effect in ios6 -- see [-init] for that option
@@ -103,7 +133,7 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
     UIView *overlayView = nil;
 
     switch (self.mode) {
-        case NBSImagePickerModeWork: {
+        case NBSImagePickerModeCameraDrawing: {
             // scale camera view to fill all screen
             // Device's screen size (ignoring rotation intentionally):
             CGSize screenSize = [[UIScreen mainScreen] bounds].size;
@@ -117,8 +147,17 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
 
             
             overlayView = [self templateCameraOverlayWithFrame:self.imagePicker.view.bounds
+                                             cameraDrawingMode:YES
                                                  templateImage:self.sourceImage
                                                     doneAction:@selector(didTapDoneButton:)];
+        }
+            break;
+            
+        case NBSImagePickerModeWhiteBGDrawing: {
+            overlayView = [self templateCameraOverlayWithFrame:self.imagePicker.view.bounds
+                                             cameraDrawingMode:NO
+                                                templateImage:self.sourceImage
+                                                   doneAction:@selector(didTapDoneButton:)];
         }
             break;
         case NBSImagePickerModePhoto: {
@@ -129,10 +168,6 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
         }
             break;
             
-        case NBSImagePickerModePreview: {
-            
-        }
-            break;
             
         default:
             break;
@@ -159,13 +194,17 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
 }
 
 #pragma mark - overlays
-
 - (UIView *)templateCameraOverlayWithFrame:(CGRect)frame
+                         cameraDrawingMode:(BOOL)cameraDrawingMode
                              templateImage:(UIImage *)template
                                 doneAction:(SEL)action
 {
     NBSTemplateCameraOverlayView *overlay = [NBSTemplateCameraOverlayView loadViewFromNIBWithFrame:frame];
     overlay.templateImageView.image = template;
+    if (!cameraDrawingMode) {
+        overlay.whiteImageBGView.hidden = NO;
+        [overlay.doneButton setImage:[UIImage imageNamed:@"iconDrowFinishedBrown"] forState:UIControlStateNormal];
+    }
     [overlay.doneButton addTarget:self
                            action:action
                  forControlEvents:UIControlEventTouchUpInside];
