@@ -25,6 +25,8 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 
 @property (nonatomic, strong) IBOutlet UILabel *nameLabel;
 @property (nonatomic, strong) IBOutlet UIView *loginSubview;
+@property (weak, nonatomic) IBOutlet UIView *galleryContainerSubview;
+@property (weak, nonatomic) IBOutlet UICollectionView *galleryCollection;
 
 @property (weak, nonatomic) IBOutlet UIButton *createPictureButton;
 @end
@@ -64,6 +66,7 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
                  self.avatarPictureView.profileID = user.facebookUid;
                  self.avatarImageView.hidden = YES;
                  self.loginSubview.hidden = YES;
+                 self.galleryContainerSubview.hidden = NO;
              } else if (error) {
                  [UIAlertView showErrorAlertWithError:error];
              }
@@ -83,6 +86,7 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
                  self.avatarImageView.image = [UIImage imageWithData:avatarData];
                  self.avatarPictureView.hidden = YES;
                  self.loginSubview.hidden = YES;
+                 self.galleryContainerSubview.hidden = NO;
              } else if (error) {
                  [UIAlertView showErrorAlertWithError:error];
              }
@@ -94,6 +98,7 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
         self.avatarImageView.image = [UIImage imageNamed:@"defaultUserAvatar"];
         self.avatarPictureView.hidden = YES;
         self.loginSubview.hidden = NO;
+        self.galleryContainerSubview.hidden = YES;
     }
 }
 
@@ -109,7 +114,7 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 
 - (IBAction)didPressCreatePictureButton:(UIButton *)sender {
     //push images collections
-//    [self performSegueWithIdentifier:kNBSPushImageCollectionFromProfileSegueIdentifier sender:self];
+    [self performSegueWithIdentifier:kNBSPushImageCollectionFromProfileSegueIdentifier sender:self];
 }
 
 - (IBAction)didPressFBLoginButton:(id)sender {

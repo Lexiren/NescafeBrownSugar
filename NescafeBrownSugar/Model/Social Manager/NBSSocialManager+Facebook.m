@@ -51,4 +51,31 @@
     }];
 }
 
+- (void)postImageToFB:(UIImage*)image withCompletion:(NBSCompletionBlock)completion {
+    NSData* imageData = UIImageJPEGRepresentation(image, 90);
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+//                                   kAppId, @"app_id",
+//                                   url, @"link",
+                                   imageData, @"source",
+                                   @"TitleString", @"name",
+                                   @"caption string", @"caption",
+                                   @"description string", @"description",
+                                   @"Hey! Look at my drawing!", @"message",
+                                   nil];
+    
+    [FBRequestConnection startWithGraphPath:@"me/feed"
+                                 parameters:params
+                                 HTTPMethod:@"POST"
+                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                              if (!error) {
+                                  // Link posted successfully to Facebook
+                                  NSLog([NSString stringWithFormat:@"result: %@", result]);
+                              } else {
+                                  // An error occurred, we need to handle the error
+                                  NSLog([NSString stringWithFormat:@"%@", error.description]);
+                              }
+                              completion((error == nil), error);
+                          }];
+}
+
 @end

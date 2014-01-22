@@ -17,7 +17,9 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UISwitch *shareFBSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *shareVKSwitch;
-
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (assign, nonatomic) BOOL animateActivityForFB;
+@property (assign, nonatomic) BOOL animateActivityForVK;
 @end
 
 @implementation NBSSharePreviewController
@@ -53,9 +55,57 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - activity indicator
+- (void)changeActivityIndicatorAnimating {
+    if (self.animateActivityForFB || self.animateActivityForVK) {
+        self.view.userInteractionEnabled = NO;
+        [self.activityIndicator startAnimating];
+    } else {
+        self.view.userInteractionEnabled = YES;
+        [self.activityIndicator stopAnimating];
+    }
+}
+
+- (void)setAnimateActivityForFB:(BOOL)animateActivityForFB {
+    _animateActivityForFB = animateActivityForFB;
+    [self changeActivityIndicatorAnimating];
+}
+
+- (void)setAnimateActivityForVK:(BOOL)animateActivityForVK {
+    _animateActivityForVK = animateActivityForVK;
+    [self changeActivityIndicatorAnimating];
+}
+
 #pragma mark - IBActions
 - (IBAction)didTapOkButton:(id)sender {
-    //TODO:Share
+    NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
+    if (self.shareFBSwitch.isOn) {
+        self.animateActivityForFB = YES;
+        if ([socialManager isFacebookLoggedIn]) {
+            [socialManager postImageToFB:self.previewImage withCompletion:^(BOOL success, NSError *error) {
+                self.animateActivityForFB = NO;
+                if (!success) {
+                    [UIAlertView showErrorAlertWithError:error];
+                }
+            }];
+        } else {
+            [socialManager facebookLoginWithCompletion:^(BOOL success, NSError *error) {
+                self.animateActivityForFB = NO;
+                if (success) {
+                    [socialManager postImageToFB:self.previewImage withCompletion:^(BOOL success, NSError *error) {
+                        if (!success) {
+                            [UIAlertView showErrorAlertWithError:error];
+                        }
+                    }];
+                } else {
+                    [UIAlertView showErrorAlertWithError:error];
+                }
+            }];
+        }
+    }
+    if (self.shareVKSwitch.isOn) {
+        
+    }
 }
 - (IBAction)didChangeStateShareVKSwitch:(id)sender {
 }

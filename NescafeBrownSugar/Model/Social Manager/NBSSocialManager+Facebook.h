@@ -15,5 +15,6 @@
 
 - (void)getFacebookUserDataWithCompletion:(NBSCompletionBlockWithUserData)completion;
 
+- (void)postImageToFB:(UIImage*)image withCompletion:(NBSCompletionBlock)completion;
 
 @end
