@@ -7,9 +7,11 @@
 //
 
 #import "NBSSharePreviewController.h"
+#import "UIImage+NBSExtensions.h"
 #import "UIViewController+NBSNavigationItems.h"
 #import "NBSSocialManager+Facebook.h"
 #import "NBSSocialManager+Vkontakte.h"
+#import <Social/Social.h>
 
 NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
 
@@ -79,12 +81,15 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
 #pragma mark - IBActions
 - (IBAction)didTapOkButton:(id)sender {
     NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
+    UIImage *photoBound = [UIImage imageNamed:@"fotoFrame"];
+    UIImage *photoWithBound = [self.previewImage NBS_mergeWithImage:photoBound finalSize:photoBound.size];
+    
     if (self.shareFBSwitch.isOn) {
         self.animateActivityForFB = YES;
         if ([socialManager isFacebookLoggedIn]) {
-            [socialManager postImageToFB:self.previewImage withCompletion:^(BOOL success, NSError *error) {
+            [socialManager postImageToFB:photoWithBound withCompletion:^(BOOL success, NSError *error) {
                 self.animateActivityForFB = NO;
-                if (!success) {
+                if (error) {
                     [UIAlertView showErrorAlertWithError:error];
                 }
             }];
@@ -92,8 +97,10 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
             [socialManager facebookLoginWithCompletion:^(BOOL success, NSError *error) {
                 self.animateActivityForFB = NO;
                 if (success) {
-                    [socialManager postImageToFB:self.previewImage withCompletion:^(BOOL success, NSError *error) {
-                        if (!success) {
+                    self.animateActivityForFB = YES;
+                    [socialManager postImageToFB:photoWithBound withCompletion:^(BOOL success, NSError *error) {
+                        self.animateActivityForFB = NO;
+                        if (error) {
                             [UIAlertView showErrorAlertWithError:error];
                         }
                     }];
@@ -104,7 +111,31 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
         }
     }
     if (self.shareVKSwitch.isOn) {
-        
+        self.animateActivityForVK = YES;
+        if ([socialManager isVkontakteLoggedIn]) {
+            [socialManager postImageToVK:photoWithBound withCompletion:^(BOOL success, NSError *error, id data) {
+                self.animateActivityForVK = NO;
+                if (error) {
+                    [UIAlertView showErrorAlertWithError:error];
+                }
+            }];
+        } else {
+            [socialManager vkontakteLoginWithCompletion:^(BOOL success, NSError *error) {
+                self.animateActivityForVK = NO;
+                if (success) {
+                    self.animateActivityForVK = YES;
+                    [socialManager postImageToVK:photoWithBound
+                                  withCompletion:^(BOOL success, NSError *error, id data) {
+                          self.animateActivityForVK = NO;
+                          if (error) {
+                              [UIAlertView showErrorAlertWithError:error];
+                          }
+                      }];
+                } else {
+                    [UIAlertView showErrorAlertWithError:error];
+                }
+            }];
+        }
     }
 }
 - (IBAction)didChangeStateShareVKSwitch:(id)sender {

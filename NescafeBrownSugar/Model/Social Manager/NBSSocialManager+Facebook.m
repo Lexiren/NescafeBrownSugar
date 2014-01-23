@@ -9,6 +9,7 @@
 #import "NBSSocialManager+Facebook.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "NBSUser.h"
+#import <Social/Social.h>
 
 @implementation NBSSocialManager (Facebook)
 
@@ -51,31 +52,80 @@
     }];
 }
 
-- (void)postImageToFB:(UIImage*)image withCompletion:(NBSCompletionBlock)completion {
-    NSData* imageData = UIImageJPEGRepresentation(image, 90);
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-//                                   kAppId, @"app_id",
-//                                   url, @"link",
-                                   imageData, @"source",
-                                   @"TitleString", @"name",
-                                   @"caption string", @"caption",
-                                   @"description string", @"description",
-                                   @"Hey! Look at my drawing!", @"message",
-                                   nil];
+- (void)postImageToFB:(UIImage *)image withCompletion:(NBSCompletionBlock)completion {
+    if (completion) {
+        completion(YES, nil);
+    }
+//
+//    NSString *strMessage = @"This is the photo caption";
+//    NSMutableDictionary* photosParams = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+//                                         image,@"source",
+//                                         strMessage,@"message",
+//                                         nil];
+//    
+//    [FBRequestConnection startForUploadPhoto:image
+//                           completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//                               
+//                           }];
+}
+
+//- (void)request:(FBRequest *)request didLoad:(id)result {
+
+    
+    /*
+    // We're going to assume you have a UIImage named image_ stored somewhere.
+    FBRequestConnection *connection = [[FBRequestConnection alloc] init];
+    
+    // First request uploads the photo.
+    FBRequest *request1 = [FBRequest
+                           requestForUploadPhoto:image];
+    [connection addRequest:request1
+         completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                                 if (error && completion) {
+                                     completion(NO, error);
+                                 }
+                             }
+            batchEntryName:@"photopost"
+     ];
+
+    FBRequest *request2 = [FBRequest
+                           requestForGraphPath:@"{result=photopost:$.id}"];
+    [connection addRequest:request2
+         completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+             if (!error && result) {
+                 NSString *ID = [result objectForKey:@"id"];
+                 [self postDataWithPhoto:ID withCompletion:completion];
+             } else {
+                 if (completion) {
+                     completion(NO, error);
+                 }
+             }
+         }
+     ];
+    
+    [connection start];
+}
+
+-(void)postDataWithPhoto:(NSString*)photoID withCompletion:(NBSCompletionBlock)completion {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:@"test image post on my wall" forKey:@"message"];
+    
+    if(photoID) {
+        NSString *urlString = [NSString stringWithFormat:
+                               @"https://graph.facebook.com/%@?access_token=%@", photoID,
+                               [[[[FBSession activeSession] accessTokenData] accessToken] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        [params setObject:urlString forKey:@"picture"];
+    }
     
     [FBRequestConnection startWithGraphPath:@"me/feed"
                                  parameters:params
                                  HTTPMethod:@"POST"
-                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                              if (!error) {
-                                  // Link posted successfully to Facebook
-                                  NSLog([NSString stringWithFormat:@"result: %@", result]);
-                              } else {
-                                  // An error occurred, we need to handle the error
-                                  NSLog([NSString stringWithFormat:@"%@", error.description]);
-                              }
-                              completion((error == nil), error);
-                          }];
-}
+                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error)
+    {
+        if (completion) {
+            completion((error == nil), error);
+        }
+    }];
+}*/
 
 @end

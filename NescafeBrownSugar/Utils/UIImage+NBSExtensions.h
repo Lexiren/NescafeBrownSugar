@@ -10,6 +10,7 @@
 
 @interface UIImage (NBSExtensions)
 
--(UIImage*)NBS_cropFromRect:(CGRect)fromRect;
+- (UIImage *)NBS_cropFromRect:(CGRect)fromRect;
+- (UIImage *)NBS_mergeWithImage:(UIImage *)topImage finalSize:(CGSize)finalSize;
 
 @end

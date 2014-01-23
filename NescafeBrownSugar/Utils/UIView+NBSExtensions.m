@@ -10,8 +10,7 @@
 
 @implementation UIView (NBSExtensions)
 
--(UIImage*)NBS_makeSnapshot
-{
+- (UIImage *)NBS_makeSnapshot {
     CGRect wholeRect = self.bounds;
     
     UIGraphicsBeginImageContextWithOptions(wholeRect.size, YES, [UIScreen mainScreen].scale);

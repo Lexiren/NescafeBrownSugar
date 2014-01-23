@@ -17,4 +17,6 @@
 
 - (void)getVkontakteUserDataWithCompletion:(NBSCompletionBlockWithUserData)completion;
 
+- (void)postImageToVK:(UIImage *)image withCompletion:(NBSCompletionBlockWithData)completion;
+
 @end

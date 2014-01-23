@@ -10,6 +10,6 @@
 
 @interface UIView (NBSExtensions)
 
--(UIImage*)NBS_makeSnapshot;
+- (UIImage *)NBS_makeSnapshot;
 
 @end

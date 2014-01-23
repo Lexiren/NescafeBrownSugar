@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:NescafeBrownSugar/View Controllers/Main Work screen/NBSWhiteBGCameraOverlay.xib">
-   </FileRef>
-   <FileRef
       location = "group:NescafeBrownSugar.xcodeproj">
    </FileRef>
    <FileRef

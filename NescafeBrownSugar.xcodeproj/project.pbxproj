@@ -47,6 +47,7 @@
 		84AB90BD1875FF2E005EEBE5 /* NBSSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AB90BC1875FF2E005EEBE5 /* NBSSocialManager.m */; };
 		84B07DD8188D962B00D98EA2 /* UIImage+NBSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B07DD7188D962B00D98EA2 /* UIImage+NBSExtensions.m */; };
 		84B07DDB188D96C700D98EA2 /* UIView+NBSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B07DDA188D96C700D98EA2 /* UIView+NBSExtensions.m */; };
+		84EB6CD11890198D00FB38CD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EB6CD01890198D00FB38CD /* Social.framework */; };
 		84EF43561882C0A200E029AC /* 00_menu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF434A1882C0A200E029AC /* 00_menu.jpg */; };
 		84EF43571882C0A200E029AC /* 01_help.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF434B1882C0A200E029AC /* 01_help.jpg */; };
 		84EF43581882C0A200E029AC /* 02_enter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF434C1882C0A200E029AC /* 02_enter.jpg */; };
@@ -147,6 +148,7 @@
 		84B07DD7188D962B00D98EA2 /* UIImage+NBSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+NBSExtensions.m"; path = "Utils/UIImage+NBSExtensions.m"; sourceTree = "<group>"; };
 		84B07DD9188D96C700D98EA2 /* UIView+NBSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+NBSExtensions.h"; path = "Utils/UIView+NBSExtensions.h"; sourceTree = "<group>"; };
 		84B07DDA188D96C700D98EA2 /* UIView+NBSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+NBSExtensions.m"; path = "Utils/UIView+NBSExtensions.m"; sourceTree = "<group>"; };
+		84EB6CD01890198D00FB38CD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		84EF434A1882C0A200E029AC /* 00_menu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00_menu.jpg; sourceTree = "<group>"; };
 		84EF434B1882C0A200E029AC /* 01_help.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01_help.jpg; sourceTree = "<group>"; };
 		84EF434C1882C0A200E029AC /* 02_enter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02_enter.jpg; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84EB6CD11890198D00FB38CD /* Social.framework in Frameworks */,
 				84506942187863760087FD3F /* MobileCoreServices.framework in Frameworks */,
 				8432C3E518757F3E005C26B8 /* CoreGraphics.framework in Frameworks */,
 				8432C3E718757F3E005C26B8 /* UIKit.framework in Frameworks */,
@@ -259,6 +262,7 @@
 		8432C3E118757F3E005C26B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84EB6CD01890198D00FB38CD /* Social.framework */,
 				84506941187863760087FD3F /* MobileCoreServices.framework */,
 				06D72EC31875F568003B3762 /* CoreLocation.framework */,
 				8432C3E218757F3E005C26B8 /* Foundation.framework */,
