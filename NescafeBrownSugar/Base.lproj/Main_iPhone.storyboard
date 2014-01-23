@@ -247,6 +247,100 @@
             </objects>
             <point key="canvasLocation" x="-622" y="860"/>
         </scene>
+        <!--About Project View Controller - Про проект-->
+        <scene sceneID="rfj-vt-blc">
+            <objects>
+                <viewController storyboardIdentifier="AboutProjectVC" id="MGb-qH-3C9" customClass="NBSAboutProjectViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YkV-OW-c8u"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vcq-sL-9Zc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hQS-7S-Z3N">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgApp" translatesAutoresizingMaskIntoConstraints="NO" id="uFk-Ik-MyP" userLabel="BG Image View - 02_enter.png">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoAboutNeskafe" translatesAutoresizingMaskIntoConstraints="NO" id="9zW-Xw-fdL">
+                                <rect key="frame" x="69" y="75" width="177" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="CWH-Ng-GlT"/>
+                                    <constraint firstAttribute="width" constant="177" id="u6I-P7-MnF"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5l-gR-LeE">
+                                <rect key="frame" x="20" y="118" width="280" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="zWc-bQ-zZo"/>
+                                </constraints>
+                                <string key="text">Кайфуй від творчості та ділися з друзями натхненням в соціальних мережах. А додаток від Nescafe 3в1 Brown Sugar — тобі в допомогу! 
+Заряди свій мозок для нових ідей!</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Подарунки" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g3-Gr-QLT">
+                                <rect key="frame" x="96" y="238" width="128" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logoAboutSEKTA" translatesAutoresizingMaskIntoConstraints="NO" id="ug7-4G-nrT">
+                                <rect key="frame" x="113" y="276" width="94" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="CdT-5l-uAb"/>
+                                    <constraint firstAttribute="width" constant="94" id="EiU-56-T2h"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3H-uv-m5X">
+                                <rect key="frame" x="20" y="327" width="280" height="226"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="226" id="6Af-5m-q4h"/>
+                                </constraints>
+                                <string key="text">Щотижня отримуй нагоду стати власником фірмовoї футболки від Sekta з власним принтом та запас Nescafe 3в1 Brown Sugar. Не втрачай шанс потішити себе! Стань фаном спiльнот Nescafe 3в1 та бери участь в акції! 
+А ще – не забудь долучати до голосування друзiв. Більше like – більше шансів на перемогу!</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2g3-Gr-QLT" firstAttribute="top" secondItem="i5l-gR-LeE" secondAttribute="bottom" constant="17" id="2pZ-E3-rod"/>
+                            <constraint firstItem="9zW-Xw-fdL" firstAttribute="top" secondItem="YkV-OW-c8u" secondAttribute="bottom" constant="11" id="4IT-7S-tVh"/>
+                            <constraint firstAttribute="centerX" secondItem="2g3-Gr-QLT" secondAttribute="centerX" id="7KT-z8-gdB"/>
+                            <constraint firstAttribute="trailing" secondItem="i5l-gR-LeE" secondAttribute="trailing" constant="20" id="9mw-pv-PRK"/>
+                            <constraint firstAttribute="centerX" secondItem="9zW-Xw-fdL" secondAttribute="centerX" constant="2.5" id="Si6-LE-UYU"/>
+                            <constraint firstAttribute="trailing" secondItem="z3H-uv-m5X" secondAttribute="trailing" constant="20" id="VZk-GN-UbR"/>
+                            <constraint firstItem="i5l-gR-LeE" firstAttribute="leading" secondItem="hQS-7S-Z3N" secondAttribute="leading" constant="20" id="aUq-Yf-ZS7"/>
+                            <constraint firstAttribute="centerX" secondItem="ug7-4G-nrT" secondAttribute="centerX" id="ebd-OE-I0z"/>
+                            <constraint firstItem="i5l-gR-LeE" firstAttribute="top" secondItem="9zW-Xw-fdL" secondAttribute="bottom" constant="8" id="fV0-zN-W4n"/>
+                            <constraint firstItem="z3H-uv-m5X" firstAttribute="leading" secondItem="hQS-7S-Z3N" secondAttribute="leading" constant="20" id="khm-5z-h43"/>
+                            <constraint firstItem="z3H-uv-m5X" firstAttribute="top" secondItem="ug7-4G-nrT" secondAttribute="bottom" constant="10" id="rhZ-to-3Jd"/>
+                            <constraint firstItem="ug7-4G-nrT" firstAttribute="top" secondItem="2g3-Gr-QLT" secondAttribute="bottom" constant="8" id="ycH-iZ-8bw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Про проект" id="tW2-tK-FuM"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="firstTextView" destination="i5l-gR-LeE" id="lSr-W1-Z5D"/>
+                        <outlet property="pricesLabel" destination="2g3-Gr-QLT" id="tbo-wF-WmH"/>
+                        <outlet property="secondTextView" destination="z3H-uv-m5X" id="BXG-Zt-hAg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YhQ-Zf-BwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-153" y="2223"/>
+        </scene>
         <!--Login View Controller - Залогинься-->
         <scene sceneID="MmK-eG-EGg">
             <objects>
@@ -2342,14 +2436,15 @@
     <resources>
         <image name="bgApp" width="320" height="568"/>
         <image name="bgMenu" width="320" height="568"/>
-        <image name="bgUserpic" width="145" height="145"/>
+        <image name="bgUserpic" width="146" height="146"/>
         <image name="defaultUserAvatar" width="125" height="125"/>
         <image name="loginFbBtn" width="193" height="48"/>
         <image name="loginVkBtn" width="193" height="48"/>
-        <image name="logoAboutNeskafe" width="177" height="34"/>
+        <image name="logoAboutNeskafe" width="177" height="35"/>
+        <image name="logoAboutSEKTA" width="94" height="41"/>
         <image name="photoWithStick" width="320" height="568"/>
         <image name="photoWithStickForShare" width="320" height="568"/>
-        <image name="shareFB_logo" width="108" height="22"/>
+        <image name="shareFB_logo" width="109" height="22"/>
         <image name="shareVK_logo" width="127" height="23"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

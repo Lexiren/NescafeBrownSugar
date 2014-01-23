@@ -14,6 +14,7 @@
 #import "NBSImagesCollectionContainerViewController.h"
 #import "NBSUser.h"
 #import <QuartzCore/QuartzCore.h>
+#import "NBSDesignAdditions.h"
 
 NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 
@@ -36,10 +37,10 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.loginSubview.hidden = YES;
-    self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.width/2;
-    self.avatarImageView.layer.masksToBounds = YES;
-    self.avatarPictureView.layer.cornerRadius = self.avatarPictureView.frame.size.width/2;
-    self.avatarPictureView.layer.masksToBounds = YES;
+    [self.avatarImageView makeHalfHeightCornerRadius];
+    [self.avatarPictureView makeHalfHeightCornerRadius];
+    
+    self.nameLabel.font = [UIFont standartLightFontWithSize:20.f];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

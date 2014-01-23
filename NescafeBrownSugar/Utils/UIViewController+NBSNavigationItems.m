@@ -10,9 +10,11 @@
 #import "NBSNavigationController.h"
 #import "UIViewController+RESideMenu.h"
 #import "RESideMenu.h"
+#import "NBSDesignAdditions.h"
 
 #define kCPInsetCorrectionValue 10.0
-#define kCPBarButtonStandartInset -20.0
+#define kCPBarButtonStandartInset -10.0
+#define kCPDefaultButtonFrame CGRectMake(0.0, 0.0, 30.0, 30.0)
 
 static inline CGFloat cpcorrectedInsetValue(CGFloat value)
 {
@@ -36,7 +38,7 @@ static inline CGFloat cpcorrectedInsetValue(CGFloat value)
         case NBSNavigationTypeBrown: {
             [backButton setImage:[UIImage imageNamed:@"iconBackBrown"] forState:UIControlStateNormal];
             [cameraButton setImage:[UIImage imageNamed:@"iconCameraOn"] forState:UIControlStateNormal];
-            [titleAttributes setValue:[UIColor colorWithRed:93/255.f green:41/255.f blue:0 alpha:1.f]
+            [titleAttributes setValue:[UIColor darkBrown]
                                forKey:UITextAttributeTextColor];
             break;
         }
@@ -69,7 +71,7 @@ static inline CGFloat cpcorrectedInsetValue(CGFloat value)
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [backButton setImage:[UIImage imageNamed:@"iconBack"]
                     forState:UIControlStateNormal];
-    backButton.frame = CGRectMake(0.0, 0.0, 44.0, 44.0);
+    backButton.frame = kCPDefaultButtonFrame;
     
     [backButton addTarget:self action:@selector(backButtonDidPress:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -78,7 +80,7 @@ static inline CGFloat cpcorrectedInsetValue(CGFloat value)
 }
 
 - (UIBarButtonItem *)navigateBackBarButtonItem {
-    return [self barButtonItemWithButton:[self navigateBackButton]];
+    return [self leftBarButtonItemWithButton:[self navigateBackButton]];
 }
 
 - (UIBarButtonItem *)leftMenuBarButtonItem {
@@ -88,10 +90,10 @@ static inline CGFloat cpcorrectedInsetValue(CGFloat value)
              forControlEvents:UIControlEventTouchUpInside];
     [leftMenuButton setImage:[UIImage imageNamed:@"iconMenu"]
                     forState:UIControlStateNormal];
-    leftMenuButton.frame = CGRectMake(0.0, 0.0, 44.0, 44.0);
+    leftMenuButton.frame = kCPDefaultButtonFrame;
     leftMenuButton.imageEdgeInsets = UIEdgeInsetsMake(0, cpcorrectedInsetValue(kCPBarButtonStandartInset), 0, 0);
     
-    return [self barButtonItemWithButton:leftMenuButton];
+    return [self leftBarButtonItemWithButton:leftMenuButton];
 }
 
 - (UIBarButtonItem *)rightCameraBarButtonItem {
@@ -101,10 +103,9 @@ static inline CGFloat cpcorrectedInsetValue(CGFloat value)
                 forControlEvents:UIControlEventTouchUpInside];
     [rightCameraButton setImage:[UIImage imageNamed:@"iconCameraOff"]
                        forState:UIControlStateNormal];
-    rightCameraButton.frame = CGRectMake(0.0, 0.0, 44.0, 44.0);
+    rightCameraButton.frame = kCPDefaultButtonFrame;
     
-    rightCameraButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, cpcorrectedInsetValue(kCPBarButtonStandartInset));
-    return [self barButtonItemWithButton:rightCameraButton];
+    return [self rightBarButtonItemWithButton:rightCameraButton];
 }
 
 #pragma mark - Private
@@ -113,8 +114,13 @@ static inline CGFloat cpcorrectedInsetValue(CGFloat value)
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (UIBarButtonItem *)barButtonItemWithButton:(UIButton *)button {
-    //button.imageEdgeInsets = UIEdgeInsetsMake(0, cpcorrectedInsetValue(kCPBarButtonStandartInset), 0, 0);
+- (UIBarButtonItem *)leftBarButtonItemWithButton:(UIButton *)button {
+    button.imageEdgeInsets = UIEdgeInsetsMake(0, cpcorrectedInsetValue(kCPBarButtonStandartInset), 0, 0);
+    return [[UIBarButtonItem alloc] initWithCustomView:button];
+}
+
+- (UIBarButtonItem *)rightBarButtonItemWithButton:(UIButton *)button {
+    button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, cpcorrectedInsetValue(kCPBarButtonStandartInset));
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 

@@ -14,6 +14,17 @@
 #import "NBSNavigationController.h"
 #import "NBSInstructionsViewController.h"
 #import "UIViewController+NBSNavigationItems.h"
+#import "NBSDesignAdditions.h"
+#import "NBSAboutProjectViewController.h"
+
+enum
+{
+    kCPMenuProfileRow = 0,
+    kCPMenuDrawRow,
+    kCPMenuAboutProjectRow,
+    kCPMenuHelpRow,
+    kCPMenuNumberOfRows
+};
 
 NSString *const kNBSMenuVCIdentifier = @"MenuVC";
 
@@ -25,48 +36,52 @@ NSString *const kNBSMenuVCIdentifier = @"MenuVC";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MenuCell"];
     switch (indexPath.row) {
-        case 0:
-            cell.textLabel.text = @"Профiль";
+        case kCPMenuProfileRow:
+            cell.textLabel.text = NSLocalizedString(@"MenuProfileTitle", nil);
             break;
-        case 1:
-            cell.textLabel.text = @"Намалювати";
+        case kCPMenuDrawRow:
+            cell.textLabel.text = NSLocalizedString(@"MenuDrawTitle", nil);
             break;
-        case 2:
-            cell.textLabel.text = @"Про проект";
+        case kCPMenuAboutProjectRow:
+            cell.textLabel.text = NSLocalizedString(@"MenuAboutProjectTitle", nil);
             break;
-        case 3:
-            cell.textLabel.text = @"Допомога";
+        case kCPMenuHelpRow:
+            cell.textLabel.text = NSLocalizedString(@"MenuHelpTitle", nil);
             break;
         default:
             break;
     }
+    cell.textLabel.font = [UIFont standartLightFontWithSize:23.f];
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return kCPMenuNumberOfRows;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UIViewController *viewController = nil;
     
     switch (indexPath.row) {
-        case 0:
+        case kCPMenuProfileRow:
         {
             NBSProfileViewController *profileVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSProfileVCIdentifier];
             viewController = profileVC;
         }
             break;
-        case 1:
+        case kCPMenuDrawRow:
         {
             NBSImagesCollectionContainerViewController *imagesCollectionVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSImagesCollectionVCIdentifier];
             viewController = imagesCollectionVC;
         }
             break;
-        case 2:
-            [UIAlertView showComingSoonAlert];
+        case kCPMenuAboutProjectRow:
+        {
+            NBSAboutProjectViewController *aboutProjectVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSAboutProjectVCIdentifier];
+            viewController = aboutProjectVC;
+        }
             break;
-        case 3: {
+        case kCPMenuHelpRow: {
             NBSInstructionsViewController *helpVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSHelpVCIdentifier];
             [helpVC setSkipButtonHidden:YES];
             viewController = helpVC;
