@@ -48,7 +48,7 @@
 #pragma mark - photos
 
 - (void)postImageToVK:(UIImage *)image withCompletion:(NBSCompletionBlockWithData)completion {
-    self.userDataCompletion = completion;
+    self.sharePhotoCompletion = completion;
     self.sharePhoto = image;
     [self startRequestServerToUploadPhoto];
 }

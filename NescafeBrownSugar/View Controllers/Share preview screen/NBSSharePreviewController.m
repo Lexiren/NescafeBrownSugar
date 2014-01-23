@@ -62,9 +62,11 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
     if (self.animateActivityForFB || self.animateActivityForVK) {
         self.view.userInteractionEnabled = NO;
         [self.activityIndicator startAnimating];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     } else {
         self.view.userInteractionEnabled = YES;
         [self.activityIndicator stopAnimating];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     }
 }
 

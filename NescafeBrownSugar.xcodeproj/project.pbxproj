@@ -23,7 +23,6 @@
 		8432C3E318757F3E005C26B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432C3E218757F3E005C26B8 /* Foundation.framework */; };
 		8432C3E518757F3E005C26B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432C3E418757F3E005C26B8 /* CoreGraphics.framework */; };
 		8432C3E718757F3E005C26B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432C3E618757F3E005C26B8 /* UIKit.framework */; };
-		8432C3ED18757F3E005C26B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8432C3EB18757F3E005C26B8 /* InfoPlist.strings */; };
 		8432C3EF18757F3E005C26B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432C3EE18757F3E005C26B8 /* main.m */; };
 		8432C3F318757F3E005C26B8 /* NBSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432C3F218757F3E005C26B8 /* NBSAppDelegate.m */; };
 		8432C3F618757F3E005C26B8 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8432C3F418757F3E005C26B8 /* Main_iPhone.storyboard */; };
@@ -32,7 +31,6 @@
 		8432C40518757F3E005C26B8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432C40418757F3E005C26B8 /* XCTest.framework */; };
 		8432C40618757F3E005C26B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432C3E218757F3E005C26B8 /* Foundation.framework */; };
 		8432C40718757F3E005C26B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432C3E618757F3E005C26B8 /* UIKit.framework */; };
-		8432C40F18757F3E005C26B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8432C40D18757F3E005C26B8 /* InfoPlist.strings */; };
 		8432C41118757F3E005C26B8 /* NescafeBrownSugarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432C41018757F3E005C26B8 /* NescafeBrownSugarTests.m */; };
 		8432C4241875924A005C26B8 /* NBSInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432C4231875924A005C26B8 /* NBSInstructionsViewController.m */; };
 		845069131876E8080087FD3F /* NBSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 845069121876E8080087FD3F /* NBSUser.m */; };
@@ -83,8 +81,6 @@
 /* Begin PBXFileReference section */
 		067B15D418773C5C0037DCE3 /* NBSSocialManager+Vkontakte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NBSSocialManager+Vkontakte.h"; path = "Model/Social Manager/NBSSocialManager+Vkontakte.h"; sourceTree = "<group>"; };
 		067B15D518773C5C0037DCE3 /* NBSSocialManager+Vkontakte.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NBSSocialManager+Vkontakte.m"; path = "Model/Social Manager/NBSSocialManager+Vkontakte.m"; sourceTree = "<group>"; };
-		067B15E4187749600037DCE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		067B15E618774B3F0037DCE3 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		067B15FA187767310037DCE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		067B15FB187829F00037DCE3 /* NBSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSProfileViewController.h; path = "View Controllers/Login/NBSProfileViewController.h"; sourceTree = "<group>"; };
 		067B15FC187829F00037DCE3 /* NBSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSProfileViewController.m; path = "View Controllers/Login/NBSProfileViewController.m"; sourceTree = "<group>"; };
@@ -111,7 +107,6 @@
 		8432C3E418757F3E005C26B8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8432C3E618757F3E005C26B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8432C3EA18757F3E005C26B8 /* NescafeBrownSugar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NescafeBrownSugar-Info.plist"; sourceTree = "<group>"; };
-		8432C3EC18757F3E005C26B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8432C3EE18757F3E005C26B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8432C3F018757F3E005C26B8 /* NescafeBrownSugar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NescafeBrownSugar-Prefix.pch"; sourceTree = "<group>"; };
 		8432C3F118757F3E005C26B8 /* NBSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBSAppDelegate.h; sourceTree = "<group>"; };
@@ -121,7 +116,6 @@
 		8432C40318757F3E005C26B8 /* NescafeBrownSugarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NescafeBrownSugarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8432C40418757F3E005C26B8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8432C40C18757F3E005C26B8 /* NescafeBrownSugarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NescafeBrownSugarTests-Info.plist"; sourceTree = "<group>"; };
-		8432C40E18757F3E005C26B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8432C41018757F3E005C26B8 /* NescafeBrownSugarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NescafeBrownSugarTests.m; sourceTree = "<group>"; };
 		8432C4221875924A005C26B8 /* NBSInstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSInstructionsViewController.h; path = "View Controllers/Instructions/NBSInstructionsViewController.h"; sourceTree = "<group>"; };
 		8432C4231875924A005C26B8 /* NBSInstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSInstructionsViewController.m; path = "View Controllers/Instructions/NBSInstructionsViewController.m"; sourceTree = "<group>"; };
@@ -157,6 +151,7 @@
 		84B07DD7188D962B00D98EA2 /* UIImage+NBSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+NBSExtensions.m"; path = "Utils/UIImage+NBSExtensions.m"; sourceTree = "<group>"; };
 		84B07DD9188D96C700D98EA2 /* UIView+NBSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+NBSExtensions.h"; path = "Utils/UIView+NBSExtensions.h"; sourceTree = "<group>"; };
 		84B07DDA188D96C700D98EA2 /* UIView+NBSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+NBSExtensions.m"; path = "Utils/UIView+NBSExtensions.m"; sourceTree = "<group>"; };
+		84DD7B1218913684003B9986 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		84EB6CD01890198D00FB38CD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		84EF434A1882C0A200E029AC /* 00_menu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00_menu.jpg; sourceTree = "<group>"; };
 		84EF434B1882C0A200E029AC /* 01_help.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01_help.jpg; sourceTree = "<group>"; };
@@ -323,7 +318,6 @@
 			isa = PBXGroup;
 			children = (
 				8432C3EA18757F3E005C26B8 /* NescafeBrownSugar-Info.plist */,
-				8432C3EB18757F3E005C26B8 /* InfoPlist.strings */,
 				8432C3EE18757F3E005C26B8 /* main.m */,
 				8432C3F018757F3E005C26B8 /* NescafeBrownSugar-Prefix.pch */,
 				067B15E3187749600037DCE3 /* Localizable.strings */,
@@ -344,7 +338,6 @@
 			isa = PBXGroup;
 			children = (
 				8432C40C18757F3E005C26B8 /* NescafeBrownSugarTests-Info.plist */,
-				8432C40D18757F3E005C26B8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -612,7 +605,6 @@
 				842C7AF31886F850004CBA0C /* NBSPhotoCameraOverlay.xib in Resources */,
 				84EF43581882C0A200E029AC /* 02_enter.jpg in Resources */,
 				84EF435A1882C0A200E029AC /* 04_choose-image.jpg in Resources */,
-				8432C3ED18757F3E005C26B8 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,7 +612,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8432C40F18757F3E005C26B8 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,18 +707,9 @@
 		067B15E3187749600037DCE3 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				067B15E4187749600037DCE3 /* en */,
-				067B15E618774B3F0037DCE3 /* uk */,
+				84DD7B1218913684003B9986 /* Base */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		8432C3EB18757F3E005C26B8 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8432C3EC18757F3E005C26B8 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		8432C3F418757F3E005C26B8 /* Main_iPhone.storyboard */ = {
@@ -744,14 +726,6 @@
 				8432C3F818757F3E005C26B8 /* Base */,
 			);
 			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
-		8432C40D18757F3E005C26B8 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8432C40E18757F3E005C26B8 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
