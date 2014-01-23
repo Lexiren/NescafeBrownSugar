@@ -15,6 +15,7 @@
 #import "NBSInstructionsViewController.h"
 #import "UIViewController+NBSNavigationItems.h"
 #import "NBSDesignAdditions.h"
+#import "NBSAboutProjectViewController.h"
 
 enum
 {
@@ -75,7 +76,10 @@ NSString *const kNBSMenuVCIdentifier = @"MenuVC";
         }
             break;
         case kCPMenuAboutProjectRow:
-            [UIAlertView showComingSoonAlert];
+        {
+            NBSAboutProjectViewController *aboutProjectVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSAboutProjectVCIdentifier];
+            viewController = aboutProjectVC;
+        }
             break;
         case kCPMenuHelpRow: {
             NBSInstructionsViewController *helpVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSHelpVCIdentifier];
