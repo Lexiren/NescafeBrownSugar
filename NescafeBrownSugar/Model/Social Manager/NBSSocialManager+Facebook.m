@@ -52,7 +52,7 @@
     }];
 }
 
-- (void)performSharePhotoCompletionWithSuccess:(BOOL)success error:(NSError *)error data:(id)data {
+- (void)performSharePhotoFBCompletionWithSuccess:(BOOL)success error:(NSError *)error data:(id)data {
     if (self.sharePhotoFBCompletion) {
         self.sharePhotoFBCompletion(success, error, data);
         self.sharePhotoFBCompletion = nil;
@@ -74,6 +74,10 @@
                                              if (session.isOpen && !error) {
                                                  [FBSession setActiveSession:session];
                                                  [self postImage:image];
+                                             } else {
+                                                 [self performSharePhotoFBCompletionWithSuccess:NO
+                                                                                          error:nil
+                                                                                           data:nil];
                                              }
                                          }];
     }else{
@@ -91,7 +95,7 @@
                                  parameters:params
                                  HTTPMethod:@"POST"
                           completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                              [self performSharePhotoCompletionWithSuccess:(error == nil)
+                              [self performSharePhotoFBCompletionWithSuccess:(error == nil)
                                                                      error:error
                                                                       data:result];
                           } ];

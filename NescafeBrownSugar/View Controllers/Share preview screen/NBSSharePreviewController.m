@@ -93,6 +93,8 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
                 self.animateActivityForFB = NO;
                 if (error) {
                     [UIAlertView showErrorAlertWithError:error];
+                } else {
+                    [UIAlertView showSimpleAlertWithMessage:@"Фото успiшно розмiщене у Facebook"];
                 }
             }];
         } else {
@@ -104,7 +106,9 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
                         self.animateActivityForFB = NO;
                         if (error) {
                             [UIAlertView showErrorAlertWithError:error];
-                        }
+                        } else {
+                            [UIAlertView showSimpleAlertWithMessage:@"Фото успiшно розмiщене у Facebook"];
+                       }
                     }];
                 } else {
                     [UIAlertView showErrorAlertWithError:error];
@@ -119,6 +123,8 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
                 self.animateActivityForVK = NO;
                 if (error) {
                     [UIAlertView showErrorAlertWithError:error];
+                } else {
+                    [UIAlertView showSimpleAlertWithMessage:@"Фото успiшно розмiщене у Vkontakte"];
                 }
             }];
         } else {
@@ -131,6 +137,8 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
                           self.animateActivityForVK = NO;
                           if (error) {
                               [UIAlertView showErrorAlertWithError:error];
+                          } else {
+                              [UIAlertView showSimpleAlertWithMessage:@"Фото успiшно розмiщене у Vkontakte"];
                           }
                       }];
                 } else {

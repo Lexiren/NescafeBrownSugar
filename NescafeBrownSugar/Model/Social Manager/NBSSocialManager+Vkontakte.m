@@ -45,7 +45,7 @@
     [request start];
 }
 
-- (void)performSharePhotoCompletionWithSuccess:(BOOL)success error:(NSError *)error data:(id)data {
+- (void)performSharePhotoVKCompletionWithSuccess:(BOOL)success error:(NSError *)error data:(id)data {
     if (self.sharePhotoVKCompletion) {
         self.sharePhotoVKCompletion(success, error, data);
         self.sharePhotoVKCompletion = nil;
@@ -115,12 +115,12 @@
                                                options:kNilOptions
                                                  error:&error];
         if (error) {
-            [self performSharePhotoCompletionWithSuccess:NO error:error data:nil];
+            [self performSharePhotoVKCompletionWithSuccess:NO error:error data:nil];
         } else {
             // Если есть описание ошибки в ответе
             NSString *errorMsg = [[dict objectForKey:@"error"] objectForKey:@"error_msg"];
             if (errorMsg.length) {
-                [self performSharePhotoCompletionWithSuccess:NO error:nil data:nil];
+                [self performSharePhotoVKCompletionWithSuccess:NO error:nil data:nil];
                 NSLog(@"Server response: %@ \nError: %@", dict, errorMsg);
             }
         }
@@ -181,7 +181,7 @@
         }
     } else if ([request.signature isEqualToString:KNBSVkontakteWallPostRequestSignature]) {
         NSLog(@"%@", [response description]);
-        [self performSharePhotoCompletionWithSuccess:YES error:nil data:response];
+        [self performSharePhotoVKCompletionWithSuccess:YES error:nil data:response];
     }
 }
 
@@ -197,7 +197,7 @@ connectionErrorOccured:(NSError *)error {
                [request.signature isEqualToString:KNBSVkontaktePhotosWallSaveRequestSignature] ||
                [request.signature isEqualToString:KNBSVkontakteWallPostRequestSignature])
     {
-        [self performSharePhotoCompletionWithSuccess:NO
+        [self performSharePhotoVKCompletionWithSuccess:NO
                                                error:error
                                                 data:nil];
     }
@@ -213,7 +213,7 @@ parsingErrorOccured:(NSError *)error {
                [request.signature isEqualToString:KNBSVkontaktePhotosWallSaveRequestSignature] ||
                [request.signature isEqualToString:KNBSVkontakteWallPostRequestSignature])
     {
-        [self performSharePhotoCompletionWithSuccess:NO
+        [self performSharePhotoVKCompletionWithSuccess:NO
                                                error:error
                                                 data:nil];
     }
@@ -229,7 +229,7 @@ responseErrorOccured:(id)error {
                [request.signature isEqualToString:KNBSVkontaktePhotosWallSaveRequestSignature] ||
                [request.signature isEqualToString:KNBSVkontakteWallPostRequestSignature])
     {
-        [self performSharePhotoCompletionWithSuccess:NO
+        [self performSharePhotoVKCompletionWithSuccess:NO
                                                error:error
                                                 data:nil];
     }
