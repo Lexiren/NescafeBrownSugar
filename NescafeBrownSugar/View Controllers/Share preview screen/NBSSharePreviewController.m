@@ -89,7 +89,7 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
     if (self.shareFBSwitch.isOn) {
         self.animateActivityForFB = YES;
         if ([socialManager isFacebookLoggedIn]) {
-            [socialManager postImageToFB:photoWithBound withCompletion:^(BOOL success, NSError *error) {
+            [socialManager postImageToFB:photoWithBound withCompletion:^(BOOL success, NSError *error, id data) {
                 self.animateActivityForFB = NO;
                 if (error) {
                     [UIAlertView showErrorAlertWithError:error];
@@ -100,7 +100,7 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
                 self.animateActivityForFB = NO;
                 if (success) {
                     self.animateActivityForFB = YES;
-                    [socialManager postImageToFB:photoWithBound withCompletion:^(BOOL success, NSError *error) {
+                    [socialManager postImageToFB:photoWithBound withCompletion:^(BOOL success, NSError *error, id data) {
                         self.animateActivityForFB = NO;
                         if (error) {
                             [UIAlertView showErrorAlertWithError:error];

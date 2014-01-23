@@ -52,80 +52,49 @@
     }];
 }
 
-- (void)postImageToFB:(UIImage *)image withCompletion:(NBSCompletionBlock)completion {
-    if (completion) {
-        completion(YES, nil);
+- (void)performSharePhotoCompletionWithSuccess:(BOOL)success error:(NSError *)error data:(id)data {
+    if (self.sharePhotoFBCompletion) {
+        self.sharePhotoFBCompletion(success, error, data);
+        self.sharePhotoFBCompletion = nil;
+        self.sharePhoto = nil;
     }
-//
-//    NSString *strMessage = @"This is the photo caption";
-//    NSMutableDictionary* photosParams = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-//                                         image,@"source",
-//                                         strMessage,@"message",
-//                                         nil];
-//    
-//    [FBRequestConnection startForUploadPhoto:image
-//                           completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-//                               
-//                           }];
 }
 
-//- (void)request:(FBRequest *)request didLoad:(id)result {
-
-    
+- (void)postImageToFB:(UIImage *)image withCompletion:(NBSCompletionBlockWithData)completion {
+    self.sharePhotoFBCompletion = completion;
     /*
-    // We're going to assume you have a UIImage named image_ stored somewhere.
-    FBRequestConnection *connection = [[FBRequestConnection alloc] init];
-    
-    // First request uploads the photo.
-    FBRequest *request1 = [FBRequest
-                           requestForUploadPhoto:image];
-    [connection addRequest:request1
-         completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                                 if (error && completion) {
-                                     completion(NO, error);
-                                 }
-                             }
-            batchEntryName:@"photopost"
-     ];
-
-    FBRequest *request2 = [FBRequest
-                           requestForGraphPath:@"{result=photopost:$.id}"];
-    [connection addRequest:request2
-         completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-             if (!error && result) {
-                 NSString *ID = [result objectForKey:@"id"];
-                 [self postDataWithPhoto:ID withCompletion:completion];
-             } else {
-                 if (completion) {
-                     completion(NO, error);
-                 }
-             }
-         }
-     ];
-    
-    [connection start];
+     * if the current session has no publish permission we need to reauthorize
+     */
+    if ([[[FBSession activeSession]permissions]indexOfObject:@"publish_actions"] == NSNotFound) {
+        
+        [FBSession openActiveSessionWithPublishPermissions:@[@"publish_actions"]
+                                           defaultAudience:FBSessionDefaultAudienceEveryone
+                                              allowLoginUI:YES
+                                         completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                                             if (session.isOpen && !error) {
+                                                 [FBSession setActiveSession:session];
+                                                 [self postImage:image];
+                                             }
+                                         }];
+    }else{
+        [self postImage:image];
+    }
 }
 
--(void)postDataWithPhoto:(NSString*)photoID withCompletion:(NBSCompletionBlock)completion {
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params setObject:@"test image post on my wall" forKey:@"message"];
+- (void)postImage:(UIImage *)image {
+    NSMutableDictionary* params = [[NSMutableDictionary alloc] init];
+    [params setObject:@"message text" forKey:@"message"];
+    [params setObject:UIImagePNGRepresentation(image) forKey:@"source"];
+    [params setValue:@"0" forKey:@"no_store"];
     
-    if(photoID) {
-        NSString *urlString = [NSString stringWithFormat:
-                               @"https://graph.facebook.com/%@?access_token=%@", photoID,
-                               [[[[FBSession activeSession] accessTokenData] accessToken] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        [params setObject:urlString forKey:@"picture"];
-    }
-    
-    [FBRequestConnection startWithGraphPath:@"me/feed"
+    [FBRequestConnection startWithGraphPath:@"me/photos"
                                  parameters:params
                                  HTTPMethod:@"POST"
-                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error)
-    {
-        if (completion) {
-            completion((error == nil), error);
-        }
-    }];
-}*/
+                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                              [self performSharePhotoCompletionWithSuccess:(error == nil)
+                                                                     error:error
+                                                                      data:result];
+                          } ];
+}
 
 @end

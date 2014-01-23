@@ -45,10 +45,18 @@
     [request start];
 }
 
+- (void)performSharePhotoCompletionWithSuccess:(BOOL)success error:(NSError *)error data:(id)data {
+    if (self.sharePhotoVKCompletion) {
+        self.sharePhotoVKCompletion(success, error, data);
+        self.sharePhotoVKCompletion = nil;
+        self.sharePhoto = nil;
+    }
+}
+
 #pragma mark - photos
 
 - (void)postImageToVK:(UIImage *)image withCompletion:(NBSCompletionBlockWithData)completion {
-    self.sharePhotoCompletion = completion;
+    self.sharePhotoVKCompletion = completion;
     self.sharePhoto = image;
     [self startRequestServerToUploadPhoto];
 }

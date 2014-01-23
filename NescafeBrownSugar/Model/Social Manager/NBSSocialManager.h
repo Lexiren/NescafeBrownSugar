@@ -17,9 +17,8 @@
 - (void)performUserDataCompletionWithSuccess:(BOOL)success
                                        error:(NSError *)error
                                         user:(NBSUser *)user;
-@property (nonatomic, copy) NBSCompletionBlockWithData sharePhotoCompletion;
+@property (nonatomic, copy) NBSCompletionBlockWithData sharePhotoVKCompletion;
+@property (nonatomic, copy) NBSCompletionBlockWithData sharePhotoFBCompletion;
 @property (nonatomic, strong) UIImage *sharePhoto;
-- (void)performSharePhotoCompletionWithSuccess:(BOOL)success
-                                         error:(NSError *)error
-                                          data:(id)data;
+
 @end

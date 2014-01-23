@@ -40,11 +40,4 @@
     }
 }
 
-- (void)performSharePhotoCompletionWithSuccess:(BOOL)success error:(NSError *)error data:(id)data {
-    if (self.sharePhotoCompletion) {
-        self.sharePhotoCompletion(success, error, data);
-        self.sharePhotoCompletion = nil;
-        self.sharePhoto = nil;
-    }
-}
 @end
