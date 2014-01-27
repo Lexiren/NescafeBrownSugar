@@ -15,10 +15,12 @@
 #import <Social/Social.h>
 #import "NBSJoinGroupViewController.h"
 #import "NBSGoogleAnalytics.h"
+#import "NBSDesignAdditions.h"
 
 NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
 
 @interface NBSSharePreviewController ()
+@property (weak, nonatomic) IBOutlet UIButton *okButton;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UISwitch *shareFBSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *shareVKSwitch;
@@ -40,19 +42,11 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
 
 @implementation NBSSharePreviewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.okButton.titleLabel.font = [UIFont standartFontWithSize:18.f];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

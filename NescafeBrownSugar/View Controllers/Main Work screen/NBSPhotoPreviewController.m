@@ -11,6 +11,7 @@
 #import "UIViewController+NBSNavigationItems.h"
 #import "UIView+NBSExtensions.h"
 #import "UIImage+NBSExtensions.h"
+#import "NBSDesignAdditions.h"
 
 #define kNBSButtonBottomSpace4Inch 50
 #define kNBSButtonBottomSpace3Inch 30
@@ -23,6 +24,8 @@ NSString *const kNBSPreviewPhotoVCPushSegueIdentifier = @"PreviewPhotoVCPushSegu
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttonsBottomSpaceConstraint;
 @property (weak, nonatomic) IBOutlet UIView *visiblePartMask;
+@property (weak, nonatomic) IBOutlet UIButton *continueButton;
+@property (weak, nonatomic) IBOutlet UIButton *retakeButton;
 @property (nonatomic, strong) UIImage *imageToShare;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *photoImageViewHeightConstraint;
 
@@ -30,20 +33,14 @@ NSString *const kNBSPreviewPhotoVCPushSegueIdentifier = @"PreviewPhotoVCPushSegu
 
 @implementation NBSPhotoPreviewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.buttonsBottomSpaceConstraint.constant = (NBS_IsDeviceScreenSize4Inch) ? kNBSButtonBottomSpace4Inch : kNBSButtonBottomSpace3Inch;
 //    self.photoImageViewHeightConstraint.constant = (NBS_IsDeviceScreenSize4Inch) ? kNBSPhotoImageViewHeight4Inch : kNBSPhotoImageViewHeight3Inch;
+    
+    self.continueButton.titleLabel.font = [UIFont standartFontWithSize:15.f];
+    self.retakeButton.titleLabel.font = [UIFont standartFontWithSize:15.f];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -8,6 +8,7 @@
 
 #import "NBSInstructionsViewController.h"
 #import "NBSInstructionsContentViewController.h"
+#import "NBSDesignAdditions.h"
 
 #define kNBSInstructionsCount 5
 #define kNBSInstructionsFirstPageIndex 0
@@ -24,17 +25,6 @@ NSString *const kNBSHelpVCIdentifier = @"HelpVC";
 
 @implementation NBSInstructionsViewController
 
-#pragma mark - init
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 #pragma mark - public
 - (void)setSkipButtonHidden:(BOOL)hidden {
     self.isSkipButtonShoudBeHidden = hidden;
@@ -46,8 +36,7 @@ NSString *const kNBSHelpVCIdentifier = @"HelpVC";
 {
     [super viewDidLoad];
 
-//    //hide skip button if we came from main menu
-//    self.skipButton.hidden = !(BOOL)(self.presentingViewController);
+    self.skipButton.titleLabel.font = [UIFont standartFontWithSize:15.f];
     
     //setup page controll
     self.pageControl.numberOfPages = kNBSInstructionsCount;

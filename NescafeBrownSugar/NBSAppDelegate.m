@@ -14,8 +14,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    [[VKStorage sharedStorage] cleanCachedData];
-//    [[VKStorage sharedStorage] clean];
     [NBSGoogleAnalytics initGoogleAnalytics];
     return YES;
 }

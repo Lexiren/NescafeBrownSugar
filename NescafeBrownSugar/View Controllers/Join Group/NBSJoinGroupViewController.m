@@ -30,6 +30,8 @@ NSString *const kNBSJoinGroupVCPushSegue = @"JoinGroupVCPushSegue";
 @property (nonatomic, assign) BOOL didJoinGroupFB;
 @property (nonatomic, assign) BOOL didJoinGroupVK;
 
+@property (nonatomic, weak) IBOutlet UIButton *okButton;
+
 @end
 
 @implementation NBSJoinGroupViewController
@@ -88,6 +90,7 @@ NSString *const kNBSJoinGroupVCPushSegue = @"JoinGroupVCPushSegue";
     [super viewDidLoad];
 	self.textView.font = [UIFont standartLightFontWithSize:15.f];
     self.switchLabel.font = [UIFont standartLightFontWithSize:14.f];
+    self.okButton.titleLabel.font = [UIFont standartFontWithSize:18.f];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

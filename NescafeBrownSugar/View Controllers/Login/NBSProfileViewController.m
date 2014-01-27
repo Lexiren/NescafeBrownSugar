@@ -26,10 +26,11 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 
 @property (nonatomic, strong) IBOutlet UILabel *nameLabel;
 @property (nonatomic, strong) IBOutlet UIView *loginSubview;
-@property (weak, nonatomic) IBOutlet UIView *galleryContainerSubview;
+@property (nonatomic, strong) IBOutlet UIView *galleryContainerSubview;
 @property (weak, nonatomic) IBOutlet UICollectionView *galleryCollection;
 
 @property (weak, nonatomic) IBOutlet UIButton *createPictureButton;
+@property (weak, nonatomic) IBOutlet UILabel *enterLabel;
 @end
 
 @implementation NBSProfileViewController
@@ -41,6 +42,8 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
     [self.avatarPictureView makeHalfHeightCornerRadius];
     
     self.nameLabel.font = [UIFont standartLightFontWithSize:20.f];
+    self.enterLabel.font = [UIFont standartLightFontWithSize:16.f];
+    [self.loginSubview layoutIfNeeded];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -116,7 +119,7 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
          }];
     } else {
         [self.spinner stopAnimating];
-        self.nameLabel.text = @"Ви не зареестрованi";
+        self.nameLabel.text = @"Залогінься";
         self.avatarImageView.hidden = NO;
         self.avatarImageView.image = [UIImage imageNamed:@"defaultUserAvatar"];
         self.avatarPictureView.hidden = YES;
