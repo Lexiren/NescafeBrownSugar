@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06708EA518969719009AC9CD /* UIViewController+GA.m in Sources */ = {isa = PBXBuildFile; fileRef = 06708EA418969719009AC9CD /* UIViewController+GA.m */; };
+		06708EA918969B06009AC9CD /* NBSJoinGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06708EA818969B06009AC9CD /* NBSJoinGroupViewController.m */; };
 		067B15D618773C5C0037DCE3 /* NBSSocialManager+Vkontakte.m in Sources */ = {isa = PBXBuildFile; fileRef = 067B15D518773C5C0037DCE3 /* NBSSocialManager+Vkontakte.m */; };
 		067B15E5187749600037DCE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 067B15E3187749600037DCE3 /* Localizable.strings */; };
 		067B15FD187829F00037DCE3 /* NBSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067B15FC187829F00037DCE3 /* NBSProfileViewController.m */; };
@@ -81,6 +83,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06708EA318969719009AC9CD /* UIViewController+GA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+GA.h"; path = "Utils/UIViewController+GA.h"; sourceTree = "<group>"; };
+		06708EA418969719009AC9CD /* UIViewController+GA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+GA.m"; path = "Utils/UIViewController+GA.m"; sourceTree = "<group>"; };
+		06708EA718969B06009AC9CD /* NBSJoinGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSJoinGroupViewController.h; path = "View Controllers/Join Group/NBSJoinGroupViewController.h"; sourceTree = "<group>"; };
+		06708EA818969B06009AC9CD /* NBSJoinGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSJoinGroupViewController.m; path = "View Controllers/Join Group/NBSJoinGroupViewController.m"; sourceTree = "<group>"; };
 		067B15D418773C5C0037DCE3 /* NBSSocialManager+Vkontakte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NBSSocialManager+Vkontakte.h"; path = "Model/Social Manager/NBSSocialManager+Vkontakte.h"; sourceTree = "<group>"; };
 		067B15D518773C5C0037DCE3 /* NBSSocialManager+Vkontakte.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NBSSocialManager+Vkontakte.m"; path = "Model/Social Manager/NBSSocialManager+Vkontakte.m"; sourceTree = "<group>"; };
 		067B15FA187767310037DCE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -208,6 +214,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06708EA618969A7C009AC9CD /* Join Group */ = {
+			isa = PBXGroup;
+			children = (
+				06708EA718969B06009AC9CD /* NBSJoinGroupViewController.h */,
+				06708EA818969B06009AC9CD /* NBSJoinGroupViewController.m */,
+			);
+			name = "Join Group";
+			sourceTree = "<group>";
+		};
 		06E6A7EF1890749C00B1ABD4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +366,7 @@
 		8432C41A18758B30005C26B8 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				06708EA618969A7C009AC9CD /* Join Group */,
 				06E6A7F718907ECE00B1ABD4 /* About Project */,
 				06F41F3A188478B4002B2055 /* Profile */,
 				8432C42A1875AA7E005C26B8 /* Base */,
@@ -498,6 +514,8 @@
 				06E6A7F518907C2E00B1ABD4 /* NBSDesignAdditions.m */,
 				84E0A011189396C100E863F2 /* NSDictionary+NBSExtensions.h */,
 				84E0A012189396C200E863F2 /* NSDictionary+NBSExtensions.m */,
+				06708EA318969719009AC9CD /* UIViewController+GA.h */,
+				06708EA418969719009AC9CD /* UIViewController+GA.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -673,6 +691,7 @@
 			files = (
 				067B1603187B16540037DCE3 /* NBSMenuViewController.m in Sources */,
 				8450691A18774EE60087FD3F /* NBSSocialManager+Facebook.m in Sources */,
+				06708EA518969719009AC9CD /* UIViewController+GA.m in Sources */,
 				847A86CD1884A0B700884965 /* NBSImagesCollectionContainerViewController.m in Sources */,
 				06E6A7F618907C2E00B1ABD4 /* NBSDesignAdditions.m in Sources */,
 				8450694018785E6A0087FD3F /* UIViewController+NBSNavigationItems.m in Sources */,
@@ -682,6 +701,7 @@
 				8432C3F318757F3E005C26B8 /* NBSAppDelegate.m in Sources */,
 				842C7AF61886FFC1004CBA0C /* NBSPhotoPreviewController.m in Sources */,
 				067B15FD187829F00037DCE3 /* NBSProfileViewController.m in Sources */,
+				06708EA918969B06009AC9CD /* NBSJoinGroupViewController.m in Sources */,
 				8432C3EF18757F3E005C26B8 /* main.m in Sources */,
 				84FAA7FE1875EC410007FB03 /* UIAlertView+NBSExtensions.m in Sources */,
 				8432C4241875924A005C26B8 /* NBSInstructionsViewController.m in Sources */,

@@ -18,18 +18,21 @@ PODS:
   - AFNetworking/UIKit (2.1.0):
     - AFNetworking/NSURLConnection
   - Facebook-iOS-SDK (3.11.0)
+  - GoogleAnalytics-iOS-SDK (3.0.3)
   - RESideMenu (3.4)
   - Vkontakte-iOS-SDK-v2 (2.7.5)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.1.0)
   - Facebook-iOS-SDK (~> 3.11)
+  - GoogleAnalytics-iOS-SDK (~> 3.0.3)
   - RESideMenu (~> 3.4)
   - Vkontakte-iOS-SDK-v2 (~> 2.7)
 
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
   Facebook-iOS-SDK: 2eb12f9ed04f3d3956f0a4fb0e4e60c824dcd101
+  GoogleAnalytics-iOS-SDK: 7b0e55cfe5e70d60478a7b105f15ac71e8bc373e
   RESideMenu: d8d6330052e0348718826045b912a1c71748357d
   Vkontakte-iOS-SDK-v2: 91298a513899bd227317f8168e5adfd95a346f5b
 

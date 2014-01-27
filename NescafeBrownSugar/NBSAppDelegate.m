@@ -8,7 +8,11 @@
 
 #import "NBSAppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
+<<<<<<< Updated upstream
 #import <VKStorage.h>
+=======
+>>>>>>> Stashed changes
+#import "GAI.h"
 
 @implementation NBSAppDelegate
 
@@ -16,7 +20,7 @@
 {
 //    [[VKStorage sharedStorage] cleanCachedData];
 //    [[VKStorage sharedStorage] clean];
-    
+    [self initGoogleAnalytics];
     return YES;
 }
 
@@ -54,6 +58,23 @@
          annotation:(id)annotation
 {
     return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+}
+
+- (void)initGoogleAnalytics
+{
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    //[GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    //[GAI sharedInstance].dispatchInterval = 20;
+    [GAI sharedInstance].dispatchInterval = 1;
+    
+    
+    // Optional: set Logger to VERBOSE for debug information.
+    //[[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    
+    // Initialize tracker.
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-47118162-1"];
 }
 
 @end

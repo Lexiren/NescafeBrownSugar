@@ -229,6 +229,11 @@ THE SOFTWARE.
    limitations under the License.
 
 
+## GoogleAnalytics-iOS-SDK
+
+Copyright 2009 - 2014 Google, Inc. All rights reserved.
+
+
 ## RESideMenu
 
 Copyright (c) 2013 Roman Efimov (https://github.com/romaonthego).

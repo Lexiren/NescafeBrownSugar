@@ -16,6 +16,7 @@
 #import "UIViewController+NBSNavigationItems.h"
 #import "NBSDesignAdditions.h"
 #import "NBSAboutProjectViewController.h"
+#import "NBSJoinGroupViewController.h"
 
 enum
 {
@@ -71,8 +72,10 @@ NSString *const kNBSMenuVCIdentifier = @"MenuVC";
             break;
         case kCPMenuDrawRow:
         {
-            NBSImagesCollectionContainerViewController *imagesCollectionVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSImagesCollectionVCIdentifier];
-            viewController = imagesCollectionVC;
+//            NBSImagesCollectionContainerViewController *imagesCollectionVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSImagesCollectionVCIdentifier];
+//            viewController = imagesCollectionVC;
+            NBSJoinGroupViewController *joinGroupVC = [self.storyboard instantiateViewControllerWithIdentifier:@"JoinGroup"];
+            viewController = joinGroupVC;
         }
             break;
         case kCPMenuAboutProjectRow:
