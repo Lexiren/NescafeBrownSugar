@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 COXO. All rights reserved.
 //
 
+#define kNBSSharePhotoPostMessage @"#brownsugar"
+
 @interface NBSSocialManager : NSObject
 //init
 + (NBSSocialManager *)sharedManager;

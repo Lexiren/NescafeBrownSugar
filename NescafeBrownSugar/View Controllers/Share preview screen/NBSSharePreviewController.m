@@ -11,6 +11,7 @@
 #import "UIViewController+NBSNavigationItems.h"
 #import "NBSSocialManager+Facebook.h"
 #import "NBSSocialManager+Vkontakte.h"
+#import "NBSServerManager.h"
 #import <Social/Social.h>
 
 NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
@@ -22,6 +23,17 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (assign, nonatomic) BOOL animateActivityForFB;
 @property (assign, nonatomic) BOOL animateActivityForVK;
+
+//data for sending photo to server
+// if postInfo == nil - there wansn't posting to this social network
+// if postInfo empty - photo is still posting to social network at this moment
+@property (assign, nonatomic) BOOL animateActivityForServer;
+@property (assign, nonatomic) BOOL didPostPhotoToFB;
+@property (assign, nonatomic) BOOL didPostPhotoToVK;
+@property (strong, nonatomic) NSDictionary *fbPostInfo;
+@property (strong, nonatomic) NSDictionary *vkPostInfo;
+@property (strong, nonatomic) UIImage *photoToSend;
+
 @end
 
 @implementation NBSSharePreviewController
@@ -59,7 +71,7 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
 
 #pragma mark - activity indicator
 - (void)changeActivityIndicatorAnimating {
-    if (self.animateActivityForFB || self.animateActivityForVK) {
+    if (self.animateActivityForFB || self.animateActivityForVK || self.animateActivityForServer) {
         self.view.userInteractionEnabled = NO;
         [self.activityIndicator startAnimating];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
@@ -80,37 +92,95 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
     [self changeActivityIndicatorAnimating];
 }
 
+- (void)setDidPostPhotoToFB:(BOOL)didPostPhotoToFB {
+    _didPostPhotoToFB = didPostPhotoToFB;
+    if (didPostPhotoToFB) {
+        [self tryToSendPhotoWithPostInfoToServer];
+    }
+}
+
+- (void)setDidPostPhotoToVK:(BOOL)didPostPhotoToVK {
+    _didPostPhotoToVK = didPostPhotoToVK;
+    if (didPostPhotoToVK) {
+        [self tryToSendPhotoWithPostInfoToServer];
+    }
+}
+
+- (void)setAnimateActivityForServer:(BOOL)animateActivityForServer {
+    _animateActivityForServer = animateActivityForServer;
+    [self changeActivityIndicatorAnimating];
+}
+
+- (void)tryToSendPhotoWithPostInfoToServer {
+    if (_didPostPhotoToVK && _didPostPhotoToFB) {
+        NSMutableDictionary *postInfo = [NSMutableDictionary dictionary];
+        if (self.fbPostInfo) {
+            [postInfo addEntriesFromDictionary:self.fbPostInfo];
+        }
+        if (self.vkPostInfo) {
+            [postInfo addEntriesFromDictionary:self.vkPostInfo];
+        }
+        self.animateActivityForServer = YES;
+        [[NBSServerManager sharedManager] sendPhoto:self.photoToSend
+                                           postInfo:postInfo
+                                         completion:^(BOOL success, NSError *error) {
+                                             self.animateActivityForServer = NO;
+                                         }];
+    }
+}
+
 #pragma mark - IBActions
 - (IBAction)didTapOkButton:(id)sender {
+    self.fbPostInfo = nil;
+    self.vkPostInfo = nil;
+    self.didPostPhotoToFB = NO;
+    self.didPostPhotoToVK = NO;
+    
     NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
     UIImage *photoBound = [UIImage imageNamed:@"fotoFrame"];
     UIImage *photoWithBound = [self.previewImage NBS_mergeWithImage:photoBound finalSize:photoBound.size];
+    self.photoToSend = photoWithBound;
     
     if (self.shareFBSwitch.isOn) {
         self.animateActivityForFB = YES;
-        if ([socialManager isFacebookLoggedIn]) {
+        
+        void (^postToFB)() = ^(){
             [socialManager postImageToFB:photoWithBound withCompletion:^(BOOL success, NSError *error, id data) {
                 self.animateActivityForFB = NO;
                 if (error) {
                     [UIAlertView showErrorAlertWithError:error];
                 } else {
-                    [UIAlertView showSimpleAlertWithMessage:@"Фото успiшно розмiщене у Facebook"];
+//                    [UIAlertView showSimpleAlertWithMessage:@"Фото успiшно розмiщене у Facebook"];
+                    id post_id = [data objectForKey:@"post_id"];
+                    if (![post_id isKindOfClass:[NSString class]]) {
+                        post_id = [post_id stringValue];
+                    }
+                    self.fbPostInfo = @{kNBSServerAPIParameterKeyFBpostID: post_id};
                 }
+                self.didPostPhotoToFB = YES;
             }];
+        };
+        
+        if ([socialManager isFacebookLoggedIn]) {
+            postToFB();
         } else {
             [socialManager facebookLoginWithCompletion:^(BOOL success, NSError *error) {
                 self.animateActivityForFB = NO;
                 if (success) {
                     self.animateActivityForFB = YES;
-                    [socialManager postImageToFB:photoWithBound withCompletion:^(BOOL success, NSError *error, id data) {
+                    [socialManager getFacebookUserDataWithCompletion:^(BOOL success, NSError *error, NBSUser *user) {
                         self.animateActivityForFB = NO;
-                        if (error) {
-                            [UIAlertView showErrorAlertWithError:error];
+                        if (success) {
+                            self.animateActivityForFB = YES;
+                            postToFB();
                         } else {
-                            [UIAlertView showSimpleAlertWithMessage:@"Фото успiшно розмiщене у Facebook"];
-                       }
+                            self.didPostPhotoToFB = YES;
+                            [UIAlertView showErrorAlertWithError:error];
+                        }
+
                     }];
                 } else {
+                    self.didPostPhotoToFB = YES;
                     [UIAlertView showErrorAlertWithError:error];
                 }
             }];
@@ -118,36 +188,61 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
     }
     if (self.shareVKSwitch.isOn) {
         self.animateActivityForVK = YES;
-        if ([socialManager isVkontakteLoggedIn]) {
+        self.vkPostInfo = [NSMutableDictionary dictionary];
+        
+        void (^postToVK)() = ^(){
             [socialManager postImageToVK:photoWithBound withCompletion:^(BOOL success, NSError *error, id data) {
                 self.animateActivityForVK = NO;
                 if (error) {
                     [UIAlertView showErrorAlertWithError:error];
                 } else {
-                    [UIAlertView showSimpleAlertWithMessage:@"Фото успiшно розмiщене у Vkontakte"];
+//                    [UIAlertView showSimpleAlertWithMessage:@"Фото успiшно розмiщене у Vkontakte"];
+                    id post_id = [[data objectForKey:@"response"] objectForKey:@"post_id"];
+                    if (![post_id isKindOfClass:[NSString class]]) {
+                        post_id = [post_id stringValue];
+                    }
+                    self.vkPostInfo = @{kNBSServerAPIParameterKeyVKpostID : post_id};
                 }
+                self.didPostPhotoToVK = YES;
             }];
+        };
+        
+        if ([socialManager isVkontakteLoggedIn]) {
+            postToVK();
         } else {
             [socialManager vkontakteLoginWithCompletion:^(BOOL success, NSError *error) {
                 self.animateActivityForVK = NO;
                 if (success) {
                     self.animateActivityForVK = YES;
-                    [socialManager postImageToVK:photoWithBound
-                                  withCompletion:^(BOOL success, NSError *error, id data) {
-                          self.animateActivityForVK = NO;
-                          if (error) {
-                              [UIAlertView showErrorAlertWithError:error];
-                          } else {
-                              [UIAlertView showSimpleAlertWithMessage:@"Фото успiшно розмiщене у Vkontakte"];
-                          }
-                      }];
+                    [socialManager getVkontakteUserDataWithCompletion:^(BOOL success, NSError *error, NBSUser *user) {
+                        self.animateActivityForVK = NO;
+                        if (success) {
+                            self.animateActivityForVK = YES;
+                            postToVK();
+                        } else {
+                            [UIAlertView showErrorAlertWithError:error];
+                            self.didPostPhotoToVK = YES;
+                        }
+                    }];
                 } else {
                     [UIAlertView showErrorAlertWithError:error];
+                    self.didPostPhotoToVK = YES;
                 }
             }];
         }
     }
 }
+/*
+NescafeBrownSugar[8761:60b] VK : {
+    response =     {
+        "post_id" = 3620;
+    };
+}
+2014-01-23 17:21:41.953 NescafeBrownSugar[8761:60b] FB : {
+    id = 593611967385237;
+    "post_id" = "100002093165006_593595930720174";
+}
+*/
 - (IBAction)didChangeStateShareVKSwitch:(id)sender {
 }
 

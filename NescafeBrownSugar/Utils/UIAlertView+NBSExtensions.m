@@ -39,7 +39,7 @@
 {
     if (error)
     {
-        [UIAlertView showErrorAlertWithMessage:error.localizedDescription];
+        [UIAlertView showErrorAlertWithMessage:(error.localizedDescription ?: @"")];
     }
 }
 

@@ -49,6 +49,8 @@
 		84AB90BD1875FF2E005EEBE5 /* NBSSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AB90BC1875FF2E005EEBE5 /* NBSSocialManager.m */; };
 		84B07DD8188D962B00D98EA2 /* UIImage+NBSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B07DD7188D962B00D98EA2 /* UIImage+NBSExtensions.m */; };
 		84B07DDB188D96C700D98EA2 /* UIView+NBSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B07DDA188D96C700D98EA2 /* UIView+NBSExtensions.m */; };
+		84B276E218925D0800E5BE8E /* NBSServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B276E118925D0800E5BE8E /* NBSServerManager.m */; };
+		84E0A013189396C200E863F2 /* NSDictionary+NBSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0A012189396C200E863F2 /* NSDictionary+NBSExtensions.m */; };
 		84EB6CD11890198D00FB38CD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EB6CD01890198D00FB38CD /* Social.framework */; };
 		84EF43561882C0A200E029AC /* 00_menu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF434A1882C0A200E029AC /* 00_menu.jpg */; };
 		84EF43571882C0A200E029AC /* 01_help.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF434B1882C0A200E029AC /* 01_help.jpg */; };
@@ -151,7 +153,11 @@
 		84B07DD7188D962B00D98EA2 /* UIImage+NBSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+NBSExtensions.m"; path = "Utils/UIImage+NBSExtensions.m"; sourceTree = "<group>"; };
 		84B07DD9188D96C700D98EA2 /* UIView+NBSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+NBSExtensions.h"; path = "Utils/UIView+NBSExtensions.h"; sourceTree = "<group>"; };
 		84B07DDA188D96C700D98EA2 /* UIView+NBSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+NBSExtensions.m"; path = "Utils/UIView+NBSExtensions.m"; sourceTree = "<group>"; };
+		84B276E018925D0800E5BE8E /* NBSServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSServerManager.h; path = "Model/Server Manager/NBSServerManager.h"; sourceTree = "<group>"; };
+		84B276E118925D0800E5BE8E /* NBSServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSServerManager.m; path = "Model/Server Manager/NBSServerManager.m"; sourceTree = "<group>"; };
 		84DD7B1218913684003B9986 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		84E0A011189396C100E863F2 /* NSDictionary+NBSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+NBSExtensions.h"; path = "Utils/NSDictionary+NBSExtensions.h"; sourceTree = "<group>"; };
+		84E0A012189396C200E863F2 /* NSDictionary+NBSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+NBSExtensions.m"; path = "Utils/NSDictionary+NBSExtensions.m"; sourceTree = "<group>"; };
 		84EB6CD01890198D00FB38CD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		84EF434A1882C0A200E029AC /* 00_menu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00_menu.jpg; sourceTree = "<group>"; };
 		84EF434B1882C0A200E029AC /* 01_help.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01_help.jpg; sourceTree = "<group>"; };
@@ -370,6 +376,7 @@
 		8432C4291875AA57005C26B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84B276DF18925CDA00E5BE8E /* Server Manager */,
 				847A86C718848FD500884965 /* Template */,
 				845069101876E7F40087FD3F /* User */,
 				84AB90BA1875FC67005EEBE5 /* Social Manager */,
@@ -463,6 +470,15 @@
 			name = "Social Manager";
 			sourceTree = "<group>";
 		};
+		84B276DF18925CDA00E5BE8E /* Server Manager */ = {
+			isa = PBXGroup;
+			children = (
+				84B276E018925D0800E5BE8E /* NBSServerManager.h */,
+				84B276E118925D0800E5BE8E /* NBSServerManager.m */,
+			);
+			name = "Server Manager";
+			sourceTree = "<group>";
+		};
 		84FAA7FB1875EBAB0007FB03 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,6 +496,8 @@
 				84B07DDA188D96C700D98EA2 /* UIView+NBSExtensions.m */,
 				06E6A7F418907C2E00B1ABD4 /* NBSDesignAdditions.h */,
 				06E6A7F518907C2E00B1ABD4 /* NBSDesignAdditions.m */,
+				84E0A011189396C100E863F2 /* NSDictionary+NBSExtensions.h */,
+				84E0A012189396C200E863F2 /* NSDictionary+NBSExtensions.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -677,8 +695,10 @@
 				842C7AEC188582CA004CBA0C /* NBSImageCollectionContentPageController.m in Sources */,
 				842C7AF11886F83C004CBA0C /* NBSPhotoCameraOverlay.m in Sources */,
 				067B15D618773C5C0037DCE3 /* NBSSocialManager+Vkontakte.m in Sources */,
+				84B276E218925D0800E5BE8E /* NBSServerManager.m in Sources */,
 				84B07DD8188D962B00D98EA2 /* UIImage+NBSExtensions.m in Sources */,
 				845069341878231B0087FD3F /* NBSMainWorkViewController.m in Sources */,
+				84E0A013189396C200E863F2 /* NSDictionary+NBSExtensions.m in Sources */,
 				8450693B187859230087FD3F /* NBSTemplateCameraOverlayView.m in Sources */,
 				84FAA8061875EC840007FB03 /* NBSInstructionsContentViewController.m in Sources */,
 				847A86CA1884901E00884965 /* NBSTemplate.m in Sources */,

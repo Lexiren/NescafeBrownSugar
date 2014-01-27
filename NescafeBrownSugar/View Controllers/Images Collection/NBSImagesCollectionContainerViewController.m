@@ -22,7 +22,6 @@ NSString *const kNBSPushImageCollectionFromProfileSegueIdentifier = @"pushImageC
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (nonatomic, strong) UIPageViewController *pageViewController;
 @property (nonatomic, strong) NSArray *sourceTemplatesArray;
-@property (nonatomic, strong) NBSTemplate *selectedTemplate;
 @end
 
 @implementation NBSImagesCollectionContainerViewController
@@ -104,7 +103,7 @@ NSString *const kNBSPushImageCollectionFromProfileSegueIdentifier = @"pushImageC
         self.pageViewController.dataSource = self;
     } else if ([segue.identifier isEqualToString:kNBSPushMainWorkControllerSegueIdentifier]) {
         NBSMainWorkViewController *mainWorkVC = (NBSMainWorkViewController *)segue.destinationViewController;
-        mainWorkVC.sourceImage = self.selectedTemplate.image;
+        mainWorkVC.sourceImage = [[NBSTemplate currentTemplate] image];
     }
 }
 
@@ -183,7 +182,7 @@ NSString *const kNBSPushImageCollectionFromProfileSegueIdentifier = @"pushImageC
     //setup callback for selected template
     __weak NBSImagesCollectionContainerViewController *weakself = self;
     instructionsContentPage.didSelectTemplateHandler = ^(NBSTemplate *template) {
-        weakself.selectedTemplate = template;
+        [NBSTemplate setCurrentTemplate:template];
         [self performSegueWithIdentifier:kNBSPushMainWorkControllerSegueIdentifier sender:weakself];
     };
     

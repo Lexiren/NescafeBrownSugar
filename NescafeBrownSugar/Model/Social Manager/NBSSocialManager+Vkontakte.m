@@ -33,7 +33,7 @@
 }
 
 - (BOOL)isVkontakteLoggedIn {
-    return [VKUser currentUser].accessToken != nil;
+    return [[VKUser currentUser].accessToken isValid];
 }
 
 - (void)getVkontakteUserDataWithCompletion:(NBSCompletionBlockWithUserData)completion {
@@ -144,7 +144,7 @@
     NSMutableDictionary *publishMutableOptions = [NSMutableDictionary dictionary];
     [publishMutableOptions setValue:[sharedOptions objectForKey:@"owner_id"] forKey:@"owner_id"];
     [publishMutableOptions setValue:[sharedOptions objectForKey:@"id"] forKey:@"attachments"];
-    [publishMutableOptions setValue:@"message text" forKey:@"message"];
+    [publishMutableOptions setValue:kNBSSharePhotoPostMessage forKey:@"message"];
     
     VKRequest *request = [[VKUser currentUser] wallPost:publishMutableOptions];
     request.signature = KNBSVkontakteWallPostRequestSignature;
@@ -162,9 +162,10 @@
         if ([response isKindOfClass:[NSArray class]]) {
             NSDictionary *userData = [response firstObject];
             NBSUser *user = [NBSUser currentUser];
-            user.vkontakteAvatar = [userData objectForKey:@"photo_100"];
+            user.vkontakteAvatarLink = [userData objectForKey:@"photo_100"];
             user.vkontakteFirstName = [userData objectForKey:@"first_name"];
             user.vkontakteLastName = [userData objectForKey:@"last_name"];
+            user.vkontakteUid = [userData objectForKey:@"uid"];
             [self performUserDataCompletionWithSuccess:YES
                                                  error:nil
                                                   user:user];
@@ -237,6 +238,12 @@ responseErrorOccured:(id)error {
 }
 
 #pragma mark - VKConnectorDelegate methods
+
+- (void)VKConnector:(VKConnector *)connector
+  willHideModalView:(KGModal *)view
+{
+    [self performLoginCompletionWithSuccess:NO error:nil];
+}
 
 - (void)VKConnector:(VKConnector *)connector
 accessTokenRenewalSucceeded:(VKAccessToken *)accessToken {

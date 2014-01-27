@@ -33,13 +33,37 @@
 
 - (void)getFacebookUserDataWithCompletion:(NBSCompletionBlockWithUserData)completion {
     self.userDataCompletion = completion;
-    [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+
+    NSDictionary *params = [NSDictionary dictionaryWithObject:@"picture,id,birthday,email,name,gender,username"
+                                                       forKey:@"fields"];
+    
+    [FBRequestConnection startWithGraphPath:@"me"
+                                 parameters:params
+                                 HTTPMethod:@"GET"
+                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//    [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
         if (!error) {
             if ([result isKindOfClass:[NSDictionary class]]) {
                 NBSUser *user = [NBSUser currentUser];
                 user.facebookUid = [result objectForKey:@"id"];
-                user.facebookFirstName = [result objectForKey:@"first_name"];
-                user.facebookLastName = [result objectForKey:@"last_name"];
+                
+                user.facebookAvatarLink = [[[result objectForKey:@"picture"]
+                                            objectForKey:@"data"]
+                                           objectForKey:@"url"];
+                
+                NSString *name = [result objectForKey:@"name"];
+                if (name.length) {
+                    NSArray *nameParts = [name componentsSeparatedByString:@" "];
+                    user.facebookFirstName = (nameParts.count > 0) ? [nameParts firstObject] : @"";
+                    for (int i = 1; i < nameParts.count; i++) {
+                        user.facebookLastName = [NSString stringWithFormat:@"%@%@",
+                                                 (i > 1) ? @" " : @"",
+                                                 nameParts[i]];
+                    }
+                }
+//                user.facebookFirstName = [result objectForKey:@"first_name"];
+//                user.facebookLastName = [result objectForKey:@"last_name"];
+                
                 [self performUserDataCompletionWithSuccess:YES
                                                      error:nil
                                                       user:user];
@@ -87,7 +111,7 @@
 
 - (void)postImage:(UIImage *)image {
     NSMutableDictionary* params = [[NSMutableDictionary alloc] init];
-    [params setObject:@"message text" forKey:@"message"];
+    [params setObject:kNBSSharePhotoPostMessage forKey:@"message"];
     [params setObject:UIImagePNGRepresentation(image) forKey:@"source"];
     [params setValue:@"0" forKey:@"no_store"];
     

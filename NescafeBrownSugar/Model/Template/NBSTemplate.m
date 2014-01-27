@@ -14,6 +14,8 @@ int       const kNBSTemplateIndexDigitsCount = 2;
 int       const kNBSTemplatesNumber = 50;
 int       const kNBSTemplatesFirstNumber = 1;
 
+static NBSTemplate *_currentInstance;
+
 @implementation NBSTemplate
 
 #pragma mark - public
@@ -40,6 +42,14 @@ int       const kNBSTemplatesFirstNumber = 1;
 - (UIImage *)image {
     NSString *imageName = [self imageNameForTemplateWithIndex:self.index];
     return [UIImage imageNamed:imageName];
+}
+
++ (void)setCurrentTemplate:(NBSTemplate *)currentTemplate {
+    _currentInstance = currentTemplate;
+}
+
++ (NBSTemplate *)currentTemplate {
+    return _currentInstance;
 }
 
 #pragma mark - private

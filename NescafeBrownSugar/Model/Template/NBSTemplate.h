@@ -15,6 +15,8 @@
 @property (nonatomic, strong, readonly) UIImage *image;
 
 - (id)initWithIndex:(int)index;
++ (void)setCurrentTemplate:(NBSTemplate *)currentTemplate;
++ (NBSTemplate *)currentTemplate;
 
 @end
 

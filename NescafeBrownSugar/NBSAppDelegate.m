@@ -8,11 +8,15 @@
 
 #import "NBSAppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import <VKStorage.h>
 
 @implementation NBSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+//    [[VKStorage sharedStorage] cleanCachedData];
+//    [[VKStorage sharedStorage] clean];
+    
     return YES;
 }
 

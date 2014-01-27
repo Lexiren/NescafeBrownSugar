@@ -32,5 +32,19 @@
     return sharedInstance;
 }
 
+- (NSString *)fullVkontakteName {
+    return [self fullNameWithFirstName:self.vkontakteFirstName lastName:self.vkontakteLastName];
+}
 
+- (NSString *)fullFacebookName {
+    return [self fullNameWithFirstName:self.facebookFirstName lastName:self.facebookLastName];
+}
+
+- (NSString *)fullNameWithFirstName:(NSString *)firstName lastName:(NSString *)lastName {
+    NSString *result = firstName ?: @"";
+    if (lastName.length) {
+        result = [result stringByAppendingString:[NSString stringWithFormat:@" %@", lastName]];
+    }
+    return result;
+}
 @end

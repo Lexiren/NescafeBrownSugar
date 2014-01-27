@@ -61,8 +61,7 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
              [self.spinner stopAnimating];
              if (success) {
                  //TODO: fill own gallery
-                 self.nameLabel.text = [self fullNameWithFirstName:user.facebookFirstName
-                                                          lastName:user.facebookLastName];
+                 self.nameLabel.text = [user fullFacebookName];
                  self.avatarPictureView.hidden = NO;
                  self.avatarPictureView.profileID = user.facebookUid;
                  self.avatarImageView.hidden = YES;
@@ -79,9 +78,8 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
              [self.spinner stopAnimating];
              if (success) {
                  //TODO: fill own gallery
-                 self.nameLabel.text = [self fullNameWithFirstName:user.vkontakteFirstName
-                                                          lastName:user.vkontakteLastName];
-                 NSURL *avatarURL = [NSURL URLWithString:user.vkontakteAvatar];
+                 self.nameLabel.text = [user fullVkontakteName];
+                 NSURL *avatarURL = [NSURL URLWithString:user.vkontakteAvatarLink];
                  NSData *avatarData = [NSData dataWithContentsOfURL:avatarURL];
                  self.avatarImageView.hidden = NO;
                  self.avatarImageView.image = [UIImage imageWithData:avatarData];
@@ -101,14 +99,6 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
         self.loginSubview.hidden = NO;
         self.galleryContainerSubview.hidden = YES;
     }
-}
-
-- (NSString *)fullNameWithFirstName:(NSString *)firstName lastName:(NSString *)lastName {
-    NSString *result = firstName ?: @"";
-    if (lastName.length) {
-        result = [result stringByAppendingString:[NSString stringWithFormat:@" %@", lastName]];
-    }
-    return result;
 }
 
 #pragma mark - IBActions
