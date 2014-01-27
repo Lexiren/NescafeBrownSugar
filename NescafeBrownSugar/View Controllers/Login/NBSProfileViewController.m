@@ -31,6 +31,8 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 
 @property (weak, nonatomic) IBOutlet UIButton *createPictureButton;
 @property (weak, nonatomic) IBOutlet UILabel *enterLabel;
+@property (weak, nonatomic) IBOutlet UILabel *yourImagesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *noImagesLabel;
 @end
 
 @implementation NBSProfileViewController
@@ -43,7 +45,9 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
     
     self.nameLabel.font = [UIFont standartLightFontWithSize:20.f];
     self.enterLabel.font = [UIFont standartLightFontWithSize:16.f];
-    [self.loginSubview layoutIfNeeded];
+    self.yourImagesLabel.font = [UIFont standartLightFontWithSize:16.f];
+    self.noImagesLabel.font = [UIFont standartLightFontWithSize:18.f];
+    self.createPictureButton.titleLabel.font = [UIFont standartFontWithSize:15.f];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
