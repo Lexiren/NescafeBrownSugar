@@ -263,7 +263,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoAboutNeskafe" translatesAutoresizingMaskIntoConstraints="NO" id="9zW-Xw-fdL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoAboutNescafe" translatesAutoresizingMaskIntoConstraints="NO" id="9zW-Xw-fdL">
                                 <rect key="frame" x="75" y="75" width="171" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -341,7 +341,7 @@
             </objects>
             <point key="canvasLocation" x="-153" y="2223"/>
         </scene>
-        <!--Login View Controller - Залогинься-->
+        <!--Login View Controller - Залогінься-->
         <scene sceneID="MmK-eG-EGg">
             <objects>
                 <viewController storyboardIdentifier="LoginVC" id="KOz-Ym-LPK" customClass="NBSLoginViewController" sceneMemberID="viewController">
@@ -419,8 +419,8 @@
                                 <rect key="frame" x="150" y="391" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Увійти за допомогою мережи" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="160" translatesAutoresizingMaskIntoConstraints="NO" id="zNJ-VG-iLM">
-                                <rect key="frame" x="80" y="113" width="160" height="41"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Увійти за допомогою соціальної мережі" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="175" translatesAutoresizingMaskIntoConstraints="NO" id="zNJ-VG-iLM">
+                                <rect key="frame" x="73" y="113" width="175" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -447,8 +447,10 @@
                             <constraint firstAttribute="centerY" secondItem="QAb-qr-8sW" secondAttribute="centerY" constant="21" id="hNT-EH-hkF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Залогинься" id="pXQ-fH-WoZ"/>
+                    <navigationItem key="navigationItem" title="Залогінься" id="pXQ-fH-WoZ"/>
                     <connections>
+                        <outlet property="enterLabel" destination="zNJ-VG-iLM" id="H2Z-Fc-YOX"/>
+                        <outlet property="skipButton" destination="aTp-z7-Ysy" id="IR5-On-h97"/>
                         <outlet property="spinner" destination="ypj-Mq-T9s" id="OZf-Tk-DSl"/>
                     </connections>
                 </viewController>
@@ -523,29 +525,29 @@
                                     <constraint firstAttribute="height" constant="1" id="3gz-yV-c7i"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isP-rd-meX" userLabel="Login SubView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isP-rd-meX" userLabel="Login SubView">
                                 <rect key="frame" x="0.0" y="301" width="320" height="219"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ys9-9j-d8N" userLabel="Separator">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="29"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Увійдіть  за допомогою мережи:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="119" translatesAutoresizingMaskIntoConstraints="NO" id="yg2-I2-Uoz">
-                                        <rect key="frame" x="101" y="29" width="119" height="29"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" text="Увійти за допомогою соціальної мережі" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yg2-I2-Uoz">
+                                        <rect key="frame" x="44" y="29" width="233" height="13"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qlt-bg-aHH" userLabel="Separator">
-                                        <rect key="frame" x="0.0" y="58" width="320" height="24"/>
+                                        <rect key="frame" x="0.0" y="46" width="320" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3n-zU-u1z" userLabel="Facebook Button">
-                                        <rect key="frame" x="63" y="82" width="193" height="48"/>
+                                        <rect key="frame" x="63" y="74" width="193" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -563,12 +565,12 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jS-aW-eOK" userLabel="Separator">
-                                        <rect key="frame" x="0.0" y="130" width="320" height="21"/>
+                                        <rect key="frame" x="0.0" y="122" width="320" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LrJ-MJ-pmC" userLabel="Vkontakte Button">
-                                        <rect key="frame" x="63" y="151" width="193" height="48"/>
+                                        <rect key="frame" x="63" y="147" width="193" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -586,7 +588,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CHZ-7Z-QAW" userLabel="Separator">
-                                        <rect key="frame" x="0.0" y="199" width="320" height="20"/>
+                                        <rect key="frame" x="0.0" y="195" width="320" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
@@ -594,15 +596,15 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="qlt-bg-aHH" secondAttribute="trailing" id="3yY-V0-Cpd"/>
-                                    <constraint firstAttribute="centerY" secondItem="yg2-I2-Uoz" secondAttribute="centerY" constant="66" id="5Jn-Fm-V9L"/>
+                                    <constraint firstAttribute="centerY" secondItem="yg2-I2-Uoz" secondAttribute="centerY" constant="74" id="5Jn-Fm-V9L"/>
                                     <constraint firstAttribute="trailing" secondItem="0jS-aW-eOK" secondAttribute="trailing" id="6lh-GR-D64"/>
                                     <constraint firstAttribute="trailing" secondItem="Ys9-9j-d8N" secondAttribute="trailing" id="Ah4-q2-mCL"/>
                                     <constraint firstItem="Ys9-9j-d8N" firstAttribute="height" secondItem="CHZ-7Z-QAW" secondAttribute="height" constant="9" id="BcZ-oE-55H"/>
-                                    <constraint firstItem="qlt-bg-aHH" firstAttribute="top" secondItem="yg2-I2-Uoz" secondAttribute="bottom" id="DRM-fV-Pd6"/>
+                                    <constraint firstItem="qlt-bg-aHH" firstAttribute="top" secondItem="yg2-I2-Uoz" secondAttribute="bottom" constant="4" id="DRM-fV-Pd6"/>
                                     <constraint firstItem="CHZ-7Z-QAW" firstAttribute="top" secondItem="LrJ-MJ-pmC" secondAttribute="bottom" id="DTV-5Q-vue"/>
                                     <constraint firstItem="0jS-aW-eOK" firstAttribute="height" secondItem="Ys9-9j-d8N" secondAttribute="height" constant="-8" id="EU1-ba-FRs"/>
                                     <constraint firstAttribute="centerX" secondItem="yg2-I2-Uoz" secondAttribute="centerX" id="IiJ-0W-m0n"/>
-                                    <constraint firstItem="yg2-I2-Uoz" firstAttribute="top" secondItem="Ys9-9j-d8N" secondAttribute="bottom" id="M3o-xY-l84"/>
+                                    <constraint firstItem="yg2-I2-Uoz" firstAttribute="top" secondItem="Ys9-9j-d8N" secondAttribute="bottom" constant="-4" id="M3o-xY-l84"/>
                                     <constraint firstItem="0jS-aW-eOK" firstAttribute="top" secondItem="n3n-zU-u1z" secondAttribute="bottom" id="Nuv-bO-mOr"/>
                                     <constraint firstItem="qlt-bg-aHH" firstAttribute="leading" secondItem="isP-rd-meX" secondAttribute="leading" id="VuH-Po-eFO"/>
                                     <constraint firstItem="qlt-bg-aHH" firstAttribute="height" secondItem="Ys9-9j-d8N" secondAttribute="height" constant="-5" id="XXX-wg-39N"/>
@@ -630,7 +632,7 @@
                                 <rect key="frame" x="150" y="281" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8G-PH-03U" userLabel="Gallery Container View">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8G-PH-03U" userLabel="Gallery Container View">
                                 <rect key="frame" x="0.0" y="301" width="320" height="222"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -1356,6 +1358,7 @@
                         <outlet property="avatarPictureView" destination="9gt-hh-SU1" id="KIS-kf-Fnv"/>
                         <outlet property="bgImageView" destination="fZl-Zj-pNQ" id="uRX-4N-WSA"/>
                         <outlet property="createPictureButton" destination="ZCS-S4-evu" id="G7b-z4-bD1"/>
+                        <outlet property="enterLabel" destination="yg2-I2-Uoz" id="ctf-Q4-XwZ"/>
                         <outlet property="galleryCollection" destination="1Ha-HQ-zhU" id="dga-r6-PX5"/>
                         <outlet property="galleryContainerSubview" destination="H8G-PH-03U" id="cgY-SE-eKw"/>
                         <outlet property="loginSubview" destination="isP-rd-meX" id="tSq-Ct-MbO"/>
@@ -2206,10 +2209,10 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwS-RP-sYl">
-                                <rect key="frame" x="40" y="488" width="77" height="30"/>
+                                <rect key="frame" x="37" y="491" width="74" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Перезняти">
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="ПЕРЕЗНЯТИ">
                                     <color key="titleColor" red="1" green="0.9210972046" blue="0.79919491519999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -2218,10 +2221,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbz-7K-ZfG">
-                                <rect key="frame" x="196" y="488" width="91" height="30"/>
+                                <rect key="frame" x="196" y="491" width="91" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Продовжити">
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="ПРОДОВЖИТИ">
                                     <color key="titleColor" red="1" green="0.9210972046" blue="0.79919491519999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -2244,7 +2247,7 @@
                             <constraint firstItem="aos-xx-mDL" firstAttribute="centerX" secondItem="LX6-2Q-u7X" secondAttribute="centerX" id="4In-89-7gG"/>
                             <constraint firstItem="G9U-T8-g6k" firstAttribute="top" secondItem="JSH-gV-ExQ" secondAttribute="top" constant="64" id="4eV-H4-pBx"/>
                             <constraint firstAttribute="trailing" secondItem="LX6-2Q-u7X" secondAttribute="trailing" id="4pX-v6-t7r"/>
-                            <constraint firstItem="bwS-RP-sYl" firstAttribute="leading" secondItem="JSH-gV-ExQ" secondAttribute="leading" constant="40" id="DXF-P7-pq1"/>
+                            <constraint firstItem="bwS-RP-sYl" firstAttribute="leading" secondItem="JSH-gV-ExQ" secondAttribute="leading" constant="37" id="DXF-P7-pq1"/>
                             <constraint firstAttribute="centerX" secondItem="G9U-T8-g6k" secondAttribute="centerX" id="SBW-K4-OtC"/>
                             <constraint firstItem="tbz-7K-ZfG" firstAttribute="centerY" secondItem="bwS-RP-sYl" secondAttribute="centerY" id="SIb-mw-7Zf"/>
                             <constraint firstItem="aos-xx-mDL" firstAttribute="centerY" secondItem="LX6-2Q-u7X" secondAttribute="centerY" constant="1" id="ThC-K7-MUj"/>
@@ -2258,8 +2261,10 @@
                     <navigationItem key="navigationItem" title="Твій малюнок" id="4g2-dA-0ci"/>
                     <connections>
                         <outlet property="buttonsBottomSpaceConstraint" destination="asK-ja-rju" id="7Ho-1j-Eic"/>
+                        <outlet property="continueButton" destination="tbz-7K-ZfG" id="U1p-LI-7Kv"/>
                         <outlet property="photoImageView" destination="G9U-T8-g6k" id="deK-ih-ohx"/>
                         <outlet property="photoImageViewHeightConstraint" destination="XKH-Aa-hie" id="xsS-nd-t00"/>
+                        <outlet property="retakeButton" destination="bwS-RP-sYl" id="O6e-TC-iAd"/>
                         <outlet property="visiblePartMask" destination="aos-xx-mDL" id="RJQ-Zq-oWI"/>
                         <segue destination="fXd-PO-XRa" kind="push" identifier="ShareVCPushSegue" id="UYa-BL-ZuT"/>
                     </connections>
@@ -2334,6 +2339,7 @@
                                     <constraint firstAttribute="height" constant="31" id="InP-wb-hW0"/>
                                     <constraint firstAttribute="width" constant="49" id="f2s-41-edF"/>
                                 </constraints>
+                                <color key="onTintColor" red="0.9490196704864502" green="0.81176477670669556" blue="0.26274511218070984" alpha="1" colorSpace="deviceRGB"/>
                                 <connections>
                                     <action selector="didChangeStateShareFBSwitch:" destination="fXd-PO-XRa" eventType="valueChanged" id="zFe-PA-Gff"/>
                                 </connections>
@@ -2345,6 +2351,7 @@
                                     <constraint firstAttribute="width" constant="49" id="57c-9g-Ast"/>
                                     <constraint firstAttribute="height" constant="31" id="Of4-Xd-k0X"/>
                                 </constraints>
+                                <color key="onTintColor" red="0.94901967050000002" green="0.81176477670000002" blue="0.26274511220000002" alpha="1" colorSpace="deviceRGB"/>
                                 <connections>
                                     <action selector="didChangeStateShareVKSwitch:" destination="fXd-PO-XRa" eventType="valueChanged" id="57K-1R-FD5"/>
                                 </connections>
@@ -2424,6 +2431,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="Azd-hd-4kv" id="Ly3-GU-Vy5"/>
                         <outlet property="imageView" destination="vcu-98-S8f" id="sX7-NF-MhA"/>
+                        <outlet property="okButton" destination="gUt-9J-fj2" id="Nd6-1U-9dj"/>
                         <outlet property="shareFBSwitch" destination="2K5-Vh-eMO" id="A3a-h6-frf"/>
                         <outlet property="shareVKSwitch" destination="wWj-L2-bVd" id="doH-jd-PwR"/>
                         <segue destination="ex6-Y6-FNh" kind="push" identifier="JoinGroupVCPushSegue" id="sxW-bD-8Ca"/>
@@ -2487,6 +2495,7 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="800" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vdC-08-Lvt">
                                 <rect key="frame" x="29" y="467" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" red="0.94901967050000002" green="0.81176477670000002" blue="0.26274511220000002" alpha="1" colorSpace="deviceRGB"/>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="198" translatesAutoresizingMaskIntoConstraints="NO" id="W5n-jD-2zH">
                                 <rect key="frame" x="94" y="464" width="198" height="36"/>
@@ -2578,6 +2587,7 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
                     <navigationItem key="navigationItem" title="Активізуйся!" id="rSi-mT-UKZ"/>
                     <connections>
                         <outlet property="joinGroupSwitch" destination="vdC-08-Lvt" id="qqp-Jc-Khu"/>
+                        <outlet property="okButton" destination="fs7-7L-4pk" id="osg-Uc-VxA"/>
                         <outlet property="switchLabel" destination="W5n-jD-2zH" id="ILD-Ri-7St"/>
                         <outlet property="textView" destination="gx4-f1-bqA" id="TYy-dx-lxr"/>
                     </connections>
@@ -2596,7 +2606,7 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
         <image name="joinTShirts" width="263" height="237"/>
         <image name="loginFbBtn" width="193" height="48"/>
         <image name="loginVkBtn" width="193" height="48"/>
-        <image name="logoAboutNeskafe" width="177" height="35"/>
+        <image name="logoAboutNescafe" width="171" height="39"/>
         <image name="logoAboutSEKTA" width="94" height="41"/>
         <image name="photoWithStick" width="320" height="568"/>
         <image name="photoWithStickForShare" width="320" height="568"/>

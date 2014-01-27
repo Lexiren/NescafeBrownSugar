@@ -14,31 +14,24 @@
 #import "NBSProfileViewController.h"
 #import "RESideMenu.h"
 #import "NBSNavigationController.h"
+#import "NBSDesignAdditions.h"
 
 NSString *const kNBSLoginVCIdentifier = @"LoginVC";
 
 @interface NBSLoginViewController ()
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *spinner;
+@property (nonatomic, weak) IBOutlet UIButton *skipButton;
+@property (nonatomic, weak) IBOutlet UILabel *enterLabel;
 @end
 
 @implementation NBSLoginViewController
-
-
-#pragma mark - init
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 #pragma mark - view life cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.skipButton.titleLabel.font = [UIFont standartFontWithSize:15.f];
+    self.enterLabel.font = [UIFont standartLightFontWithSize:18.f];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
