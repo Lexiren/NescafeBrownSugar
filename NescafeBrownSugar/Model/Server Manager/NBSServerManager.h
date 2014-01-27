@@ -21,7 +21,7 @@
 #define kNBSServerAPIParameterKeyVKpostID @"vkPostID"
 #define kNBSServerAPIParameterKeyFBpostID @"fbPostID"
 
-#define kNBSServerURL @"http://brown-sugar.com.ua/app.php"
+#define kNBSServerURL @"http://brown-sugar.com.ua"
 
 @interface NBSServerManager : NSObject
 
@@ -31,5 +31,8 @@
          postInfo:(NSDictionary *)postInfo
        completion:(NBSCompletionBlock)completion;
 
-
+//- (void)loadUserGalleryWithCompletion:(NBSCompletionBlockWithData)completion;
+- (void)loadGalleryWithSocialNetworkType:(NSString *)snType
+                                  userID:(NSString *)userID
+                              completion:(NBSCompletionBlockWithData)requestCompletion;
 @end

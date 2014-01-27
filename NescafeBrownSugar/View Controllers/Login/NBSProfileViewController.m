@@ -15,10 +15,14 @@
 #import "NBSUser.h"
 #import <QuartzCore/QuartzCore.h>
 #import "NBSDesignAdditions.h"
+#import "NBSServerManager.h"
+#import "NBSImageCollectionViewCell.h"
+#import "NBSGalleryImage.h"
+#import "NBSGalleryDetalViewController.h"
 
 NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 
-@interface NBSProfileViewController ()
+@interface NBSProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *spinner;
 @property (nonatomic, weak) IBOutlet UIImageView *avatarImageView;
@@ -31,6 +35,11 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 
 @property (weak, nonatomic) IBOutlet UIButton *createPictureButton;
 @property (weak, nonatomic) IBOutlet UILabel *enterLabel;
+
+@property (strong, nonatomic) NSDictionary *gallerySourceDictionaries;
+@property (strong, nonatomic) NSArray *gallerySource;
+@property (strong, nonatomic) NBSGalleryImage *selectedImage;
+
 @end
 
 @implementation NBSProfileViewController
@@ -75,48 +84,91 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
     [self reloadData];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:kNBSpresentGalleryDetailSegueIdentifier]) {
+        NBSGalleryDetalViewController *galleryContainer = (NBSGalleryDetalViewController *)segue.destinationViewController;
+        galleryContainer.image = self.selectedImage;
+    }
+}
+
 #pragma mark - private functions
+
+- (void)updateGallerySourceByAddingDictionary:(NSDictionary *)dict {
+    if (_gallerySourceDictionaries) {
+        NSMutableDictionary *newSource = [_gallerySourceDictionaries mutableCopy];
+        [newSource addEntriesFromDictionary:dict];
+        _gallerySourceDictionaries = newSource;
+    } else {
+        _gallerySourceDictionaries = dict;
+    }
+    
+    
+    NSMutableArray *gallerySourceMutable = [NSMutableArray array];
+    for (NSString *key in [_gallerySourceDictionaries allKeys]) {
+        NBSGalleryImage *galleryImage = [[NBSGalleryImage alloc] initWithId:key
+                                                                      image:[_gallerySourceDictionaries objectForKey:key]];
+        [gallerySourceMutable addObject:galleryImage];
+    }
+    
+    self.gallerySource = gallerySourceMutable;
+    
+    [self.galleryCollection reloadData];
+}
 
 - (void)reloadData {
     [self.spinner startAnimating];
     
     NBSSocialManager *sharedManager = [NBSSocialManager sharedManager];
+    NBSUser *user = [NBSUser currentUser];
     if ([sharedManager isFacebookLoggedIn]) {
-        [sharedManager getFacebookUserDataWithCompletion:
-         ^(BOOL success, NSError *error, NBSUser *user)
-         {
-             [self.spinner stopAnimating];
-             if (success) {
-                 //TODO: fill own gallery
-                 self.nameLabel.text = [user fullFacebookName];
-                 self.avatarPictureView.hidden = NO;
-                 self.avatarPictureView.profileID = user.facebookUid;
-                 self.avatarImageView.hidden = YES;
-                 self.loginSubview.hidden = YES;
-                 self.galleryContainerSubview.hidden = NO;
-             } else if (error) {
-                 [UIAlertView showErrorAlertWithError:error];
-             }
-         }];
+        [[NBSServerManager sharedManager] loadGalleryWithSocialNetworkType:@"fbid"
+                                                                    userID:user.facebookUid
+                                                                completion:^(BOOL success, NSError *error, id data) {
+                                                                    [self.spinner stopAnimating];
+                                                                    if (success) {
+                                                                        [self updateGallerySourceByAddingDictionary:data];
+                                                                    } else {
+                                                                        [UIAlertView showErrorAlertWithError:error];
+                                                                    }
+                                                                }];
+        if ([sharedManager isVkontakteLoggedIn]) {
+            [[NBSServerManager sharedManager] loadGalleryWithSocialNetworkType:@"vkid"
+                                                                        userID:user.vkontakteUid
+                                                                    completion:^(BOOL success, NSError *error, id data) {
+                                                                        [self.spinner stopAnimating];
+                                                                        if (success) {
+                                                                            [self updateGallerySourceByAddingDictionary:data];
+                                                                        } else {
+                                                                            [UIAlertView showErrorAlertWithError:error];
+                                                                        }
+                                                                    }];
+        }
+        
+        self.nameLabel.text = [user fullFacebookName];
+        self.avatarPictureView.hidden = NO;
+        self.avatarPictureView.profileID = user.facebookUid;
+        self.avatarImageView.hidden = YES;
+        self.loginSubview.hidden = YES;
+        self.galleryContainerSubview.hidden = NO;
     } else if ([sharedManager isVkontakteLoggedIn]) {
-        [sharedManager getVkontakteUserDataWithCompletion:
-         ^(BOOL success, NSError *error, NBSUser *user)
-         {
-             [self.spinner stopAnimating];
-             if (success) {
-                 //TODO: fill own gallery
-                 self.nameLabel.text = [user fullVkontakteName];
-                 NSURL *avatarURL = [NSURL URLWithString:user.vkontakteAvatarLink];
-                 NSData *avatarData = [NSData dataWithContentsOfURL:avatarURL];
-                 self.avatarImageView.hidden = NO;
-                 self.avatarImageView.image = [UIImage imageWithData:avatarData];
-                 self.avatarPictureView.hidden = YES;
-                 self.loginSubview.hidden = YES;
-                 self.galleryContainerSubview.hidden = NO;
-             } else if (error) {
-                 [UIAlertView showErrorAlertWithError:error];
-             }
-         }];
+        [[NBSServerManager sharedManager] loadGalleryWithSocialNetworkType:@"vkid"
+                                                                    userID:user.vkontakteUid
+                                                                completion:^(BOOL success, NSError *error, id data) {
+                                                                    [self.spinner stopAnimating];
+                                                                    if (success) {
+                                                                        [self updateGallerySourceByAddingDictionary:data];
+                                                                    } else {
+                                                                        [UIAlertView showErrorAlertWithError:error];
+                                                                    }
+                                                                }];
+        self.nameLabel.text = [user fullVkontakteName];
+        NSURL *avatarURL = [NSURL URLWithString:user.vkontakteAvatarLink];
+        NSData *avatarData = [NSData dataWithContentsOfURL:avatarURL];
+        self.avatarImageView.hidden = NO;
+        self.avatarImageView.image = [UIImage imageWithData:avatarData];
+        self.avatarPictureView.hidden = YES;
+        self.loginSubview.hidden = YES;
+        self.galleryContainerSubview.hidden = NO;
     } else {
         [self.spinner stopAnimating];
         self.nameLabel.text = @"Залогінься";
@@ -172,5 +224,38 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
         }
     }];
 }
+
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView
+     numberOfItemsInSection:(NSInteger)section
+{
+    //    return self.sourceImagesNames.count;
+    return self.gallerySource.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifier = @"ImageCellIdentifier";
+    
+    NBSImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier
+                                                                                 forIndexPath:indexPath];
+    NBSGalleryImage *image = self.gallerySource[indexPath.row];
+    cell.imageThumbView.image = image.imagePreview;
+    
+    return cell;
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView
+didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    self.selectedImage = self.gallerySource[indexPath.row];
+    [self performSegueWithIdentifier:kNBSpresentGalleryDetailSegueIdentifier sender:self];
+}
+
 
 @end

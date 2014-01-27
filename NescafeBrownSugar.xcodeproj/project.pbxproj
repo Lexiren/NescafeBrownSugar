@@ -18,6 +18,8 @@
 		06E6A7F618907C2E00B1ABD4 /* NBSDesignAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 06E6A7F518907C2E00B1ABD4 /* NBSDesignAdditions.m */; };
 		06E6A7FA18907EFF00B1ABD4 /* NBSAboutProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06E6A7F918907EFF00B1ABD4 /* NBSAboutProjectViewController.m */; };
 		842237BB1896EB890061A724 /* NBSGoogleAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 842237BA1896EB890061A724 /* NBSGoogleAnalytics.m */; };
+		842237C4189720FE0061A724 /* NBSGalleryImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 842237C3189720FE0061A724 /* NBSGalleryImage.m */; };
+		842237C71897238B0061A724 /* NBSGalleryDetalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842237C61897238B0061A724 /* NBSGalleryDetalViewController.m */; };
 		842C7AEC188582CA004CBA0C /* NBSImageCollectionContentPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C7AEB188582CA004CBA0C /* NBSImageCollectionContentPageController.m */; };
 		842C7AF11886F83C004CBA0C /* NBSPhotoCameraOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C7AF01886F83C004CBA0C /* NBSPhotoCameraOverlay.m */; };
 		842C7AF31886F850004CBA0C /* NBSPhotoCameraOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842C7AF21886F850004CBA0C /* NBSPhotoCameraOverlay.xib */; };
@@ -103,6 +105,10 @@
 		06E6A7F918907EFF00B1ABD4 /* NBSAboutProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSAboutProjectViewController.m; path = "View Controllers/About Project/NBSAboutProjectViewController.m"; sourceTree = "<group>"; };
 		842237B91896EB890061A724 /* NBSGoogleAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSGoogleAnalytics.h; path = Utils/NBSGoogleAnalytics.h; sourceTree = "<group>"; };
 		842237BA1896EB890061A724 /* NBSGoogleAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSGoogleAnalytics.m; path = Utils/NBSGoogleAnalytics.m; sourceTree = "<group>"; };
+		842237C2189720FE0061A724 /* NBSGalleryImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSGalleryImage.h; path = "Model/Gallery Image/NBSGalleryImage.h"; sourceTree = "<group>"; };
+		842237C3189720FE0061A724 /* NBSGalleryImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSGalleryImage.m; path = "Model/Gallery Image/NBSGalleryImage.m"; sourceTree = "<group>"; };
+		842237C51897238B0061A724 /* NBSGalleryDetalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSGalleryDetalViewController.h; path = "View Controllers/Login/NBSGalleryDetalViewController.h"; sourceTree = "<group>"; };
+		842237C61897238B0061A724 /* NBSGalleryDetalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSGalleryDetalViewController.m; path = "View Controllers/Login/NBSGalleryDetalViewController.m"; sourceTree = "<group>"; };
 		842C7AEA188582CA004CBA0C /* NBSImageCollectionContentPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSImageCollectionContentPageController.h; path = "View Controllers/Images Collection/NBSImageCollectionContentPageController.h"; sourceTree = "<group>"; };
 		842C7AEB188582CA004CBA0C /* NBSImageCollectionContentPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSImageCollectionContentPageController.m; path = "View Controllers/Images Collection/NBSImageCollectionContentPageController.m"; sourceTree = "<group>"; };
 		842C7AEF1886F83C004CBA0C /* NBSPhotoCameraOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSPhotoCameraOverlay.h; path = "View Controllers/Main Work screen/NBSPhotoCameraOverlay.h"; sourceTree = "<group>"; };
@@ -247,8 +253,19 @@
 			children = (
 				067B15FB187829F00037DCE3 /* NBSProfileViewController.h */,
 				067B15FC187829F00037DCE3 /* NBSProfileViewController.m */,
+				842237C51897238B0061A724 /* NBSGalleryDetalViewController.h */,
+				842237C61897238B0061A724 /* NBSGalleryDetalViewController.m */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		842237C1189720D80061A724 /* Gallery Image */ = {
+			isa = PBXGroup;
+			children = (
+				842237C2189720FE0061A724 /* NBSGalleryImage.h */,
+				842237C3189720FE0061A724 /* NBSGalleryImage.m */,
+			);
+			name = "Gallery Image";
 			sourceTree = "<group>";
 		};
 		842C7AED1886F6FA004CBA0C /* Template Overlay */ = {
@@ -392,6 +409,7 @@
 		8432C4291875AA57005C26B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				842237C1189720D80061A724 /* Gallery Image */,
 				84B276DF18925CDA00E5BE8E /* Server Manager */,
 				847A86C718848FD500884965 /* Template */,
 				845069101876E7F40087FD3F /* User */,
@@ -721,7 +739,9 @@
 				84E0A013189396C200E863F2 /* NSDictionary+NBSExtensions.m in Sources */,
 				8450693B187859230087FD3F /* NBSTemplateCameraOverlayView.m in Sources */,
 				84FAA8061875EC840007FB03 /* NBSInstructionsContentViewController.m in Sources */,
+				842237C4189720FE0061A724 /* NBSGalleryImage.m in Sources */,
 				847A86CA1884901E00884965 /* NBSTemplate.m in Sources */,
+				842237C71897238B0061A724 /* NBSGalleryDetalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

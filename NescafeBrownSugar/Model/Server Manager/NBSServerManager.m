@@ -65,7 +65,7 @@
     NSLog(@"%@", parameters.description);
     
     AFHTTPRequestOperationManager *httpManager = [AFHTTPRequestOperationManager manager];
-    [httpManager POST:kNBSServerURL
+    [httpManager POST:[kNBSServerURL stringByAppendingPathComponent:@"app.php"]
            parameters:parameters
               success:^(AFHTTPRequestOperation *operation, id responseObject) {
                   DLog(@"photo sent to the server successfull");
@@ -78,6 +78,59 @@
                       completion(NO, error);
                   }
               }];
+}
+
+
+//- (void)loadUserGalleryWithCompletion:(NBSCompletionBlockWithData)completion {
+//    
+//    void (^loadGalleryForFB)(NSMutableDictionary *, NBSCompletionBlockWithData) = ^(NSMutableDictionary *response, NBSCompletionBlockWithData requestCompletion)
+//    {
+//        if ([[NBSSocialManager sharedManager] isFacebookLoggedIn]) {
+//            [self loadGalleryWithSocialNetworkType:@"fbid"
+//                                            userID:[NBSUser currentUser].vkontakteUid
+//                                        completion:^(BOOL success, NSError *error, NSDictionary *data) {
+//                                            if (success) {
+//                                                [response addEntriesFromDictionary:(NSDictionary *)data];
+//                                            }
+//                                            if (requestCompletion) {
+//                                                requestCompletion(success, error, response);
+//                                            }
+//                                        }];
+//        }
+//    };
+//    
+//    if ([[NBSSocialManager sharedManager] isVkontakteLoggedIn]) {
+//        [self loadGalleryWithSocialNetworkType:@"vkid"
+//                                        userID:[NBSUser currentUser].vkontakteUid
+//                                    completion:^(BOOL success, NSError *error, id data)
+//        {
+//            NSMutableDictionary *response = [data mutableCopy];
+//            loadGalleryForFB(response, completion);
+//        }];
+//    } else {
+//        loadGalleryForFB([NSMutableDictionary dictionary], completion);
+//    }
+//}
+
+- (void)loadGalleryWithSocialNetworkType:(NSString *)snType
+                                  userID:(NSString *)userID
+                              completion:(NBSCompletionBlockWithData)requestCompletion
+{
+    AFHTTPRequestOperationManager *httpManager = [AFHTTPRequestOperationManager manager];
+    [httpManager POST:[kNBSServerURL stringByAppendingFormat:@"/gallery_get/%@/%@/",snType,userID]
+           parameters:@{}
+              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                  DLog(@"get gallary successfull");
+                  if (requestCompletion) {
+                      requestCompletion(YES, nil, responseObject);
+                  }
+              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                  DLog(@"failed loading gallery");
+                  if (requestCompletion) {
+                      requestCompletion(NO, error, nil);
+                  }
+              }];
+
 }
 
 @end
