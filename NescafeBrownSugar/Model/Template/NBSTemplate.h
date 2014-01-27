@@ -13,6 +13,7 @@
 @property (nonatomic, readonly) int index;
 @property (nonatomic, strong, readonly) UIImage *icon;
 @property (nonatomic, strong, readonly) UIImage *image;
+@property (nonatomic, readonly) int templateID;
 
 - (id)initWithIndex:(int)index;
 + (void)setCurrentTemplate:(NBSTemplate *)currentTemplate;

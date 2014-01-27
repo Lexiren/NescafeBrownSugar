@@ -50,7 +50,7 @@
     NBSTemplate *template = [NBSTemplate currentTemplate];
     
     NSMutableDictionary *parameters = [postInfo mutableCopy];
-    [parameters setValueIfExist:@(template.index) forKey:kNBSServerAPIParameterKeyTemplateID];
+    [parameters setValueIfExist:@(template.templateID) forKey:kNBSServerAPIParameterKeyTemplateID];
     
     [parameters setValueIfExist:user.vkontakteUid forKey:kNBSServerAPIParameterKeyVKid];
     [parameters setValueIfExist:user.vkontakteAvatarLink forKey:kNBSServerAPIParameterKeyVKavatar];

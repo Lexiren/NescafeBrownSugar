@@ -34,6 +34,10 @@ static NBSTemplate *_currentInstance;
     return self;
 }
 
+- (int)templateID {
+    return self.index + kNBSTemplatesFirstNumber;
+}
+
 - (UIImage *)icon {
     NSString *iconName = [self iconNameForTemplateWithIndex:self.index];
     return [UIImage imageNamed:iconName];
