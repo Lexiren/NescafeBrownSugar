@@ -10,19 +10,41 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "NBSUser.h"
 #import <Social/Social.h>
+#import "NBSGoogleAnalytics.h"
 
 @implementation NBSSocialManager (Facebook)
 
+- (void)facebookAutologinWithCompletion:(NBSCompletionBlock)completion {
+    [self facebookLoginWithAllowLoginUI:NO completion:completion];
+}
+
 - (void)facebookLoginWithCompletion:(NBSCompletionBlock)completion {
+    [self facebookLoginWithAllowLoginUI:YES completion:completion];
+}
+
+- (void)facebookLoginWithAllowLoginUI:(BOOL)allowLoginUI completion:(NBSCompletionBlock)completion {
     self.loginCompletion = completion;
     if (![self isFacebookLoggedIn]) {
         [FBSession openActiveSessionWithReadPermissions:@[@"basic_info"]
-                                           allowLoginUI:YES
+                                           allowLoginUI:allowLoginUI
                                       completionHandler:^(FBSession *session,
                                                           FBSessionState status,
                                                           NSError *error)
          {
-             [self performLoginCompletionWithSuccess:session.isOpen error:error];
+             if (session.isOpen && !error) {
+                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kNBSShouldAutologinFBDefaultsKey];
+                 [[NSUserDefaults standardUserDefaults] synchronize];
+                 
+                 [NBSGoogleAnalytics sendEventWithCategory:NBSGAEventCategoryFacebook
+                                                    action:NBSGAEventActionLogin];
+                 
+                 [self getFacebookUserDataWithCompletion:^(BOOL success, NSError *error, NBSUser *user) {
+                     [self performLoginCompletionWithSuccess:success error:error];
+                 }];
+             } else {
+                 [self performLoginCompletionWithSuccess:session.isOpen error:error];
+             }
+
          }];
     }
 }

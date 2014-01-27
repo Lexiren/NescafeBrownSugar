@@ -13,6 +13,8 @@
 #import "NBSSocialManager+Vkontakte.h"
 #import "NBSServerManager.h"
 #import <Social/Social.h>
+#import "NBSJoinGroupViewController.h"
+#import "NBSGoogleAnalytics.h"
 
 NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
 
@@ -125,6 +127,12 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
                                            postInfo:postInfo
                                          completion:^(BOOL success, NSError *error) {
                                              self.animateActivityForServer = NO;
+                                             if (success) {
+                                             } else {
+                                                 [UIAlertView showErrorAlertWithError:error];
+                                             }
+                                             [self performSegueWithIdentifier:kNBSJoinGroupVCPushSegue
+                                                                       sender:self];
                                          }];
     }
 }
@@ -142,12 +150,13 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
     self.photoToSend = photoWithBound;
     
     if (self.shareFBSwitch.isOn) {
+        self.didPostPhotoToFB = NO;
         self.animateActivityForFB = YES;
         
         void (^postToFB)() = ^(){
             [socialManager postImageToFB:photoWithBound withCompletion:^(BOOL success, NSError *error, id data) {
                 self.animateActivityForFB = NO;
-                if (error) {
+                if (!success) {
                     [UIAlertView showErrorAlertWithError:error];
                 } else {
 //                    [UIAlertView showSimpleAlertWithMessage:@"Фото успiшно розмiщене у Facebook"];
@@ -156,6 +165,8 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
                         post_id = [post_id stringValue];
                     }
                     self.fbPostInfo = @{kNBSServerAPIParameterKeyFBpostID: post_id};
+                    [NBSGoogleAnalytics sendEventWithCategory:NBSGAEventCategoryFacebook
+                                                       action:NBSGAEventActionShare];
                 }
                 self.didPostPhotoToFB = YES;
             }];
@@ -168,32 +179,25 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
                 self.animateActivityForFB = NO;
                 if (success) {
                     self.animateActivityForFB = YES;
-                    [socialManager getFacebookUserDataWithCompletion:^(BOOL success, NSError *error, NBSUser *user) {
-                        self.animateActivityForFB = NO;
-                        if (success) {
-                            self.animateActivityForFB = YES;
-                            postToFB();
-                        } else {
-                            self.didPostPhotoToFB = YES;
-                            [UIAlertView showErrorAlertWithError:error];
-                        }
-
-                    }];
+                    postToFB();
                 } else {
                     self.didPostPhotoToFB = YES;
                     [UIAlertView showErrorAlertWithError:error];
                 }
             }];
         }
+    } else {
+        self.didPostPhotoToFB = YES;
     }
     if (self.shareVKSwitch.isOn) {
+        self.didPostPhotoToVK = NO;
         self.animateActivityForVK = YES;
         self.vkPostInfo = [NSMutableDictionary dictionary];
         
         void (^postToVK)() = ^(){
             [socialManager postImageToVK:photoWithBound withCompletion:^(BOOL success, NSError *error, id data) {
                 self.animateActivityForVK = NO;
-                if (error) {
+                if (!success) {
                     [UIAlertView showErrorAlertWithError:error];
                 } else {
 //                    [UIAlertView showSimpleAlertWithMessage:@"Фото успiшно розмiщене у Vkontakte"];
@@ -202,6 +206,10 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
                         post_id = [post_id stringValue];
                     }
                     self.vkPostInfo = @{kNBSServerAPIParameterKeyVKpostID : post_id};
+
+                    [NBSGoogleAnalytics sendEventWithCategory:NBSGAEventCategoryVkontakte
+                                                       action:NBSGAEventActionShare];
+                    
                 }
                 self.didPostPhotoToVK = YES;
             }];
@@ -214,35 +222,18 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
                 self.animateActivityForVK = NO;
                 if (success) {
                     self.animateActivityForVK = YES;
-                    [socialManager getVkontakteUserDataWithCompletion:^(BOOL success, NSError *error, NBSUser *user) {
-                        self.animateActivityForVK = NO;
-                        if (success) {
-                            self.animateActivityForVK = YES;
-                            postToVK();
-                        } else {
-                            [UIAlertView showErrorAlertWithError:error];
-                            self.didPostPhotoToVK = YES;
-                        }
-                    }];
+                    postToVK();
                 } else {
                     [UIAlertView showErrorAlertWithError:error];
                     self.didPostPhotoToVK = YES;
                 }
             }];
         }
+    } else {
+        self.didPostPhotoToVK = YES;
     }
 }
-/*
-NescafeBrownSugar[8761:60b] VK : {
-    response =     {
-        "post_id" = 3620;
-    };
-}
-2014-01-23 17:21:41.953 NescafeBrownSugar[8761:60b] FB : {
-    id = 593611967385237;
-    "post_id" = "100002093165006_593595930720174";
-}
-*/
+
 - (IBAction)didChangeStateShareVKSwitch:(id)sender {
 }
 

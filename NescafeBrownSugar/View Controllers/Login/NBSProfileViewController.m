@@ -45,6 +45,30 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:kNBSShouldAutologinFBDefaultsKey] &&
+        ![socialManager isFacebookLoggedIn])
+    {
+        [socialManager facebookAutologinWithCompletion:^(BOOL success, NSError *error) {
+            if (success) {
+                [self reloadData];
+            } else {
+                [UIAlertView showErrorAlertWithError:error];
+            }
+        }];
+    }
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:kNBSShouldAutologinVKDefaultsKey] &&
+        ![socialManager isVkontakteLoggedIn])
+    {
+        [socialManager getVkontakteUserDataWithCompletion:^(BOOL success, NSError *error, NBSUser *user) {
+            if (success) {
+                [self reloadData];
+            } else {
+                [UIAlertView showErrorAlertWithError:error];
+            }
+        }];
+    }
     [self reloadData];
 }
 

@@ -62,6 +62,8 @@
     
     [parameters setValue:@"iOS" forKey:@"OSType"];
     
+    NSLog(@"%@", parameters.description);
+    
     AFHTTPRequestOperationManager *httpManager = [AFHTTPRequestOperationManager manager];
     [httpManager POST:kNBSServerURL
            parameters:parameters

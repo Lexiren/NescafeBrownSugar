@@ -8,6 +8,10 @@
 
 #import "NBSJoinGroupViewController.h"
 #import "NBSDesignAdditions.h"
+#import "NBSProfileViewController.h"
+#import "NBSNavigationController.h"
+
+#import "UIViewController+NBSNavigationItems.h"
 
 NSString *const kNBSJoinGroupVCPushSegue = @"JoinGroupVCPushSegue";
 
@@ -25,7 +29,17 @@ NSString *const kNBSJoinGroupVCPushSegue = @"JoinGroupVCPushSegue";
     self.switchLabel.font = [UIFont standartLightFontWithSize:14.f];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self showLeftMenuBarButton:YES];
+}
+
 - (IBAction)okButtonPressed:(id)sender {
+    //todo: join group
+    
+    NBSProfileViewController *profileVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSProfileVCIdentifier];
+    [profileVC showLeftMenuBarButton:YES];
+    [self.navigationController setViewControllers:@[profileVC] animated:YES];
 }
 
 @end

@@ -13,6 +13,7 @@
 #import "NBSUser.h"
 #import "VKAccessToken.h"
 #import <AFHTTPRequestOperationManager.h>
+#import "NBSGoogleAnalytics.h"
 
 #define kNBSVkontakteAppIDPlistKey @"VkontakteAppID"
 #define kNBSVkontakteUserDataRequestSignature @"UserDataRequest"
@@ -242,12 +243,22 @@ responseErrorOccured:(id)error {
 - (void)VKConnector:(VKConnector *)connector
   willHideModalView:(KGModal *)view
 {
-    [self performLoginCompletionWithSuccess:NO error:nil];
+    if (![self isVkontakteLoggedIn]) {
+        [self performLoginCompletionWithSuccess:NO error:nil];
+    }
 }
 
 - (void)VKConnector:(VKConnector *)connector
 accessTokenRenewalSucceeded:(VKAccessToken *)accessToken {
-    [self performLoginCompletionWithSuccess:YES error:nil];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kNBSShouldAutologinVKDefaultsKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
+    [NBSGoogleAnalytics sendEventWithCategory:NBSGAEventCategoryVkontakte
+                                       action:NBSGAEventActionLogin];
+    
+    [self getVkontakteUserDataWithCompletion:^(BOOL success, NSError *error, NBSUser *user) {
+        [self performLoginCompletionWithSuccess:success error:error];
+    }];
 }
 
 - (void)VKConnector:(VKConnector *)connector

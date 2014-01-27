@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06708EA518969719009AC9CD /* UIViewController+GA.m in Sources */ = {isa = PBXBuildFile; fileRef = 06708EA418969719009AC9CD /* UIViewController+GA.m */; };
 		06708EA918969B06009AC9CD /* NBSJoinGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06708EA818969B06009AC9CD /* NBSJoinGroupViewController.m */; };
 		067B15D618773C5C0037DCE3 /* NBSSocialManager+Vkontakte.m in Sources */ = {isa = PBXBuildFile; fileRef = 067B15D518773C5C0037DCE3 /* NBSSocialManager+Vkontakte.m */; };
 		067B15E5187749600037DCE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 067B15E3187749600037DCE3 /* Localizable.strings */; };
@@ -18,6 +17,7 @@
 		06E6A7F3189074B100B1ABD4 /* SansRoundedLightC.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06E6A7F1189074B100B1ABD4 /* SansRoundedLightC.otf */; };
 		06E6A7F618907C2E00B1ABD4 /* NBSDesignAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 06E6A7F518907C2E00B1ABD4 /* NBSDesignAdditions.m */; };
 		06E6A7FA18907EFF00B1ABD4 /* NBSAboutProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06E6A7F918907EFF00B1ABD4 /* NBSAboutProjectViewController.m */; };
+		842237BB1896EB890061A724 /* NBSGoogleAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 842237BA1896EB890061A724 /* NBSGoogleAnalytics.m */; };
 		842C7AEC188582CA004CBA0C /* NBSImageCollectionContentPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C7AEB188582CA004CBA0C /* NBSImageCollectionContentPageController.m */; };
 		842C7AF11886F83C004CBA0C /* NBSPhotoCameraOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C7AF01886F83C004CBA0C /* NBSPhotoCameraOverlay.m */; };
 		842C7AF31886F850004CBA0C /* NBSPhotoCameraOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842C7AF21886F850004CBA0C /* NBSPhotoCameraOverlay.xib */; };
@@ -83,8 +83,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06708EA318969719009AC9CD /* UIViewController+GA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+GA.h"; path = "Utils/UIViewController+GA.h"; sourceTree = "<group>"; };
-		06708EA418969719009AC9CD /* UIViewController+GA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+GA.m"; path = "Utils/UIViewController+GA.m"; sourceTree = "<group>"; };
 		06708EA718969B06009AC9CD /* NBSJoinGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSJoinGroupViewController.h; path = "View Controllers/Join Group/NBSJoinGroupViewController.h"; sourceTree = "<group>"; };
 		06708EA818969B06009AC9CD /* NBSJoinGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSJoinGroupViewController.m; path = "View Controllers/Join Group/NBSJoinGroupViewController.m"; sourceTree = "<group>"; };
 		067B15D418773C5C0037DCE3 /* NBSSocialManager+Vkontakte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NBSSocialManager+Vkontakte.h"; path = "Model/Social Manager/NBSSocialManager+Vkontakte.h"; sourceTree = "<group>"; };
@@ -103,6 +101,8 @@
 		06E6A7F518907C2E00B1ABD4 /* NBSDesignAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSDesignAdditions.m; path = Utils/NBSDesignAdditions.m; sourceTree = "<group>"; };
 		06E6A7F818907EFF00B1ABD4 /* NBSAboutProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSAboutProjectViewController.h; path = "View Controllers/About Project/NBSAboutProjectViewController.h"; sourceTree = "<group>"; };
 		06E6A7F918907EFF00B1ABD4 /* NBSAboutProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSAboutProjectViewController.m; path = "View Controllers/About Project/NBSAboutProjectViewController.m"; sourceTree = "<group>"; };
+		842237B91896EB890061A724 /* NBSGoogleAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSGoogleAnalytics.h; path = Utils/NBSGoogleAnalytics.h; sourceTree = "<group>"; };
+		842237BA1896EB890061A724 /* NBSGoogleAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSGoogleAnalytics.m; path = Utils/NBSGoogleAnalytics.m; sourceTree = "<group>"; };
 		842C7AEA188582CA004CBA0C /* NBSImageCollectionContentPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSImageCollectionContentPageController.h; path = "View Controllers/Images Collection/NBSImageCollectionContentPageController.h"; sourceTree = "<group>"; };
 		842C7AEB188582CA004CBA0C /* NBSImageCollectionContentPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSImageCollectionContentPageController.m; path = "View Controllers/Images Collection/NBSImageCollectionContentPageController.m"; sourceTree = "<group>"; };
 		842C7AEF1886F83C004CBA0C /* NBSPhotoCameraOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSPhotoCameraOverlay.h; path = "View Controllers/Main Work screen/NBSPhotoCameraOverlay.h"; sourceTree = "<group>"; };
@@ -514,8 +514,8 @@
 				06E6A7F518907C2E00B1ABD4 /* NBSDesignAdditions.m */,
 				84E0A011189396C100E863F2 /* NSDictionary+NBSExtensions.h */,
 				84E0A012189396C200E863F2 /* NSDictionary+NBSExtensions.m */,
-				06708EA318969719009AC9CD /* UIViewController+GA.h */,
-				06708EA418969719009AC9CD /* UIViewController+GA.m */,
+				842237B91896EB890061A724 /* NBSGoogleAnalytics.h */,
+				842237BA1896EB890061A724 /* NBSGoogleAnalytics.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -691,7 +691,6 @@
 			files = (
 				067B1603187B16540037DCE3 /* NBSMenuViewController.m in Sources */,
 				8450691A18774EE60087FD3F /* NBSSocialManager+Facebook.m in Sources */,
-				06708EA518969719009AC9CD /* UIViewController+GA.m in Sources */,
 				847A86CD1884A0B700884965 /* NBSImagesCollectionContainerViewController.m in Sources */,
 				06E6A7F618907C2E00B1ABD4 /* NBSDesignAdditions.m in Sources */,
 				8450694018785E6A0087FD3F /* UIViewController+NBSNavigationItems.m in Sources */,
@@ -702,6 +701,7 @@
 				842C7AF61886FFC1004CBA0C /* NBSPhotoPreviewController.m in Sources */,
 				067B15FD187829F00037DCE3 /* NBSProfileViewController.m in Sources */,
 				06708EA918969B06009AC9CD /* NBSJoinGroupViewController.m in Sources */,
+				842237BB1896EB890061A724 /* NBSGoogleAnalytics.m in Sources */,
 				8432C3EF18757F3E005C26B8 /* main.m in Sources */,
 				84FAA7FE1875EC410007FB03 /* UIAlertView+NBSExtensions.m in Sources */,
 				8432C4241875924A005C26B8 /* NBSInstructionsViewController.m in Sources */,
@@ -856,15 +856,15 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Iryna Vasylyeva (86C4E82F6G)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Iryna Vasylyeva (86C4E82F6G)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NescafeBrownSugar/NescafeBrownSugar-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "NescafeBrownSugar/NescafeBrownSugar-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "7F4A10E5-3CDA-4505-A84C-245424DB9B97";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -878,7 +878,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Iryna Vasylyeva (6ZM464WN24)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Iryna Vasylyeva (6ZM464WN24)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NescafeBrownSugar/NescafeBrownSugar-Prefix.pch";
@@ -887,7 +887,7 @@
 				INFOPLIST_FILE = "NescafeBrownSugar/NescafeBrownSugar-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "F8A55082-6343-42E7-A7DA-8338751CAE3E";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;

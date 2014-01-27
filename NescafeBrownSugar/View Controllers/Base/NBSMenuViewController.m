@@ -72,10 +72,10 @@ NSString *const kNBSMenuVCIdentifier = @"MenuVC";
             break;
         case kCPMenuDrawRow:
         {
-//            NBSImagesCollectionContainerViewController *imagesCollectionVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSImagesCollectionVCIdentifier];
-//            viewController = imagesCollectionVC;
-            NBSJoinGroupViewController *joinGroupVC = [self.storyboard instantiateViewControllerWithIdentifier:@"JoinGroup"];
-            viewController = joinGroupVC;
+            NBSImagesCollectionContainerViewController *imagesCollectionVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSImagesCollectionVCIdentifier];
+            viewController = imagesCollectionVC;
+//            NBSJoinGroupViewController *joinGroupVC = [self.storyboard instantiateViewControllerWithIdentifier:@"JoinGroup"];
+//            viewController = joinGroupVC;
         }
             break;
         case kCPMenuAboutProjectRow:

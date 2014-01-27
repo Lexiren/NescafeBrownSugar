@@ -8,6 +8,9 @@
 
 #define kNBSSharePhotoPostMessage @"#brownsugar"
 
+#define kNBSShouldAutologinFBDefaultsKey @"shouldAutologinFB"
+#define kNBSShouldAutologinVKDefaultsKey @"shouldAutologinVK"
+
 @interface NBSSocialManager : NSObject
 //init
 + (NBSSocialManager *)sharedManager;

@@ -10,6 +10,7 @@
 
 @interface NBSSocialManager (Facebook)
 
+- (void)facebookAutologinWithCompletion:(NBSCompletionBlock)completion;
 - (void)facebookLoginWithCompletion:(NBSCompletionBlock)completion;
 - (BOOL)isFacebookLoggedIn;
 
