@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "logoAboutNeskafe.png"
+      "filename" : "iconNescafeMainLogo.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "logoAboutNeskafe@2x.png"
+      "filename" : "iconNescafeMainLogo@2x.png"
     }
   ],
   "info" : {

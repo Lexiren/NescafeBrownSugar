@@ -80,12 +80,12 @@
                                     <segue destination="wo0-5P-YGn" kind="embed" identifier="InstructionsFillContentSegue" id="ePe-ER-68I"/>
                                 </connections>
                             </containerView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoAboutNeskafe" translatesAutoresizingMaskIntoConstraints="NO" id="3H6-wU-Jkm" userLabel="Nescafe Image View - logoAboutNeskafe">
-                                <rect key="frame" x="115" y="523" width="90" height="18"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconNescafeMainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="3H6-wU-Jkm" userLabel="Nescafe Image View - logoAboutNeskafe">
+                                <rect key="frame" x="116" y="523" width="87" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="76b-et-Qca"/>
-                                    <constraint firstAttribute="height" constant="18" id="Xi9-yr-LV0"/>
+                                    <constraint firstAttribute="width" constant="87" id="76b-et-Qca"/>
+                                    <constraint firstAttribute="height" constant="20" id="Xi9-yr-LV0"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8Q-2r-EB2">
@@ -124,7 +124,7 @@
                             <constraint firstItem="nHn-L7-vqf" firstAttribute="leading" secondItem="edw-Vn-7tV" secondAttribute="leading" id="G2A-jG-yDr"/>
                             <constraint firstAttribute="bottom" secondItem="iud-Dw-yIW" secondAttribute="bottom" constant="82" id="GBF-Rx-fJA"/>
                             <constraint firstAttribute="trailing" secondItem="Spb-Rj-IaQ" secondAttribute="trailing" id="Ywk-AI-B9B"/>
-                            <constraint firstAttribute="bottom" secondItem="3H6-wU-Jkm" secondAttribute="bottom" constant="27" id="ZmK-eC-xqS"/>
+                            <constraint firstAttribute="bottom" secondItem="3H6-wU-Jkm" secondAttribute="bottom" constant="25" id="ZmK-eC-xqS"/>
                             <constraint firstItem="Spb-Rj-IaQ" firstAttribute="leading" secondItem="edw-Vn-7tV" secondAttribute="leading" id="aNS-ax-5c8"/>
                             <constraint firstItem="nHn-L7-vqf" firstAttribute="top" secondItem="edw-Vn-7tV" secondAttribute="top" id="bwf-hT-Cdb"/>
                             <constraint firstAttribute="bottom" secondItem="Spb-Rj-IaQ" secondAttribute="bottom" id="cBz-kk-fQh"/>
@@ -187,12 +187,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoAboutNeskafe" translatesAutoresizingMaskIntoConstraints="NO" id="26X-Fm-SCL">
-                                <rect key="frame" x="114" y="523" width="92" height="18"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconNescafeMainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="26X-Fm-SCL">
+                                <rect key="frame" x="117" y="523" width="87" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="18W-be-SHU"/>
-                                    <constraint firstAttribute="width" constant="92" id="JgW-iW-RWl"/>
+                                    <constraint firstAttribute="height" constant="20" id="18W-be-SHU"/>
+                                    <constraint firstAttribute="width" constant="87" id="JgW-iW-RWl"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="4" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Yf1-e4-4IE">
@@ -239,7 +239,7 @@
                             <constraint firstAttribute="centerY" secondItem="Yf1-e4-4IE" secondAttribute="centerY" constant="33" id="Khj-wo-tdH"/>
                             <constraint firstAttribute="centerX" secondItem="26X-Fm-SCL" secondAttribute="centerX" id="LOG-kP-cl3"/>
                             <constraint firstItem="Yf1-e4-4IE" firstAttribute="leading" secondItem="I4R-nD-D1O" secondAttribute="leading" id="Tmz-JJ-16v"/>
-                            <constraint firstItem="him-sg-SXL" firstAttribute="top" secondItem="26X-Fm-SCL" secondAttribute="bottom" constant="27" id="fiE-jf-aj5"/>
+                            <constraint firstItem="him-sg-SXL" firstAttribute="top" secondItem="26X-Fm-SCL" secondAttribute="bottom" constant="25" id="fiE-jf-aj5"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -264,11 +264,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoAboutNeskafe" translatesAutoresizingMaskIntoConstraints="NO" id="9zW-Xw-fdL">
-                                <rect key="frame" x="69" y="75" width="177" height="35"/>
+                                <rect key="frame" x="75" y="75" width="171" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="CWH-Ng-GlT"/>
-                                    <constraint firstAttribute="width" constant="177" id="u6I-P7-MnF"/>
+                                    <constraint firstAttribute="height" constant="39" id="CWH-Ng-GlT"/>
+                                    <constraint firstAttribute="width" constant="171" id="u6I-P7-MnF"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5l-gR-LeE">
@@ -319,11 +319,11 @@
                             <constraint firstItem="9zW-Xw-fdL" firstAttribute="top" secondItem="YkV-OW-c8u" secondAttribute="bottom" constant="11" id="4IT-7S-tVh"/>
                             <constraint firstAttribute="centerX" secondItem="2g3-Gr-QLT" secondAttribute="centerX" id="7KT-z8-gdB"/>
                             <constraint firstAttribute="trailing" secondItem="i5l-gR-LeE" secondAttribute="trailing" constant="20" id="9mw-pv-PRK"/>
-                            <constraint firstAttribute="centerX" secondItem="9zW-Xw-fdL" secondAttribute="centerX" constant="2.5" id="Si6-LE-UYU"/>
+                            <constraint firstAttribute="centerX" secondItem="9zW-Xw-fdL" secondAttribute="centerX" constant="-0.5" id="Si6-LE-UYU"/>
                             <constraint firstAttribute="trailing" secondItem="z3H-uv-m5X" secondAttribute="trailing" constant="20" id="VZk-GN-UbR"/>
                             <constraint firstItem="i5l-gR-LeE" firstAttribute="leading" secondItem="hQS-7S-Z3N" secondAttribute="leading" constant="20" id="aUq-Yf-ZS7"/>
                             <constraint firstAttribute="centerX" secondItem="ug7-4G-nrT" secondAttribute="centerX" id="ebd-OE-I0z"/>
-                            <constraint firstItem="i5l-gR-LeE" firstAttribute="top" secondItem="9zW-Xw-fdL" secondAttribute="bottom" constant="8" id="fV0-zN-W4n"/>
+                            <constraint firstItem="i5l-gR-LeE" firstAttribute="top" secondItem="9zW-Xw-fdL" secondAttribute="bottom" constant="4" id="fV0-zN-W4n"/>
                             <constraint firstItem="z3H-uv-m5X" firstAttribute="leading" secondItem="hQS-7S-Z3N" secondAttribute="leading" constant="20" id="khm-5z-h43"/>
                             <constraint firstItem="z3H-uv-m5X" firstAttribute="top" secondItem="ug7-4G-nrT" secondAttribute="bottom" constant="10" id="rhZ-to-3Jd"/>
                             <constraint firstItem="ug7-4G-nrT" firstAttribute="top" secondItem="2g3-Gr-QLT" secondAttribute="bottom" constant="8" id="ycH-iZ-8bw"/>
@@ -357,12 +357,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoAboutNeskafe" translatesAutoresizingMaskIntoConstraints="NO" id="bgu-Ay-syK">
-                                <rect key="frame" x="115" y="523" width="90" height="18"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconNescafeMainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="bgu-Ay-syK">
+                                <rect key="frame" x="115" y="523" width="87" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="2NM-Md-V7V"/>
-                                    <constraint firstAttribute="width" constant="90" id="Olq-OI-9Mp"/>
+                                    <constraint firstAttribute="height" constant="20" id="2NM-Md-V7V"/>
+                                    <constraint firstAttribute="width" constant="87" id="Olq-OI-9Mp"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAb-qr-8sW">
@@ -432,11 +432,11 @@
                             <constraint firstAttribute="centerY" secondItem="ypj-Mq-T9s" secondAttribute="centerY" constant="-117" id="5XZ-nq-9Ff"/>
                             <constraint firstAttribute="trailing" secondItem="S0w-TJ-cLj" secondAttribute="trailing" id="A5m-o5-7fB"/>
                             <constraint firstAttribute="centerX" secondItem="aTp-z7-Ysy" secondAttribute="centerX" id="Gtf-bN-zDv"/>
-                            <constraint firstAttribute="centerX" secondItem="bgu-Ay-syK" secondAttribute="centerX" id="HFs-aJ-8nI"/>
+                            <constraint firstAttribute="centerX" secondItem="bgu-Ay-syK" secondAttribute="centerX" constant="1.5" id="HFs-aJ-8nI"/>
                             <constraint firstItem="S0w-TJ-cLj" firstAttribute="top" secondItem="mvm-rC-Oc1" secondAttribute="top" id="OQ7-X7-CcK"/>
                             <constraint firstAttribute="bottom" secondItem="S0w-TJ-cLj" secondAttribute="bottom" id="Q79-vX-lkp"/>
                             <constraint firstAttribute="centerX" secondItem="QAb-qr-8sW" secondAttribute="centerX" id="QnD-2v-3Yt"/>
-                            <constraint firstAttribute="bottom" secondItem="bgu-Ay-syK" secondAttribute="bottom" constant="27" id="Rep-7I-aKm"/>
+                            <constraint firstAttribute="bottom" secondItem="bgu-Ay-syK" secondAttribute="bottom" constant="25" id="Rep-7I-aKm"/>
                             <constraint firstAttribute="centerY" secondItem="zNJ-VG-iLM" secondAttribute="centerY" constant="150.5" id="TZg-gh-Bab"/>
                             <constraint firstAttribute="bottom" secondItem="aTp-z7-Ysy" secondAttribute="bottom" constant="42" id="ZJb-UR-moX"/>
                             <constraint firstAttribute="centerX" secondItem="ypj-Mq-T9s" secondAttribute="centerX" id="ZpJ-kU-k65"/>
@@ -618,12 +618,12 @@
                                     <constraint firstItem="CHZ-7Z-QAW" firstAttribute="leading" secondItem="isP-rd-meX" secondAttribute="leading" id="qcz-I2-44n"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoAboutNeskafe" translatesAutoresizingMaskIntoConstraints="NO" id="mIn-Dj-RbC">
-                                <rect key="frame" x="115" y="523" width="90" height="18"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconNescafeMainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="mIn-Dj-RbC">
+                                <rect key="frame" x="116" y="523" width="87" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="jz7-ZU-5se"/>
-                                    <constraint firstAttribute="width" constant="90" id="mtG-1C-MCs"/>
+                                    <constraint firstAttribute="height" constant="20" id="jz7-ZU-5se"/>
+                                    <constraint firstAttribute="width" constant="87" id="mtG-1C-MCs"/>
                                 </constraints>
                             </imageView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="NlE-Ul-l3h">
@@ -1339,7 +1339,7 @@
                             <constraint firstAttribute="centerX" secondItem="mIn-Dj-RbC" secondAttribute="centerX" id="h7b-7W-2XJ"/>
                             <constraint firstItem="isP-rd-meX" firstAttribute="leading" secondItem="5Zh-NK-NLn" secondAttribute="leading" id="hAF-6U-ERO"/>
                             <constraint firstItem="70W-9b-YJx" firstAttribute="centerY" secondItem="9gt-hh-SU1" secondAttribute="centerY" id="hqW-JY-nTc"/>
-                            <constraint firstItem="SFz-X7-2cS" firstAttribute="top" secondItem="mIn-Dj-RbC" secondAttribute="bottom" constant="27" id="ieQ-I4-QN4"/>
+                            <constraint firstItem="SFz-X7-2cS" firstAttribute="top" secondItem="mIn-Dj-RbC" secondAttribute="bottom" constant="25" id="ieQ-I4-QN4"/>
                             <constraint firstAttribute="centerX" secondItem="NlE-Ul-l3h" secondAttribute="centerX" id="j5V-qv-eVC"/>
                             <constraint firstItem="isP-rd-meX" firstAttribute="top" secondItem="S6m-e6-1hr" secondAttribute="bottom" id="lYF-Wv-nFM"/>
                             <constraint firstItem="70W-9b-YJx" firstAttribute="centerX" secondItem="9gt-hh-SU1" secondAttribute="centerX" id="pAR-Gj-NNO"/>
@@ -2592,6 +2592,7 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
         <image name="bgMenu" width="320" height="568"/>
         <image name="bgUserpic" width="146" height="146"/>
         <image name="defaultUserAvatar" width="125" height="125"/>
+        <image name="iconNescafeMainLogo" width="87" height="20"/>
         <image name="joinTShirts" width="263" height="237"/>
         <image name="loginFbBtn" width="193" height="48"/>
         <image name="loginVkBtn" width="193" height="48"/>
