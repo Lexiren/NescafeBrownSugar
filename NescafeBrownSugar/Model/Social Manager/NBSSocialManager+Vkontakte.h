@@ -19,4 +19,6 @@
 
 - (void)postImageToVK:(UIImage *)image withCompletion:(NBSCompletionBlockWithData)completion;
 
+- (void)checkIsMemberOfGroupVKWithCompletion:(NBSCompletionBlockWithData)completion;
+- (void)joinGroupVKWIthCompletion:(NBSCompletionBlock)completion;
 @end

@@ -40,4 +40,23 @@
     }
 }
 
+- (void)performIsMemberVKCompletionWithSuccess:(BOOL)success
+                                         error:(NSError *)error
+                                      response:(NSNumber *)response
+{
+    if (self.isGroupMemberVKCompletion) {
+        self.isGroupMemberVKCompletion(success, error, response);
+        self.isGroupMemberVKCompletion = nil;
+    }
+}
+
+- (void)performJoinGroupVKCompletionWithSuccess:(BOOL)success
+                                          error:(NSError *)error
+{
+    if (self.joinGroupVKCompletion) {
+        self.joinGroupVKCompletion(success, error);
+        self.joinGroupVKCompletion = nil;
+    }
+}
+
 @end

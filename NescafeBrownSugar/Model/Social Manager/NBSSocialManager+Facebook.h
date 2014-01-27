@@ -18,4 +18,7 @@
 
 - (void)postImageToFB:(UIImage*)image withCompletion:(NBSCompletionBlockWithData)completion;
 
+- (void)checkIsMemberOfGroupFBWithCompletion:(NBSCompletionBlockWithData)completion;
+- (void)joinGroupFBWIthCompletion:(NBSCompletionBlock)completion;
+
 @end

@@ -12,6 +12,9 @@
 #import <Social/Social.h>
 #import "NBSGoogleAnalytics.h"
 
+#define kNBSFacebookGroupID @"487332541365515"
+
+
 @implementation NBSSocialManager (Facebook)
 
 - (void)facebookAutologinWithCompletion:(NBSCompletionBlock)completion {
@@ -132,7 +135,7 @@
 }
 
 - (void)postImage:(UIImage *)image {
-    NSMutableDictionary* params = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* params = [NSMutableDictionary dictionary];
     [params setObject:kNBSSharePhotoPostMessage forKey:@"message"];
     [params setObject:UIImagePNGRepresentation(image) forKey:@"source"];
     [params setValue:@"0" forKey:@"no_store"];
@@ -145,6 +148,99 @@
                                                                      error:error
                                                                       data:result];
                           } ];
+}
+
+- (void)checkIsMemberOfGroupFBWithCompletion:(NBSCompletionBlockWithData)completion {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:[[[FBSession activeSession] accessTokenData] accessToken]
+               forKey:@"access_token"];
+    
+    void (^checkMembers)() = ^(){
+        [FBRequestConnection startWithGraphPath:[NSString stringWithFormat:@"/%@/members", kNBSFacebookGroupID]
+                                     parameters:params
+                                     HTTPMethod:@"GET"
+                              completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                                  NSNumber *resultData = nil;
+                                  if (!error) {
+                                      NSArray *members = [result objectForKey:@"data"];
+                                      for (NSDictionary *member in members) {
+                                          if ([[member objectForKey:@"id"] isEqualToString:[[NBSUser currentUser] facebookUid]])
+                                          {
+                                              resultData = [NSNumber numberWithBool:YES];
+                                              break;
+                                          }
+                                      }
+                                  } else {
+                                      [UIAlertView showErrorAlertWithError:error];
+                                  }
+                                  if (completion) {
+                                      completion(!error, error, resultData);
+                                  }
+                              } ];
+    };
+    
+    if ([[[FBSession activeSession]permissions]indexOfObject:@"user_groups"] == NSNotFound) {
+        
+        [FBSession openActiveSessionWithPublishPermissions:@[@"user_groups"]
+                                           defaultAudience:FBSessionDefaultAudienceEveryone
+                                              allowLoginUI:YES
+                                         completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                                             if (session.isOpen && !error) {
+                                                 [FBSession setActiveSession:session];
+                                                 checkMembers();
+                                             } else {
+                                                 if (completion) {
+                                                     completion(NO, error, nil);
+                                                 }
+                                             }
+                                         }];
+    }else{
+        checkMembers();
+    }
+
+}
+
+- (void)joinGroupFBWIthCompletion:(NBSCompletionBlock)completion {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:[[[FBSession activeSession] accessTokenData] accessToken]
+               forKey:@"access_token"];
+    
+    void (^joinGroup)() = ^(){
+        NSString *path = [NSString stringWithFormat:@"%@/members/%@", kNBSFacebookGroupID,
+                          [NBSUser currentUser].facebookUid];
+
+        [FBRequestConnection startWithGraphPath:path
+                                     parameters:params
+                                     HTTPMethod:@"POST"
+                              completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                                  if (error) {
+                                      [UIAlertView showErrorAlertWithError:error];
+                                  }
+                                  if (completion) {
+                                      completion(!error, error);
+                                  }
+                              }];
+    };
+    
+    if ([[[FBSession activeSession]permissions]indexOfObject:@"user_groups"] == NSNotFound) {
+        
+        [FBSession openActiveSessionWithPublishPermissions:@[@"user_groups"]
+                                           defaultAudience:FBSessionDefaultAudienceEveryone
+                                              allowLoginUI:YES
+                                         completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                                             if (session.isOpen && !error) {
+                                                 [FBSession setActiveSession:session];
+                                                 joinGroup();
+                                             } else {
+                                                 if (completion) {
+                                                     completion(NO, error);
+                                                 }
+                                             }
+                                         }];
+    }else{
+        joinGroup();
+    }
+
 }
 
 @end

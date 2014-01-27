@@ -21,6 +21,9 @@
 #define KNBSVkontaktePhotosWallSaveRequestSignature @"SaveWallPhotosRequest"
 #define KNBSVkontakteWallPostRequestSignature @"WallPostRequest"
 
+#define kNBSVkontakteIsGroupMemberRequestSignature @"isMemberRequest"
+#define kNBSVkontakteJoinGroupRequestSignature @"joinGroupSignature"
+#define kNBSVkontakteGroupID @"blog_apple"
 
 @implementation NBSSocialManager (Vkontakte)  
 
@@ -154,6 +157,32 @@
     [request start];
 }
 
+#pragma mark - groups
+
+- (void)checkIsMemberOfGroupVKWithCompletion:(NBSCompletionBlockWithData)completion {
+    NSMutableDictionary *options = [NSMutableDictionary dictionary];
+    [options setValue:[NBSUser currentUser].vkontakteUid forKey:@"user_id"];
+    [options setValue:kNBSVkontakteGroupID forKey:@"group_id"];
+    
+    VKRequest *request = [[VKUser currentUser] groupsIsMember:options];
+    request.signature = kNBSVkontakteIsGroupMemberRequestSignature;
+    request.offlineMode = YES;
+    request.delegate = self;
+    [request start];
+}
+
+- (void)joinGroupVKWIthCompletion:(NBSCompletionBlock)completion {
+    NSMutableDictionary *options = [NSMutableDictionary dictionary];
+    [options setValue:kNBSVkontakteGroupID forKey:@"group_id"];
+    
+    VKRequest *request = [[VKUser currentUser] groupsJoin:options];
+    request.signature = kNBSVkontakteJoinGroupRequestSignature;
+    request.offlineMode = YES;
+    request.delegate = self;
+    [request start];
+
+}
+
 #pragma mark - VKRequestDelegate methods
 
 - (void)VKRequest:(VKRequest *)request
@@ -184,6 +213,14 @@
     } else if ([request.signature isEqualToString:KNBSVkontakteWallPostRequestSignature]) {
         NSLog(@"%@", [response description]);
         [self performSharePhotoVKCompletionWithSuccess:YES error:nil data:response];
+    } else if ([request.signature isEqualToString:kNBSVkontakteIsGroupMemberRequestSignature]) {
+        response = [[response objectForKey:@"response"] objectForKey:@"member"];
+        [self performIsMemberVKCompletionWithSuccess:YES
+                                               error:nil
+                                            response:@([response intValue])];
+    } else if ([request.signature isEqualToString:kNBSVkontakteJoinGroupRequestSignature]) {
+        [self performJoinGroupVKCompletionWithSuccess:YES
+                                                error:nil];
     }
 }
 
@@ -202,6 +239,13 @@ connectionErrorOccured:(NSError *)error {
         [self performSharePhotoVKCompletionWithSuccess:NO
                                                error:error
                                                 data:nil];
+    } else if ([request.signature isEqualToString:kNBSVkontakteIsGroupMemberRequestSignature]) {
+        [self performIsMemberVKCompletionWithSuccess:NO
+                                               error:error
+                                            response:nil];
+    } else if ([request.signature isEqualToString:kNBSVkontakteJoinGroupRequestSignature]) {
+        [self performJoinGroupVKCompletionWithSuccess:NO
+                                                error:error];
     }
 }
 
@@ -218,6 +262,13 @@ parsingErrorOccured:(NSError *)error {
         [self performSharePhotoVKCompletionWithSuccess:NO
                                                error:error
                                                 data:nil];
+    } else if ([request.signature isEqualToString:kNBSVkontakteIsGroupMemberRequestSignature]) {
+        [self performIsMemberVKCompletionWithSuccess:NO
+                                               error:error
+                                            response:nil];
+    } else if ([request.signature isEqualToString:kNBSVkontakteJoinGroupRequestSignature]) {
+        [self performJoinGroupVKCompletionWithSuccess:NO
+                                                error:error];
     }
 }
 
@@ -234,6 +285,13 @@ responseErrorOccured:(id)error {
         [self performSharePhotoVKCompletionWithSuccess:NO
                                                error:error
                                                 data:nil];
+    } else if ([request.signature isEqualToString:kNBSVkontakteIsGroupMemberRequestSignature]) {
+        [self performIsMemberVKCompletionWithSuccess:NO
+                                               error:error
+                                            response:nil];
+    } else if ([request.signature isEqualToString:kNBSVkontakteJoinGroupRequestSignature]) {
+        [self performJoinGroupVKCompletionWithSuccess:NO
+                                                error:error];
     }
     NSLog(@"Error in response from Vkontakte = %@", [error description]);
 }

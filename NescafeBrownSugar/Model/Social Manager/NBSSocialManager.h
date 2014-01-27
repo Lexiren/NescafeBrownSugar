@@ -26,4 +26,15 @@
 @property (nonatomic, copy) NBSCompletionBlockWithData sharePhotoFBCompletion;
 @property (nonatomic, strong) UIImage *sharePhoto;
 
+@property (nonatomic, copy) NBSCompletionBlockWithData isGroupMemberVKCompletion;
+@property (nonatomic, copy) NBSCompletionBlock joinGroupVKCompletion;
+
+
+- (void)performIsMemberVKCompletionWithSuccess:(BOOL)success
+                                         error:(NSError *)error
+                                      response:(NSNumber *)response;
+
+- (void)performJoinGroupVKCompletionWithSuccess:(BOOL)success
+                                          error:(NSError *)error;
+
 @end
