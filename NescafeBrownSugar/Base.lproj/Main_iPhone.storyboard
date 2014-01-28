@@ -416,7 +416,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ypj-Mq-T9s">
-                                <rect key="frame" x="150" y="391" width="20" height="20"/>
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Увійти за допомогою соціальної мережі" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="175" translatesAutoresizingMaskIntoConstraints="NO" id="zNJ-VG-iLM">
@@ -429,7 +429,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="ypj-Mq-T9s" secondAttribute="centerY" constant="-117" id="5XZ-nq-9Ff"/>
+                            <constraint firstAttribute="centerY" secondItem="ypj-Mq-T9s" secondAttribute="centerY" id="5XZ-nq-9Ff"/>
                             <constraint firstAttribute="trailing" secondItem="S0w-TJ-cLj" secondAttribute="trailing" id="A5m-o5-7fB"/>
                             <constraint firstAttribute="centerX" secondItem="aTp-z7-Ysy" secondAttribute="centerX" id="Gtf-bN-zDv"/>
                             <constraint firstAttribute="centerX" secondItem="bgu-Ay-syK" secondAttribute="centerX" constant="1.5" id="HFs-aJ-8nI"/>

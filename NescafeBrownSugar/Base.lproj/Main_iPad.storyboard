@@ -1,23 +1,1053 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3676"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="NBSViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="NBSRootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wGO-oH-z1E"/>
+                        <viewControllerLayoutGuide type="bottom" id="61H-eV-IvH"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgMenu" translatesAutoresizingMaskIntoConstraints="NO" id="iLX-SF-gRX">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-990" y="-209"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="QSg-V8-YBU">
+            <objects>
+                <viewController id="6KC-hf-p53" customClass="NBSMenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bJK-zH-9vk"/>
+                        <viewControllerLayoutGuide type="bottom" id="LDx-fy-fIJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wM9-3J-WOA">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="4" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MeP-JS-21O">
+                                <rect key="frame" x="0.0" y="349" width="270" height="280"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" textLabel="zQm-QW-Q2r" style="IBUITableViewCellStyleDefault" id="3Sy-6a-hMI">
+                                        <rect key="frame" x="0.0" y="22" width="270" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Sy-6a-hMI" id="5Hp-X4-QxS">
+                                            <rect key="frame" x="0.0" y="0.0" width="270" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Профiль" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zQm-QW-Q2r">
+                                                    <rect key="frame" x="15" y="0.0" width="240" height="69"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconNescafeMainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="YMw-El-4uy">
+                                <rect key="frame" x="318" y="974" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EhO-Gt-zAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="43" y="-186"/>
+        </scene>
+        <!--Instructions View Controller - Як користуватись-->
+        <scene sceneID="ewO-hO-4Iq">
+            <objects>
+                <viewController id="wt2-L6-LPI" customClass="NBSInstructionsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N59-iX-jLx"/>
+                        <viewControllerLayoutGuide type="bottom" id="6mC-Ff-aqY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dp0-hX-jrW">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgApp" translatesAutoresizingMaskIntoConstraints="NO" id="hYu-BV-7aR" userLabel="Bg Image View - bgApp">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i8J-UR-M4a">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="Vso-JG-2z5" kind="embed" id="b5w-og-Toh"/>
+                                </connections>
+                            </containerView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ouo-Vm-qdU">
+                                <rect key="frame" x="337" y="855" width="94" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDP-7S-zmV">
+                                <rect key="frame" x="284" y="900" width="200" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="ПРОПУСТИТИ">
+                                    <color key="titleColor" red="0.96078437569999997" green="0.9450981021" blue="0.93725496529999996" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconNescafeMainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="yYm-T4-kjI">
+                                <rect key="frame" x="319" y="974" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Як користуватись" id="L4M-HY-LEV"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XRq-cF-FQt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1088" y="-186"/>
+        </scene>
+        <!--Profile View Controller - Профіль-->
+        <scene sceneID="xNU-NK-HUi">
+            <objects>
+                <viewController id="Hgs-AR-Gnt" customClass="NBSProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="18p-eK-swR"/>
+                        <viewControllerLayoutGuide type="bottom" id="VQu-F9-Qp3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dej-WD-Pxv">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgApp" translatesAutoresizingMaskIntoConstraints="NO" id="r9l-Gp-CX6" userLabel="BG Image View - ProfileBG0">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UGe-df-T6T" userLabel="Avatar View">
+                                <rect key="frame" x="0.0" y="64" width="768" height="350"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgUserpic" translatesAutoresizingMaskIntoConstraints="NO" id="mZK-42-AJE" userLabel="Ava bg Image View - bgUserpic">
+                                        <rect key="frame" x="311" y="104" width="146" height="146"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultUserAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="0x3-2p-2Dr" userLabel="Ava Image View">
+                                        <rect key="frame" x="320" y="113" width="128" height="129"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XgU-CK-44D" customClass="FBProfilePictureView">
+                                        <rect key="frame" x="320" y="113" width="128" height="129"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYw-GI-5ct" userLabel="Name Label">
+                                        <rect key="frame" x="384" y="286" width="0.0" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.90980398650000005" green="0.86274516580000005" blue="0.81960791349999995" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view alpha="0.30000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s1T-Sl-pcb" userLabel="Separator View">
+                                <rect key="frame" x="84" y="415" width="600" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LhK-qe-Web" userLabel="Login SubView">
+                                <rect key="frame" x="237" y="482" width="294" height="319"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" fixedFrame="YES" text="Увійти за допомогою соціальної мережі" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="156" translatesAutoresizingMaskIntoConstraints="NO" id="Whv-i2-ffX">
+                                        <rect key="frame" x="65" y="20" width="156" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZF-4Y-V2M" userLabel="Facebook Button">
+                                        <rect key="frame" x="47" y="167" width="193" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" image="loginFbBtn">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4Q-4u-Y8H" userLabel="Vkontakte Button">
+                                        <rect key="frame" x="47" y="245" width="193" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" image="loginVkBtn">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x4n-gx-scQ" userLabel="Gallery Container View">
+                                <rect key="frame" x="26" y="447" width="717" height="485"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Галерея твоїх малюнків" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4t-nk-cc8">
+                                        <rect key="frame" x="273" y="64" width="171" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qcw-N0-UxT">
+                                        <rect key="frame" x="43" y="139" width="630" height="320"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="35" minimumInteritemSpacing="10" id="ulQ-bk-Wag">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="Qgn-sd-Wga" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="1" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4gu-t8-uIL">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="4gu-t8-uIL" firstAttribute="leading" secondItem="Qgn-sd-Wga" secondAttribute="leading" id="Ol0-xe-HRb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4gu-t8-uIL" secondAttribute="trailing" id="a9h-ub-NM5"/>
+                                                    <constraint firstItem="4gu-t8-uIL" firstAttribute="top" secondItem="Qgn-sd-Wga" secondAttribute="top" id="bfe-U1-pcx"/>
+                                                    <constraint firstAttribute="bottom" secondItem="4gu-t8-uIL" secondAttribute="bottom" id="vjx-Cc-XwY"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="4gu-t8-uIL" id="LCK-Jx-9GL"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="Ekl-N2-ahT" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="1" y="192" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gu5-6b-Dfi">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="gu5-6b-Dfi" secondAttribute="trailing" id="CdH-8z-s6q"/>
+                                                    <constraint firstItem="gu5-6b-Dfi" firstAttribute="leading" secondItem="Ekl-N2-ahT" secondAttribute="leading" id="EWh-T0-RkE"/>
+                                                    <constraint firstItem="gu5-6b-Dfi" firstAttribute="top" secondItem="Ekl-N2-ahT" secondAttribute="top" id="SdK-eh-Rrj"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gu5-6b-Dfi" secondAttribute="bottom" id="UQg-Zr-Bjf"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="gu5-6b-Dfi" id="3Oh-kw-vRW"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="YA0-2S-Zzy" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="164" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LVh-RP-PXa">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="LVh-RP-PXa" secondAttribute="bottom" id="BtK-G4-cat"/>
+                                                    <constraint firstItem="LVh-RP-PXa" firstAttribute="top" secondItem="YA0-2S-Zzy" secondAttribute="top" id="Tiz-Bg-0BU"/>
+                                                    <constraint firstItem="LVh-RP-PXa" firstAttribute="leading" secondItem="YA0-2S-Zzy" secondAttribute="leading" id="ZGB-QO-e9c"/>
+                                                    <constraint firstAttribute="trailing" secondItem="LVh-RP-PXa" secondAttribute="trailing" id="dXY-RT-QKD"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="LVh-RP-PXa" id="gXt-Gy-fh5"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="eTR-kS-SSJ" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="164" y="192" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bJ0-hQ-X8f">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="bJ0-hQ-X8f" firstAttribute="top" secondItem="eTR-kS-SSJ" secondAttribute="top" id="32z-ve-1fo"/>
+                                                    <constraint firstAttribute="bottom" secondItem="bJ0-hQ-X8f" secondAttribute="bottom" id="B24-iq-TI1"/>
+                                                    <constraint firstItem="bJ0-hQ-X8f" firstAttribute="leading" secondItem="eTR-kS-SSJ" secondAttribute="leading" id="Dyx-og-YLb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="bJ0-hQ-X8f" secondAttribute="trailing" id="yHQ-gf-nAg"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="bJ0-hQ-X8f" id="B0M-zn-X1I"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="2uq-z8-KmX" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="327" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m6T-NF-JY4">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="m6T-NF-JY4" secondAttribute="bottom" id="Pe0-95-X4k"/>
+                                                    <constraint firstAttribute="trailing" secondItem="m6T-NF-JY4" secondAttribute="trailing" id="aFN-GM-NWU"/>
+                                                    <constraint firstItem="m6T-NF-JY4" firstAttribute="top" secondItem="2uq-z8-KmX" secondAttribute="top" id="mFR-CB-Exa"/>
+                                                    <constraint firstItem="m6T-NF-JY4" firstAttribute="leading" secondItem="2uq-z8-KmX" secondAttribute="leading" id="sx2-gr-Jwy"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="m6T-NF-JY4" id="QSp-hn-Bc6"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="fzb-If-l0O" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="327" y="192" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gLu-MJ-f6H">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="gLu-MJ-f6H" secondAttribute="trailing" id="3a9-rG-Sbe"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gLu-MJ-f6H" secondAttribute="bottom" id="ONI-eE-fqd"/>
+                                                    <constraint firstItem="gLu-MJ-f6H" firstAttribute="leading" secondItem="fzb-If-l0O" secondAttribute="leading" id="f6o-gK-5Gt"/>
+                                                    <constraint firstItem="gLu-MJ-f6H" firstAttribute="top" secondItem="fzb-If-l0O" secondAttribute="top" id="ign-D2-teg"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="gLu-MJ-f6H" id="WIz-Fk-GfP"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="HZQ-n0-D65" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="490" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="95T-Sb-snx">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="95T-Sb-snx" secondAttribute="bottom" id="2oM-KS-z7u"/>
+                                                    <constraint firstItem="95T-Sb-snx" firstAttribute="leading" secondItem="HZQ-n0-D65" secondAttribute="leading" id="QbQ-GV-1Fj"/>
+                                                    <constraint firstItem="95T-Sb-snx" firstAttribute="top" secondItem="HZQ-n0-D65" secondAttribute="top" id="VBa-YX-0RR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="95T-Sb-snx" secondAttribute="trailing" id="vGB-eV-LZW"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="95T-Sb-snx" id="9NK-j3-zUr"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="Nqo-Kc-jZB" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="490" y="192" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fty-Xe-ftS">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="Fty-Xe-ftS" firstAttribute="leading" secondItem="Nqo-Kc-jZB" secondAttribute="leading" id="TFR-6s-AFN"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Fty-Xe-ftS" secondAttribute="bottom" id="URe-46-3hK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Fty-Xe-ftS" secondAttribute="trailing" id="bj2-bR-9ik"/>
+                                                    <constraint firstItem="Fty-Xe-ftS" firstAttribute="top" secondItem="Nqo-Kc-jZB" secondAttribute="top" id="xWt-bl-G6P"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="Fty-Xe-ftS" id="6gz-00-BaH"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="6bU-dN-PvE" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="653" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8SL-J9-3Jf">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="8SL-J9-3Jf" secondAttribute="bottom" id="Rbr-Hs-8zi"/>
+                                                    <constraint firstItem="8SL-J9-3Jf" firstAttribute="leading" secondItem="6bU-dN-PvE" secondAttribute="leading" id="kIM-Q8-1Eo"/>
+                                                    <constraint firstAttribute="trailing" secondItem="8SL-J9-3Jf" secondAttribute="trailing" id="qc1-Xt-0gl"/>
+                                                    <constraint firstItem="8SL-J9-3Jf" firstAttribute="top" secondItem="6bU-dN-PvE" secondAttribute="top" id="yi8-8w-NBP"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="8SL-J9-3Jf" id="OS5-Xy-UtY"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="cd6-UX-6Kg" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="653" y="192" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Lt-Oo-h5z">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="6Lt-Oo-h5z" firstAttribute="leading" secondItem="cd6-UX-6Kg" secondAttribute="leading" id="5IS-iw-JgU"/>
+                                                    <constraint firstAttribute="bottom" secondItem="6Lt-Oo-h5z" secondAttribute="bottom" id="Enb-S5-y0K"/>
+                                                    <constraint firstAttribute="trailing" secondItem="6Lt-Oo-h5z" secondAttribute="trailing" id="HPV-iT-803"/>
+                                                    <constraint firstItem="6Lt-Oo-h5z" firstAttribute="top" secondItem="cd6-UX-6Kg" secondAttribute="top" id="Xcx-84-RQ5"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="6Lt-Oo-h5z" id="l1X-OI-syx"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="vWl-KT-XfW" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="816" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eKn-lE-mUo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="eKn-lE-mUo" firstAttribute="leading" secondItem="vWl-KT-XfW" secondAttribute="leading" id="0nN-dE-meC"/>
+                                                    <constraint firstAttribute="bottom" secondItem="eKn-lE-mUo" secondAttribute="bottom" id="5W6-s3-LHU"/>
+                                                    <constraint firstItem="eKn-lE-mUo" firstAttribute="top" secondItem="vWl-KT-XfW" secondAttribute="top" id="D6Z-xF-4Aq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eKn-lE-mUo" secondAttribute="trailing" id="TFR-hd-KHR"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="eKn-lE-mUo" id="aWa-sf-ZRO"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="qA1-Kq-VEA" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="816" y="192" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eSl-aF-bv7">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="eSl-aF-bv7" firstAttribute="leading" secondItem="qA1-Kq-VEA" secondAttribute="leading" id="aaJ-Ew-sea"/>
+                                                    <constraint firstItem="eSl-aF-bv7" firstAttribute="top" secondItem="qA1-Kq-VEA" secondAttribute="top" id="qJT-Pk-kcu"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eSl-aF-bv7" secondAttribute="trailing" id="rJM-iU-cie"/>
+                                                    <constraint firstAttribute="bottom" secondItem="eSl-aF-bv7" secondAttribute="bottom" id="vbs-kZ-exs"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="eSl-aF-bv7" id="dFK-9b-eBk"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="xWO-RJ-hS7" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="979" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="slo-Ly-WWK">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="slo-Ly-WWK" secondAttribute="trailing" id="0Zi-gG-edI"/>
+                                                    <constraint firstItem="slo-Ly-WWK" firstAttribute="leading" secondItem="xWO-RJ-hS7" secondAttribute="leading" id="52K-OF-NqA"/>
+                                                    <constraint firstAttribute="bottom" secondItem="slo-Ly-WWK" secondAttribute="bottom" id="I6c-dW-nP2"/>
+                                                    <constraint firstItem="slo-Ly-WWK" firstAttribute="top" secondItem="xWO-RJ-hS7" secondAttribute="top" id="vpF-QE-Njz"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="slo-Ly-WWK" id="Mr4-sV-xv2"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="xty-e6-fqh" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="979" y="192" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7lD-05-unC">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="7lD-05-unC" firstAttribute="top" secondItem="xty-e6-fqh" secondAttribute="top" id="ENX-Kv-hh1"/>
+                                                    <constraint firstAttribute="bottom" secondItem="7lD-05-unC" secondAttribute="bottom" id="Fxx-dn-cK1"/>
+                                                    <constraint firstItem="7lD-05-unC" firstAttribute="leading" secondItem="xty-e6-fqh" secondAttribute="leading" id="Srb-yC-ejv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="7lD-05-unC" secondAttribute="trailing" id="WNs-rB-ZC8"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="7lD-05-unC" id="tgb-R3-krx"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="5Ms-7R-Kho" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="1142" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="paP-gy-ULQ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="paP-gy-ULQ" firstAttribute="top" secondItem="5Ms-7R-Kho" secondAttribute="top" id="25e-Po-DMK"/>
+                                                    <constraint firstAttribute="bottom" secondItem="paP-gy-ULQ" secondAttribute="bottom" id="U0k-Nk-oN1"/>
+                                                    <constraint firstItem="paP-gy-ULQ" firstAttribute="leading" secondItem="5Ms-7R-Kho" secondAttribute="leading" id="hF7-ba-ueI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="paP-gy-ULQ" secondAttribute="trailing" id="iQ6-bg-unv"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="paP-gy-ULQ" id="ymb-22-wA2"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="cKn-gt-aHN" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="1142" y="192" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ahX-B6-ZdJ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="ahX-B6-ZdJ" secondAttribute="bottom" id="SbS-ZU-WNO"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ahX-B6-ZdJ" secondAttribute="trailing" id="dyB-h0-4Oz"/>
+                                                    <constraint firstItem="ahX-B6-ZdJ" firstAttribute="top" secondItem="cKn-gt-aHN" secondAttribute="top" id="lxH-Nm-izU"/>
+                                                    <constraint firstItem="ahX-B6-ZdJ" firstAttribute="leading" secondItem="cKn-gt-aHN" secondAttribute="leading" id="ots-DA-yTm"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="ahX-B6-ZdJ" id="xRH-jK-K2Q"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="O0B-Hz-hKV" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="1305" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l8w-oE-zH7">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="l8w-oE-zH7" firstAttribute="leading" secondItem="O0B-Hz-hKV" secondAttribute="leading" id="QHi-bN-a2t"/>
+                                                    <constraint firstAttribute="trailing" secondItem="l8w-oE-zH7" secondAttribute="trailing" id="eFE-24-vfP"/>
+                                                    <constraint firstAttribute="bottom" secondItem="l8w-oE-zH7" secondAttribute="bottom" id="xuu-Wy-2dH"/>
+                                                    <constraint firstItem="l8w-oE-zH7" firstAttribute="top" secondItem="O0B-Hz-hKV" secondAttribute="top" id="yzE-gs-BYl"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="l8w-oE-zH7" id="rMR-ar-hd1"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="9kb-Ys-Iu1" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="1305" y="192" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BtI-sf-aQx">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="BtI-sf-aQx" firstAttribute="top" secondItem="9kb-Ys-Iu1" secondAttribute="top" id="Crp-bZ-TwH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="BtI-sf-aQx" secondAttribute="trailing" id="HDo-kH-621"/>
+                                                    <constraint firstItem="BtI-sf-aQx" firstAttribute="leading" secondItem="9kb-Ys-Iu1" secondAttribute="leading" id="VtH-ay-9p1"/>
+                                                    <constraint firstAttribute="bottom" secondItem="BtI-sf-aQx" secondAttribute="bottom" id="tDX-Ut-eOh"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="BtI-sf-aQx" id="IMc-M6-epd"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="90W-Pc-SbG" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="1468" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yKn-K8-Haq">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="yKn-K8-Haq" firstAttribute="top" secondItem="90W-Pc-SbG" secondAttribute="top" id="6lD-y1-18g"/>
+                                                    <constraint firstAttribute="bottom" secondItem="yKn-K8-Haq" secondAttribute="bottom" id="JD2-xk-93c"/>
+                                                    <constraint firstItem="yKn-K8-Haq" firstAttribute="leading" secondItem="90W-Pc-SbG" secondAttribute="leading" id="Jie-w1-8hX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="yKn-K8-Haq" secondAttribute="trailing" id="rbm-uc-oc4"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="yKn-K8-Haq" id="7pf-ZX-rP5"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="vqf-si-JUb" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="1468" y="192" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EEV-z1-PMQ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="EEV-z1-PMQ" firstAttribute="leading" secondItem="vqf-si-JUb" secondAttribute="leading" id="erz-Kj-fNB"/>
+                                                    <constraint firstAttribute="bottom" secondItem="EEV-z1-PMQ" secondAttribute="bottom" id="k0M-JC-hRv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="EEV-z1-PMQ" secondAttribute="trailing" id="qOy-H6-xbm"/>
+                                                    <constraint firstItem="EEV-z1-PMQ" firstAttribute="top" secondItem="vqf-si-JUb" secondAttribute="top" id="uhL-wy-NND"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="EEV-z1-PMQ" id="q3u-Wm-qsi"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="Lhb-0j-LbT" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="1631" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I4Q-b2-8gH">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="I4Q-b2-8gH" secondAttribute="trailing" id="7Po-Tl-L6Q"/>
+                                                    <constraint firstAttribute="bottom" secondItem="I4Q-b2-8gH" secondAttribute="bottom" id="P8j-bq-ANO"/>
+                                                    <constraint firstItem="I4Q-b2-8gH" firstAttribute="top" secondItem="Lhb-0j-LbT" secondAttribute="top" id="luD-21-5g8"/>
+                                                    <constraint firstItem="I4Q-b2-8gH" firstAttribute="leading" secondItem="Lhb-0j-LbT" secondAttribute="leading" id="o4R-hy-h8f"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="I4Q-b2-8gH" id="IDc-XQ-KHI"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="M3k-xO-X4U" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="1631" y="192" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EKc-hS-P0Y">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="EKc-hS-P0Y" firstAttribute="leading" secondItem="M3k-xO-X4U" secondAttribute="leading" id="Dnq-Qo-jET"/>
+                                                    <constraint firstAttribute="bottom" secondItem="EKc-hS-P0Y" secondAttribute="bottom" id="FWh-Ih-qFT"/>
+                                                    <constraint firstItem="EKc-hS-P0Y" firstAttribute="top" secondItem="M3k-xO-X4U" secondAttribute="top" id="QXb-Gd-mpD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="EKc-hS-P0Y" secondAttribute="trailing" id="e60-cK-BWj"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="EKc-hS-P0Y" id="9P1-JZ-sAa"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="yCM-xD-4zP" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="1794" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hFd-Uw-fXZ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="hFd-Uw-fXZ" secondAttribute="bottom" id="ATe-9D-bov"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hFd-Uw-fXZ" secondAttribute="trailing" id="B4Y-aZ-8mv"/>
+                                                    <constraint firstItem="hFd-Uw-fXZ" firstAttribute="top" secondItem="yCM-xD-4zP" secondAttribute="top" id="RFm-d6-A31"/>
+                                                    <constraint firstItem="hFd-Uw-fXZ" firstAttribute="leading" secondItem="yCM-xD-4zP" secondAttribute="leading" id="pKi-ev-fgx"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="hFd-Uw-fXZ" id="MV7-vC-3Ky"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="42K-Gt-LbX" customClass="NBSImageCollectionViewCell">
+                                                <rect key="frame" x="1794" y="192" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OHv-ll-toO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="OHv-ll-toO" firstAttribute="leading" secondItem="42K-Gt-LbX" secondAttribute="leading" id="D69-DP-Wxu"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OHv-ll-toO" secondAttribute="trailing" id="McD-1G-Bbe"/>
+                                                    <constraint firstItem="OHv-ll-toO" firstAttribute="top" secondItem="42K-Gt-LbX" secondAttribute="top" id="U0s-SU-FhI"/>
+                                                    <constraint firstAttribute="bottom" secondItem="OHv-ll-toO" secondAttribute="bottom" id="xQd-Ro-ay8"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageThumbView" destination="OHv-ll-toO" id="Flh-M4-Qjf"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ти ще нічого не намалював, або немає інтернет зв'язку" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="183" translatesAutoresizingMaskIntoConstraints="NO" id="qu0-RF-G4n">
+                                        <rect key="frame" x="267" y="235" width="183" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eZ-ld-CaF">
+                                        <rect key="frame" x="268" y="416" width="180" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="НАМАЛЮВАТИ">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconNescafeMainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="WcV-hR-SDy">
+                                <rect key="frame" x="319" y="976" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="h0K-e0-0YP">
+                                <rect key="frame" x="374" y="502" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Профіль" id="0xU-eC-ZFD"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bnu-MG-TYQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2057" y="-2260"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="W9M-KM-nmb">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Vso-JG-2z5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MIH-6f-sqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2055" y="-186"/>
+        </scene>
+        <!--Login View Controller - Залогінься-->
+        <scene sceneID="9hM-jz-vzV">
+            <objects>
+                <viewController id="Ufv-2G-OTl" customClass="NBSLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="veY-PN-lPI"/>
+                        <viewControllerLayoutGuide type="bottom" id="mCl-Hi-YpS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vBd-te-yb4">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgApp" translatesAutoresizingMaskIntoConstraints="NO" id="lPB-Qb-V5t" userLabel="BG Image View - 02_enter.png">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Увійти за допомогою соціальної мережі" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="175" translatesAutoresizingMaskIntoConstraints="NO" id="vNd-po-XAo">
+                                <rect key="frame" x="297" y="218" width="175" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ols-wx-SUh">
+                                <rect key="frame" x="288" y="453" width="193" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="loginFbBtn">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressFacebookButton:" destination="Ufv-2G-OTl" eventType="touchUpInside" id="Vf8-Zv-WnN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h33-lH-gra">
+                                <rect key="frame" x="288" y="548" width="193" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="loginVkBtn">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressVkontakteButton:" destination="Ufv-2G-OTl" eventType="touchUpInside" id="2fj-Of-V25"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCl-93-t8T">
+                                <rect key="frame" x="284" y="905" width="200" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="ПРОПУСТИТИ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressSkipButton:" destination="Ufv-2G-OTl" eventType="touchUpInside" id="u9r-kN-BAK"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconNescafeMainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="IX6-dI-OK9">
+                                <rect key="frame" x="319" y="974" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XDH-Ca-pSu">
+                                <rect key="frame" x="374" y="502" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Залогінься" id="NRy-FX-Xj3"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="enterLabel" destination="vNd-po-XAo" id="wMD-QV-nM7"/>
+                        <outlet property="skipButton" destination="CCl-93-t8T" id="8v2-eD-TJn"/>
+                        <outlet property="spinner" destination="XDH-Ca-pSu" id="PJM-Br-U08"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rd4-L3-i4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2057" y="984"/>
+        </scene>
+        <!--Instructions Content View Controller-->
+        <scene sceneID="Z5t-xO-ILF">
+            <objects>
+                <viewController id="nrS-fq-uw6" customClass="NBSInstructionsContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cRm-My-fOc"/>
+                        <viewControllerLayoutGuide type="bottom" id="kVh-Tx-z98"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q0R-hZ-040">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gCc-Aw-Tuk">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFD-1v-9Ay">
+                                <rect key="frame" x="574" y="861" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.92941182850000004" blue="0.0039215688589999999" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="indexLabel" destination="MFD-1v-9Ay" id="mEf-CW-TVM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gf8-ug-XcE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2877" y="-186"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bgApp" width="768" height="1024"/>
+        <image name="bgApp" width="768" height="1024"/>
+        <image name="bgApp" width="768" height="1024"/>
+        <image name="bgMenu" width="768" height="1024"/>
+        <image name="bgUserpic" width="146" height="146"/>
+        <image name="defaultUserAvatar" width="125" height="125"/>
+        <image name="iconNescafeMainLogo" width="130" height="30"/>
+        <image name="iconNescafeMainLogo" width="130" height="30"/>
+        <image name="iconNescafeMainLogo" width="130" height="30"/>
+        <image name="iconNescafeMainLogo" width="130" height="30"/>
+        <image name="loginFbBtn" width="270" height="68"/>
+        <image name="loginFbBtn" width="270" height="68"/>
+        <image name="loginVkBtn" width="270" height="68"/>
+        <image name="loginVkBtn" width="270" height="68"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
         <simulatedOrientationMetrics key="orientation"/>
