@@ -62,29 +62,43 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    __weak NBSProfileViewController *weakself = self;
+    
     NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:kNBSShouldAutologinFBDefaultsKey]/* &&
         ![socialManager isFacebookLoggedIn]*/)
     {
         [socialManager facebookAutologinWithCompletion:^(BOOL success, NSError *error) {
             if (success) {
-                [self reloadData];
+                [weakself reloadData];
             } else {
                 [UIAlertView showErrorAlertWithError:error];
             }
+            if ([[NSUserDefaults standardUserDefaults] boolForKey:kNBSShouldAutologinVKDefaultsKey] /*&&
+                                                                                                     ![socialManager isVkontakteLoggedIn]*/)
+            {
+                [socialManager getVkontakteUserDataWithCompletion:^(BOOL success, NSError *error, NBSUser *user) {
+                    if (success) {
+                        [weakself reloadData];
+                    } else {
+                        [UIAlertView showErrorAlertWithError:error];
+                    }
+                }];
+            }
+
         }];
-    }
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:kNBSShouldAutologinVKDefaultsKey] /*&&
-        ![socialManager isVkontakteLoggedIn]*/)
+    } else if ([[NSUserDefaults standardUserDefaults] boolForKey:kNBSShouldAutologinVKDefaultsKey] /*&&
+                                                                                                        ![socialManager isVkontakteLoggedIn]*/)
     {
         [socialManager getVkontakteUserDataWithCompletion:^(BOOL success, NSError *error, NBSUser *user) {
             if (success) {
-                [self reloadData];
+                [weakself reloadData];
             } else {
                 [UIAlertView showErrorAlertWithError:error];
             }
         }];
     }
+
     [self reloadData];
 }
 
@@ -156,34 +170,48 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 }
 
 - (void)reloadData {
-//    [self.spinner startAnimating];
-    
-    NBSSocialManager *sharedManager = [NBSSocialManager sharedManager];
-    NBSUser *user = [NBSUser currentUser];
-    if ([sharedManager isFacebookLoggedIn]) {
-        self.nameLabel.text = [user fullFacebookName];
-        self.avatarPictureView.hidden = NO;
-        self.avatarPictureView.profileID = user.facebookUid;
-        self.avatarImageView.hidden = YES;
-        self.loginSubview.hidden = YES;
-        self.galleryContainerSubview.hidden = NO;
-    } else if ([sharedManager isVkontakteLoggedIn]) {
-        self.nameLabel.text = [user fullVkontakteName];
-        NSURL *avatarURL = [NSURL URLWithString:user.vkontakteAvatarLink];
-        NSData *avatarData = [NSData dataWithContentsOfURL:avatarURL];
-        self.avatarImageView.hidden = NO;
-        self.avatarImageView.image = [UIImage imageWithData:avatarData];
-        self.avatarPictureView.hidden = YES;
-        self.loginSubview.hidden = YES;
-        self.galleryContainerSubview.hidden = NO;
-    } else {
-        [self.spinner stopAnimating];
+
+    void (^defaultState)() = ^(){
         self.nameLabel.text = @"Залогінься";
         self.avatarImageView.hidden = NO;
         self.avatarImageView.image = [UIImage imageNamed:@"defaultUserAvatar"];
         self.avatarPictureView.hidden = YES;
         self.loginSubview.hidden = NO;
         self.galleryContainerSubview.hidden = YES;
+    };
+    
+    NBSSocialManager *sharedManager = [NBSSocialManager sharedManager];
+    NBSUser *user = [NBSUser currentUser];
+    if ([sharedManager isFacebookLoggedIn]) {
+        if (!user.facebookUid.length) {
+            [self.spinner startAnimating];
+            defaultState();
+        } else {
+            [self.spinner stopAnimating];
+            self.nameLabel.text = [user fullFacebookName];
+            self.avatarPictureView.hidden = NO;
+            self.avatarPictureView.profileID = user.facebookUid;
+            self.avatarImageView.hidden = YES;
+            self.loginSubview.hidden = YES;
+            self.galleryContainerSubview.hidden = NO;
+        }
+    } else if ([sharedManager isVkontakteLoggedIn]) {
+        if (!user.vkontakteUid.length) {
+            [self.spinner startAnimating];
+            defaultState();
+        } else {
+            [self.spinner stopAnimating];
+            self.nameLabel.text = [user fullVkontakteName];
+            NSURL *avatarURL = [NSURL URLWithString:user.vkontakteAvatarLink];
+            NSData *avatarData = [NSData dataWithContentsOfURL:avatarURL];
+            self.avatarImageView.hidden = NO;
+            self.avatarImageView.image = [UIImage imageWithData:avatarData];
+            self.avatarPictureView.hidden = YES;
+            self.loginSubview.hidden = YES;
+            self.galleryContainerSubview.hidden = NO;
+        }
+    } else {
+        defaultState();
     }
 }
 

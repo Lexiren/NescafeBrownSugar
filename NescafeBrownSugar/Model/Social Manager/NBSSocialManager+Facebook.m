@@ -12,7 +12,7 @@
 #import <Social/Social.h>
 #import "NBSGoogleAnalytics.h"
 
-#define kNBSFacebookGroupID @"487332541365515"
+#define kNBSFacebookGroupID @"212435355525147"
 
 
 @implementation NBSSocialManager (Facebook)
@@ -181,7 +181,7 @@
     
     if ([[[FBSession activeSession]permissions]indexOfObject:@"user_groups"] == NSNotFound) {
         
-        [FBSession openActiveSessionWithPublishPermissions:@[@"user_groups"]
+        [FBSession openActiveSessionWithPublishPermissions:@[@"user_groups, friends_groups"]
                                            defaultAudience:FBSessionDefaultAudienceEveryone
                                               allowLoginUI:YES
                                          completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {

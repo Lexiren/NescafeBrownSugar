@@ -23,7 +23,7 @@
 
 #define kNBSVkontakteIsGroupMemberRequestSignature @"isMemberRequest"
 #define kNBSVkontakteJoinGroupRequestSignature @"joinGroupSignature"
-#define kNBSVkontakteGroupID @"blog_apple"
+#define kNBSVkontakteGroupID @"37076256"
 
 @implementation NBSSocialManager (Vkontakte)  
 

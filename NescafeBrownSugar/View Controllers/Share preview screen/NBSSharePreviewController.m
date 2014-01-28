@@ -129,6 +129,7 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
         if (self.vkPostInfo) {
             [postInfo addEntriesFromDictionary:self.vkPostInfo];
         }
+        
         self.animateActivityForServer = YES;
         [[NBSServerManager sharedManager] sendPhoto:self.photoToSend
                                            postInfo:postInfo

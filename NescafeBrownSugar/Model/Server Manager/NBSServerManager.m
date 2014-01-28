@@ -64,20 +64,28 @@
     
     NSLog(@"%@", parameters.description);
     
+
     AFHTTPRequestOperationManager *httpManager = [AFHTTPRequestOperationManager manager];
+    
     [httpManager POST:[kNBSServerURL stringByAppendingPathComponent:@"app.php"]
            parameters:parameters
-              success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                  DLog(@"photo sent to the server successfull");
-                  if (completion) {
-                      completion(YES, nil);
-                  }
-              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                  DLog(@"failed sending photo to the server");
-                  if (completion) {
-                      completion(NO, error);
-                  }
-              }];
+    constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFileData:UIImagePNGRepresentation(photo)
+                                    name:kNBSServerAPIParameterKeyPicture
+                                fileName:@"image.png"
+                                mimeType:@"image/png"];
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        DLog(@"photo sent to the server successfull");
+        if (completion) {
+            completion(YES, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        DLog(@"failed sending photo to the server");
+        if (completion) {
+            completion(NO, error);
+        }
+    }];
+
 }
 
 

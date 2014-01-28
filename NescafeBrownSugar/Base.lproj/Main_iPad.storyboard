@@ -2295,24 +2295,12 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
     </scenes>
     <resources>
         <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
         <image name="bgMenu" width="768" height="1024"/>
         <image name="bgUserpic" width="146" height="146"/>
         <image name="defaultUserAvatar" width="125" height="125"/>
         <image name="iconNescafeMainLogo" width="130" height="30"/>
-        <image name="iconNescafeMainLogo" width="130" height="30"/>
-        <image name="iconNescafeMainLogo" width="130" height="30"/>
-        <image name="iconNescafeMainLogo" width="130" height="30"/>
         <image name="joinTShirts" width="356" height="321"/>
         <image name="loginFbBtn" width="270" height="68"/>
-        <image name="loginFbBtn" width="270" height="68"/>
-        <image name="loginVkBtn" width="270" height="68"/>
         <image name="loginVkBtn" width="270" height="68"/>
         <image name="logoAboutNescafe" width="178" height="41"/>
         <image name="logoAboutSEKTA" width="147" height="65"/>
