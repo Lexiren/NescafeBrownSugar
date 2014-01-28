@@ -51,6 +51,9 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self.okButton.titleLabel replaceFontWithStandartFont];
+    NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
+    self.shareFBSwitch.on = [socialManager isFacebookLoggedIn];
+    self.shareVKSwitch.on = [socialManager isVkontakteLoggedIn];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -58,9 +61,7 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
     [self showLeftMenuBarButton:YES];
     
     self.imageView.image = self.previewImage;
-    NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
-    self.shareFBSwitch.on = [socialManager isFacebookLoggedIn];
-    self.shareVKSwitch.on = [socialManager isVkontakteLoggedIn];
+
 }
 
 - (void)didReceiveMemoryWarning

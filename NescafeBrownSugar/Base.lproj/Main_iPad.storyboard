@@ -1504,22 +1504,22 @@
                                 <rect key="frame" x="20" y="20" width="728" height="954"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="25" minimumInteritemSpacing="25" id="01P-1u-uJm">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="01P-1u-uJm">
+                                    <size key="itemSize" width="130" height="130"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="Dfc-Ng-h4J" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="10" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="30" y="0.0" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2UF-FM-fer">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1538,14 +1538,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="VAm-RV-EdF" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="203" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="209" y="0.0" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H1T-CG-mEI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1564,14 +1564,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="k4f-Bo-wOH" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="397" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="389" y="0.0" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dFM-xn-YuY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1590,14 +1590,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="1FB-eW-BmW" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="590" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="568" y="0.0" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8q7-IV-BeP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1616,14 +1616,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="xpc-qg-Gp1" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="10" y="153" width="128" height="128"/>
+                                        <rect key="frame" x="30" y="150" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T5E-cV-Au5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1642,14 +1642,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="1TV-0L-10J" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="203" y="153" width="128" height="128"/>
+                                        <rect key="frame" x="209" y="150" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JyP-P2-PRo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1668,14 +1668,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="ifs-hT-YYP" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="397" y="153" width="128" height="128"/>
+                                        <rect key="frame" x="389" y="150" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MlE-p0-cyy">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1694,14 +1694,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="wu4-uI-bxI" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="590" y="153" width="128" height="128"/>
+                                        <rect key="frame" x="568" y="150" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y8W-gd-5f8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1720,14 +1720,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="NMn-fR-zh0" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="10" y="306" width="128" height="128"/>
+                                        <rect key="frame" x="30" y="300" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tMh-x5-PmM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1746,14 +1746,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="ism-8p-j8t" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="203" y="306" width="128" height="128"/>
+                                        <rect key="frame" x="209" y="300" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pAN-hE-Pjp">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1772,14 +1772,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="V5y-vW-JFz" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="397" y="306" width="128" height="128"/>
+                                        <rect key="frame" x="389" y="300" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uEB-yv-V4O">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1798,14 +1798,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="ldA-kE-QAl" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="590" y="306" width="128" height="128"/>
+                                        <rect key="frame" x="568" y="300" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S5Z-Cj-7ne">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1824,14 +1824,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="EJP-Dc-NIv" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="10" y="459" width="128" height="128"/>
+                                        <rect key="frame" x="30" y="450" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qir-Em-nRp">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1850,14 +1850,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="YoO-IM-Xzb" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="203" y="459" width="128" height="128"/>
+                                        <rect key="frame" x="209" y="450" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9M3-4T-9CJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1876,14 +1876,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="rv7-3J-1Fu" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="397" y="459" width="128" height="128"/>
+                                        <rect key="frame" x="389" y="450" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZiI-oh-Hij">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1902,14 +1902,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="8Mx-j1-Z78" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="590" y="459" width="128" height="128"/>
+                                        <rect key="frame" x="568" y="450" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="km4-J7-oUV">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1928,14 +1928,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="Hkg-KG-e8G" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="10" y="612" width="128" height="128"/>
+                                        <rect key="frame" x="30" y="600" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V9f-r4-71T">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1954,14 +1954,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="0uO-nK-dXO" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="203" y="612" width="128" height="128"/>
+                                        <rect key="frame" x="209" y="600" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cR0-uc-7X9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1980,14 +1980,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="5p1-ez-f9V" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="397" y="612" width="128" height="128"/>
+                                        <rect key="frame" x="389" y="600" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b5K-Pj-kgU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -2006,14 +2006,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="f1U-pf-RSl" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="590" y="612" width="128" height="128"/>
+                                        <rect key="frame" x="568" y="600" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m0S-Lx-dfb">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -2032,14 +2032,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="zJJ-B3-blb" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="10" y="765" width="128" height="128"/>
+                                        <rect key="frame" x="30" y="750" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J3M-tn-vKT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -2058,14 +2058,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="hme-X6-jSr" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="203" y="765" width="128" height="128"/>
+                                        <rect key="frame" x="209" y="750" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JNO-iB-6ft">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -2084,14 +2084,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="V62-Ul-6hm" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="397" y="765" width="128" height="128"/>
+                                        <rect key="frame" x="389" y="750" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3YM-jn-Ddp">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -2110,14 +2110,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCellIdentifier" id="HU2-Iz-TM7" customClass="NBSImageCollectionViewCell">
-                                        <rect key="frame" x="590" y="765" width="128" height="128"/>
+                                        <rect key="frame" x="568" y="750" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D78-aD-wmz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -2304,16 +2304,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OLq-Z6-qXJ" userLabel="photoImage View">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OLq-Z6-qXJ" userLabel="photoImage View">
                                 <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photoWithStick" translatesAutoresizingMaskIntoConstraints="NO" id="4Yy-DM-X6Z">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoWithStick" translatesAutoresizingMaskIntoConstraints="NO" id="4Yy-DM-X6Z">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDH-Pi-gan">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDH-Pi-gan">
                                 <rect key="frame" x="109" y="850" width="165" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -2325,7 +2325,7 @@
                                     <action selector="didTapRetakeButton:" destination="rs6-Gg-JKA" eventType="touchUpInside" id="IiQ-JF-gbO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wl5-hM-tfH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wl5-hM-tfH">
                                 <rect key="frame" x="436" y="850" width="204" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -2337,13 +2337,34 @@
                                     <action selector="didTapConfirmButton:" destination="rs6-Gg-JKA" eventType="touchUpInside" id="rch-66-Hml"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="atN-ny-g1S" userLabel="Visible Part mask View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atN-ny-g1S" userLabel="Visible Part mask View">
                                 <rect key="frame" x="96" y="195" width="549" height="551"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="549" id="4no-78-4hp"/>
+                                    <constraint firstAttribute="height" constant="551" id="nqd-j8-QF4"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="atN-ny-g1S" firstAttribute="centerY" secondItem="4Yy-DM-X6Z" secondAttribute="centerY" constant="-41.5" id="3HU-Oh-7My"/>
+                            <constraint firstItem="NDH-Pi-gan" firstAttribute="centerY" secondItem="wl5-hM-tfH" secondAttribute="centerY" id="Abc-Ql-f9z"/>
+                            <constraint firstItem="wl5-hM-tfH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NDH-Pi-gan" secondAttribute="trailing" constant="15" id="HK9-aL-Mig"/>
+                            <constraint firstAttribute="trailing" secondItem="4Yy-DM-X6Z" secondAttribute="trailing" id="Im2-GF-fJb"/>
+                            <constraint firstItem="4Yy-DM-X6Z" firstAttribute="leading" secondItem="VHr-K0-Mjo" secondAttribute="leading" id="M5D-KQ-ZgJ"/>
+                            <constraint firstAttribute="trailing" secondItem="wl5-hM-tfH" secondAttribute="trailing" constant="128" id="SxA-E5-xVr"/>
+                            <constraint firstAttribute="trailing" secondItem="OLq-Z6-qXJ" secondAttribute="trailing" id="X4a-Ud-YVB"/>
+                            <constraint firstItem="OLq-Z6-qXJ" firstAttribute="top" secondItem="VHr-K0-Mjo" secondAttribute="top" constant="64" id="cCs-Up-bUT"/>
+                            <constraint firstItem="4Yy-DM-X6Z" firstAttribute="top" secondItem="VHr-K0-Mjo" secondAttribute="top" id="eAx-lI-YmW"/>
+                            <constraint firstAttribute="bottom" secondItem="OLq-Z6-qXJ" secondAttribute="bottom" id="hOv-21-bY9"/>
+                            <constraint firstAttribute="bottom" secondItem="4Yy-DM-X6Z" secondAttribute="bottom" id="irr-Ng-qIa"/>
+                            <constraint firstItem="atN-ny-g1S" firstAttribute="centerX" secondItem="4Yy-DM-X6Z" secondAttribute="centerX" constant="-13.5" id="krZ-HN-mFE"/>
+                            <constraint firstItem="OLq-Z6-qXJ" firstAttribute="leading" secondItem="VHr-K0-Mjo" secondAttribute="leading" id="qhq-dS-Jrp"/>
+                            <constraint firstItem="epM-TG-oRm" firstAttribute="top" secondItem="NDH-Pi-gan" secondAttribute="bottom" constant="128" id="saY-o6-Na3"/>
+                            <constraint firstItem="NDH-Pi-gan" firstAttribute="leading" secondItem="VHr-K0-Mjo" secondAttribute="leading" constant="109" id="vz2-wK-wDg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Твій малюнок" id="qUa-SH-vvY"/>
                     <connections>
@@ -2413,9 +2434,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0AB-3v-58u">
-                                        <rect key="frame" x="334" y="552" width="100" height="40"/>
+                                        <rect key="frame" x="299" y="517" width="171" height="76"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <state key="normal" title="OK">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -2464,18 +2485,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rnl-dB-t2r" userLabel="Separator view">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rnl-dB-t2r" userLabel="Separator view">
                                 <rect key="frame" x="0.0" y="64" width="768" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="780" misplaced="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQH-j9-WFz">
-                                <rect key="frame" x="7" y="78" width="755" height="139"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="780" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MQH-j9-WFz">
+                                <rect key="frame" x="122" y="117" width="525" height="237"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="139" id="T0T-zg-bsI"/>
-                                </constraints>
                                 <string key="text" base64-UTF8="YES">
 0KHRgtCw0L3RjCDRhNCw0L3QvtC8INGB0L/RltC70YzQvdC+0YIgTmVzY2FmZSAz0LIxINGC0LAg0L7R
 gtGA0LjQvNCw0Lkg0YjQsNC90YEg0YHRgtCw0YLQuCDQstC70LDRgdC90LjQutC+0Lwg0YTRg9GC0LHQ
@@ -2487,35 +2505,27 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
 0LPRgyELA
 </string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="740" misplaced="YES" image="joinTShirts" translatesAutoresizingMaskIntoConstraints="NO" id="3zu-NP-iW6">
-                                <rect key="frame" x="29" y="213" width="263" height="237"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="740" fixedFrame="YES" image="joinTShirts" translatesAutoresizingMaskIntoConstraints="NO" id="3zu-NP-iW6">
+                                <rect key="frame" x="206" y="351" width="356" height="321"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e50-rR-8mZ" userLabel="Separator view">
-                                <rect key="frame" x="0.0" y="450" width="768" height="14"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="800" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b6K-4j-D38">
-                                <rect key="frame" x="253" y="467" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="800" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b6K-4j-D38">
+                                <rect key="frame" x="73" y="734" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.94901967050000002" green="0.81176477670000002" blue="0.26274511220000002" alpha="1" colorSpace="deviceRGB"/>
                             </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="198" translatesAutoresizingMaskIntoConstraints="NO" id="xqg-8S-yHx">
-                                <rect key="frame" x="318" y="464" width="198" height="36"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqg-8S-yHx">
+                                <rect key="frame" x="168" y="727" width="483" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="198" id="1Sk-rB-4sS"/>
-                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Приєднатися до спiльноти ">
                                         <attributes>
                                             <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="38">
                                                 <tabStops/>
                                             </paragraphStyle>
                                         </attributes>
@@ -2524,7 +2534,7 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
                                         <attributes>
                                             <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="38">
                                                 <tabStops/>
                                             </paragraphStyle>
                                             <integer key="NSUnderline" value="1"/>
@@ -2533,19 +2543,10 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EcK-5T-mQV" userLabel="Separator view">
-                                <rect key="frame" x="0.0" y="500" width="768" height="14"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1j2-ZO-Zes">
+                                <rect key="frame" x="334" y="883" width="100" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1j2-ZO-Zes">
-                                <rect key="frame" x="334" y="514" width="100" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="rS2-0n-3BR"/>
-                                    <constraint firstAttribute="height" constant="40" id="z8b-sO-sht"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <state key="normal" title="OK">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -2553,52 +2554,16 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
                                     <action selector="okButtonPressed:" destination="rML-cC-Hde" eventType="touchUpInside" id="zAZ-eh-Oa4"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IgZ-To-29D" userLabel="Separator view">
-                                <rect key="frame" x="0.0" y="554" width="768" height="14"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oPq-21-BPn">
-                                <rect key="frame" x="374" y="502" width="20" height="20"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="s2S-wD-o0X">
+                                <rect key="frame" x="366" y="804" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="MQH-j9-WFz" firstAttribute="top" secondItem="rnl-dB-t2r" secondAttribute="bottom" id="08L-RO-UHG"/>
-                            <constraint firstAttribute="centerX" secondItem="1j2-ZO-Zes" secondAttribute="centerX" id="1oI-zq-aq3"/>
-                            <constraint firstItem="EcK-5T-mQV" firstAttribute="height" secondItem="IgZ-To-29D" secondAttribute="height" id="300-FQ-mhS"/>
-                            <constraint firstItem="EcK-5T-mQV" firstAttribute="height" secondItem="e50-rR-8mZ" secondAttribute="height" id="32U-Rg-vML"/>
-                            <constraint firstItem="EcK-5T-mQV" firstAttribute="leading" secondItem="ahc-XH-onP" secondAttribute="leading" id="3TH-oI-vee"/>
-                            <constraint firstItem="EcK-5T-mQV" firstAttribute="top" secondItem="xqg-8S-yHx" secondAttribute="bottom" id="3nU-OD-kuQ"/>
-                            <constraint firstAttribute="centerX" secondItem="xqg-8S-yHx" secondAttribute="centerX" constant="-33" id="4v9-mj-u7b"/>
-                            <constraint firstItem="wp1-0n-9k8" firstAttribute="top" secondItem="IgZ-To-29D" secondAttribute="bottom" id="4vw-lv-eqj"/>
-                            <constraint firstAttribute="centerX" secondItem="oPq-21-BPn" secondAttribute="centerX" id="90s-hc-zOb"/>
-                            <constraint firstItem="b6K-4j-D38" firstAttribute="centerY" secondItem="xqg-8S-yHx" secondAttribute="centerY" id="9E5-2x-LOQ"/>
-                            <constraint firstAttribute="trailing" secondItem="EcK-5T-mQV" secondAttribute="trailing" id="CnT-9u-A2Z"/>
-                            <constraint firstItem="rnl-dB-t2r" firstAttribute="top" secondItem="pRs-Ay-VhJ" secondAttribute="bottom" id="FVB-jM-USU"/>
-                            <constraint firstAttribute="trailing" secondItem="MQH-j9-WFz" secondAttribute="trailing" constant="6" id="HfV-w7-AGs"/>
-                            <constraint firstItem="IgZ-To-29D" firstAttribute="leading" secondItem="ahc-XH-onP" secondAttribute="leading" id="I5P-6x-Seu"/>
-                            <constraint firstItem="e50-rR-8mZ" firstAttribute="leading" secondItem="ahc-XH-onP" secondAttribute="leading" id="VD5-hz-b32"/>
-                            <constraint firstAttribute="trailing" secondItem="rnl-dB-t2r" secondAttribute="trailing" id="WdY-22-Wjs"/>
-                            <constraint firstAttribute="trailing" secondItem="IgZ-To-29D" secondAttribute="trailing" id="ZEv-yU-q2C"/>
-                            <constraint firstItem="3zu-NP-iW6" firstAttribute="top" secondItem="MQH-j9-WFz" secondAttribute="top" constant="135" id="aUC-Ba-s4m"/>
-                            <constraint firstAttribute="centerX" secondItem="3zu-NP-iW6" secondAttribute="centerX" id="aYo-Ye-3E5"/>
-                            <constraint firstItem="e50-rR-8mZ" firstAttribute="top" secondItem="3zu-NP-iW6" secondAttribute="bottom" id="b76-Y8-ogd"/>
-                            <constraint firstItem="MQH-j9-WFz" firstAttribute="leading" secondItem="ahc-XH-onP" secondAttribute="leading" constant="7" id="fui-KD-dWa"/>
-                            <constraint firstAttribute="centerY" secondItem="oPq-21-BPn" secondAttribute="centerY" id="gQi-yr-vWT"/>
-                            <constraint firstItem="IgZ-To-29D" firstAttribute="top" secondItem="1j2-ZO-Zes" secondAttribute="bottom" id="lVY-H3-IgF"/>
-                            <constraint firstItem="xqg-8S-yHx" firstAttribute="leading" secondItem="b6K-4j-D38" secondAttribute="trailing" constant="16" id="lWF-Yw-l2E"/>
-                            <constraint firstAttribute="trailing" secondItem="e50-rR-8mZ" secondAttribute="trailing" id="nbT-JM-4Pq"/>
-                            <constraint firstItem="xqg-8S-yHx" firstAttribute="top" secondItem="e50-rR-8mZ" secondAttribute="bottom" id="q7a-ap-xJG"/>
-                            <constraint firstItem="1j2-ZO-Zes" firstAttribute="top" secondItem="EcK-5T-mQV" secondAttribute="bottom" id="uA4-s3-yPe"/>
-                            <constraint firstItem="EcK-5T-mQV" firstAttribute="height" secondItem="rnl-dB-t2r" secondAttribute="height" id="v0Z-UN-Lvb"/>
-                            <constraint firstItem="rnl-dB-t2r" firstAttribute="leading" secondItem="ahc-XH-onP" secondAttribute="leading" id="zWi-eH-K0b"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Активізуйся!" id="qnf-0w-0zk"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="oPq-21-BPn" id="jFz-NB-wnS"/>
+                        <outlet property="activityIndicator" destination="s2S-wD-o0X" id="Mlx-KD-p4v"/>
                         <outlet property="joinGroupSwitch" destination="b6K-4j-D38" id="ovc-4o-9Ao"/>
                         <outlet property="okButton" destination="1j2-ZO-Zes" id="KTc-Ht-ZAs"/>
                         <outlet property="switchLabel" destination="xqg-8S-yHx" id="zrt-fY-q1F"/>
@@ -2612,24 +2577,12 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
     </scenes>
     <resources>
         <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
         <image name="bgMenu" width="768" height="1024"/>
         <image name="bgUserpic" width="146" height="146"/>
         <image name="defaultUserAvatar" width="125" height="125"/>
         <image name="iconNescafeMainLogo" width="130" height="30"/>
-        <image name="iconNescafeMainLogo" width="130" height="30"/>
-        <image name="iconNescafeMainLogo" width="130" height="30"/>
-        <image name="iconNescafeMainLogo" width="130" height="30"/>
         <image name="joinTShirts" width="356" height="321"/>
         <image name="loginFbBtn" width="270" height="68"/>
-        <image name="loginFbBtn" width="270" height="68"/>
-        <image name="loginVkBtn" width="270" height="68"/>
         <image name="loginVkBtn" width="270" height="68"/>
         <image name="logoAboutNescafe" width="171" height="39"/>
         <image name="logoAboutSEKTA" width="147" height="65"/>

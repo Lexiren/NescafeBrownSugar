@@ -19,11 +19,11 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmf-xg-XTs">
-                    <rect key="frame" x="350" y="944" width="69" height="70"/>
+                    <rect key="frame" x="335" y="853" width="98" height="98"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="70" id="oMV-49-A47"/>
-                        <constraint firstAttribute="width" constant="69" id="sgx-Ni-bno"/>
+                        <constraint firstAttribute="height" constant="98" id="oMV-49-A47"/>
+                        <constraint firstAttribute="width" constant="98" id="sgx-Ni-bno"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" image="iconCamera">
@@ -34,7 +34,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="V29-de-kDf" secondAttribute="trailing" id="5A7-bo-dUf"/>
-                <constraint firstAttribute="bottom" secondItem="lmf-xg-XTs" secondAttribute="bottom" constant="10" id="6Uz-4q-j1J"/>
+                <constraint firstAttribute="bottom" secondItem="lmf-xg-XTs" secondAttribute="bottom" constant="73" id="6Uz-4q-j1J"/>
                 <constraint firstAttribute="centerY" secondItem="V29-de-kDf" secondAttribute="centerY" id="9mz-3g-lO2"/>
                 <constraint firstAttribute="centerX" secondItem="lmf-xg-XTs" secondAttribute="centerX" id="QzB-Dw-Fun"/>
                 <constraint firstItem="V29-de-kDf" firstAttribute="leading" secondItem="O6i-VY-rml" secondAttribute="leading" id="rrr-Jy-qbK"/>

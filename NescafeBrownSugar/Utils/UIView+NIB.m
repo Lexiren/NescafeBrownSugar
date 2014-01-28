@@ -13,7 +13,9 @@
 #pragma mark - public
 + (id)loadViewFromNIB {
     NSString *nibName = NSStringFromClass([self class]);
-
+    if (!NBS_isIPhone) {
+        nibName = [nibName stringByAppendingString:@"_iPad"];
+    }
     return [self loadViewFromNIBWithName:nibName];
 }
 
