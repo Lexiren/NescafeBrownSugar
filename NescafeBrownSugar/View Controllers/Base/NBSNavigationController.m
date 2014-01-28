@@ -17,15 +17,6 @@
 
 @implementation NBSNavigationController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -35,9 +26,10 @@
     self.navigationBar.translucent = YES;
     self.view.backgroundColor = [UIColor clearColor];
     
+    UIFont *navigationBarFont = [UIFont standartLightFontWithSize:NBS_isIPhone ?22.f : 40.f];
     self.navigationBar.titleTextAttributes =
-  @{UITextAttributeTextColor : [UIColor whiteColor],
-    UITextAttributeFont : [UIFont standartLightFontWithSize:22.f]};
+  @{NSForegroundColorAttributeName : [UIColor whiteColor],
+    NSFontAttributeName : navigationBarFont};
     
     [self setNavigationBarHidden:NO animated:NO];
 	// Do any additional setup after loading the view.
