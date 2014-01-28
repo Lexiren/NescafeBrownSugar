@@ -12,7 +12,9 @@
 
 #pragma mark - public
 + (id)loadViewFromNIB {
-    return [self loadViewFromNIBWithName:NSStringFromClass([self class])];
+    NSString *nibName = NSStringFromClass([self class]);
+
+    return [self loadViewFromNIBWithName:nibName];
 }
 
 + (id)loadViewFromNIBWithFrame:(CGRect)frame {

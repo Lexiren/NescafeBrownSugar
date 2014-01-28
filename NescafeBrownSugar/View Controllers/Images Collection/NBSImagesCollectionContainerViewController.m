@@ -38,7 +38,7 @@ NSString *const kNBSPushImageCollectionFromProfileSegueIdentifier = @"pushImageC
 #pragma mark - private
 
 - (int)numberOfTemplatesPerCollectionPage {
-    if ((NBS_IsDeviceScreenSize4Inch)) {
+    if ((NBS_IsDeviceScreenSize4InchOrBigger)) {
         return kNBSTemplatesNumberPerPage4Inch;
     }
     return kNBSTemplatesNumberPerPage;
