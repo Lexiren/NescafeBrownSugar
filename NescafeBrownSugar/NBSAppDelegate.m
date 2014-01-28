@@ -15,6 +15,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [NBSGoogleAnalytics initGoogleAnalytics];
+    application.statusBarStyle = UIStatusBarStyleLightContent;
     return YES;
 }
 
