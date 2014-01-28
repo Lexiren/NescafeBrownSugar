@@ -33,7 +33,6 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        if ( NBS_iOSVersionLessThan(@"7.0") ) self.wantsFullScreenLayout = NO;
         self.mode = NBSImagePickerModeCameraDrawing;
     }
     return self;

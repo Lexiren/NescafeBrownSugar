@@ -58,18 +58,6 @@
 		84B276E218925D0800E5BE8E /* NBSServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B276E118925D0800E5BE8E /* NBSServerManager.m */; };
 		84E0A013189396C200E863F2 /* NSDictionary+NBSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0A012189396C200E863F2 /* NSDictionary+NBSExtensions.m */; };
 		84EB6CD11890198D00FB38CD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EB6CD01890198D00FB38CD /* Social.framework */; };
-		84EF43561882C0A200E029AC /* 00_menu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF434A1882C0A200E029AC /* 00_menu.jpg */; };
-		84EF43571882C0A200E029AC /* 01_help.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF434B1882C0A200E029AC /* 01_help.jpg */; };
-		84EF43581882C0A200E029AC /* 02_enter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF434C1882C0A200E029AC /* 02_enter.jpg */; };
-		84EF43591882C0A200E029AC /* 03_registration_w_images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF434D1882C0A200E029AC /* 03_registration_w_images.jpg */; };
-		84EF435A1882C0A200E029AC /* 04_choose-image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF434E1882C0A200E029AC /* 04_choose-image.jpg */; };
-		84EF435B1882C0A200E029AC /* 05_draw.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF434F1882C0A200E029AC /* 05_draw.jpg */; };
-		84EF435C1882C0A200E029AC /* 06_camera.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF43501882C0A200E029AC /* 06_camera.jpg */; };
-		84EF435D1882C0A200E029AC /* 07_picture-comlete.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF43511882C0A200E029AC /* 07_picture-comlete.jpg */; };
-		84EF435E1882C0A200E029AC /* 08_share.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF43521882C0A200E029AC /* 08_share.jpg */; };
-		84EF435F1882C0A200E029AC /* 09_join.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF43531882C0A200E029AC /* 09_join.jpg */; };
-		84EF43601882C0A200E029AC /* 10_about.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF43541882C0A200E029AC /* 10_about.jpg */; };
-		84EF43611882C0A200E029AC /* 11_unregistered-user.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EF43551882C0A200E029AC /* 11_unregistered-user.jpg */; };
 		84FAA7FE1875EC410007FB03 /* UIAlertView+NBSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FAA7FD1875EC410007FB03 /* UIAlertView+NBSExtensions.m */; };
 		84FAA8021875EC690007FB03 /* NBSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FAA8011875EC690007FB03 /* NBSLoginViewController.m */; };
 		84FAA8061875EC840007FB03 /* NBSInstructionsContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FAA8051875EC840007FB03 /* NBSInstructionsContentViewController.m */; };
@@ -175,18 +163,6 @@
 		84E0A011189396C100E863F2 /* NSDictionary+NBSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+NBSExtensions.h"; path = "Utils/NSDictionary+NBSExtensions.h"; sourceTree = "<group>"; };
 		84E0A012189396C200E863F2 /* NSDictionary+NBSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+NBSExtensions.m"; path = "Utils/NSDictionary+NBSExtensions.m"; sourceTree = "<group>"; };
 		84EB6CD01890198D00FB38CD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		84EF434A1882C0A200E029AC /* 00_menu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00_menu.jpg; sourceTree = "<group>"; };
-		84EF434B1882C0A200E029AC /* 01_help.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01_help.jpg; sourceTree = "<group>"; };
-		84EF434C1882C0A200E029AC /* 02_enter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02_enter.jpg; sourceTree = "<group>"; };
-		84EF434D1882C0A200E029AC /* 03_registration_w_images.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 03_registration_w_images.jpg; sourceTree = "<group>"; };
-		84EF434E1882C0A200E029AC /* 04_choose-image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "04_choose-image.jpg"; sourceTree = "<group>"; };
-		84EF434F1882C0A200E029AC /* 05_draw.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 05_draw.jpg; sourceTree = "<group>"; };
-		84EF43501882C0A200E029AC /* 06_camera.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 06_camera.jpg; sourceTree = "<group>"; };
-		84EF43511882C0A200E029AC /* 07_picture-comlete.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "07_picture-comlete.jpg"; sourceTree = "<group>"; };
-		84EF43521882C0A200E029AC /* 08_share.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 08_share.jpg; sourceTree = "<group>"; };
-		84EF43531882C0A200E029AC /* 09_join.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 09_join.jpg; sourceTree = "<group>"; };
-		84EF43541882C0A200E029AC /* 10_about.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10_about.jpg; sourceTree = "<group>"; };
-		84EF43551882C0A200E029AC /* 11_unregistered-user.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "11_unregistered-user.jpg"; sourceTree = "<group>"; };
 		84FAA7FC1875EC410007FB03 /* UIAlertView+NBSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+NBSExtensions.h"; path = "Utils/UIAlertView+NBSExtensions.h"; sourceTree = "<group>"; };
 		84FAA7FD1875EC410007FB03 /* UIAlertView+NBSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+NBSExtensions.m"; path = "Utils/UIAlertView+NBSExtensions.m"; sourceTree = "<group>"; };
 		84FAA8001875EC690007FB03 /* NBSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBSLoginViewController.h; sourceTree = "<group>"; };
@@ -297,18 +273,6 @@
 		8432C3D618757F3D005C26B8 = {
 			isa = PBXGroup;
 			children = (
-				84EF434A1882C0A200E029AC /* 00_menu.jpg */,
-				84EF434B1882C0A200E029AC /* 01_help.jpg */,
-				84EF434C1882C0A200E029AC /* 02_enter.jpg */,
-				84EF434D1882C0A200E029AC /* 03_registration_w_images.jpg */,
-				84EF434E1882C0A200E029AC /* 04_choose-image.jpg */,
-				84EF434F1882C0A200E029AC /* 05_draw.jpg */,
-				84EF43501882C0A200E029AC /* 06_camera.jpg */,
-				84EF43511882C0A200E029AC /* 07_picture-comlete.jpg */,
-				84EF43521882C0A200E029AC /* 08_share.jpg */,
-				84EF43531882C0A200E029AC /* 09_join.jpg */,
-				84EF43541882C0A200E029AC /* 10_about.jpg */,
-				84EF43551882C0A200E029AC /* 11_unregistered-user.jpg */,
 				8432C3E818757F3E005C26B8 /* NescafeBrownSugar */,
 				8432C40A18757F3E005C26B8 /* NescafeBrownSugarTests */,
 				8432C3E118757F3E005C26B8 /* Frameworks */,
@@ -647,26 +611,14 @@
 			files = (
 				842237CA189752AC0061A724 /* NBSTemplateCameraOverlayView_iPad.xib in Resources */,
 				06E6A7F2189074B100B1ABD4 /* SansRoundedC.otf in Resources */,
-				84EF435E1882C0A200E029AC /* 08_share.jpg in Resources */,
-				84EF43611882C0A200E029AC /* 11_unregistered-user.jpg in Resources */,
 				8432C3F918757F3E005C26B8 /* Main_iPad.storyboard in Resources */,
-				84EF435F1882C0A200E029AC /* 09_join.jpg in Resources */,
-				84EF43591882C0A200E029AC /* 03_registration_w_images.jpg in Resources */,
-				84EF43561882C0A200E029AC /* 00_menu.jpg in Resources */,
-				84EF435D1882C0A200E029AC /* 07_picture-comlete.jpg in Resources */,
 				067B15E5187749600037DCE3 /* Localizable.strings in Resources */,
-				84EF43601882C0A200E029AC /* 10_about.jpg in Resources */,
-				84EF435B1882C0A200E029AC /* 05_draw.jpg in Resources */,
 				842237CC1897559C0061A724 /* NBSPhotoCameraOverlay_iPad.xib in Resources */,
-				84EF435C1882C0A200E029AC /* 06_camera.jpg in Resources */,
-				84EF43571882C0A200E029AC /* 01_help.jpg in Resources */,
 				8432C3FE18757F3E005C26B8 /* Images.xcassets in Resources */,
 				8450693D187859350087FD3F /* NBSTemplateCameraOverlayView.xib in Resources */,
 				06E6A7F3189074B100B1ABD4 /* SansRoundedLightC.otf in Resources */,
 				8432C3F618757F3E005C26B8 /* Main_iPhone.storyboard in Resources */,
 				842C7AF31886F850004CBA0C /* NBSPhotoCameraOverlay.xib in Resources */,
-				84EF43581882C0A200E029AC /* 02_enter.jpg in Resources */,
-				84EF435A1882C0A200E029AC /* 04_choose-image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

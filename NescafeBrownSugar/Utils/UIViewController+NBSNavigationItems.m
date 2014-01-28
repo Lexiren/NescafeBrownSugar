@@ -32,14 +32,14 @@ static inline CGFloat cpcorrectedInsetValue(CGFloat value)
         case NBSNavigationTypeWhite: {
             [backButton setImage:[UIImage imageNamed:@"iconBack"] forState:UIControlStateNormal];
             [cameraButton setImage:[UIImage imageNamed:@"iconCameraOff"] forState:UIControlStateNormal];
-            [titleAttributes setValue:[UIColor whiteColor] forKey:UITextAttributeTextColor];
+            [titleAttributes setValue:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
             break;
         }
         case NBSNavigationTypeBrown: {
             [backButton setImage:[UIImage imageNamed:@"iconBackBrown"] forState:UIControlStateNormal];
             [cameraButton setImage:[UIImage imageNamed:@"iconCameraOn"] forState:UIControlStateNormal];
             [titleAttributes setValue:[UIColor darkBrown]
-                               forKey:UITextAttributeTextColor];
+                               forKey:NSForegroundColorAttributeName];
             break;
         }
     }
@@ -101,9 +101,10 @@ static inline CGFloat cpcorrectedInsetValue(CGFloat value)
     [rightCameraButton addTarget:self
                           action:@selector(rightCameraButtonDidPress:)
                 forControlEvents:UIControlEventTouchUpInside];
-    [rightCameraButton setImage:[UIImage imageNamed:@"iconCameraOff"]
+    UIImage *rightCameraButtonImage = [UIImage imageNamed:@"iconCameraOff"];
+    [rightCameraButton setImage:rightCameraButtonImage
                        forState:UIControlStateNormal];
-    rightCameraButton.frame = kCPDefaultButtonFrame;
+    rightCameraButton.frame = NBS_isIPhone ? kCPDefaultButtonFrame : CGRectMake(0.f, 0.f, rightCameraButtonImage.size.width, rightCameraButtonImage.size.height);
     
     return [self rightBarButtonItemWithButton:rightCameraButton];
 }
