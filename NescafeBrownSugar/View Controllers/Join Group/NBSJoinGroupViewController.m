@@ -85,15 +85,14 @@ NSString *const kNBSJoinGroupVCPushSegue = @"JoinGroupVCPushSegue";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.textView.font = [UIFont standartLightFontWithSize:15.f];
-    self.switchLabel.font = [UIFont standartLightFontWithSize:14.f];
-    self.okButton.titleLabel.font = [UIFont standartFontWithSize:18.f];
+    [self.textView replaceFontWithStandartLightFont];
+    [self.switchLabel replaceFontWithStandartLightFont];
+    [self.okButton.titleLabel replaceFontWithStandartFont];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self showLeftMenuBarButton:YES];
-    
 }
 
 - (void)moveToNextScreen {

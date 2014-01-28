@@ -50,7 +50,7 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.okButton.titleLabel.font = [UIFont standartFontWithSize:18.f];
+    [self.okButton.titleLabel replaceFontWithStandartFont];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

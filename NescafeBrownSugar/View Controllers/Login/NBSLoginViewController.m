@@ -30,8 +30,8 @@ NSString *const kNBSLoginVCIdentifier = @"LoginVC";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.skipButton.titleLabel.font = [UIFont standartFontWithSize:15.f];
-    self.enterLabel.font = [UIFont standartLightFontWithSize:18.f];
+    [self.skipButton.titleLabel replaceFontWithStandartFont];
+    [self.enterLabel replaceFontWithStandartLightFont];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -17,6 +17,8 @@
 #define NBS_iOSVersionLessOrEqualTo(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 // iOS version check-functions defines
 
+#define NBS_isIPhone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+
 // ---- screen size defines ---- //
 #define NBS_IsDeviceScreenSize4Inch ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 // ---- screen size defines ---- //

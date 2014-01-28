@@ -6,6 +6,20 @@
 //  Copyright (c) 2014 COXO. All rights reserved.
 //
 
+@interface UILabel (NBSAdditions)
+
+- (void)replaceFontWithStandartFont;
+- (void)replaceFontWithStandartLightFont;
+
+@end
+
+@interface UITextView (NBSAdditions)
+
+- (void)replaceFontWithStandartFont;
+- (void)replaceFontWithStandartLightFont;
+
+@end
+
 @interface UIFont (NBSAdditions)
 
 + (UIFont *)standartFontWithSize:(CGFloat)size;
