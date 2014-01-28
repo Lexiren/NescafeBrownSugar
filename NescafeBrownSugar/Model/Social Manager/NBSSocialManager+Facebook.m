@@ -215,6 +215,9 @@
                               completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
                                   if (error) {
                                       [UIAlertView showErrorAlertWithError:error];
+                                  } else {
+                                      [NBSGoogleAnalytics sendEventWithCategory:NBSGAEventCategoryFacebook
+                                                                         action:NBSGAEventActionLike];
                                   }
                                   if (completion) {
                                       completion(!error, error);

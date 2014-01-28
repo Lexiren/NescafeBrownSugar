@@ -221,6 +221,7 @@
                                                error:nil
                                             response:@([response intValue])];
     } else if ([request.signature isEqualToString:kNBSVkontakteJoinGroupRequestSignature]) {
+        [NBSGoogleAnalytics sendEventWithCategory:NBSGAEventCategoryVkontakte action:NBSGAEventActionLike];
         [self performJoinGroupVKCompletionWithSuccess:YES
                                                 error:nil];
     }
