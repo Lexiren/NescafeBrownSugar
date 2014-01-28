@@ -160,6 +160,7 @@
 #pragma mark - groups
 
 - (void)checkIsMemberOfGroupVKWithCompletion:(NBSCompletionBlockWithData)completion {
+    self.isGroupMemberVKCompletion = completion;
     NSMutableDictionary *options = [NSMutableDictionary dictionary];
     [options setValue:[NBSUser currentUser].vkontakteUid forKey:@"user_id"];
     [options setValue:kNBSVkontakteGroupID forKey:@"group_id"];
@@ -172,6 +173,7 @@
 }
 
 - (void)joinGroupVKWIthCompletion:(NBSCompletionBlock)completion {
+    self.joinGroupVKCompletion = completion;
     NSMutableDictionary *options = [NSMutableDictionary dictionary];
     [options setValue:kNBSVkontakteGroupID forKey:@"group_id"];
     
@@ -195,7 +197,7 @@
             user.vkontakteAvatarLink = [userData objectForKey:@"photo_100"];
             user.vkontakteFirstName = [userData objectForKey:@"first_name"];
             user.vkontakteLastName = [userData objectForKey:@"last_name"];
-            user.vkontakteUid = [userData objectForKey:@"uid"];
+            user.vkontakteUid = [[userData objectForKey:@"uid"] stringValue];
             [self performUserDataCompletionWithSuccess:YES
                                                  error:nil
                                                   user:user];
@@ -214,7 +216,7 @@
         NSLog(@"%@", [response description]);
         [self performSharePhotoVKCompletionWithSuccess:YES error:nil data:response];
     } else if ([request.signature isEqualToString:kNBSVkontakteIsGroupMemberRequestSignature]) {
-        response = [[response objectForKey:@"response"] objectForKey:@"member"];
+        response = [response objectForKey:@"response"];
         [self performIsMemberVKCompletionWithSuccess:YES
                                                error:nil
                                             response:@([response intValue])];

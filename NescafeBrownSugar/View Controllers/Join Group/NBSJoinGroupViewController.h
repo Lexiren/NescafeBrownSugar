@@ -10,6 +10,8 @@
 
 @interface NBSJoinGroupViewController : UIViewController
 
+@property (nonatomic, assign) BOOL didJoinGroupFB;
+@property (nonatomic, assign) BOOL didJoinGroupVK;
 
 @end
 

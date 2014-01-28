@@ -40,6 +40,9 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 @property (strong, nonatomic) NSArray *gallerySource;
 @property (strong, nonatomic) NBSGalleryImage *selectedImage;
 
+@property (weak, nonatomic) IBOutlet UILabel *yourImagesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *noImagesLabel;
+
 @end
 
 @implementation NBSProfileViewController
@@ -52,15 +55,17 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
     
     self.nameLabel.font = [UIFont standartLightFontWithSize:20.f];
     self.enterLabel.font = [UIFont standartLightFontWithSize:16.f];
-    [self.loginSubview layoutIfNeeded];
+    self.yourImagesLabel.font = [UIFont standartLightFontWithSize:16.f];
+    self.noImagesLabel.font = [UIFont standartLightFontWithSize:18.f];
+    self.createPictureButton.titleLabel.font = [UIFont standartFontWithSize:15.f];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:kNBSShouldAutologinFBDefaultsKey] &&
-        ![socialManager isFacebookLoggedIn])
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:kNBSShouldAutologinFBDefaultsKey]/* &&
+        ![socialManager isFacebookLoggedIn]*/)
     {
         [socialManager facebookAutologinWithCompletion:^(BOOL success, NSError *error) {
             if (success) {
@@ -70,8 +75,8 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
             }
         }];
     }
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:kNBSShouldAutologinVKDefaultsKey] &&
-        ![socialManager isVkontakteLoggedIn])
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:kNBSShouldAutologinVKDefaultsKey] /*&&
+        ![socialManager isVkontakteLoggedIn]*/)
     {
         [socialManager getVkontakteUserDataWithCompletion:^(BOOL success, NSError *error, NBSUser *user) {
             if (success) {
@@ -82,6 +87,42 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
         }];
     }
     [self reloadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+
+    NBSUser *user = [NBSUser currentUser];
+    if (user.facebookUid.length) {
+        [self.spinner startAnimating];
+
+        [[NBSServerManager sharedManager] loadGalleryWithSocialNetworkType:@"fbid"
+                                                                    userID:user.facebookUid
+                                                                completion:^(BOOL success, NSError *error, id data) {
+                                                                    [self.spinner stopAnimating];
+                                                                    if (success) {
+                                                                        [self updateGallerySourceByAddingDictionary:data];
+                                                                    } else {
+                                                                        [UIAlertView showErrorAlertWithError:error];
+                                                                    }
+                                                                }];
+    }
+    
+    if (user.vkontakteUid.length) {
+        [self.spinner startAnimating];
+
+        [[NBSServerManager sharedManager] loadGalleryWithSocialNetworkType:@"vkid"
+                                                                    userID:user.vkontakteUid
+                                                                completion:^(BOOL success, NSError *error, id data) {
+                                                                    [self.spinner stopAnimating];
+                                                                    if (success) {
+                                                                        [self updateGallerySourceByAddingDictionary:data];
+                                                                    } else {
+                                                                        [UIAlertView showErrorAlertWithError:error];
+                                                                    }
+                                                                }];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -116,34 +157,11 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 }
 
 - (void)reloadData {
-    [self.spinner startAnimating];
+//    [self.spinner startAnimating];
     
     NBSSocialManager *sharedManager = [NBSSocialManager sharedManager];
     NBSUser *user = [NBSUser currentUser];
     if ([sharedManager isFacebookLoggedIn]) {
-        [[NBSServerManager sharedManager] loadGalleryWithSocialNetworkType:@"fbid"
-                                                                    userID:user.facebookUid
-                                                                completion:^(BOOL success, NSError *error, id data) {
-                                                                    [self.spinner stopAnimating];
-                                                                    if (success) {
-                                                                        [self updateGallerySourceByAddingDictionary:data];
-                                                                    } else {
-                                                                        [UIAlertView showErrorAlertWithError:error];
-                                                                    }
-                                                                }];
-        if ([sharedManager isVkontakteLoggedIn]) {
-            [[NBSServerManager sharedManager] loadGalleryWithSocialNetworkType:@"vkid"
-                                                                        userID:user.vkontakteUid
-                                                                    completion:^(BOOL success, NSError *error, id data) {
-                                                                        [self.spinner stopAnimating];
-                                                                        if (success) {
-                                                                            [self updateGallerySourceByAddingDictionary:data];
-                                                                        } else {
-                                                                            [UIAlertView showErrorAlertWithError:error];
-                                                                        }
-                                                                    }];
-        }
-        
         self.nameLabel.text = [user fullFacebookName];
         self.avatarPictureView.hidden = NO;
         self.avatarPictureView.profileID = user.facebookUid;
@@ -151,16 +169,6 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
         self.loginSubview.hidden = YES;
         self.galleryContainerSubview.hidden = NO;
     } else if ([sharedManager isVkontakteLoggedIn]) {
-        [[NBSServerManager sharedManager] loadGalleryWithSocialNetworkType:@"vkid"
-                                                                    userID:user.vkontakteUid
-                                                                completion:^(BOOL success, NSError *error, id data) {
-                                                                    [self.spinner stopAnimating];
-                                                                    if (success) {
-                                                                        [self updateGallerySourceByAddingDictionary:data];
-                                                                    } else {
-                                                                        [UIAlertView showErrorAlertWithError:error];
-                                                                    }
-                                                                }];
         self.nameLabel.text = [user fullVkontakteName];
         NSURL *avatarURL = [NSURL URLWithString:user.vkontakteAvatarLink];
         NSData *avatarData = [NSData dataWithContentsOfURL:avatarURL];
@@ -230,8 +238,10 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section
 {
-    //    return self.sourceImagesNames.count;
-    return self.gallerySource.count;
+    int count = self.gallerySource.count;
+    self.yourImagesLabel.hidden = (count == 0);
+    self.noImagesLabel.hidden = (count != 0);
+    return count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView

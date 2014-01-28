@@ -16,6 +16,7 @@
 #import "NBSJoinGroupViewController.h"
 #import "NBSGoogleAnalytics.h"
 #import "NBSDesignAdditions.h"
+#import "NBSProfileViewController.h"
 
 NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
 
@@ -29,14 +30,17 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
 @property (assign, nonatomic) BOOL animateActivityForVK;
 
 //data for sending photo to server
-// if postInfo == nil - there wansn't posting to this social network
-// if postInfo empty - photo is still posting to social network at this moment
 @property (assign, nonatomic) BOOL animateActivityForServer;
 @property (assign, nonatomic) BOOL didPostPhotoToFB;
 @property (assign, nonatomic) BOOL didPostPhotoToVK;
 @property (strong, nonatomic) NSDictionary *fbPostInfo;
 @property (strong, nonatomic) NSDictionary *vkPostInfo;
 @property (strong, nonatomic) UIImage *photoToSend;
+
+@property (assign, nonatomic) BOOL needShowJoinGroupFB;
+@property (assign, nonatomic) BOOL needShowJoinGroupVK;
+@property (assign, nonatomic) BOOL didCheckGroupFB;
+@property (assign, nonatomic) BOOL didCheckGroupVK;
 
 @end
 
@@ -63,6 +67,14 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:kNBSJoinGroupVCPushSegue]) {
+        NBSJoinGroupViewController *joinVC = (NBSJoinGroupViewController *)segue.destinationViewController;
+        joinVC.didJoinGroupFB = !self.needShowJoinGroupFB;
+        joinVC.didJoinGroupVK = !self.needShowJoinGroupVK;
+    }
 }
 
 #pragma mark - activity indicator
@@ -125,9 +137,71 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
                                              } else {
                                                  [UIAlertView showErrorAlertWithError:error];
                                              }
-                                             [self performSegueWithIdentifier:kNBSJoinGroupVCPushSegue
-                                                                       sender:self];
+                                             [self checkShouldShowJoinGroupScreen];
                                          }];
+    }
+}
+
+- (void)checkShouldShowJoinGroupScreen {
+    self.didCheckGroupFB = NO;
+    self.didCheckGroupVK = NO;
+    
+    self.needShowJoinGroupFB = NO;
+    self.needShowJoinGroupVK = NO;
+    
+    NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
+    if ([socialManager isFacebookLoggedIn]) {
+        self.animateActivityForFB = YES;
+        [socialManager checkIsMemberOfGroupFBWithCompletion:^(BOOL success, NSError *error, NSNumber *data) {
+            self.animateActivityForFB = NO;
+            if (success) {
+                self.needShowJoinGroupFB = ![data boolValue];
+            } else {
+                [UIAlertView showErrorAlertWithError:error];
+            }
+            self.didCheckGroupFB = YES;
+        }];
+    } else {
+        self.didCheckGroupFB = YES;
+    }
+    if ([socialManager isVkontakteLoggedIn]) {
+        self.animateActivityForVK = YES;
+        [socialManager checkIsMemberOfGroupVKWithCompletion:^(BOOL success, NSError *error, id data) {
+            self.animateActivityForVK = NO;
+            if (success) {
+                self.needShowJoinGroupVK = ![data boolValue];
+            } else {
+                [UIAlertView showErrorAlertWithError:error];
+            }
+            self.didCheckGroupVK = YES;
+        }];
+    } else {
+        self.didCheckGroupVK = YES;
+    }
+
+}
+
+- (void)setDidCheckGroupFB:(BOOL)didCheckGroupFB {
+    _didCheckGroupFB = didCheckGroupFB;
+    if (_didCheckGroupFB && _didCheckGroupVK) {
+        [self moveToNextScreen];
+    }
+}
+
+- (void)setDidCheckGroupVK:(BOOL)didCheckGroupVK {
+    _didCheckGroupVK = didCheckGroupVK;
+    if (_didCheckGroupFB && _didCheckGroupVK) {
+        [self moveToNextScreen];
+    }
+}
+
+- (void)moveToNextScreen {
+    if (_needShowJoinGroupFB || _needShowJoinGroupVK) {
+        [self performSegueWithIdentifier:kNBSJoinGroupVCPushSegue sender:self];
+    } else {
+        NBSProfileViewController *profileVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSProfileVCIdentifier];
+        [profileVC showLeftMenuBarButton:YES];
+        [self.navigationController setViewControllers:@[profileVC] animated:YES];
     }
 }
 

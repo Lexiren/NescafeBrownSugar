@@ -116,6 +116,9 @@
                                   userID:(NSString *)userID
                               completion:(NBSCompletionBlockWithData)requestCompletion
 {
+    if (!userID.length) {
+        return;
+    }
     AFHTTPRequestOperationManager *httpManager = [AFHTTPRequestOperationManager manager];
     [httpManager POST:[kNBSServerURL stringByAppendingFormat:@"/gallery_get/%@/%@/",snType,userID]
            parameters:@{}

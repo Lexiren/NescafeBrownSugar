@@ -27,9 +27,6 @@ NSString *const kNBSJoinGroupVCPushSegue = @"JoinGroupVCPushSegue";
 @property (nonatomic, assign) BOOL shouldShowActivityFB;
 @property (nonatomic, assign) BOOL shouldShowActivityVK;
 
-@property (nonatomic, assign) BOOL didJoinGroupFB;
-@property (nonatomic, assign) BOOL didJoinGroupVK;
-
 @property (nonatomic, weak) IBOutlet UIButton *okButton;
 
 @end
@@ -97,36 +94,6 @@ NSString *const kNBSJoinGroupVCPushSegue = @"JoinGroupVCPushSegue";
     [super viewWillAppear:animated];
     [self showLeftMenuBarButton:YES];
     
-    self.didJoinGroupFB = NO;
-    self.didJoinGroupVK = NO;
-    
-    NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
-    if ([socialManager isFacebookLoggedIn]) {
-        self.shouldShowActivityFB = YES;
-        [socialManager checkIsMemberOfGroupFBWithCompletion:^(BOOL success, NSError *error, NSNumber *data) {
-            self.shouldShowActivityFB = NO;
-            if (success) {
-                self.didJoinGroupFB = [data boolValue];
-            } else {
-                [UIAlertView showErrorAlertWithError:error];
-            }
-        }];
-    } else {
-        self.didJoinGroupFB = YES;
-    }
-    if ([socialManager isVkontakteLoggedIn]) {
-        self.shouldShowActivityVK = YES;
-        [socialManager checkIsMemberOfGroupVKWithCompletion:^(BOOL success, NSError *error, id data) {
-            self.shouldShowActivityVK = NO;
-            if (success) {
-                self.didJoinGroupVK = [data boolValue];
-            } else {
-                [UIAlertView showErrorAlertWithError:error];
-            }
-        }];
-    } else {
-        self.didJoinGroupVK = YES;
-    }
 }
 
 - (void)moveToNextScreen {
