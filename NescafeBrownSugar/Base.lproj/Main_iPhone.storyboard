@@ -674,7 +674,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Ha-HQ-zhU">
+                                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Ha-HQ-zhU">
                                         <rect key="frame" x="20" y="55" width="280" height="147"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1422,7 +1422,7 @@
                         <outlet property="spinner" destination="NlE-Ul-l3h" id="FlF-7p-sTU"/>
                         <outlet property="yourImagesLabel" destination="hHy-FS-PSY" id="3kx-Zd-x03"/>
                         <segue destination="jUU-5L-6LA" kind="push" identifier="pushImageCollectionFromProfileSegue" id="X8t-BQ-G5H"/>
-                        <segue destination="0rw-D6-yEg" kind="modal" identifier="galleryDetailSegue" modalTransitionStyle="crossDissolve" id="u3D-eT-CB6"/>
+                        <segue destination="0rw-D6-yEg" kind="push" identifier="galleryDetailSegue" id="u3D-eT-CB6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9U-fR-CHV" userLabel="First Responder" sceneMemberID="firstResponder"/>

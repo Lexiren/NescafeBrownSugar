@@ -1128,7 +1128,7 @@
                         <outlet property="spinner" destination="rqx-EQ-o51" id="Muk-aS-Pau"/>
                         <outlet property="yourImagesLabel" destination="gUQ-ap-95f" id="08U-h8-qrK"/>
                         <segue destination="X8C-Kh-OJe" kind="push" identifier="pushImageCollectionFromProfileSegue" id="fzw-a6-ehj"/>
-                        <segue destination="t5W-S0-jeH" kind="modal" identifier="galleryDetailSegue" modalTransitionStyle="crossDissolve" id="9mA-Gk-aDb"/>
+                        <segue destination="t5W-S0-jeH" kind="push" identifier="galleryDetailSegue" id="9mA-Gk-aDb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEz-hg-meo" userLabel="First Responder" sceneMemberID="firstResponder"/>

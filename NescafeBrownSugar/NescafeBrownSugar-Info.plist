@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>uk</string>
 	<key>CFBundleDisplayName</key>
@@ -34,7 +32,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>0.0.7</string>
+	<string>0.0.9</string>
 	<key>FacebookAppID</key>
 	<string>638257006220218</string>
 	<key>FacebookDisplayName</key>
@@ -63,6 +61,8 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>VkontakteAppID</key>
 	<string>4119928</string>
 </dict>

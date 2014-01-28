@@ -298,7 +298,8 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
                                                                                  forIndexPath:indexPath];
     NBSGalleryImage *image = self.gallerySource[indexPath.row];
     
-    
+    cell.layer.cornerRadius = 10;
+    cell.layer.masksToBounds = YES;
     if (image.preview) {
         cell.imageThumbView.image = image.preview;
     } else {

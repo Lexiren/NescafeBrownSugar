@@ -11,6 +11,7 @@ NSString *const kNBSpresentGalleryDetailSegueIdentifier = @"galleryDetailSegue";
 
 #import "NBSGalleryDetalViewController.h"
 #import "NBSGalleryImage.h"
+#import "UIViewController+NBSNavigationItems.h"
 
 @interface NBSGalleryDetalViewController ()
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -32,6 +33,7 @@ NSString *const kNBSpresentGalleryDetailSegueIdentifier = @"galleryDetailSegue";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self showLeftMenuBarButton:YES];
 	// Do any additional setup after loading the view.
 }
 
