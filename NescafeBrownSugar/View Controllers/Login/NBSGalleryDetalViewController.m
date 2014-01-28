@@ -40,8 +40,9 @@ NSString *const kNBSpresentGalleryDetailSegueIdentifier = @"galleryDetailSegue";
     
     [self.activityIndicator startAnimating];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
-        NSData *data0 = [NSData dataWithContentsOfURL:self.image.imageURL];
-        UIImage *image = [UIImage imageWithData:data0];
+        NSURL *url = self.image.imageURL;
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        UIImage *image = [UIImage imageWithData:data];
         
         dispatch_sync(dispatch_get_main_queue(), ^(void) {
             [self.activityIndicator stopAnimating];

@@ -104,37 +104,40 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
 
-    NBSUser *user = [NBSUser currentUser];
-    if (user.facebookUid.length) {
-        [self.spinner startAnimating];
+    if ([NBSGalleryImage needUpdateGallary]) {
 
-        [[NBSServerManager sharedManager] loadGalleryWithSocialNetworkType:@"fbid"
-                                                                    userID:user.facebookUid
-                                                                completion:^(BOOL success, NSError *error, id data) {
-                                                                    [self.spinner stopAnimating];
-                                                                    if (success) {
-                                                                        [self updateGallerySourceByAddingDictionary:data];
-                                                                    } else {
-                                                                        [UIAlertView showErrorAlertWithError:error];
-                                                                    }
-                                                                }];
-    }
-    
-    if (user.vkontakteUid.length) {
-        [self.spinner startAnimating];
+        NBSUser *user = [NBSUser currentUser];
+        if (user.facebookUid.length) {
+            [self.spinner startAnimating];
 
-        [[NBSServerManager sharedManager] loadGalleryWithSocialNetworkType:@"vkid"
-                                                                    userID:user.vkontakteUid
-                                                                completion:^(BOOL success, NSError *error, id data) {
-                                                                    [self.spinner stopAnimating];
-                                                                    if (success) {
-                                                                        [self updateGallerySourceByAddingDictionary:data];
-                                                                    } else {
-                                                                        [UIAlertView showErrorAlertWithError:error];
-                                                                    }
-                                                                }];
+            [[NBSServerManager sharedManager] loadGalleryWithSocialNetworkType:@"fbid"
+                                                                        userID:user.facebookUid
+                                                                    completion:^(BOOL success, NSError *error, id data) {
+                                                                        [self.spinner stopAnimating];
+                                                                        if (success) {
+                                                                            [self updateGallerySourceByAddingDictionary:data];
+                                                                        } else {
+                                                                            [UIAlertView showErrorAlertWithError:error];
+                                                                        }
+                                                                    }];
+        }
+        
+        if (user.vkontakteUid.length) {
+            [self.spinner startAnimating];
+
+            [[NBSServerManager sharedManager] loadGalleryWithSocialNetworkType:@"vkid"
+                                                                        userID:user.vkontakteUid
+                                                                    completion:^(BOOL success, NSError *error, id data) {
+                                                                        [self.spinner stopAnimating];
+                                                                        if (success) {
+                                                                            [self updateGallerySourceByAddingDictionary:data];
+                                                                        } else {
+                                                                            [UIAlertView showErrorAlertWithError:error];
+                                                                        }
+                                                                    }];
+        }
+        [NBSGalleryImage setNeedUpdateGallery:NO];
     }
 }
 
@@ -148,6 +151,11 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 #pragma mark - private functions
 
 - (void)updateGallerySourceByAddingDictionary:(NSDictionary *)dict {
+    if (!dict || ![dict isKindOfClass:[NSDictionary class]] || ![[dict allKeys] count]) {
+        //fool protection
+        return;
+    }
+    
     if (_gallerySourceDictionaries) {
         NSMutableDictionary *newSource = [_gallerySourceDictionaries mutableCopy];
         [newSource addEntriesFromDictionary:dict];
@@ -159,14 +167,24 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
     
     NSMutableArray *gallerySourceMutable = [NSMutableArray array];
     for (NSString *key in [_gallerySourceDictionaries allKeys]) {
+        NSString *value = [_gallerySourceDictionaries objectForKey:key];
         NBSGalleryImage *galleryImage = [[NBSGalleryImage alloc] initWithId:key
-                                                                      image:[_gallerySourceDictionaries objectForKey:key]];
+                                                             imageURLString:value];
         [gallerySourceMutable addObject:galleryImage];
     }
     
     self.gallerySource = gallerySourceMutable;
     
-    [self.galleryCollection reloadData];
+    if ([self.gallerySource count]) {
+        self.galleryContainerSubview.hidden = NO;
+        self.galleryCollection.hidden = NO;
+        self.createPictureButton.hidden = YES;
+        [self.galleryCollection reloadData];
+    } else {
+        self.galleryCollection.hidden = YES;
+        self.galleryContainerSubview.hidden = YES;
+        self.createPictureButton.hidden = NO;
+    }
 }
 
 - (void)reloadData {
@@ -279,7 +297,29 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
     NBSImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier
                                                                                  forIndexPath:indexPath];
     NBSGalleryImage *image = self.gallerySource[indexPath.row];
-    cell.imageThumbView.image = image.imagePreview;
+    
+    
+    if (image.preview) {
+        cell.imageThumbView.image = image.preview;
+    } else {
+        UIActivityIndicatorView *spiner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+        spiner.center = cell.contentView.center;
+        [cell.contentView addSubview:spiner];
+        [spiner startAnimating];
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:image.previewLink]];
+            UIImage *previewImage = [UIImage imageWithData:data];
+            
+            dispatch_sync(dispatch_get_main_queue(), ^(void) {
+                [spiner stopAnimating];
+                [spiner removeFromSuperview];
+                cell.imageThumbView.image = previewImage;
+                image.preview = previewImage;
+            });
+        });
+    }
+    
     
     return cell;
 }

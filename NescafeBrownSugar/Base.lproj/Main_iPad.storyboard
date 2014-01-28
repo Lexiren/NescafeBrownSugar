@@ -1077,8 +1077,8 @@
                                             </collectionViewCell>
                                         </cells>
                                         <connections>
-                                            <outlet property="dataSource" destination="djS-pL-lqT" id="1Fk-ki-Efv"/>
-                                            <outlet property="delegate" destination="djS-pL-lqT" id="fjx-w9-3ds"/>
+                                            <outlet property="dataSource" destination="aHu-qs-fki" id="iBt-8R-FDw"/>
+                                            <outlet property="delegate" destination="aHu-qs-fki" id="LvM-s3-oVI"/>
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ти ще нічого не намалював, або немає інтернет зв'язку" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="QEz-50-Njx">
@@ -1128,7 +1128,7 @@
                         <outlet property="spinner" destination="rqx-EQ-o51" id="Muk-aS-Pau"/>
                         <outlet property="yourImagesLabel" destination="gUQ-ap-95f" id="08U-h8-qrK"/>
                         <segue destination="X8C-Kh-OJe" kind="push" identifier="pushImageCollectionFromProfileSegue" id="fzw-a6-ehj"/>
-                        <segue destination="t5W-S0-jeH" kind="modal" identifier="galleryDetailSegue" id="9mA-Gk-aDb"/>
+                        <segue destination="t5W-S0-jeH" kind="modal" identifier="galleryDetailSegue" modalTransitionStyle="crossDissolve" id="9mA-Gk-aDb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEz-hg-meo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1147,42 +1147,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edK-0V-C5O">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hC-ed-hmU">
+                                <rect key="frame" x="20" y="20" width="728" height="984"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2hC-ed-hmU">
-                                        <rect key="frame" x="20" y="20" width="728" height="984"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="bGn-Ry-3E9" appends="YES" id="1O1-xD-Tq4"/>
-                                        </connections>
-                                    </imageView>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VUy-m2-Row">
-                                        <rect key="frame" x="366" y="494" width="37" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </activityIndicatorView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="2hC-ed-hmU" firstAttribute="top" secondItem="edK-0V-C5O" secondAttribute="top" constant="20" id="2fq-tU-YcR"/>
-                                    <constraint firstAttribute="centerY" secondItem="VUy-m2-Row" secondAttribute="centerY" id="UIt-eH-KXu"/>
-                                    <constraint firstAttribute="bottom" secondItem="2hC-ed-hmU" secondAttribute="bottom" constant="20" id="YeB-6e-TnU"/>
-                                    <constraint firstAttribute="trailing" secondItem="2hC-ed-hmU" secondAttribute="trailing" constant="20" id="iGG-Db-W1a"/>
-                                    <constraint firstAttribute="centerX" secondItem="VUy-m2-Row" secondAttribute="centerX" id="lSV-ZK-Hfo"/>
-                                    <constraint firstItem="2hC-ed-hmU" firstAttribute="leading" secondItem="edK-0V-C5O" secondAttribute="leading" constant="20" id="pbc-w7-8VF"/>
-                                </constraints>
-                            </view>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bGn-Ry-3E9" appends="YES" id="1O1-xD-Tq4"/>
+                                </connections>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VUy-m2-Row">
+                                <rect key="frame" x="365" y="494" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="edK-0V-C5O" firstAttribute="top" secondItem="Mwh-5U-Jbl" secondAttribute="top" id="2J2-8y-ERI"/>
-                            <constraint firstAttribute="bottom" secondItem="edK-0V-C5O" secondAttribute="bottom" id="E5l-hc-oaR"/>
-                            <constraint firstItem="edK-0V-C5O" firstAttribute="leading" secondItem="Mwh-5U-Jbl" secondAttribute="leading" id="NSZ-nk-wLe"/>
-                            <constraint firstAttribute="trailing" secondItem="edK-0V-C5O" secondAttribute="trailing" id="shK-Gf-3Xp"/>
-                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="bGn-Ry-3E9" appends="YES" id="DE9-EP-P9i"/>
                         </connections>

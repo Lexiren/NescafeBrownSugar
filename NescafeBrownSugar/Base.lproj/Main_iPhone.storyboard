@@ -674,7 +674,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Ha-HQ-zhU">
+                                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Ha-HQ-zhU">
                                         <rect key="frame" x="20" y="55" width="280" height="147"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1314,8 +1314,8 @@
                                             </collectionViewCell>
                                         </cells>
                                         <connections>
-                                            <outlet property="dataSource" destination="PTI-la-V1a" id="7VI-Ik-fgP"/>
-                                            <outlet property="delegate" destination="PTI-la-V1a" id="2pu-8N-he5"/>
+                                            <outlet property="dataSource" destination="BJ4-jy-p5R" id="tsK-bQ-Cda"/>
+                                            <outlet property="delegate" destination="BJ4-jy-p5R" id="fiM-ZC-Mwf"/>
                                         </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="lXt-W1-m8G" userLabel="Separator">
@@ -1323,7 +1323,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ти ще нічого не намалював, або немає інтернет зв'язку" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="192" translatesAutoresizingMaskIntoConstraints="NO" id="yJY-Mh-DKy">
+                                    <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ти ще нічого не намалював, або немає інтернет зв'язку" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="192" translatesAutoresizingMaskIntoConstraints="NO" id="yJY-Mh-DKy">
                                         <rect key="frame" x="64" y="80" width="192" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -1422,7 +1422,7 @@
                         <outlet property="spinner" destination="NlE-Ul-l3h" id="FlF-7p-sTU"/>
                         <outlet property="yourImagesLabel" destination="hHy-FS-PSY" id="3kx-Zd-x03"/>
                         <segue destination="jUU-5L-6LA" kind="push" identifier="pushImageCollectionFromProfileSegue" id="X8t-BQ-G5H"/>
-                        <segue destination="0rw-D6-yEg" kind="modal" identifier="galleryDetailSegue" id="u3D-eT-CB6"/>
+                        <segue destination="0rw-D6-yEg" kind="modal" identifier="galleryDetailSegue" modalTransitionStyle="crossDissolve" id="u3D-eT-CB6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9U-fR-CHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1441,41 +1441,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpR-zF-rml">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tN0-Jd-NOL">
+                                <rect key="frame" x="20" y="20" width="280" height="528"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tN0-Jd-NOL">
-                                        <rect key="frame" x="20" y="20" width="280" height="528"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="mTP-s8-AJs" appends="YES" id="2lp-vx-JmT"/>
-                                        </connections>
-                                    </imageView>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="W4c-M4-51b">
-                                        <rect key="frame" x="142" y="266" width="37" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </activityIndicatorView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="tN0-Jd-NOL" secondAttribute="trailing" constant="20" id="HoH-2T-gPE"/>
-                                    <constraint firstAttribute="centerY" secondItem="W4c-M4-51b" secondAttribute="centerY" id="MiW-Nu-Fls"/>
-                                    <constraint firstAttribute="centerX" secondItem="W4c-M4-51b" secondAttribute="centerX" id="NMU-4M-7jM"/>
-                                    <constraint firstAttribute="bottom" secondItem="tN0-Jd-NOL" secondAttribute="bottom" constant="20" id="Q2L-5K-ZpK"/>
-                                    <constraint firstItem="tN0-Jd-NOL" firstAttribute="top" secondItem="lpR-zF-rml" secondAttribute="top" constant="20" id="TWF-ES-n3l"/>
-                                    <constraint firstItem="tN0-Jd-NOL" firstAttribute="leading" secondItem="lpR-zF-rml" secondAttribute="leading" constant="20" id="stH-Ot-fWZ"/>
-                                </constraints>
-                            </view>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mTP-s8-AJs" appends="YES" id="2lp-vx-JmT"/>
+                                </connections>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="W4c-M4-51b">
+                                <rect key="frame" x="142" y="266" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="lpR-zF-rml" firstAttribute="top" secondItem="63e-ys-XUf" secondAttribute="top" id="AZF-5J-1tY"/>
-                            <constraint firstAttribute="trailing" secondItem="lpR-zF-rml" secondAttribute="trailing" id="DD5-TC-dCC"/>
-                            <constraint firstAttribute="bottom" secondItem="lpR-zF-rml" secondAttribute="bottom" id="LaD-b0-tc0"/>
-                            <constraint firstItem="lpR-zF-rml" firstAttribute="leading" secondItem="63e-ys-XUf" secondAttribute="leading" id="WBM-KK-wMM"/>
+                            <constraint firstAttribute="trailing" secondItem="tN0-Jd-NOL" secondAttribute="trailing" constant="20" id="ANT-Qe-1IW"/>
+                            <constraint firstAttribute="centerX" secondItem="W4c-M4-51b" secondAttribute="centerX" id="Fjr-hY-THW"/>
+                            <constraint firstItem="EV0-cl-0mQ" firstAttribute="top" secondItem="tN0-Jd-NOL" secondAttribute="bottom" constant="20" id="Rvq-mY-nuM"/>
+                            <constraint firstAttribute="centerY" secondItem="W4c-M4-51b" secondAttribute="centerY" id="gNg-8G-1ef"/>
+                            <constraint firstItem="tN0-Jd-NOL" firstAttribute="top" secondItem="63e-ys-XUf" secondAttribute="top" constant="20" id="lOB-le-3N7"/>
+                            <constraint firstItem="tN0-Jd-NOL" firstAttribute="leading" secondItem="63e-ys-XUf" secondAttribute="leading" constant="20" id="zkz-zZ-iqq"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="mTP-s8-AJs" appends="YES" id="YkZ-U7-gzT"/>

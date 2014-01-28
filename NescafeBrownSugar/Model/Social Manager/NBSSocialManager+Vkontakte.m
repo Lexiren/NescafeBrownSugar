@@ -14,6 +14,7 @@
 #import "VKAccessToken.h"
 #import <AFHTTPRequestOperationManager.h>
 #import "NBSGoogleAnalytics.h"
+#import "NBSGalleryImage.h"
 
 #define kNBSVkontakteAppIDPlistKey @"VkontakteAppID"
 #define kNBSVkontakteUserDataRequestSignature @"UserDataRequest"
@@ -37,7 +38,7 @@
 }
 
 - (BOOL)isVkontakteLoggedIn {
-    return [[VKUser currentUser].accessToken isValid];
+    return [[VKUser currentUser].accessToken isValid] && ![[VKUser currentUser].accessToken isExpired];
 }
 
 - (void)getVkontakteUserDataWithCompletion:(NBSCompletionBlockWithUserData)completion {
@@ -198,6 +199,9 @@
             user.vkontakteFirstName = [userData objectForKey:@"first_name"];
             user.vkontakteLastName = [userData objectForKey:@"last_name"];
             user.vkontakteUid = [[userData objectForKey:@"uid"] stringValue];
+            
+            [NBSGalleryImage setNeedUpdateGallery:YES];
+            
             [self performUserDataCompletionWithSuccess:YES
                                                  error:nil
                                                   user:user];

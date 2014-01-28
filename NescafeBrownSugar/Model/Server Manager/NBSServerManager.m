@@ -13,6 +13,7 @@
 #import "NBSSocialManager+Facebook.h"
 #import "NBSSocialManager+Vkontakte.h"
 #import "NSDictionary+NBSExtensions.h"
+#import "NBSGalleryImage.h"
 
 /*
  
@@ -76,6 +77,9 @@
                                 mimeType:@"image/png"];
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         DLog(@"photo sent to the server successfull");
+        
+        [NBSGalleryImage setNeedUpdateGallery:YES];
+        
         if (completion) {
             completion(YES, nil);
         }
@@ -131,7 +135,7 @@
     [httpManager POST:[kNBSServerURL stringByAppendingFormat:@"/gallery_get/%@/%@/",snType,userID]
            parameters:@{}
               success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                  DLog(@"get gallary successfull");
+                  DLog(@"get gallery successfull");
                   if (requestCompletion) {
                       requestCompletion(YES, nil, responseObject);
                   }

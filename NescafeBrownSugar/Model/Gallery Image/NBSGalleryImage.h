@@ -11,9 +11,12 @@
 @interface NBSGalleryImage : NSObject
 
 @property (nonatomic, strong) NSString *imageID;
-@property (nonatomic, strong) NSURL *imageURL;
-@property (nonatomic, strong) UIImage *imagePreview;
+@property (nonatomic, strong, readonly) NSURL *imageURL;
+@property (nonatomic, strong) NSString *previewLink;
+@property (nonatomic, strong) UIImage *preview;
 
-- (id)initWithId:(NSString *)imageID image:(UIImage *)image;
+- (id)initWithId:(NSString *)imageID imageURLString:(NSString *)imageLink;
++ (BOOL)needUpdateGallary;
++ (void)setNeedUpdateGallery:(BOOL)needUpdateGallery;
 
 @end

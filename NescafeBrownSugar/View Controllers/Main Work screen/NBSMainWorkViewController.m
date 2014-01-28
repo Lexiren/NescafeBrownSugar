@@ -43,6 +43,7 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -182,7 +183,7 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
         _imagePicker.delegate = self;
         _imagePicker.allowsEditing = NO;
         _imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        _imagePicker.navigationBarHidden = YES;
+//        _imagePicker.navigationBarHidden = YES;
         _imagePicker.toolbarHidden = YES;
         _imagePicker.mediaTypes = @[ (NSString *) kUTTypeImage];
         

@@ -11,6 +11,7 @@
 #import "NBSUser.h"
 #import <Social/Social.h>
 #import "NBSGoogleAnalytics.h"
+#import "NBSGalleryImage.h"
 
 #define kNBSFacebookGroupID @"212435355525147"
 
@@ -42,6 +43,9 @@
                                                     action:NBSGAEventActionLogin];
                  
                  [self getFacebookUserDataWithCompletion:^(BOOL success, NSError *error, NBSUser *user) {
+                     if (success) {
+                        [NBSGalleryImage setNeedUpdateGallery:YES];
+                     }
                      [self performLoginCompletionWithSuccess:success error:error];
                  }];
              } else {
