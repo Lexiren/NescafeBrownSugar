@@ -23,7 +23,6 @@
 NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 
 @interface NBSProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *spinner;
 @property (nonatomic, weak) IBOutlet UIImageView *avatarImageView;
 @property (nonatomic, weak) IBOutlet FBProfilePictureView *avatarPictureView;
