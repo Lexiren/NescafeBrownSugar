@@ -34,13 +34,6 @@ NSString *const kNBSMenuVCIdentifier = @"MenuVC";
 
 @implementation NBSMenuViewController
 
-- (void)tableView:(UITableView *)tableView
-  willDisplayCell:(UITableViewCell *)cell
-forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [cell setBackgroundColor:[UIColor clearColor]];
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MenuCell"];
     switch (indexPath.row) {
@@ -59,7 +52,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         default:
             break;
     }
-    cell.textLabel.font = [UIFont standartLightFontWithSize:23.f];
+    [cell.textLabel replaceFontWithStandartLightFont];
     return cell;
 }
 
@@ -81,8 +74,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         {
             NBSImagesCollectionContainerViewController *imagesCollectionVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSImagesCollectionVCIdentifier];
             viewController = imagesCollectionVC;
-//            NBSJoinGroupViewController *joinGroupVC = [self.storyboard instantiateViewControllerWithIdentifier:@"JoinGroup"];
-//            viewController = joinGroupVC;
         }
             break;
         case kCPMenuAboutProjectRow:
@@ -108,6 +99,13 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
     }
 
+}
+
+- (void)tableView:(UITableView *)tableView
+  willDisplayCell:(UITableViewCell *)cell
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [cell setBackgroundColor:[UIColor clearColor]];
 }
 
 @end

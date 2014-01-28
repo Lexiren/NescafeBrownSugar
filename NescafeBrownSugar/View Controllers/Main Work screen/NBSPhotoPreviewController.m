@@ -39,8 +39,8 @@ NSString *const kNBSPreviewPhotoVCPushSegueIdentifier = @"PreviewPhotoVCPushSegu
     self.buttonsBottomSpaceConstraint.constant = (NBS_IsDeviceScreenSize4Inch) ? kNBSButtonBottomSpace4Inch : kNBSButtonBottomSpace3Inch;
 //    self.photoImageViewHeightConstraint.constant = (NBS_IsDeviceScreenSize4Inch) ? kNBSPhotoImageViewHeight4Inch : kNBSPhotoImageViewHeight3Inch;
     
-    self.continueButton.titleLabel.font = [UIFont standartFontWithSize:15.f];
-    self.retakeButton.titleLabel.font = [UIFont standartFontWithSize:15.f];
+    [self.continueButton.titleLabel replaceFontWithStandartFont];
+    [self.retakeButton.titleLabel replaceFontWithStandartFont];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

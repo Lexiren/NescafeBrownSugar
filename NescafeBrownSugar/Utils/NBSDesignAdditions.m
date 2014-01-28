@@ -8,6 +8,30 @@
 
 #import "NBSDesignAdditions.h"
 
+@implementation UILabel (NBSAdditions)
+
+- (void)replaceFontWithStandartFont {
+    self.font = [UIFont fontWithName:@"SansRoundedC" size:self.font.pointSize];
+}
+
+- (void)replaceFontWithStandartLightFont {
+    self.font = [UIFont fontWithName:@"SansRoundedLightC" size:self.font.pointSize];
+}
+
+@end
+
+@implementation UITextView (NBSAdditions)
+
+- (void)replaceFontWithStandartFont {
+    self.font = [UIFont fontWithName:@"SansRoundedC" size:self.font.pointSize];
+}
+
+- (void)replaceFontWithStandartLightFont {
+    self.font = [UIFont fontWithName:@"SansRoundedLightC" size:self.font.pointSize];
+}
+
+@end
+
 @implementation UIFont (NBSAdditions)
 
 + (UIFont *)standartFontWithSize:(CGFloat)size {

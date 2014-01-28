@@ -36,7 +36,7 @@ NSString *const kNBSHelpVCIdentifier = @"HelpVC";
 {
     [super viewDidLoad];
 
-    self.skipButton.titleLabel.font = [UIFont standartFontWithSize:15.f];
+    [self.skipButton.titleLabel replaceFontWithStandartFont];
     
     //setup page controll
     self.pageControl.numberOfPages = kNBSInstructionsCount;

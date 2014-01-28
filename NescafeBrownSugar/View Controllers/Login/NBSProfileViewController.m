@@ -52,11 +52,11 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
     [self.avatarImageView makeHalfHeightCornerRadius];
     [self.avatarPictureView makeHalfHeightCornerRadius];
     
-    self.nameLabel.font = [UIFont standartLightFontWithSize:20.f];
-    self.enterLabel.font = [UIFont standartLightFontWithSize:16.f];
-    self.yourImagesLabel.font = [UIFont standartLightFontWithSize:16.f];
-    self.noImagesLabel.font = [UIFont standartLightFontWithSize:18.f];
-    self.createPictureButton.titleLabel.font = [UIFont standartFontWithSize:15.f];
+    [self.nameLabel replaceFontWithStandartLightFont];
+    [self.enterLabel replaceFontWithStandartLightFont];
+    [self.yourImagesLabel replaceFontWithStandartLightFont];
+    [self.noImagesLabel replaceFontWithStandartLightFont];
+    [self.createPictureButton.titleLabel replaceFontWithStandartFont];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

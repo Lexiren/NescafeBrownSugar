@@ -23,12 +23,16 @@ NSString *const kNBSAboutProjectVCIdentifier = @"AboutProjectVC";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    CGFloat delta = NBS_IsDeviceScreenSize4InchOrBigger ? 0 : 3;
-	self.firstTextView.font = [UIFont standartLightFontWithSize:17.f - delta];
-    self.secondTextView.font = [UIFont standartLightFontWithSize:17.f - delta];
-    self.pricesLabel.font = [UIFont standartLightFontWithSize:23.f - delta];
-    [self.firstTextView sizeToFit];
-    [self.secondTextView sizeToFit];
+    if (NBS_isIPhone) {
+        CGFloat delta = NBS_IsDeviceScreenSize4InchOrBigger ? 0 : 3;
+        self.firstTextView.font = [UIFont standartLightFontWithSize:17.f - delta];
+        self.secondTextView.font = [UIFont standartLightFontWithSize:17.f - delta];
+        self.pricesLabel.font = [UIFont standartLightFontWithSize:23.f - delta];
+    } else {
+        [self.firstTextView replaceFontWithStandartLightFont];
+        [self.secondTextView replaceFontWithStandartLightFont];
+        [self.pricesLabel replaceFontWithStandartLightFont];
+    }
 }
 
 
