@@ -6,13 +6,18 @@
 //  Copyright (c) 2014 COXO. All rights reserved.
 //
 
+#define kNBSHelpContentImageBaseName @"help"
+
 #import "NBSInstructionsContentViewController.h"
+#import "NBSDesignAdditions.h"
 
 NSString *const kNBSInstructionsFillContentSegueIdentifier = @"InstructionsFillContentSegue";
 NSString *const kNBSInstructionsContentVCIdentifier = @"InstructionsContentVC";
 
 @interface NBSInstructionsContentViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *indexLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *contentImageView;
+@property (nonatomic, strong) NSArray *helpTexts;
 
 @end
 
@@ -30,7 +35,7 @@ NSString *const kNBSInstructionsContentVCIdentifier = @"InstructionsContentVC";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [self.contentLabel replaceFontWithStandartLightFont];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,7 +46,24 @@ NSString *const kNBSInstructionsContentVCIdentifier = @"InstructionsContentVC";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.indexLabel.text = [NSString stringWithFormat:@"%d", self.pageIndex+1];
+    if (_pageIndex >= 0 && _pageIndex < self.helpTexts.count) {
+        self.contentLabel.text = self.helpTexts[_pageIndex];
+    }
+
+    NSString *contentImageName = [NSString stringWithFormat:@"%@%d", kNBSHelpContentImageBaseName, _pageIndex + 1];
+    self.contentImageView.image = [UIImage imageNamed:contentImageName];
+}
+
+- (NSArray *)helpTexts {
+    if (!_helpTexts) {
+        _helpTexts = @[@"Залогінся через соціальну мережу",
+                       @"Намалюй за ескізом",
+                       @"Сфотографуй",
+                       @"Поділись малюнком",
+                       @"Отримай драйвові подарунки"
+                       ];
+    }
+    return _helpTexts;
 }
 
 @end

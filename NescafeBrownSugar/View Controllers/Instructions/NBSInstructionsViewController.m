@@ -42,15 +42,7 @@ NSString *const kNBSHelpVCIdentifier = @"HelpVC";
     self.pageControl.numberOfPages = kNBSInstructionsCount;
     
     //move page view controller to first page
-    NBSInstructionsContentViewController *firstPage = [self viewControllerAtIndex:kNBSInstructionsFirstPageIndex];
-    if (firstPage) {
-        [self.pageViewController setViewControllers:@[firstPage]
-                                          direction:UIPageViewControllerNavigationDirectionForward
-                                           animated:NO
-                                         completion:^(BOOL finished) {
-            
-        }];
-    }
+    [self showPageAtIndex:kNBSInstructionsFirstPageIndex];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -85,10 +77,31 @@ NSString *const kNBSHelpVCIdentifier = @"HelpVC";
     NBSInstructionsContentViewController *currentInstructionsContentViewController =
         (NBSInstructionsContentViewController *)[self.pageViewController.viewControllers lastObject];
     //update page controll
-    self.pageControl.currentPage = currentInstructionsContentViewController.pageIndex;
+    if (self.pageControl.currentPage != currentInstructionsContentViewController.pageIndex) {
+        self.pageControl.currentPage = currentInstructionsContentViewController.pageIndex;
+    }
 }
 
+- (IBAction)didChangeValuePageControl:(UIPageControl *)sender {
+    NBSInstructionsContentViewController *displayedPage = [[self.pageViewController viewControllers] lastObject];
+    if (displayedPage.pageIndex != sender.currentPage) {
+        [self showPageAtIndex:sender.currentPage];
+    }
+}
+
+
 #pragma mark - UIPageViewControllerDataSource
+- (void)showPageAtIndex:(NSUInteger)index {
+    NBSInstructionsContentViewController *page = [self viewControllerAtIndex:index];
+    if (page) {
+        [self.pageViewController setViewControllers:@[page]
+                                          direction:UIPageViewControllerNavigationDirectionForward
+                                           animated:NO
+                                         completion:^(BOOL finished) {
+                                             
+                                         }];
+    }
+}
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {

@@ -189,6 +189,8 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
         
         [self addChildViewController:_imagePicker];
         [_imagePicker didMoveToParentViewController:self];
+        [UIApplication sharedApplication].statusBarHidden = NO;
+        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     }
     return _imagePicker;
 }
