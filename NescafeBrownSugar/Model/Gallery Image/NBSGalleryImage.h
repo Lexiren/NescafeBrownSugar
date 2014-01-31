@@ -16,7 +16,7 @@
 @property (nonatomic, strong) UIImage *preview;
 
 - (id)initWithId:(NSString *)imageID imageURLString:(NSString *)imageLink;
-+ (BOOL)needUpdateGallary;
++ (BOOL)needUpdateGallery;
 + (void)setNeedUpdateGallery:(BOOL)needUpdateGallery;
 
 @end

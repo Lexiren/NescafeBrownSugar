@@ -54,8 +54,7 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
     
     [self showLeftMenuBarButton:YES];
     [self showRightCameraBarButton:(self.mode != NBSImagePickerModePhoto)];
-    [self setNavigationType:((self.mode != NBSImagePickerModeWhiteBGDrawing) ? NBSNavigationTypeWhite : NBSNavigationTypeBrown)];
-
+    
     self.isCameraPresent = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
     if (!_isCameraPresent) {
         [UIAlertView showErrorAlertWithMessage:@"This device has no camera"];
@@ -69,6 +68,10 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self setNavigationType:NBSNavigationTypeWhite];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -104,9 +107,15 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
 }
 
 // Will have no effect in ios6 -- see [-init] for that option
-- (BOOL) prefersStatusBarHidden
+- (BOOL)prefersStatusBarHidden
 {
     return NO;
+}
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+    [self setNavigationType:((self.mode != NBSImagePickerModeWhiteBGDrawing) ? NBSNavigationTypeWhite : NBSNavigationTypeBrown)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -189,8 +198,6 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
         
         [self addChildViewController:_imagePicker];
         [_imagePicker didMoveToParentViewController:self];
-        [UIApplication sharedApplication].statusBarHidden = NO;
-        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     }
     return _imagePicker;
 }

@@ -33,6 +33,7 @@ static inline CGFloat cpcorrectedInsetValue(CGFloat value)
             [backButton setImage:[UIImage imageNamed:@"iconBack"] forState:UIControlStateNormal];
             [cameraButton setImage:[UIImage imageNamed:@"iconCameraOff"] forState:UIControlStateNormal];
             [titleAttributes setValue:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
             break;
         }
         case NBSNavigationTypeBrown: {
@@ -40,6 +41,7 @@ static inline CGFloat cpcorrectedInsetValue(CGFloat value)
             [cameraButton setImage:[UIImage imageNamed:@"iconCameraOn"] forState:UIControlStateNormal];
             [titleAttributes setValue:[UIColor darkBrown]
                                forKey:NSForegroundColorAttributeName];
+            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
             break;
         }
     }

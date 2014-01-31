@@ -262,12 +262,11 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
     if (self.shareVKSwitch.isOn) {
         self.didPostPhotoToVK = NO;
         self.animateActivityForVK = YES;
-        self.vkPostInfo = [NSMutableDictionary dictionary];
         
         void (^postToVK)() = ^(){
             [socialManager postImageToVK:photoWithBound withCompletion:^(BOOL success, NSError *error, id data) {
                 self.animateActivityForVK = NO;
-                if (!success) {
+                if (!success || error) {
                     [UIAlertView showErrorAlertWithError:error];
                 } else {
 //                    [UIAlertView showSimpleAlertWithMessage:@"Фото успiшно розмiщене у Vkontakte"];

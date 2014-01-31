@@ -105,8 +105,9 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-    if ([NBSGalleryImage needUpdateGallary]) {
-
+    NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
+    if ([NBSGalleryImage needUpdateGallery] && ([socialManager isVkontakteLoggedIn] || [socialManager isFacebookLoggedIn]))
+    {
         NBSUser *user = [NBSUser currentUser];
         if (user.facebookUid.length) {
             [self.spinner startAnimating];
@@ -174,6 +175,7 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
     }
     
     self.gallerySource = gallerySourceMutable;
+    [self reloadData];
     
     if ([self.gallerySource count]) {
         self.galleryContainerSubview.hidden = NO;

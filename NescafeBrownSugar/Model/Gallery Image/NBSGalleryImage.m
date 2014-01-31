@@ -36,7 +36,7 @@ static BOOL _needUpdateGalleryUI = NO;
     return url;
 }
 
-+ (BOOL)needUpdateGallary {
++ (BOOL)needUpdateGallery {
     return _needUpdateGalleryUI;
 }
 
