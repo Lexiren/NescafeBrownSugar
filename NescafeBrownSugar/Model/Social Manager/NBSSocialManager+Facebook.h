@@ -21,4 +21,5 @@
 - (void)checkIsMemberOfGroupFBWithCompletion:(NBSCompletionBlockWithData)completion;
 - (void)joinGroupFBWIthCompletion:(NBSCompletionBlock)completion;
 
+- (void)cleanAuthDataFB;
 @end

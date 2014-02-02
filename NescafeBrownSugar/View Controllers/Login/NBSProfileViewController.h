@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 COXO. All rights reserved.
 //
 
-@interface NBSProfileViewController : UIViewController
+@interface NBSProfileViewController : NBSViewController
 @end
 
 extern NSString *const kNBSProfileVCIdentifier;

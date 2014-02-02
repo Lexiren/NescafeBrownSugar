@@ -17,6 +17,7 @@
 #define kNBSButtonBottomSpace3Inch 30
 #define kNBSPhotoImageViewHeight4Inch 425
 #define kNBSPhotoImageViewHeight3Inch 400
+#define kNBSPhotoImageViewWidth 320
 
 NSString *const kNBSPreviewPhotoVCPushSegueIdentifier = @"PreviewPhotoVCPushSegue";
 
@@ -27,7 +28,11 @@ NSString *const kNBSPreviewPhotoVCPushSegueIdentifier = @"PreviewPhotoVCPushSegu
 @property (weak, nonatomic) IBOutlet UIButton *continueButton;
 @property (weak, nonatomic) IBOutlet UIButton *retakeButton;
 @property (nonatomic, strong) UIImage *imageToShare;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *photoImageViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *photoImageViewTopSpaceConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *photoImageViewWidthConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *photoImageViewHorizontalCenterConstraint;
 
 @end
 
@@ -47,7 +52,27 @@ NSString *const kNBSPreviewPhotoVCPushSegueIdentifier = @"PreviewPhotoVCPushSegu
     [super viewWillAppear:animated];
     [self showLeftMenuBarButton:YES];
 
+    [self setupPhotoImageViewSizes];
     self.photoImageView.image = self.photo;
+}
+
+- (void)setupPhotoImageViewSizes {
+    if (self.photo) {
+        BOOL isLandscapePhoto = (self.photo.size.width > self.photo.size.height);
+        CGFloat maxWH = MAX(self.photoImageView.frame.size.width, self.photoImageView.frame.size.height);
+        CGFloat minWH = MIN(self.photoImageView.frame.size.width, self.photoImageView.frame.size.height);
+        
+        self.photoImageViewHeightConstraint.constant = (isLandscapePhoto) ? minWH : maxWH;
+        self.photoImageViewWidthConstraint.constant = (isLandscapePhoto) ? maxWH : minWH;
+        CGFloat k = 0.0;
+        
+        if (isLandscapePhoto) {
+            k = (NBS_isIPad) ? -85 : 10;
+            self.photoImageViewHorizontalCenterConstraint.constant = (NBS_isIPad) ? -100.0 : 10;
+        }
+        
+        self.photoImageViewTopSpaceConstraint.constant = (maxWH - self.photoImageViewHeightConstraint.constant)/2.0 + k;
+    }
 }
 
 - (void)didReceiveMemoryWarning

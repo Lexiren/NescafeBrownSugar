@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 COXO. All rights reserved.
 //
 
-@interface NBSAboutProjectViewController : UIViewController
+@interface NBSAboutProjectViewController : NBSViewController
 
 @end
 

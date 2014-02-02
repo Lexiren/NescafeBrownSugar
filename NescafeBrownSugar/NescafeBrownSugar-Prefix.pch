@@ -22,4 +22,5 @@
     #import "NBSTypes.h"
     #import "UIAlertView+NBSExtensions.h"
     #import "NBSCommonDefines.h"
+    #import "NBSViewController.h"
 #endif

@@ -40,11 +40,11 @@
     if (error)
     {
         NSString *msg = nil;
-        if ([error respondsToSelector:@selector(localizedDescription)]) {
-            msg = [error localizedDescription];
-        } else {
+//        if ([error respondsToSelector:@selector(localizedDescription)]) {
+//            msg = [error localizedDescription];
+//        } else {
             msg = [error description];
-        }
+//        }
         [UIAlertView showErrorAlertWithMessage:msg];
     }
 }

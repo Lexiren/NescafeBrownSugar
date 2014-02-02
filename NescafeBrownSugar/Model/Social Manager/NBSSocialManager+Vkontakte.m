@@ -10,6 +10,7 @@
 #import "UIAlertView+NBSExtensions.h"
 #import "VKUser.h"
 #import "VKRequest.h"
+#import <VKStorage.h>
 #import "NBSUser.h"
 #import "VKAccessToken.h"
 #import <AFHTTPRequestOperationManager.h>
@@ -37,8 +38,14 @@
     self.loginCompletion = completion;
 }
 
+- (void)cleanAuthDataVK {
+    [[VKStorage sharedStorage] cleanCachedData];
+    [[VKStorage sharedStorage] clean];
+}
+
 - (BOOL)isVkontakteLoggedIn {
-    return [[VKUser currentUser].accessToken isValid] && ![[VKUser currentUser].accessToken isExpired];
+    BOOL isValidVKToken = [[VKUser currentUser].accessToken isValid] && ![[VKUser currentUser].accessToken isExpired];
+    return isValidVKToken;
 }
 
 - (void)getVkontakteUserDataWithCompletion:(NBSCompletionBlockWithUserData)completion {

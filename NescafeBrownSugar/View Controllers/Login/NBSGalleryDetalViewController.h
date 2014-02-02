@@ -10,7 +10,7 @@
 
 
 @class NBSGalleryImage;
-@interface NBSGalleryDetalViewController : UIViewController
+@interface NBSGalleryDetalViewController : NBSViewController
 
 @property (nonatomic, strong) NBSGalleryImage *image;
 

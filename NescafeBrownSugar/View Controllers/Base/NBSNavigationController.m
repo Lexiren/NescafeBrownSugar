@@ -26,7 +26,7 @@
     self.navigationBar.translucent = YES;
     self.view.backgroundColor = [UIColor clearColor];
     
-    UIFont *navigationBarFont = [UIFont standartLightFontWithSize:NBS_isIPhone ?22.f : 40.f];
+    UIFont *navigationBarFont = [UIFont standartLightFontWithSize:(!NBS_isIPad) ?22.f : 40.f];
     self.navigationBar.titleTextAttributes =
   @{NSForegroundColorAttributeName : [UIColor whiteColor],
     NSFontAttributeName : navigationBarFont};

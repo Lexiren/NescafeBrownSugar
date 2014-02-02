@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NBSImagesCollectionContainerViewController : UIViewController
+@interface NBSImagesCollectionContainerViewController : NBSViewController
 
 @end
 

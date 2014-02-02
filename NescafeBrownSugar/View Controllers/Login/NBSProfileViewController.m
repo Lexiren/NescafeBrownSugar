@@ -63,40 +63,54 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
     [super viewWillAppear:animated];
     
     __weak NBSProfileViewController *weakself = self;
-    
     NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:kNBSShouldAutologinFBDefaultsKey]/* &&
-        ![socialManager isFacebookLoggedIn]*/)
+    
+    BOOL shouldAutologinFB = [[NSUserDefaults standardUserDefaults] boolForKey:kNBSShouldAutologinFBDefaultsKey];
+    BOOL shouldAutologinVK = [[NSUserDefaults standardUserDefaults] boolForKey:kNBSShouldAutologinVKDefaultsKey];
+    
+    shouldAutologinFB = shouldAutologinFB && ![socialManager isFacebookLoggedIn];
+    shouldAutologinVK = shouldAutologinVK && ![socialManager isVkontakteLoggedIn];
+    
+    if (shouldAutologinVK) {
+        [socialManager cleanAuthDataVK];
+    }
+//    if (shouldAutologinFB) {
+//        [socialManager cleanAuthDataFB];
+//    }
+    
+    void (^performLoginIfNeededVK)(BOOL) = ^(BOOL needed){
+        if (needed)
+        {
+            [weakself.spinner startAnimating];
+            
+            [socialManager vkontakteLoginWithCompletion:^(BOOL success, NSError *error) {
+                [weakself.spinner stopAnimating];
+                
+                if (success) {
+                    [weakself reloadData];
+                } else {
+                    [UIAlertView showErrorAlertWithError:error];
+                }
+            }];
+        }
+    };
+    
+    if (shouldAutologinFB)
     {
-        [socialManager facebookAutologinWithCompletion:^(BOOL success, NSError *error) {
-            if (success) {
-                [weakself reloadData];
-            } else {
-                [UIAlertView showErrorAlertWithError:error];
-            }
-            if ([[NSUserDefaults standardUserDefaults] boolForKey:kNBSShouldAutologinVKDefaultsKey] /*&&
-                                                                                                     ![socialManager isVkontakteLoggedIn]*/)
-            {
-                [socialManager getVkontakteUserDataWithCompletion:^(BOOL success, NSError *error, NBSUser *user) {
-                    if (success) {
-                        [weakself reloadData];
-                    } else {
-                        [UIAlertView showErrorAlertWithError:error];
-                    }
-                }];
-            }
+        [self.spinner startAnimating];
 
-        }];
-    } else if ([[NSUserDefaults standardUserDefaults] boolForKey:kNBSShouldAutologinVKDefaultsKey] /*&&
-                                                                                                        ![socialManager isVkontakteLoggedIn]*/)
-    {
-        [socialManager getVkontakteUserDataWithCompletion:^(BOOL success, NSError *error, NBSUser *user) {
+        [socialManager facebookAutologinWithCompletion:^(BOOL success, NSError *error) {
+            [self.spinner stopAnimating];
             if (success) {
                 [weakself reloadData];
             } else {
                 [UIAlertView showErrorAlertWithError:error];
             }
+            
+            performLoginIfNeededVK(shouldAutologinVK);
         }];
+    } else {
+        performLoginIfNeededVK(shouldAutologinVK);
     }
 
     [self reloadData];
@@ -105,13 +119,16 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
+}
+
+- (void)updateGalleryIfNeeded {
     NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
     if ([NBSGalleryImage needUpdateGallery] && ([socialManager isVkontakteLoggedIn] || [socialManager isFacebookLoggedIn]))
     {
         NBSUser *user = [NBSUser currentUser];
         if (user.facebookUid.length) {
             [self.spinner startAnimating];
-
+            
             [[NBSServerManager sharedManager] loadGalleryWithSocialNetworkType:@"fbid"
                                                                         userID:user.facebookUid
                                                                     completion:^(BOOL success, NSError *error, id data) {
@@ -126,7 +143,7 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
         
         if (user.vkontakteUid.length) {
             [self.spinner startAnimating];
-
+            
             [[NBSServerManager sharedManager] loadGalleryWithSocialNetworkType:@"vkid"
                                                                         userID:user.vkontakteUid
                                                                     completion:^(BOOL success, NSError *error, id data) {
@@ -204,23 +221,22 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
     NBSUser *user = [NBSUser currentUser];
     if ([sharedManager isFacebookLoggedIn]) {
         if (!user.facebookUid.length) {
-            [self.spinner startAnimating];
+//            [sharedManager cleanAuthDataFB];
             defaultState();
         } else {
-            [self.spinner stopAnimating];
             self.nameLabel.text = [user fullFacebookName];
             self.avatarPictureView.hidden = NO;
             self.avatarPictureView.profileID = user.facebookUid;
             self.avatarImageView.hidden = YES;
             self.loginSubview.hidden = YES;
             self.galleryContainerSubview.hidden = NO;
+            [self updateGalleryIfNeeded];
         }
     } else if ([sharedManager isVkontakteLoggedIn]) {
         if (!user.vkontakteUid.length) {
-            [self.spinner startAnimating];
+            [sharedManager cleanAuthDataVK];
             defaultState();
         } else {
-            [self.spinner stopAnimating];
             self.nameLabel.text = [user fullVkontakteName];
             NSURL *avatarURL = [NSURL URLWithString:user.vkontakteAvatarLink];
             NSData *avatarData = [NSData dataWithContentsOfURL:avatarURL];
@@ -229,6 +245,7 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
             self.avatarPictureView.hidden = YES;
             self.loginSubview.hidden = YES;
             self.galleryContainerSubview.hidden = NO;
+            [self updateGalleryIfNeeded];
         }
     } else {
         defaultState();

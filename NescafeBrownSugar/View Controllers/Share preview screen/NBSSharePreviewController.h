@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NBSSharePreviewController : UIViewController
+@interface NBSSharePreviewController : NBSViewController
 
 @property (nonatomic, strong) UIImage *previewImage;
 

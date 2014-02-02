@@ -23,7 +23,7 @@ NSString *const kNBSAboutProjectVCIdentifier = @"AboutProjectVC";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (NBS_isIPhone) {
+    if (!NBS_isIPad) {
         CGFloat delta = NBS_IsDeviceScreenSize4InchOrBigger ? 0 : 3;
         self.firstTextView.font = [UIFont standartLightFontWithSize:17.f - delta];
         self.secondTextView.font = [UIFont standartLightFontWithSize:17.f - delta];

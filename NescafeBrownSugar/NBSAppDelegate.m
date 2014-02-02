@@ -52,7 +52,8 @@
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation
 {
-    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    return wasHandled;
 }
 
 

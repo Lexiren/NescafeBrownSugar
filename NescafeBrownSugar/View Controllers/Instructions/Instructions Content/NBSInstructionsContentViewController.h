@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NBSInstructionsContentViewController : UIViewController
+@interface NBSInstructionsContentViewController : NBSViewController
 @property (nonatomic, assign) NSInteger pageIndex;
 @end
 

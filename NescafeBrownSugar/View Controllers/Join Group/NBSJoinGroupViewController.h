@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NBSJoinGroupViewController : UIViewController
+@interface NBSJoinGroupViewController : NBSViewController
 
 @property (nonatomic, assign) BOOL didJoinGroupFB;
 @property (nonatomic, assign) BOOL didJoinGroupVK;

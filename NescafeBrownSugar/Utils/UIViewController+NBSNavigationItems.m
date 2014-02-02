@@ -106,7 +106,7 @@ static inline CGFloat cpcorrectedInsetValue(CGFloat value)
     UIImage *rightCameraButtonImage = [UIImage imageNamed:@"iconCameraOff"];
     [rightCameraButton setImage:rightCameraButtonImage
                        forState:UIControlStateNormal];
-    rightCameraButton.frame = NBS_isIPhone ? kCPDefaultButtonFrame : CGRectMake(0.f, 0.f, rightCameraButtonImage.size.width, rightCameraButtonImage.size.height);
+    rightCameraButton.frame = (!NBS_isIPad) ? kCPDefaultButtonFrame : CGRectMake(0.f, 0.f, rightCameraButtonImage.size.width, rightCameraButtonImage.size.height);
     
     return [self rightBarButtonItemWithButton:rightCameraButton];
 }

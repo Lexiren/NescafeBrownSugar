@@ -21,4 +21,6 @@
 
 - (void)checkIsMemberOfGroupVKWithCompletion:(NBSCompletionBlockWithData)completion;
 - (void)joinGroupVKWIthCompletion:(NBSCompletionBlock)completion;
+
+- (void)cleanAuthDataVK;
 @end

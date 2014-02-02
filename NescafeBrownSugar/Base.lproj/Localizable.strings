@@ -9,7 +9,8 @@
 "ErrorDisplayTitle" = "Помилка";
 "OKButton" = "OK";
 
-"VkontakteTokenRenewalFailedMessage" = "Vkontakte was not authorized";
+"FacebookTokenRenewalFailedMessage" = "Facebook помилка авторизації";
+"VkontakteTokenRenewalFailedMessage" = "Vkontakte помилка авторизації";
 
 "MenuProfileTitle" = "Профiль";
 "MenuDrawTitle" = "Намалювати";

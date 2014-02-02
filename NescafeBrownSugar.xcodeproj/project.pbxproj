@@ -17,6 +17,7 @@
 		06E6A7F3189074B100B1ABD4 /* SansRoundedLightC.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06E6A7F1189074B100B1ABD4 /* SansRoundedLightC.otf */; };
 		06E6A7F618907C2E00B1ABD4 /* NBSDesignAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 06E6A7F518907C2E00B1ABD4 /* NBSDesignAdditions.m */; };
 		06E6A7FA18907EFF00B1ABD4 /* NBSAboutProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06E6A7F918907EFF00B1ABD4 /* NBSAboutProjectViewController.m */; };
+		8407B673189E5C7C00A4F36A /* NBSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8407B672189E5C7C00A4F36A /* NBSViewController.m */; };
 		842237BB1896EB890061A724 /* NBSGoogleAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 842237BA1896EB890061A724 /* NBSGoogleAnalytics.m */; };
 		842237C4189720FE0061A724 /* NBSGalleryImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 842237C3189720FE0061A724 /* NBSGalleryImage.m */; };
 		842237C71897238B0061A724 /* NBSGalleryDetalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842237C61897238B0061A724 /* NBSGalleryDetalViewController.m */; };
@@ -93,6 +94,8 @@
 		06E6A7F518907C2E00B1ABD4 /* NBSDesignAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSDesignAdditions.m; path = Utils/NBSDesignAdditions.m; sourceTree = "<group>"; };
 		06E6A7F818907EFF00B1ABD4 /* NBSAboutProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSAboutProjectViewController.h; path = "View Controllers/About Project/NBSAboutProjectViewController.h"; sourceTree = "<group>"; };
 		06E6A7F918907EFF00B1ABD4 /* NBSAboutProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSAboutProjectViewController.m; path = "View Controllers/About Project/NBSAboutProjectViewController.m"; sourceTree = "<group>"; };
+		8407B671189E5C7C00A4F36A /* NBSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSViewController.h; path = "View Controllers/Base/NBSViewController.h"; sourceTree = "<group>"; };
+		8407B672189E5C7C00A4F36A /* NBSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSViewController.m; path = "View Controllers/Base/NBSViewController.m"; sourceTree = "<group>"; };
 		842237B91896EB890061A724 /* NBSGoogleAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSGoogleAnalytics.h; path = Utils/NBSGoogleAnalytics.h; sourceTree = "<group>"; };
 		842237BA1896EB890061A724 /* NBSGoogleAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBSGoogleAnalytics.m; path = Utils/NBSGoogleAnalytics.m; sourceTree = "<group>"; };
 		842237C2189720FE0061A724 /* NBSGalleryImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBSGalleryImage.h; path = "Model/Gallery Image/NBSGalleryImage.h"; sourceTree = "<group>"; };
@@ -353,7 +356,6 @@
 		8432C41A18758B30005C26B8 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				06708EA618969A7C009AC9CD /* Join Group */,
 				06E6A7F718907ECE00B1ABD4 /* About Project */,
 				06F41F3A188478B4002B2055 /* Profile */,
 				8432C42A1875AA7E005C26B8 /* Base */,
@@ -362,6 +364,7 @@
 				8450691B187771A30087FD3F /* Images Collection */,
 				84506931187822DA0087FD3F /* Main Work screen */,
 				8450693018779AB60087FD3F /* Share preview screen */,
+				06708EA618969A7C009AC9CD /* Join Group */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -397,6 +400,8 @@
 				067B15FF187B10DB0037DCE3 /* NBSRootViewController.m */,
 				067B1601187B16540037DCE3 /* NBSMenuViewController.h */,
 				067B1602187B16540037DCE3 /* NBSMenuViewController.m */,
+				8407B671189E5C7C00A4F36A /* NBSViewController.h */,
+				8407B672189E5C7C00A4F36A /* NBSViewController.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -671,6 +676,7 @@
 				8450691A18774EE60087FD3F /* NBSSocialManager+Facebook.m in Sources */,
 				847A86CD1884A0B700884965 /* NBSImagesCollectionContainerViewController.m in Sources */,
 				06E6A7F618907C2E00B1ABD4 /* NBSDesignAdditions.m in Sources */,
+				8407B673189E5C7C00A4F36A /* NBSViewController.m in Sources */,
 				8450694018785E6A0087FD3F /* UIViewController+NBSNavigationItems.m in Sources */,
 				84506945187867720087FD3F /* NBSSharePreviewController.m in Sources */,
 				8450692418777A800087FD3F /* NBSImageCollectionViewCell.m in Sources */,
@@ -787,7 +793,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "8B5F2FC0-0F96-49D0-97A2-25929F63DC61";
+				PROVISIONING_PROFILE = "2D6EE126-C719-4077-AB9D-FEF876919D96";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -822,7 +828,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "2182A39B-964F-4F70-973E-737840D7B9F4";
+				PROVISIONING_PROFILE = "2B8B7C1C-B078-4C6C-9CF8-36E034B31B57";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -842,7 +848,7 @@
 				GCC_PREFIX_HEADER = "NescafeBrownSugar/NescafeBrownSugar-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "NescafeBrownSugar/NescafeBrownSugar-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2D6EE126-C719-4077-AB9D-FEF876919D96";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -865,7 +871,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				"GCC_WARN_64_TO_32_BIT_CONVERSION[arch=*64]" = YES;
 				INFOPLIST_FILE = "NescafeBrownSugar/NescafeBrownSugar-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2B8B7C1C-B078-4C6C-9CF8-36E034B31B57";
 				TARGETED_DEVICE_FAMILY = "1,2";

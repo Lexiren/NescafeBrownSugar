@@ -28,36 +28,46 @@
 
 - (void)facebookLoginWithAllowLoginUI:(BOOL)allowLoginUI completion:(NBSCompletionBlock)completion {
     self.loginCompletion = completion;
-    if (![self isFacebookLoggedIn]) {
-        [FBSession openActiveSessionWithReadPermissions:@[@"basic_info"]
-                                           allowLoginUI:allowLoginUI
-                                      completionHandler:^(FBSession *session,
-                                                          FBSessionState status,
-                                                          NSError *error)
-         {
-             if (session.isOpen && !error) {
-                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kNBSShouldAutologinFBDefaultsKey];
-                 [[NSUserDefaults standardUserDefaults] synchronize];
-                 
-                 [NBSGoogleAnalytics sendEventWithCategory:NBSGAEventCategoryFacebook
-                                                    action:NBSGAEventActionLogin];
-                 
-                 [self getFacebookUserDataWithCompletion:^(BOOL success, NSError *error, NBSUser *user) {
-                     if (success) {
-                        [NBSGalleryImage setNeedUpdateGallery:YES];
-                     }
-                     [self performLoginCompletionWithSuccess:success error:error];
-                 }];
-             } else {
-                 [self performLoginCompletionWithSuccess:session.isOpen error:error];
-             }
+    
+    FBSessionStateHandler sessionStateChangedHandler = ^(FBSession *session, FBSessionState status, NSError *error) {
+        if (session.isOpen && !error) {
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kNBSShouldAutologinFBDefaultsKey];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            [NBSGoogleAnalytics sendEventWithCategory:NBSGAEventCategoryFacebook
+                                               action:NBSGAEventActionLogin];
+            
+            [self getFacebookUserDataWithCompletion:^(BOOL success, NSError *error, NBSUser *user) {
+                if (success) {
+                    [NBSGalleryImage setNeedUpdateGallery:YES];
+                }
+                [self performLoginCompletionWithSuccess:success error:error];
+            }];
+        } else {
+            [self performLoginCompletionWithSuccess:session.isOpen error:error];
+        }
+    };
 
-         }];
+    if (![self isFacebookLoggedIn]) {
+        if ([FBSession activeSession].state == FBSessionStateCreated ||
+            [FBSession activeSession].state == FBSessionStateCreatedTokenLoaded)
+        {
+            [[FBSession activeSession] openWithCompletionHandler:sessionStateChangedHandler];
+        } else {
+            [FBSession openActiveSessionWithReadPermissions:@[@"basic_info"]
+                                               allowLoginUI:allowLoginUI
+                                          completionHandler:sessionStateChangedHandler];
+        }
     }
 }
 
+- (void)cleanAuthDataFB {
+    [[FBSession activeSession] closeAndClearTokenInformation];
+}
+
 - (BOOL)isFacebookLoggedIn {
-    return [FBSession activeSession].isOpen;
+    BOOL isOpenFBSession = [[FBSession activeSession] isOpen];
+    return isOpenFBSession;
 }
 
 - (void)getFacebookUserDataWithCompletion:(NBSCompletionBlockWithUserData)completion {

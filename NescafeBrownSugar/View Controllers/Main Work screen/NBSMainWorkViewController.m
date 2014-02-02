@@ -34,6 +34,7 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         self.mode = NBSImagePickerModeCameraDrawing;
+        if ( NBS_iOSVersionLessThan(@"7.0") ) self.wantsFullScreenLayout = NO;
     }
     return self;
 }
@@ -59,7 +60,11 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
     if (!_isCameraPresent) {
         [UIAlertView showErrorAlertWithMessage:@"This device has no camera"];
     } else {
-        self.imagePicker.view.frame = self.view.bounds;
+        CGRect pickerFrame = self.view.bounds;
+        if (NBS_iOSVersionLessThan(@"7.0")) {
+            pickerFrame.origin.y -= 20;
+        }
+        self.imagePicker.view.frame = pickerFrame;
         [self setupImagePickerCameraAndOverlay];
         [self.view addSubview: self.imagePicker.view];
     }
@@ -106,7 +111,7 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
     [self setupImagePickerCameraAndOverlay];
 }
 
-// Will have no effect in ios6 -- see [-init] for that option
+// Will have no effect in ios6 -- see [-initWithCoder] for that option
 - (BOOL)prefersStatusBarHidden
 {
     return NO;

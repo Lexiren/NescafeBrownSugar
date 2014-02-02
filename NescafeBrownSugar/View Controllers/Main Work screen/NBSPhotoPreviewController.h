@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NBSPhotoPreviewController : UIViewController
+@interface NBSPhotoPreviewController : NBSViewController
 
 @property (nonatomic, strong) UIImage *photo;
 
