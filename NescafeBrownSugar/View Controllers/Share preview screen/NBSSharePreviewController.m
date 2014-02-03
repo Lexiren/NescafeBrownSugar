@@ -129,18 +129,22 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
         if (self.vkPostInfo) {
             [postInfo addEntriesFromDictionary:self.vkPostInfo];
         }
-        
-        self.animateActivityForServer = YES;
-        [[NBSServerManager sharedManager] sendPhoto:self.photoToSend
-                                           postInfo:postInfo
-                                         completion:^(BOOL success, NSError *error) {
-                                             self.animateActivityForServer = NO;
-                                             if (success) {
-                                             } else {
-                                                 [UIAlertView showErrorAlertWithError:error];
-                                             }
-                                             [self checkShouldShowJoinGroupScreen];
-                                         }];
+        NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
+        if (![socialManager isFacebookLoggedIn] && ![socialManager isVkontakteLoggedIn]) {
+            [self checkShouldShowJoinGroupScreen];
+        } else {
+            self.animateActivityForServer = YES;
+            [[NBSServerManager sharedManager] sendPhoto:self.photoToSend
+                                               postInfo:postInfo
+                                             completion:^(BOOL success, NSError *error) {
+                                                 self.animateActivityForServer = NO;
+                                                 if (success) {
+                                                 } else {
+                                                     [UIAlertView showErrorAlertWithError:error];
+                                                 }
+                                                 [self checkShouldShowJoinGroupScreen];
+                                             }];
+        }
     }
 }
 
