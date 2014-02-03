@@ -19,7 +19,7 @@
 - (void)postImageToFB:(UIImage*)image withCompletion:(NBSCompletionBlockWithData)completion;
 
 - (void)checkIsMemberOfGroupFBWithCompletion:(NBSCompletionBlockWithData)completion;
-- (void)joinGroupFBWIthCompletion:(NBSCompletionBlock)completion;
+- (NSURLRequest *)facebookJoinGroupPluginRequestWithPluginSize:(CGSize)pluginSize;
 
 - (void)cleanAuthDataFB;
 @end

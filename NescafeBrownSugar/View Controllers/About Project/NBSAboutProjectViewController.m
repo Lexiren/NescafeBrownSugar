@@ -24,10 +24,10 @@ NSString *const kNBSAboutProjectVCIdentifier = @"AboutProjectVC";
 {
     [super viewDidLoad];
     if (!NBS_isIPad) {
-        CGFloat delta = NBS_IsDeviceScreenSize4InchOrBigger ? 0 : 3;
-        self.firstTextView.font = [UIFont standartLightFontWithSize:17.f - delta];
-        self.secondTextView.font = [UIFont standartLightFontWithSize:17.f - delta];
-        self.pricesLabel.font = [UIFont standartLightFontWithSize:23.f - delta];
+        CGFloat delta = NBS_IsDeviceScreenSize4InchOrBigger ? 0 : 2;
+        self.firstTextView.font = [UIFont standartLightFontWithSize:16.f - delta];
+        self.secondTextView.font = [UIFont standartLightFontWithSize:16.f - delta];
+        self.pricesLabel.font = [UIFont standartLightFontWithSize:22.f - delta];
     } else {
         [self.firstTextView replaceFontWithStandartLightFont];
         [self.secondTextView replaceFontWithStandartLightFont];

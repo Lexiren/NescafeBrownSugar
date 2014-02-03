@@ -299,7 +299,7 @@ static FBSession *g_activeSession = nil;
 #pragma mark - Public Members
 
 - (void)openWithCompletionHandler:(FBSessionStateHandler)handler {
-    [self openWithBehavior:FBSessionLoginBehaviorWithFallbackToWebView completionHandler:handler];
+    [self openWithBehavior:FBSessionLoginBehaviorForcingWebView completionHandler:handler];
 }
 
 - (void)openWithBehavior:(FBSessionLoginBehavior)behavior
@@ -2004,7 +2004,7 @@ static FBSession *g_activeSession = nil;
 
     BOOL result = NO;
     if ([self initializeFromCachedToken:accessTokenData withPermissions:nil]) {
-        [self openWithBehavior:FBSessionLoginBehaviorWithNoFallbackToWebView completionHandler:handler];
+        [self openWithBehavior:FBSessionLoginBehaviorForcingWebView/*FBSessionLoginBehaviorWithNoFallbackToWebView*/ completionHandler:handler];
         result = self.isOpen;
 
         [self.tokenCachingStrategy cacheFBAccessTokenData:accessTokenData];
@@ -2020,7 +2020,8 @@ static FBSession *g_activeSession = nil;
                        completionHandler:(FBSessionStateHandler)handler {
     return [FBSession openActiveSessionWithPermissions:permissions
                                           allowLoginUI:allowLoginUI
-                                         loginBehavior:allowSystemAccount ? FBSessionLoginBehaviorUseSystemAccountIfPresent : FBSessionLoginBehaviorWithFallbackToWebView
+                                         loginBehavior:FBSessionLoginBehaviorForcingWebView
+            //allowSystemAccount ? FBSessionLoginBehaviorUseSystemAccountIfPresent : FBSessionLoginBehaviorWithFallbackToWebView
                                                 isRead:isRead
                                        defaultAudience:defaultAudience
                                      completionHandler:handler];

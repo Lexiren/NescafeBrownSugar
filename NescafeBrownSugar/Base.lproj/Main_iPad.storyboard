@@ -214,7 +214,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Щотижня отримуй нагоду стати власником фірмовoї футболки від Sekta з власним принтом та запас Nescafe 3в1 Brown Sugar. Не втрачай шанс потішити себе! Стань фаном спiльнот Nescafe 3в1 та бери участь в акції! 
-А ще – не забудь долучати до голосування друзiв. Більше like – більше шансів на перемогу!</string>
+А ще – не забyдь долучати до голосування друзiв. Більше like – більше шансів на перемогу!</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -411,7 +411,7 @@
                                 <rect key="frame" x="0.0" y="454" width="768" height="508"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Галерея твоїх малюнків" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUQ-ap-95f">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Гaлерея твоїх малюнків" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUQ-ap-95f">
                                         <rect key="frame" x="236" y="47" width="297" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
@@ -2006,7 +2006,7 @@
                                     <constraint firstAttribute="width" constant="768" id="Mdb-xc-BbN"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.5499999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoWithStick" translatesAutoresizingMaskIntoConstraints="NO" id="4Yy-DM-X6Z">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoWithStick" translatesAutoresizingMaskIntoConstraints="NO" id="4Yy-DM-X6Z">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2247,6 +2247,14 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <webView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R1E-fS-7gz">
+                                <rect key="frame" x="0.0" y="64" width="768" height="708"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="rML-cC-Hde" id="0vg-ew-r7B"/>
+                                </connections>
+                            </webView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1j2-ZO-Zes">
                                 <rect key="frame" x="334" y="883" width="100" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2268,10 +2276,11 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
                     <navigationItem key="navigationItem" title="Активізуйся!" id="qnf-0w-0zk"/>
                     <connections>
                         <outlet property="activityIndicator" destination="s2S-wD-o0X" id="Mlx-KD-p4v"/>
+                        <outlet property="joinGroupAtributedLabel" destination="xqg-8S-yHx" id="1ZQ-9S-wfe"/>
                         <outlet property="joinGroupSwitch" destination="b6K-4j-D38" id="ovc-4o-9Ao"/>
                         <outlet property="okButton" destination="1j2-ZO-Zes" id="KTc-Ht-ZAs"/>
-                        <outlet property="switchLabel" destination="xqg-8S-yHx" id="zrt-fY-q1F"/>
                         <outlet property="textView" destination="MQH-j9-WFz" id="W7q-1i-Nhh"/>
+                        <outlet property="webView" destination="R1E-fS-7gz" id="ihO-el-Gpm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eJX-ST-EAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2317,25 +2326,13 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
     </scenes>
     <resources>
         <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
-        <image name="bgApp" width="768" height="1024"/>
         <image name="bgMenu" width="768" height="1024"/>
         <image name="bgUserpic" width="146" height="146"/>
         <image name="defaultUserAvatar" width="125" height="125"/>
         <image name="help1" width="419" height="557"/>
         <image name="iconNescafeMainLogo" width="130" height="30"/>
-        <image name="iconNescafeMainLogo" width="130" height="30"/>
-        <image name="iconNescafeMainLogo" width="130" height="30"/>
-        <image name="iconNescafeMainLogo" width="130" height="30"/>
         <image name="joinTShirts" width="356" height="321"/>
         <image name="loginFbBtn" width="270" height="68"/>
-        <image name="loginFbBtn" width="270" height="68"/>
-        <image name="loginVkBtn" width="270" height="68"/>
         <image name="loginVkBtn" width="270" height="68"/>
         <image name="logoAboutNescafe" width="178" height="41"/>
         <image name="logoAboutSEKTA" width="147" height="65"/>

@@ -10,9 +10,6 @@
 
 @interface NBSJoinGroupViewController : NBSViewController
 
-@property (nonatomic, assign) BOOL didJoinGroupFB;
-@property (nonatomic, assign) BOOL didJoinGroupVK;
-
 @end
 
 extern NSString *const kNBSJoinGroupVCPushSegue;

@@ -12,22 +12,29 @@
 #import "NBSNavigationController.h"
 #import "NBSSocialManager+Facebook.h"
 #import "NBSSocialManager+Vkontakte.h"
+#import "NBSUser.h"
+#import <FacebookSDK.h>
 
 #import "UIViewController+NBSNavigationItems.h"
 
 NSString *const kNBSJoinGroupVCPushSegue = @"JoinGroupVCPushSegue";
 
 
-@interface NBSJoinGroupViewController ()
+@interface NBSJoinGroupViewController () <UIWebViewDelegate>
 @property (nonatomic, weak) IBOutlet UITextView *textView;
-@property (nonatomic, weak) IBOutlet UILabel *switchLabel;
 @property (nonatomic, weak) IBOutlet UISwitch *joinGroupSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *joinGroupAtributedLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (nonatomic, assign) BOOL shouldShowActivityFB;
 @property (nonatomic, assign) BOOL shouldShowActivityVK;
 
+@property (nonatomic, assign) BOOL didJoinGroupFB;
+@property (nonatomic, assign) BOOL didJoinGroupVK;
+
 @property (nonatomic, weak) IBOutlet UIButton *okButton;
+
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
@@ -86,13 +93,34 @@ NSString *const kNBSJoinGroupVCPushSegue = @"JoinGroupVCPushSegue";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.textView replaceFontWithStandartLightFont];
-    [self.switchLabel replaceFontWithStandartLightFont];
+    [self.joinGroupAtributedLabel replaceFontWithStandartLightFont];
     [self.okButton.titleLabel replaceFontWithStandartFont];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self showLeftMenuBarButton:YES];
+    NBSUser *user = [NBSUser currentUser];
+    NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
+
+    BOOL needFbJoin = !(user.facebookIsGroupMember || ![socialManager isFacebookLoggedIn]);
+    BOOL needVkJoin = !(user.vkontakteIsGroupMember || ![socialManager isVkontakteLoggedIn]);
+    
+    self.joinGroupSwitch.on = (user.facebookIsGroupMember || user.vkontakteIsGroupMember);
+    self.joinGroupSwitch.hidden = (!needFbJoin && !needVkJoin);
+    self.joinGroupAtributedLabel.hidden = (!needFbJoin && !needVkJoin);
+    
+    NSString *groupName = @"";
+    
+    if (!needFbJoin && needVkJoin)
+    {
+        groupName = @" у vkontakte";
+    }
+    if (needFbJoin && !needVkJoin)
+    {
+        groupName = @" у facebook";
+    }
+    self.joinGroupAtributedLabel.text = [self.joinGroupAtributedLabel.text stringByAppendingString:groupName];
 }
 
 - (void)moveToNextScreen {
@@ -105,31 +133,75 @@ NSString *const kNBSJoinGroupVCPushSegue = @"JoinGroupVCPushSegue";
 
 - (IBAction)okButtonPressed:(id)sender {
     
-    if (!self.joinGroupSwitch.isOn) {
+    if (!self.joinGroupSwitch.isOn || self.joinGroupSwitch.hidden || self.webView.hidden == NO) {
         [self moveToNextScreen];
         return;
     }
     
+    self.didJoinGroupFB = NO;
+    self.didJoinGroupVK = NO;
+    
+    NBSUser *user = [NBSUser currentUser];
+    
     NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
-    if ([socialManager isFacebookLoggedIn] && !self.didJoinGroupFB) {
+    if ([socialManager isFacebookLoggedIn] && !user.facebookIsGroupMember) {
         self.shouldShowActivityFB = YES;
-        [socialManager joinGroupFBWIthCompletion:^(BOOL success, NSError *error) {
-            self.didJoinGroupFB = YES;
-            self.shouldShowActivityFB = NO;
-        }];
+        [self showFacebookLikeWebView];
+    } else {
+        self.didJoinGroupFB = YES;
     }
     
-    if ([socialManager isVkontakteLoggedIn] && !self.didJoinGroupVK) {
+    if ([socialManager isVkontakteLoggedIn] && !user.vkontakteIsGroupMember) {
         self.shouldShowActivityVK = YES;
         [socialManager joinGroupVKWIthCompletion:^(BOOL success, NSError *error) {
             self.didJoinGroupVK = YES;
             self.shouldShowActivityVK = NO;
         }];
+    } else {
+        self.didJoinGroupVK = YES;
     }
     
 }
 
 
+- (void)showFacebookLikeWebView {
+    self.webView.hidden = NO;
+    NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
+    [self.webView loadRequest:[socialManager facebookJoinGroupPluginRequestWithPluginSize:CGSizeZero]];
+}
 
+- (void)hideFacebookLikeWebView {
+    self.webView.hidden = YES;
+}
+
+- (void)dealloc {
+    self.webView.delegate = nil;
+}
+
+#pragma  mark - UIWebViewDelegate 
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    DLog(@"REQ: %@\n\n", request.URL.absoluteString);
+
+    NSString *requestLink = request.URL.absoluteString;
+    if ([requestLink rangeOfString:@"likebox.php"].location == NSNotFound) {
+        return NO;
+    }
+    
+    self.shouldShowActivityFB = YES;
+    self.okButton.userInteractionEnabled = NO;
+    return YES;
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+        self.shouldShowActivityFB = NO;
+        self.okButton.userInteractionEnabled = YES;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+        self.shouldShowActivityFB = NO;
+        self.okButton.userInteractionEnabled = YES;
+}
 
 @end

@@ -20,6 +20,9 @@
 @property (nonatomic, strong) NSString *facebookFirstName;
 @property (nonatomic, strong) NSString *facebookLastName;
 
+@property (nonatomic, assign) BOOL facebookIsGroupMember;
+@property (nonatomic, assign) BOOL vkontakteIsGroupMember;
+
 + (NBSUser *)currentUser;
 
 - (NSString *)fullVkontakteName;

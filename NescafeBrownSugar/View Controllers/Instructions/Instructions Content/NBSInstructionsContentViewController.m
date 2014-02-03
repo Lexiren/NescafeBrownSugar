@@ -56,7 +56,7 @@ NSString *const kNBSInstructionsContentVCIdentifier = @"InstructionsContentVC";
 
 - (NSArray *)helpTexts {
     if (!_helpTexts) {
-        _helpTexts = @[@"Залогінся через соціальну мережу",
+        _helpTexts = @[@"Залогінься через соціальну мережу",
                        @"Намалюй за ескізом",
                        @"Сфотографуй",
                        @"Поділись малюнком",

@@ -20,6 +20,9 @@
 #import "NBSGalleryImage.h"
 #import "NBSGalleryDetalViewController.h"
 
+static NSDictionary *_gallerySourceDictionaries;
+static NSArray *_gallerySource;
+
 NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 
 @interface NBSProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -35,8 +38,7 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 @property (weak, nonatomic) IBOutlet UIButton *createPictureButton;
 @property (weak, nonatomic) IBOutlet UILabel *enterLabel;
 
-@property (strong, nonatomic) NSDictionary *gallerySourceDictionaries;
-@property (strong, nonatomic) NSArray *gallerySource;
+
 @property (strong, nonatomic) NBSGalleryImage *selectedImage;
 
 @property (weak, nonatomic) IBOutlet UILabel *yourImagesLabel;
@@ -64,12 +66,13 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
     
     __weak NBSProfileViewController *weakself = self;
     NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
+    NBSUser *user = [NBSUser currentUser];
     
     BOOL shouldAutologinFB = [[NSUserDefaults standardUserDefaults] boolForKey:kNBSShouldAutologinFBDefaultsKey];
     BOOL shouldAutologinVK = [[NSUserDefaults standardUserDefaults] boolForKey:kNBSShouldAutologinVKDefaultsKey];
     
     shouldAutologinFB = shouldAutologinFB && ![socialManager isFacebookLoggedIn];
-    shouldAutologinVK = shouldAutologinVK && ![socialManager isVkontakteLoggedIn];
+    shouldAutologinVK = shouldAutologinVK && ![[user vkontakteUid] length];
     
     if (shouldAutologinVK) {
         [socialManager cleanAuthDataVK];
@@ -81,10 +84,10 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
     void (^performLoginIfNeededVK)(BOOL) = ^(BOOL needed){
         if (needed)
         {
-            [weakself.spinner startAnimating];
+            [weakself startSpinnerAnimating];
             
             [socialManager vkontakteLoginWithCompletion:^(BOOL success, NSError *error) {
-                [weakself.spinner stopAnimating];
+                [weakself stopSpinnerAnimating];
                 
                 if (success) {
                     [weakself reloadData];
@@ -97,10 +100,10 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
     
     if (shouldAutologinFB)
     {
-        [self.spinner startAnimating];
+        [self startSpinnerAnimating];
 
         [socialManager facebookAutologinWithCompletion:^(BOOL success, NSError *error) {
-            [self.spinner stopAnimating];
+            [self stopSpinnerAnimating];
             if (success) {
                 [weakself reloadData];
             } else {
@@ -191,10 +194,10 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
         [gallerySourceMutable addObject:galleryImage];
     }
     
-    self.gallerySource = gallerySourceMutable;
+    _gallerySource = gallerySourceMutable;
     [self reloadData];
     
-    if ([self.gallerySource count]) {
+    if ([_gallerySource count]) {
         self.galleryContainerSubview.hidden = NO;
         self.galleryCollection.hidden = NO;
         self.createPictureButton.hidden = YES;
@@ -230,6 +233,7 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
             self.avatarImageView.hidden = YES;
             self.loginSubview.hidden = YES;
             self.galleryContainerSubview.hidden = NO;
+            self.createPictureButton.hidden = _gallerySource.count;
             [self updateGalleryIfNeeded];
         }
     } else if ([sharedManager isVkontakteLoggedIn]) {
@@ -245,6 +249,7 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
             self.avatarPictureView.hidden = YES;
             self.loginSubview.hidden = YES;
             self.galleryContainerSubview.hidden = NO;
+            self.createPictureButton.hidden = _gallerySource.count;
             [self updateGalleryIfNeeded];
         }
     } else {
@@ -254,16 +259,27 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 
 #pragma mark - IBActions
 
+- (void)startSpinnerAnimating {
+    self.loginSubview.userInteractionEnabled = NO;
+    [self.spinner startAnimating];
+}
+
+- (void)stopSpinnerAnimating {
+    self.loginSubview.userInteractionEnabled = YES;
+    [self.spinner stopAnimating];
+}
+
+
 - (IBAction)didPressCreatePictureButton:(UIButton *)sender {
     //push images collections
     [self performSegueWithIdentifier:kNBSPushImageCollectionFromProfileSegueIdentifier sender:self];
 }
 
 - (IBAction)didPressFBLoginButton:(id)sender {
-    [self.spinner startAnimating];
+    [self startSpinnerAnimating];
     [[NBSSocialManager sharedManager] facebookLoginWithCompletion:^(BOOL success, NSError *error) {
         self.view.userInteractionEnabled = YES;
-        [self.spinner stopAnimating];
+        [self stopSpinnerAnimating];
         
         if (success) {
             [self reloadData];
@@ -280,10 +296,10 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 
 - (IBAction)didPressVKLoginButoon:(id)sender {
     self.view.userInteractionEnabled = NO;
-    [self.spinner startAnimating];
+    [self startSpinnerAnimating];
     [[NBSSocialManager sharedManager] vkontakteLoginWithCompletion:^(BOOL success, NSError *error) {
         self.view.userInteractionEnabled = YES;
-        [self.spinner stopAnimating];
+        [self stopSpinnerAnimating];
         
         if (success) {
             [self reloadData];
@@ -302,7 +318,7 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section
 {
-    int count = self.gallerySource.count;
+    int count = _gallerySource.count;
     self.yourImagesLabel.hidden = (count == 0);
     self.noImagesLabel.hidden = (count != 0);
     return count;
@@ -315,7 +331,7 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
     
     NBSImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier
                                                                                  forIndexPath:indexPath];
-    NBSGalleryImage *image = self.gallerySource[indexPath.row];
+    NBSGalleryImage *image = _gallerySource[indexPath.row];
     
     cell.layer.cornerRadius = 10;
     cell.layer.masksToBounds = YES;
@@ -350,7 +366,7 @@ NSString *const kNBSProfileVCIdentifier = @"ProfileVC";
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
-    self.selectedImage = self.gallerySource[indexPath.row];
+    self.selectedImage = _gallerySource[indexPath.row];
     [self performSegueWithIdentifier:kNBSpresentGalleryDetailSegueIdentifier sender:self];
 }
 

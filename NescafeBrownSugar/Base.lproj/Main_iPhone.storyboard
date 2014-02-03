@@ -292,7 +292,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoAboutNescafe" translatesAutoresizingMaskIntoConstraints="NO" id="9zW-Xw-fdL">
-                                <rect key="frame" x="75" y="75" width="171" height="39"/>
+                                <rect key="frame" x="75" y="64" width="171" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="CWH-Ng-GlT"/>
@@ -300,27 +300,27 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="i5l-gR-LeE">
-                                <rect key="frame" x="20" y="118" width="280" height="103"/>
+                                <rect key="frame" x="10" y="107" width="300" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="103" id="zWc-bQ-zZo"/>
                                 </constraints>
-                                <string key="text">Кайфуй від творчості та ділися з друзями натхненням в соціальних мережах. А додаток від Nescafe 3в1 Brown Sugar — тобі в допомогу! 
+                                <string key="text">Кайфуй від творчості та ділися з друзями натхненням в соціальних мережах. А додаток від  Nescafe 3в1 Brown Sugar — тобі в допомогу!
 Заряди свій мозок для нових ідей!</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Подарунки" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g3-Gr-QLT">
-                                <rect key="frame" x="96" y="238" width="128" height="30"/>
+                                <rect key="frame" x="96" y="217" width="128" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logoAboutSEKTA" translatesAutoresizingMaskIntoConstraints="NO" id="ug7-4G-nrT">
-                                <rect key="frame" x="113" y="276" width="94" height="41"/>
+                                <rect key="frame" x="113" y="255" width="94" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="CdT-5l-uAb"/>
@@ -328,14 +328,14 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="z3H-uv-m5X">
-                                <rect key="frame" x="20" y="327" width="280" height="226"/>
+                                <rect key="frame" x="10" y="306" width="300" height="226"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="226" id="6Af-5m-q4h"/>
                                 </constraints>
                                 <string key="text">Щотижня отримуй нагоду стати власником фірмовoї футболки від Sekta з власним принтом та запас Nescafe 3в1 Brown Sugar. Не втрачай шанс потішити себе! Стань фаном спiльнот Nescafe 3в1 та бери участь в акції! 
-А ще – не забудь долучати до голосування друзiв. Більше like – більше шансів на перемогу!</string>
+А ще – не забyдь долучати до голосування друзiв. Більше like – більше шансів на перемогу!</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -343,21 +343,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2g3-Gr-QLT" firstAttribute="top" secondItem="i5l-gR-LeE" secondAttribute="bottom" constant="17" id="2pZ-E3-rod"/>
+                            <constraint firstItem="2g3-Gr-QLT" firstAttribute="top" secondItem="i5l-gR-LeE" secondAttribute="bottom" constant="7" id="2pZ-E3-rod"/>
                             <constraint firstAttribute="centerX" secondItem="2g3-Gr-QLT" secondAttribute="centerX" id="7KT-z8-gdB"/>
-                            <constraint firstAttribute="trailing" secondItem="i5l-gR-LeE" secondAttribute="trailing" constant="20" id="9mw-pv-PRK"/>
+                            <constraint firstAttribute="trailing" secondItem="i5l-gR-LeE" secondAttribute="trailing" constant="10" id="9mw-pv-PRK"/>
                             <constraint firstAttribute="trailing" secondItem="uFk-Ik-MyP" secondAttribute="trailing" id="EGx-9K-65G"/>
                             <constraint firstItem="uFk-Ik-MyP" firstAttribute="top" secondItem="hQS-7S-Z3N" secondAttribute="top" id="IZM-42-SVy"/>
                             <constraint firstItem="uFk-Ik-MyP" firstAttribute="leading" secondItem="hQS-7S-Z3N" secondAttribute="leading" id="M8q-Hk-zeU"/>
-                            <constraint firstItem="9zW-Xw-fdL" firstAttribute="top" secondItem="XHd-GI-vOJ" secondAttribute="bottom" constant="11" id="SCp-RH-3tS"/>
+                            <constraint firstItem="9zW-Xw-fdL" firstAttribute="top" secondItem="XHd-GI-vOJ" secondAttribute="bottom" id="SCp-RH-3tS"/>
                             <constraint firstAttribute="centerX" secondItem="9zW-Xw-fdL" secondAttribute="centerX" constant="-0.5" id="Si6-LE-UYU"/>
-                            <constraint firstAttribute="trailing" secondItem="z3H-uv-m5X" secondAttribute="trailing" constant="20" id="VZk-GN-UbR"/>
-                            <constraint firstItem="i5l-gR-LeE" firstAttribute="leading" secondItem="hQS-7S-Z3N" secondAttribute="leading" constant="20" id="aUq-Yf-ZS7"/>
+                            <constraint firstAttribute="trailing" secondItem="z3H-uv-m5X" secondAttribute="trailing" constant="10" id="VZk-GN-UbR"/>
+                            <constraint firstItem="i5l-gR-LeE" firstAttribute="leading" secondItem="hQS-7S-Z3N" secondAttribute="leading" constant="10" id="aUq-Yf-ZS7"/>
                             <constraint firstAttribute="centerX" secondItem="ug7-4G-nrT" secondAttribute="centerX" id="ebd-OE-I0z"/>
                             <constraint firstItem="i5l-gR-LeE" firstAttribute="top" secondItem="9zW-Xw-fdL" secondAttribute="bottom" constant="4" id="fV0-zN-W4n"/>
                             <constraint firstItem="XHd-GI-vOJ" firstAttribute="top" secondItem="hQS-7S-Z3N" secondAttribute="top" id="ffF-1h-eMk"/>
                             <constraint firstItem="XHd-GI-vOJ" firstAttribute="leading" secondItem="hQS-7S-Z3N" secondAttribute="leading" id="fgH-Ny-yr6"/>
-                            <constraint firstItem="z3H-uv-m5X" firstAttribute="leading" secondItem="hQS-7S-Z3N" secondAttribute="leading" constant="20" id="khm-5z-h43"/>
+                            <constraint firstItem="z3H-uv-m5X" firstAttribute="leading" secondItem="hQS-7S-Z3N" secondAttribute="leading" constant="10" id="khm-5z-h43"/>
                             <constraint firstAttribute="bottom" secondItem="uFk-Ik-MyP" secondAttribute="bottom" id="osq-55-5lm"/>
                             <constraint firstItem="z3H-uv-m5X" firstAttribute="top" secondItem="ug7-4G-nrT" secondAttribute="bottom" constant="10" id="rhZ-to-3Jd"/>
                             <constraint firstAttribute="trailing" secondItem="XHd-GI-vOJ" secondAttribute="trailing" id="y87-67-C6l"/>
@@ -703,7 +703,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Галерея твоїх малюнків" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHy-FS-PSY">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Гaлерея твоїх малюнків" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHy-FS-PSY">
                                         <rect key="frame" x="70" y="17" width="181" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
@@ -2739,6 +2739,19 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDd-PU-rVr" userLabel="Separator view">
+                                <rect key="frame" x="0.0" y="554" width="320" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <webView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lRR-LV-BUB">
+                                <rect key="frame" x="0.0" y="64" width="320" height="440"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ex6-Y6-FNh" id="lSn-Ck-Djz"/>
+                                </connections>
+                            </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fs7-7L-4pk">
                                 <rect key="frame" x="110" y="514" width="100" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2754,11 +2767,6 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
                                     <action selector="okButtonPressed:" destination="ex6-Y6-FNh" eventType="touchUpInside" id="5Dz-27-uf8"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDd-PU-rVr" userLabel="Separator view">
-                                <rect key="frame" x="0.0" y="554" width="320" height="14"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3bM-uc-ioD">
                                 <rect key="frame" x="150" y="274" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2773,6 +2781,7 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
                             <constraint firstItem="SE1-hQ-C0P" firstAttribute="leading" secondItem="79M-Ds-WDj" secondAttribute="leading" id="1sH-tq-Nw4"/>
                             <constraint firstAttribute="trailing" secondItem="Br2-mP-DJO" secondAttribute="trailing" id="2FR-mc-gvO"/>
                             <constraint firstItem="SE1-hQ-C0P" firstAttribute="height" secondItem="fDd-PU-rVr" secondAttribute="height" id="2Zm-56-eK7"/>
+                            <constraint firstAttribute="trailing" secondItem="lRR-LV-BUB" secondAttribute="trailing" id="35w-VA-5W3"/>
                             <constraint firstAttribute="centerX" secondItem="fs7-7L-4pk" secondAttribute="centerX" id="96v-yW-RZH"/>
                             <constraint firstItem="gfv-y7-dfe" firstAttribute="leading" secondItem="79M-Ds-WDj" secondAttribute="leading" id="9Ib-nO-49B"/>
                             <constraint firstItem="vdC-08-Lvt" firstAttribute="centerY" secondItem="W5n-jD-2zH" secondAttribute="centerY" id="9ln-KT-mj2"/>
@@ -2785,6 +2794,8 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
                             <constraint firstItem="fDd-PU-rVr" firstAttribute="leading" secondItem="79M-Ds-WDj" secondAttribute="leading" id="H8O-Of-LA5"/>
                             <constraint firstAttribute="trailing" secondItem="gfv-y7-dfe" secondAttribute="trailing" id="IuW-eP-J2c"/>
                             <constraint firstAttribute="trailing" secondItem="SE1-hQ-C0P" secondAttribute="trailing" id="Kbd-cR-jUt"/>
+                            <constraint firstItem="lRR-LV-BUB" firstAttribute="leading" secondItem="79M-Ds-WDj" secondAttribute="leading" id="TrJ-7J-ZmC"/>
+                            <constraint firstItem="fs7-7L-4pk" firstAttribute="top" secondItem="lRR-LV-BUB" secondAttribute="bottom" constant="10" id="Ujb-s3-pBU"/>
                             <constraint firstAttribute="centerX" secondItem="3bM-uc-ioD" secondAttribute="centerX" id="Ukd-ZT-lbz"/>
                             <constraint firstItem="SE1-hQ-C0P" firstAttribute="height" secondItem="gfv-y7-dfe" secondAttribute="height" constant="-1" id="YFN-JA-u9P"/>
                             <constraint firstItem="Av9-Jb-DXU" firstAttribute="top" secondItem="fDd-PU-rVr" secondAttribute="bottom" id="bka-cX-7sR"/>
@@ -2792,6 +2803,7 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
                             <constraint firstItem="W5n-jD-2zH" firstAttribute="leading" secondItem="vdC-08-Lvt" secondAttribute="trailing" constant="16" id="lBQ-sj-zeH"/>
                             <constraint firstItem="J6x-iO-vTQ" firstAttribute="top" secondItem="Br2-mP-DJO" secondAttribute="bottom" id="og8-Ri-tlP"/>
                             <constraint firstItem="gx4-f1-bqA" firstAttribute="leading" secondItem="79M-Ds-WDj" secondAttribute="leading" constant="7" id="qbf-CI-HlB"/>
+                            <constraint firstItem="lRR-LV-BUB" firstAttribute="top" secondItem="Br2-mP-DJO" secondAttribute="bottom" id="s8N-LX-pXk"/>
                             <constraint firstAttribute="centerY" secondItem="3bM-uc-ioD" secondAttribute="centerY" id="sH3-1Q-Dc8"/>
                             <constraint firstItem="SE1-hQ-C0P" firstAttribute="height" secondItem="J6x-iO-vTQ" secondAttribute="height" constant="-1" id="sId-ST-no6"/>
                             <constraint firstItem="gx4-f1-bqA" firstAttribute="top" secondItem="J6x-iO-vTQ" secondAttribute="bottom" id="szx-wQ-97t"/>
@@ -2803,11 +2815,12 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
                     <navigationItem key="navigationItem" title="Активізуйся!" id="rSi-mT-UKZ"/>
                     <connections>
                         <outlet property="activityIndicator" destination="3bM-uc-ioD" id="0bc-pq-QUU"/>
+                        <outlet property="joinGroupAtributedLabel" destination="W5n-jD-2zH" id="kdg-rv-nXz"/>
                         <outlet property="joinGroupSwitch" destination="vdC-08-Lvt" id="qqp-Jc-Khu"/>
                         <outlet property="navigationPlaceholderHeightConstraint" destination="1Ao-7f-Ht5" id="YSV-Cg-LdY"/>
                         <outlet property="okButton" destination="fs7-7L-4pk" id="l6g-KW-0Nw"/>
-                        <outlet property="switchLabel" destination="W5n-jD-2zH" id="ILD-Ri-7St"/>
                         <outlet property="textView" destination="gx4-f1-bqA" id="TYy-dx-lxr"/>
+                        <outlet property="webView" destination="lRR-LV-BUB" id="ZxC-eW-eLO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jmY-uj-Pnn" userLabel="First Responder" sceneMemberID="firstResponder"/>

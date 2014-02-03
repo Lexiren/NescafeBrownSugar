@@ -170,15 +170,15 @@
                forKey:@"access_token"];
     
     void (^checkMembers)() = ^(){
-        [FBRequestConnection startWithGraphPath:[NSString stringWithFormat:@"/%@/members", kNBSFacebookGroupID]
+        [FBRequestConnection startWithGraphPath:@"/me/likes"
                                      parameters:params
                                      HTTPMethod:@"GET"
                               completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
                                   NSNumber *resultData = nil;
                                   if (!error) {
-                                      NSArray *members = [result objectForKey:@"data"];
-                                      for (NSDictionary *member in members) {
-                                          if ([[member objectForKey:@"id"] isEqualToString:[[NBSUser currentUser] facebookUid]])
+                                      NSArray *pages = [result objectForKey:@"data"];
+                                      for (NSDictionary *page in pages) {
+                                          if ([[page objectForKey:@"id"] isEqualToString:kNBSFacebookGroupID])
                                           {
                                               resultData = [NSNumber numberWithBool:YES];
                                               break;
@@ -193,9 +193,9 @@
                               } ];
     };
     
-    if ([[[FBSession activeSession]permissions]indexOfObject:@"user_groups"] == NSNotFound) {
+    if ([[[FBSession activeSession]permissions]indexOfObject:@"user_likes"] == NSNotFound) {
         
-        [FBSession openActiveSessionWithPublishPermissions:@[@"user_groups, friends_groups"]
+        [FBSession openActiveSessionWithPublishPermissions:@[@"user_likes, friends_likes"]
                                            defaultAudience:FBSessionDefaultAudienceEveryone
                                               allowLoginUI:YES
                                          completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
@@ -214,50 +214,16 @@
 
 }
 
-- (void)joinGroupFBWIthCompletion:(NBSCompletionBlock)completion {
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params setObject:[[[FBSession activeSession] accessTokenData] accessToken]
-               forKey:@"access_token"];
-    
-    void (^joinGroup)() = ^(){
-        NSString *path = [NSString stringWithFormat:@"%@/members/%@", kNBSFacebookGroupID,
-                          [NBSUser currentUser].facebookUid];
 
-        [FBRequestConnection startWithGraphPath:path
-                                     parameters:params
-                                     HTTPMethod:@"POST"
-                              completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                                  if (error) {
-                                      [UIAlertView showErrorAlertWithError:error];
-                                  } else {
-                                      [NBSGoogleAnalytics sendEventWithCategory:NBSGAEventCategoryFacebook
-                                                                         action:NBSGAEventActionLike];
-                                  }
-                                  if (completion) {
-                                      completion(!error, error);
-                                  }
-                              }];
-    };
+- (NSURLRequest *)facebookJoinGroupPluginRequestWithPluginSize:(CGSize)pluginSize {
+    NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
+    NSString* appID = [infoDict objectForKey:@"FacebookAppID"];
     
-    if ([[[FBSession activeSession]permissions]indexOfObject:@"user_groups"] == NSNotFound) {
-        
-        [FBSession openActiveSessionWithPublishPermissions:@[@"user_groups"]
-                                           defaultAudience:FBSessionDefaultAudienceEveryone
-                                              allowLoginUI:YES
-                                         completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
-                                             if (session.isOpen && !error) {
-                                                 [FBSession setActiveSession:session];
-                                                 joinGroup();
-                                             } else {
-                                                 if (completion) {
-                                                     completion(NO, error);
-                                                 }
-                                             }
-                                         }];
-    }else{
-        joinGroup();
-    }
-
+    NSString *likeButtonIframe = [NSString stringWithFormat:@"http://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/%@&amp;width=%d&amp;height=%d&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=%@",kNBSFacebookGroupID,(int)pluginSize.width,(int)pluginSize.height,appID];
+    
+    NSURLRequest *result = [NSURLRequest requestWithURL:[NSURL URLWithString:likeButtonIframe]];
+    return result;
 }
+
 
 @end

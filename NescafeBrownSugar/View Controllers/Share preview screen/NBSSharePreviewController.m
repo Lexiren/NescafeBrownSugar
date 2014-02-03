@@ -17,6 +17,7 @@
 #import "NBSGoogleAnalytics.h"
 #import "NBSDesignAdditions.h"
 #import "NBSProfileViewController.h"
+#import "NBSUser.h"
 
 NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
 
@@ -37,8 +38,6 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
 @property (strong, nonatomic) NSDictionary *vkPostInfo;
 @property (strong, nonatomic) UIImage *photoToSend;
 
-@property (assign, nonatomic) BOOL needShowJoinGroupFB;
-@property (assign, nonatomic) BOOL needShowJoinGroupVK;
 @property (assign, nonatomic) BOOL didCheckGroupFB;
 @property (assign, nonatomic) BOOL didCheckGroupVK;
 
@@ -60,6 +59,10 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
     [super viewWillAppear:animated];
     [self showLeftMenuBarButton:YES];
     
+    self.animateActivityForFB = NO;
+    self.animateActivityForVK = NO;
+    self.animateActivityForServer = NO;
+    
     self.imageView.image = self.previewImage;
 
 }
@@ -72,9 +75,6 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:kNBSJoinGroupVCPushSegue]) {
-        NBSJoinGroupViewController *joinVC = (NBSJoinGroupViewController *)segue.destinationViewController;
-        joinVC.didJoinGroupFB = !self.needShowJoinGroupFB;
-        joinVC.didJoinGroupVK = !self.needShowJoinGroupVK;
     }
 }
 
@@ -148,16 +148,15 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
     self.didCheckGroupFB = NO;
     self.didCheckGroupVK = NO;
     
-    self.needShowJoinGroupFB = NO;
-    self.needShowJoinGroupVK = NO;
     
     NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
     if ([socialManager isFacebookLoggedIn]) {
+        
         self.animateActivityForFB = YES;
         [socialManager checkIsMemberOfGroupFBWithCompletion:^(BOOL success, NSError *error, NSNumber *data) {
             self.animateActivityForFB = NO;
             if (success) {
-                self.needShowJoinGroupFB = ![data boolValue];
+                [[NBSUser currentUser] setFacebookIsGroupMember:[data boolValue]];
             } else {
                 [UIAlertView showErrorAlertWithError:error];
             }
@@ -171,7 +170,7 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
         [socialManager checkIsMemberOfGroupVKWithCompletion:^(BOOL success, NSError *error, id data) {
             self.animateActivityForVK = NO;
             if (success) {
-                self.needShowJoinGroupVK = ![data boolValue];
+                [[NBSUser currentUser] setVkontakteIsGroupMember:[data boolValue]];
             } else {
                 [UIAlertView showErrorAlertWithError:error];
             }
@@ -198,13 +197,7 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
 }
 
 - (void)moveToNextScreen {
-    if (_needShowJoinGroupFB || _needShowJoinGroupVK) {
         [self performSegueWithIdentifier:kNBSJoinGroupVCPushSegue sender:self];
-    } else {
-        NBSProfileViewController *profileVC = [self.storyboard instantiateViewControllerWithIdentifier:kNBSProfileVCIdentifier];
-        [profileVC showLeftMenuBarButton:YES];
-        [self.navigationController setViewControllers:@[profileVC] animated:YES];
-    }
 }
 
 #pragma mark - IBActions
@@ -229,7 +222,6 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
                 if (!success) {
                     [UIAlertView showErrorAlertWithError:error];
                 } else {
-//                    [UIAlertView showSimpleAlertWithMessage:@"Фото успiшно розмiщене у Facebook"];
                     id post_id = [data objectForKey:@"post_id"];
                     if (![post_id isKindOfClass:[NSString class]]) {
                         post_id = [post_id stringValue];
@@ -269,7 +261,6 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
                 if (!success || error) {
                     [UIAlertView showErrorAlertWithError:error];
                 } else {
-//                    [UIAlertView showSimpleAlertWithMessage:@"Фото успiшно розмiщене у Vkontakte"];
                     id post_id = [[data objectForKey:@"response"] objectForKey:@"post_id"];
                     if (![post_id isKindOfClass:[NSString class]]) {
                         post_id = [post_id stringValue];
