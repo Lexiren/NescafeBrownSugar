@@ -30,7 +30,7 @@
       "idiom" : "ipad",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
-      "filename" : "splash_ipad_1536.png",
+      "filename" : "splash_ipad.png",
       "scale" : "2x"
     },
     {
@@ -66,7 +66,7 @@
       "orientation" : "portrait",
       "idiom" : "ipad",
       "extent" : "full-screen",
-      "filename" : "splash_ipad_1536-1.png",
+      "filename" : "splash_ipad-1.png",
       "scale" : "2x"
     }
   ],
