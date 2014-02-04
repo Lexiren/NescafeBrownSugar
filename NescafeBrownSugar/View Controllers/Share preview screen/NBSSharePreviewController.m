@@ -213,7 +213,7 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
     
     NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
     UIImage *photoBound = [UIImage imageNamed:@"fotoFrame"];
-    UIImage *photoWithBound = [self.previewImage NBS_mergeWithImage:photoBound finalSize:photoBound.size];
+    UIImage *photoWithBound = [self.previewImage NBS_mergeWithImage:photoBound finalSize:CGSizeMake(640.0, 640.0)];
     self.photoToSend = photoWithBound;
     
     if (self.shareFBSwitch.isOn) {
