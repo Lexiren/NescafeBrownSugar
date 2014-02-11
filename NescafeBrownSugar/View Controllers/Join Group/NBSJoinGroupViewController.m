@@ -103,6 +103,15 @@ NSString *const kNBSJoinGroupVCPushSegue = @"JoinGroupVCPushSegue";
     NBSUser *user = [NBSUser currentUser];
     NBSSocialManager *socialManager = [NBSSocialManager sharedManager];
 
+    
+    self.textView.text = @"Стань фаном спільнот Nescafe 3в1 та отримай шанс стати власником футболки з власним шедевром від компанії Sekta і запасу Nescafe 3в1 Brown Sugar! А ще – обов’язково долучай до голосування за свою роботу друзів. Більше like – більше шансів на перемогу!\n\n*Apple Inc. не є організатором, спонсором, участником та ніяким iншим чином не пов'язана з діючою акцією, що проходить в мобільному додатку Nescafe 3в1 Brown Sugar";
+    if (!NBS_isIPad) {
+        self.textView.editable = YES;
+        self.textView.font = [UIFont standartLightFontWithSize:(NBS_IsDeviceScreenSize4Inch)? 12.f : 11.f];
+        self.textView.editable = NO;
+    }
+    
+    
     BOOL needFbJoin = !(user.facebookIsGroupMember || ![socialManager isFacebookLoggedIn]);
     BOOL needVkJoin = !(user.vkontakteIsGroupMember || ![socialManager isVkontakteLoggedIn]);
     

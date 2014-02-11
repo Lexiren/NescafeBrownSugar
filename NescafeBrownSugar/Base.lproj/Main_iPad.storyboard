@@ -210,7 +210,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ge-mb-BVx">
-                                <rect key="frame" x="269" y="437" width="450" height="350"/>
+                                <rect key="frame" x="269" y="437" width="450" height="543"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Щотижня отримуй нагоду стати власником фірмовoї футболки від Sekta з власним принтом та запас Nescafe 3в1 Brown Sugar. Не втрачай шанс потішити себе! Стань фаном спiльнот Nescafe 3в1 та бери участь в акції! 
@@ -2185,6 +2185,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <webView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R1E-fS-7gz">
+                                <rect key="frame" x="0.0" y="64" width="768" height="751"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="rML-cC-Hde" id="0vg-ew-r7B"/>
+                                </connections>
+                            </webView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgApp" translatesAutoresizingMaskIntoConstraints="NO" id="pDh-Ci-5vW">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2195,7 +2203,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="780" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MQH-j9-WFz">
-                                <rect key="frame" x="122" y="117" width="525" height="237"/>
+                                <rect key="frame" x="56" y="117" width="656" height="316"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text" base64-UTF8="YES">
@@ -2213,16 +2221,16 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="740" fixedFrame="YES" image="joinTShirts" translatesAutoresizingMaskIntoConstraints="NO" id="3zu-NP-iW6">
-                                <rect key="frame" x="206" y="351" width="356" height="321"/>
+                                <rect key="frame" x="206" y="441" width="356" height="321"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="800" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b6K-4j-D38">
-                                <rect key="frame" x="73" y="734" width="51" height="31"/>
+                                <rect key="frame" x="74" y="777" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.94901967050000002" green="0.81176477670000002" blue="0.26274511220000002" alpha="1" colorSpace="deviceRGB"/>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqg-8S-yHx">
-                                <rect key="frame" x="168" y="727" width="483" height="45"/>
+                                <rect key="frame" x="169" y="770" width="483" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Приєднатися до спiльноти ">
@@ -2247,14 +2255,6 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <webView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R1E-fS-7gz">
-                                <rect key="frame" x="0.0" y="64" width="768" height="708"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="rML-cC-Hde" id="0vg-ew-r7B"/>
-                                </connections>
-                            </webView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1j2-ZO-Zes">
                                 <rect key="frame" x="334" y="883" width="100" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2267,7 +2267,7 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="s2S-wD-o0X">
-                                <rect key="frame" x="366" y="804" width="37" height="37"/>
+                                <rect key="frame" x="366" y="830" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>

@@ -2689,7 +2689,7 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
 0LPRgyELA
 </string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="740" image="joinTShirts" translatesAutoresizingMaskIntoConstraints="NO" id="IRF-Eo-b6a">
