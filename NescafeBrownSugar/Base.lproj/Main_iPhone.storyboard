@@ -291,48 +291,49 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoAboutNescafe" translatesAutoresizingMaskIntoConstraints="NO" id="9zW-Xw-fdL">
-                                <rect key="frame" x="75" y="64" width="171" height="39"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoAboutNescafe" translatesAutoresizingMaskIntoConstraints="NO" id="9zW-Xw-fdL">
+                                <rect key="frame" x="75" y="64" width="171" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="CWH-Ng-GlT"/>
+                                    <constraint firstAttribute="height" constant="30" id="CWH-Ng-GlT"/>
                                     <constraint firstAttribute="width" constant="171" id="u6I-P7-MnF"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="i5l-gR-LeE">
-                                <rect key="frame" x="10" y="107" width="300" height="140"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5l-gR-LeE">
+                                <rect key="frame" x="10" y="98" width="300" height="318"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="zWc-bQ-zZo"/>
+                                    <constraint firstAttribute="height" constant="318" id="zWc-bQ-zZo"/>
                                 </constraints>
                                 <string key="text">Кайфуй від творчості та ділися з друзями натхненням в соціальних мережах. А додаток від \r Nescafe 3в1 Brown Sugar — тобі в допомогу!
 Заряди свій мозок для нових ідей!</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Подарунки" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g3-Gr-QLT">
-                                <rect key="frame" x="96" y="254" width="128" height="30"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Подарунки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g3-Gr-QLT">
+                                <rect key="frame" x="114" y="424" width="93" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logoAboutSEKTA" translatesAutoresizingMaskIntoConstraints="NO" id="ug7-4G-nrT">
-                                <rect key="frame" x="113" y="292" width="94" height="41"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logoAboutSEKTA" translatesAutoresizingMaskIntoConstraints="NO" id="ug7-4G-nrT">
+                                <rect key="frame" x="113" y="453" width="94" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="CdT-5l-uAb"/>
+                                    <constraint firstAttribute="height" constant="35" id="CdT-5l-uAb"/>
                                     <constraint firstAttribute="width" constant="94" id="EiU-56-T2h"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="z3H-uv-m5X">
-                                <rect key="frame" x="10" y="343" width="300" height="220"/>
+                                <rect key="frame" x="10" y="496" width="300" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="220" id="Vuv-ex-5js"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="67" id="Vuv-ex-5js"/>
                                 </constraints>
                                 <string key="text">Щотижня отримуй нагоду стати власником фірмовoї футболки від Sekta з власним принтом та запас Nescafe 3в1 Brown Sugar. Не втрачай шанс потішити себе! Стань фаном спiльнот Nescafe 3в1 та бери участь в акції! 
 А ще – не забyдь долучати до голосування друзiв. Більше like – більше шансів на перемогу!</string>
@@ -343,7 +344,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2g3-Gr-QLT" firstAttribute="top" secondItem="i5l-gR-LeE" secondAttribute="bottom" constant="7" id="2pZ-E3-rod"/>
+                            <constraint firstItem="2g3-Gr-QLT" firstAttribute="top" secondItem="i5l-gR-LeE" secondAttribute="bottom" constant="8" id="2pZ-E3-rod"/>
                             <constraint firstAttribute="centerX" secondItem="2g3-Gr-QLT" secondAttribute="centerX" id="7KT-z8-gdB"/>
                             <constraint firstAttribute="trailing" secondItem="i5l-gR-LeE" secondAttribute="trailing" constant="10" id="9mw-pv-PRK"/>
                             <constraint firstAttribute="trailing" secondItem="uFk-Ik-MyP" secondAttribute="trailing" id="EGx-9K-65G"/>
@@ -360,9 +361,9 @@
                             <constraint firstItem="XHd-GI-vOJ" firstAttribute="leading" secondItem="hQS-7S-Z3N" secondAttribute="leading" id="fgH-Ny-yr6"/>
                             <constraint firstItem="z3H-uv-m5X" firstAttribute="leading" secondItem="hQS-7S-Z3N" secondAttribute="leading" constant="10" id="khm-5z-h43"/>
                             <constraint firstAttribute="bottom" secondItem="uFk-Ik-MyP" secondAttribute="bottom" id="osq-55-5lm"/>
-                            <constraint firstItem="z3H-uv-m5X" firstAttribute="top" secondItem="ug7-4G-nrT" secondAttribute="bottom" constant="10" id="rhZ-to-3Jd"/>
+                            <constraint firstItem="z3H-uv-m5X" firstAttribute="top" secondItem="ug7-4G-nrT" secondAttribute="bottom" constant="8" id="rhZ-to-3Jd"/>
                             <constraint firstAttribute="trailing" secondItem="XHd-GI-vOJ" secondAttribute="trailing" id="y87-67-C6l"/>
-                            <constraint firstItem="ug7-4G-nrT" firstAttribute="top" secondItem="2g3-Gr-QLT" secondAttribute="bottom" constant="8" id="ycH-iZ-8bw"/>
+                            <constraint firstItem="ug7-4G-nrT" firstAttribute="top" secondItem="2g3-Gr-QLT" secondAttribute="bottom" constant="6" id="ycH-iZ-8bw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Про проект" id="tW2-tK-FuM"/>
