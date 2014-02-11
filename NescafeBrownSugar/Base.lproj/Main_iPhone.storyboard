@@ -332,7 +332,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="6Af-5m-q4h"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="220" id="Vuv-ex-5js"/>
                                 </constraints>
                                 <string key="text">Щотижня отримуй нагоду стати власником фірмовoї футболки від Sekta з власним принтом та запас Nescafe 3в1 Brown Sugar. Не втрачай шанс потішити себе! Стань фаном спiльнот Nescafe 3в1 та бери участь в акції! 
 А ще – не забyдь долучати до голосування друзiв. Більше like – більше шансів на перемогу!</string>
@@ -347,6 +347,7 @@
                             <constraint firstAttribute="centerX" secondItem="2g3-Gr-QLT" secondAttribute="centerX" id="7KT-z8-gdB"/>
                             <constraint firstAttribute="trailing" secondItem="i5l-gR-LeE" secondAttribute="trailing" constant="10" id="9mw-pv-PRK"/>
                             <constraint firstAttribute="trailing" secondItem="uFk-Ik-MyP" secondAttribute="trailing" id="EGx-9K-65G"/>
+                            <constraint firstAttribute="bottom" secondItem="z3H-uv-m5X" secondAttribute="bottom" constant="5" id="IMK-Qz-Av3"/>
                             <constraint firstItem="uFk-Ik-MyP" firstAttribute="top" secondItem="hQS-7S-Z3N" secondAttribute="top" id="IZM-42-SVy"/>
                             <constraint firstItem="uFk-Ik-MyP" firstAttribute="leading" secondItem="hQS-7S-Z3N" secondAttribute="leading" id="M8q-Hk-zeU"/>
                             <constraint firstItem="9zW-Xw-fdL" firstAttribute="top" secondItem="XHd-GI-vOJ" secondAttribute="bottom" id="SCp-RH-3tS"/>
