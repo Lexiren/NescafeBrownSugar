@@ -11,7 +11,7 @@
 NSString *const kNBSTemplateImagesBaseName = @"image_";
 NSString *const kNBSTemplateIconsBaseName = @"icon_";
 int       const kNBSTemplateIndexDigitsCount = 2;
-int       const kNBSTemplatesNumber = 50;
+int       const kNBSTemplatesNumber = 51;
 int       const kNBSTemplatesFirstNumber = 1;
 
 static NBSTemplate *_currentInstance;
