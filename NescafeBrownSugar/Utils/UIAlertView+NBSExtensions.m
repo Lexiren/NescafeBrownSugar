@@ -40,11 +40,11 @@
     if (error)
     {
         NSString *msg = nil;
-//        if ([error respondsToSelector:@selector(localizedDescription)]) {
-//            msg = [error localizedDescription];
-//        } else {
-            msg = [error description];
-//        }
+        if ([error respondsToSelector:@selector(localizedDescription)]) {
+            msg = [error localizedDescription];
+        } else {
+            msg = @"Виникла помилка пiд час передачi даних";
+        }
         [UIAlertView showErrorAlertWithMessage:msg];
     }
 }

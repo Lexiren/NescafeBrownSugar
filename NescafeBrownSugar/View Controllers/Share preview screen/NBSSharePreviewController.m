@@ -264,6 +264,8 @@ NSString *const kNBSShareVCPushSegueIdentifier = @"ShareVCPushSegue";
                 self.animateActivityForVK = NO;
                 if (!success || error) {
                     [UIAlertView showErrorAlertWithError:error];
+                    //TODO: handle error with invalid token
+
                 } else {
                     id post_id = [[data objectForKey:@"response"] objectForKey:@"post_id"];
                     if (![post_id isKindOfClass:[NSString class]]) {
