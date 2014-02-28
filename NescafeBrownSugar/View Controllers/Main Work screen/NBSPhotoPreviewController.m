@@ -64,14 +64,17 @@ NSString *const kNBSPreviewPhotoVCPushSegueIdentifier = @"PreviewPhotoVCPushSegu
         
         self.photoImageViewHeightConstraint.constant = (isLandscapePhoto) ? minWH : maxWH;
         self.photoImageViewWidthConstraint.constant = (isLandscapePhoto) ? maxWH : minWH;
-        CGFloat k = 0.0;
-        
-        if (isLandscapePhoto) {
-            k = (NBS_isIPad) ? -85 : 10;
-            self.photoImageViewHorizontalCenterConstraint.constant = (NBS_isIPad) ? -100.0 : 10;
-        }
-        
-        self.photoImageViewTopSpaceConstraint.constant = (maxWH - self.photoImageViewHeightConstraint.constant)/2.0 + k;
+//        CGFloat k = 0.0;
+//        
+//        if (isLandscapePhoto) {
+//            k = (NBS_isIPad) ? -85 : 10;
+//            self.photoImageViewHorizontalCenterConstraint.constant = (NBS_isIPad) ? -100.0 : 10;
+//        }
+//        
+//        self.photoImageViewTopSpaceConstraint.constant = (maxWH - self.photoImageViewHeightConstraint.constant)/2.0 + k;
+//        if (NBS_iOSVersionLessThan(@"7.0")) {
+//            self.photoImageViewTopSpaceConstraint.constant -= 44;
+//        }
     }
 }
 

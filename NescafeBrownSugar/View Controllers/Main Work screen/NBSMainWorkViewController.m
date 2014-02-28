@@ -24,6 +24,7 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
 @property (nonatomic, strong) UIImagePickerController *imagePicker;
 
 @property (nonatomic, assign) BOOL isCameraPresent;
+@property (nonatomic, assign) BOOL isFirstShow;
 
 @end
 
@@ -60,23 +61,25 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
     if (!_isCameraPresent) {
         [UIAlertView showErrorAlertWithMessage:@"This device has no camera"];
     } else {
-        CGRect pickerFrame = self.view.bounds;
-        if (NBS_iOSVersionLessThan(@"7.0")) {
-            pickerFrame.origin.y -= 20;
-        }
-        self.imagePicker.view.frame = pickerFrame;
-        [self setupImagePickerCameraAndOverlay];
+        self.imagePicker.view.frame = self.view.bounds;
+        self.imagePicker.showsCameraControls = NO;
         [self.view addSubview: self.imagePicker.view];
+        self.isFirstShow = YES;
+        [self setupImagePickerCameraAndOverlay];
+        self.isFirstShow = NO;
     }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self setNavigationType:NBSNavigationTypeWhite];
+//    [self setNavigationType:NBSNavigationTypeWhite];
 }
 
-- (void) viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+//    if (_isCameraPresent) {
+//        [self setupImagePickerCameraAndOverlay];
+//    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -146,6 +149,13 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
 - (void)setupImagePickerCameraAndOverlay {
     UIView *overlayView = nil;
 
+    CGRect pickerFrame = self.imagePicker.view.bounds;
+    if (NBS_iOSVersionLessThan(@"7.0")) {
+        pickerFrame.origin.y -= 20;
+        pickerFrame.size.height += (_isFirstShow) ? 40 : 20;
+    }
+
+    
     switch (self.mode) {
         case NBSImagePickerModeCameraDrawing: {
             // scale camera view to fill all screen
@@ -158,9 +168,8 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
             float scale = ceilf((screenSize.height / imageWidth) * 10.0) / 10.0;
             
             _imagePicker.cameraViewTransform = CGAffineTransformTranslate(CGAffineTransformMakeScale(scale, scale), 0, 64);
-
             
-            overlayView = [self templateCameraOverlayWithFrame:self.imagePicker.view.bounds
+            overlayView = [self templateCameraOverlayWithFrame:pickerFrame
                                              cameraDrawingMode:YES
                                                  templateImage:self.sourceImage
                                                     doneAction:@selector(didTapDoneButton:)];
@@ -168,7 +177,7 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
             break;
             
         case NBSImagePickerModeWhiteBGDrawing: {
-            overlayView = [self templateCameraOverlayWithFrame:self.imagePicker.view.bounds
+            overlayView = [self templateCameraOverlayWithFrame:pickerFrame
                                              cameraDrawingMode:NO
                                                 templateImage:self.sourceImage
                                                    doneAction:@selector(didTapDoneButton:)];
@@ -177,7 +186,9 @@ NSString *const kNBSPushPhotoMainWorkControllerSegueIdentifier = @"PhotoMainWork
         case NBSImagePickerModePhoto: {
             _imagePicker.cameraViewTransform = CGAffineTransformMakeTranslation(0, 64);
             
-            overlayView = [self photoCameraOverlayWithFrame:self.imagePicker.view.bounds
+            pickerFrame.size.height -= 20;
+            
+            overlayView = [self photoCameraOverlayWithFrame:pickerFrame
                                              snapshotAction:@selector(didTapShapshotButton:)];
         }
             break;

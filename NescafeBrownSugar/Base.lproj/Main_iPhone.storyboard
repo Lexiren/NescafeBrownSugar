@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="dhE-x2-Mgc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="dhE-x2-Mgc">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -2445,7 +2445,7 @@
                         <constraints>
                             <constraint firstItem="aos-xx-mDL" firstAttribute="centerX" secondItem="LX6-2Q-u7X" secondAttribute="centerX" id="4In-89-7gG"/>
                             <constraint firstAttribute="trailing" secondItem="LX6-2Q-u7X" secondAttribute="trailing" id="4pX-v6-t7r"/>
-                            <constraint firstItem="G9U-T8-g6k" firstAttribute="top" secondItem="4Bf-qg-0Mf" secondAttribute="bottom" id="6SM-2R-pOI"/>
+                            <constraint firstItem="LX6-2Q-u7X" firstAttribute="centerX" secondItem="G9U-T8-g6k" secondAttribute="centerX" id="513-ZX-1tO"/>
                             <constraint firstItem="bwS-RP-sYl" firstAttribute="leading" secondItem="JSH-gV-ExQ" secondAttribute="leading" constant="37" id="DXF-P7-pq1"/>
                             <constraint firstItem="4Bf-qg-0Mf" firstAttribute="top" secondItem="JSH-gV-ExQ" secondAttribute="top" id="Kkl-mz-baV"/>
                             <constraint firstAttribute="centerX" secondItem="G9U-T8-g6k" secondAttribute="centerX" id="SBW-K4-OtC"/>
@@ -2453,6 +2453,7 @@
                             <constraint firstItem="aos-xx-mDL" firstAttribute="centerY" secondItem="LX6-2Q-u7X" secondAttribute="centerY" constant="1" id="ThC-K7-MUj"/>
                             <constraint firstAttribute="trailing" secondItem="tbz-7K-ZfG" secondAttribute="trailing" constant="33" id="UH6-V6-Utq"/>
                             <constraint firstItem="LX6-2Q-u7X" firstAttribute="leading" secondItem="JSH-gV-ExQ" secondAttribute="leading" id="Yc9-J2-1mM"/>
+                            <constraint firstItem="LX6-2Q-u7X" firstAttribute="centerY" secondItem="G9U-T8-g6k" secondAttribute="centerY" constant="7.5" id="aG3-mz-MRT"/>
                             <constraint firstAttribute="trailing" secondItem="4Bf-qg-0Mf" secondAttribute="trailing" id="ao5-Se-Q4j"/>
                             <constraint firstAttribute="bottom" secondItem="tbz-7K-ZfG" secondAttribute="bottom" constant="47" id="asK-ja-rju"/>
                             <constraint firstItem="tbz-7K-ZfG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bwS-RP-sYl" secondAttribute="trailing" constant="8" symbolic="YES" id="nNP-G1-XLw"/>
@@ -2467,7 +2468,6 @@
                         <outlet property="navigationPlaceholderHeightConstraint" destination="Rl0-eY-MV1" id="D1U-yK-GfK"/>
                         <outlet property="photoImageView" destination="G9U-T8-g6k" id="deK-ih-ohx"/>
                         <outlet property="photoImageViewHeightConstraint" destination="XKH-Aa-hie" id="xsS-nd-t00"/>
-                        <outlet property="photoImageViewTopSpaceConstraint" destination="6SM-2R-pOI" id="DD5-d2-Psj"/>
                         <outlet property="photoImageViewWidthConstraint" destination="bs6-gh-IKC" id="nvo-WC-Fl9"/>
                         <outlet property="retakeButton" destination="bwS-RP-sYl" id="O6e-TC-iAd"/>
                         <outlet property="visiblePartMask" destination="aos-xx-mDL" id="RJQ-Zq-oWI"/>
@@ -2515,9 +2515,13 @@
                                     <constraint firstAttribute="width" constant="180" id="tTe-Fd-w0M"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photoWithStickForShare" translatesAutoresizingMaskIntoConstraints="NO" id="7tb-UU-QWJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoWithStickForShare" translatesAutoresizingMaskIntoConstraints="NO" id="7tb-UU-QWJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="568" id="8FT-Cn-IYL"/>
+                                    <constraint firstAttribute="width" constant="320" id="LfT-oZ-sCG"/>
+                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAh-Kj-dj1">
                                 <rect key="frame" x="0.0" y="282" width="320" height="286"/>
@@ -2529,15 +2533,18 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2K5-Vh-eMO">
-                                        <rect key="frame" x="31" y="84" width="51" height="31"/>
+                                        <rect key="frame" x="30" y="84" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="49" id="Nka-To-iL3"/>
+                                        </constraints>
                                         <color key="onTintColor" red="0.9490196704864502" green="0.81176477670669556" blue="0.26274511218070984" alpha="1" colorSpace="deviceRGB"/>
                                         <connections>
                                             <action selector="didChangeStateShareFBSwitch:" destination="fXd-PO-XRa" eventType="valueChanged" id="zFe-PA-Gff"/>
                                         </connections>
                                     </switch>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shareFB_logo" translatesAutoresizingMaskIntoConstraints="NO" id="xbT-bS-iuF">
-                                        <rect key="frame" x="106" y="89" width="109" height="22"/>
+                                        <rect key="frame" x="115" y="89" width="109" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJZ-uE-VNN" userLabel="Separator View">
@@ -2549,15 +2556,18 @@
                                         </constraints>
                                     </view>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wWj-L2-bVd">
-                                        <rect key="frame" x="31" y="145" width="51" height="31"/>
+                                        <rect key="frame" x="30" y="145" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="49" id="FC1-f6-nBy"/>
+                                        </constraints>
                                         <color key="onTintColor" red="0.94901967050000002" green="0.81176477670000002" blue="0.26274511220000002" alpha="1" colorSpace="deviceRGB"/>
                                         <connections>
                                             <action selector="didChangeStateShareVKSwitch:" destination="fXd-PO-XRa" eventType="valueChanged" id="57K-1R-FD5"/>
                                         </connections>
                                     </switch>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shareVK_logo" translatesAutoresizingMaskIntoConstraints="NO" id="ODP-GP-egM">
-                                        <rect key="frame" x="106" y="149" width="127" height="23"/>
+                                        <rect key="frame" x="115" y="149" width="127" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="cBW-cm-9Pg" userLabel="Separator View">
@@ -2591,12 +2601,12 @@
                                     <constraint firstItem="cBW-cm-9Pg" firstAttribute="height" secondItem="EOZ-Gp-3KT" secondAttribute="height" constant="26" id="6jQ-Ld-4Je"/>
                                     <constraint firstItem="cBW-cm-9Pg" firstAttribute="centerY" secondItem="gUt-9J-fj2" secondAttribute="centerY" constant="1" id="8Nz-uP-DWP"/>
                                     <constraint firstAttribute="trailing" secondItem="tJZ-uE-VNN" secondAttribute="trailing" id="8oQ-gZ-Vuc"/>
+                                    <constraint firstItem="2K5-Vh-eMO" firstAttribute="leading" secondItem="lAh-Kj-dj1" secondAttribute="leading" constant="30" id="90C-X0-mkt"/>
                                     <constraint firstItem="cBW-cm-9Pg" firstAttribute="top" secondItem="wWj-L2-bVd" secondAttribute="bottom" id="HYC-jp-tzS"/>
                                     <constraint firstAttribute="trailing" secondItem="EOZ-Gp-3KT" secondAttribute="trailing" id="IIJ-6G-fiG"/>
                                     <constraint firstItem="ODP-GP-egM" firstAttribute="centerY" secondItem="wWj-L2-bVd" secondAttribute="centerY" id="IaK-XI-0CH"/>
                                     <constraint firstItem="EOZ-Gp-3KT" firstAttribute="leading" secondItem="lAh-Kj-dj1" secondAttribute="leading" id="Odh-En-5is"/>
-                                    <constraint firstAttribute="centerX" secondItem="xbT-bS-iuF" secondAttribute="centerX" id="QFk-ZW-QKZ"/>
-                                    <constraint firstItem="xbT-bS-iuF" firstAttribute="leading" secondItem="2K5-Vh-eMO" secondAttribute="trailing" constant="26" id="QoB-xW-tnp"/>
+                                    <constraint firstItem="xbT-bS-iuF" firstAttribute="leading" secondItem="2K5-Vh-eMO" secondAttribute="trailing" constant="36" id="QoB-xW-tnp"/>
                                     <constraint firstItem="tJZ-uE-VNN" firstAttribute="top" secondItem="2K5-Vh-eMO" secondAttribute="bottom" id="Rty-iz-0BH"/>
                                     <constraint firstItem="wWj-L2-bVd" firstAttribute="leading" secondItem="2K5-Vh-eMO" secondAttribute="leading" id="bOJ-b7-sUr"/>
                                     <constraint firstAttribute="bottom" secondItem="cBW-cm-9Pg" secondAttribute="bottom" id="kvr-1Z-EZ1"/>
@@ -2625,7 +2635,9 @@
                             <constraint firstItem="lHc-fY-Oad" firstAttribute="top" secondItem="Rln-oF-dRk" secondAttribute="bottom" id="etC-2W-sRX"/>
                             <constraint firstItem="Rln-oF-dRk" firstAttribute="top" secondItem="64k-r8-Ij5" secondAttribute="top" id="gyG-JB-Dyg"/>
                             <constraint firstItem="lAh-Kj-dj1" firstAttribute="top" secondItem="lHc-fY-Oad" secondAttribute="bottom" id="kur-W4-ohW"/>
+                            <constraint firstItem="vcu-98-S8f" firstAttribute="centerY" secondItem="7tb-UU-QWJ" secondAttribute="centerY" constant="-107" id="mdv-BH-OC8"/>
                             <constraint firstItem="xKg-qu-DLb" firstAttribute="top" secondItem="lAh-Kj-dj1" secondAttribute="bottom" id="qAO-Ok-Edc"/>
+                            <constraint firstItem="vcu-98-S8f" firstAttribute="centerX" secondItem="7tb-UU-QWJ" secondAttribute="centerX" constant="1" id="via-xx-dm9"/>
                             <constraint firstAttribute="trailing" secondItem="lAh-Kj-dj1" secondAttribute="trailing" id="zED-4L-rVe"/>
                         </constraints>
                     </view>
