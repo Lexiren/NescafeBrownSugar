@@ -2174,7 +2174,7 @@
             </objects>
             <point key="canvasLocation" x="4699" y="746"/>
         </scene>
-        <!--Join Group View Controller - Активізуйся!-->
+        <!--Join Group View Controller - Долучайся!-->
         <scene sceneID="wcu-KI-pHR">
             <objects>
                 <viewController storyboardIdentifier="JoinGroup" id="rML-cC-Hde" customClass="NBSJoinGroupViewController" sceneMemberID="viewController">
@@ -2208,52 +2208,24 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text" base64-UTF8="YES">
-0KHRgtCw0L3RjCDRhNCw0L3QvtC8INGB0L/RltC70YzQvdC+0YIgTmVzY2FmZSAz0LIxINGC0LAg0L7R
-gtGA0LjQvNCw0Lkg0YjQsNC90YEg0YHRgtCw0YLQuCDQstC70LDRgdC90LjQutC+0Lwg0YTRg9GC0LHQ
-vtC70LrQuCDQtyDQstC70LDRgdC90LjQvCDRiNC10LTQtdCy0YDQvtC8INCy0ZbQtCDQutC+0LzQv9Cw
-0L3RltGXIFNla3RhINGWINC30LDQv9Cw0YHRgyBOZXNjYWZlIDPQsjEgQnJvd24gU3VnYXIhINCQINGJ
-0LUg4oCTINC+0LHQvtCy4oCZ0Y/Qt9C60L7QstC+INC00L7Qu9GD0YfQsNC5INC00L4g0LPQvtC70L7R
-gdGD0LLQsNC90L3RjyDQt9CwINGB0LLQvtGOINGA0L7QsdC+0YLRgyDQtNGA0YPQt9GW0LIuINCR0ZbQ
-u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
-0LPRgyELA
+0KHQu9GW0LTQutGD0Lkg0LfQsCDQvtC90L7QstC70LXQvdC90Y/QvNC4INCyINGB0L/RltC70YzQvdC+
+0YLQsNGFIE5lc2NhZmUgM9CyMS4g0J/QvtCy0ZbRgCwg0YMg0L3QsNGBINC00LvRjyDRgtC10LHQtSDQ
+t9Cw0LLQttC00Lgg0ZQg0LHQsNCz0LDRgtC+INC00YDQsNC50LLQvtCy0LjRhSDQvdC+0LLQuNC9LgA
 </string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="740" fixedFrame="YES" image="joinTShirts" translatesAutoresizingMaskIntoConstraints="NO" id="3zu-NP-iW6">
-                                <rect key="frame" x="206" y="441" width="356" height="321"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="800" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b6K-4j-D38">
                                 <rect key="frame" x="74" y="777" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.94901967050000002" green="0.81176477670000002" blue="0.26274511220000002" alpha="1" colorSpace="deviceRGB"/>
                             </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqg-8S-yHx">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" fixedFrame="YES" text="Тисни!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqg-8S-yHx">
                                 <rect key="frame" x="169" y="770" width="483" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Приєднатися до спiльноти ">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="38">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Nescafe 3в1">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="38">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1j2-ZO-Zes">
@@ -2274,7 +2246,7 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Активізуйся!" id="qnf-0w-0zk"/>
+                    <navigationItem key="navigationItem" title="Долучайся!" id="qnf-0w-0zk"/>
                     <connections>
                         <outlet property="activityIndicator" destination="s2S-wD-o0X" id="Mlx-KD-p4v"/>
                         <outlet property="joinGroupAtributedLabel" destination="xqg-8S-yHx" id="1ZQ-9S-wfe"/>
@@ -2327,13 +2299,24 @@ u9GM0YjQtSBsaWtlIOKAkyDQsdGW0LvRjNGI0LUg0YjQsNC90YHRltCyINC90LAg0L/QtdGA0LXQvNC+
     </scenes>
     <resources>
         <image name="bgApp" width="768" height="1024"/>
+        <image name="bgApp" width="768" height="1024"/>
+        <image name="bgApp" width="768" height="1024"/>
+        <image name="bgApp" width="768" height="1024"/>
+        <image name="bgApp" width="768" height="1024"/>
+        <image name="bgApp" width="768" height="1024"/>
+        <image name="bgApp" width="768" height="1024"/>
+        <image name="bgApp" width="768" height="1024"/>
         <image name="bgMenu" width="768" height="1024"/>
         <image name="bgUserpic" width="146" height="146"/>
         <image name="defaultUserAvatar" width="125" height="125"/>
         <image name="help1" width="419" height="557"/>
         <image name="iconNescafeMainLogo" width="130" height="30"/>
-        <image name="joinTShirts" width="356" height="321"/>
+        <image name="iconNescafeMainLogo" width="130" height="30"/>
+        <image name="iconNescafeMainLogo" width="130" height="30"/>
+        <image name="iconNescafeMainLogo" width="130" height="30"/>
         <image name="loginFbBtn" width="270" height="68"/>
+        <image name="loginFbBtn" width="270" height="68"/>
+        <image name="loginVkBtn" width="270" height="68"/>
         <image name="loginVkBtn" width="270" height="68"/>
         <image name="logoAboutNescafe" width="178" height="41"/>
         <image name="logoAboutSEKTA" width="147" height="65"/>
