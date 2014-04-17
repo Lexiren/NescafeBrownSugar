@@ -25,11 +25,11 @@ NSString *const kNBSAboutProjectVCIdentifier = @"AboutProjectVC";
 {
     [super viewDidLoad];
     
-    NSString *aboutProductText = @"Nescafe 3в1 Brown Sugar - модерновий мобільний додаток для створення власних шедеврів. З ним ти без проблем реалізуєш творчий потенціал!\nЯк він працює?\n- Встанови додаток\n- Авторизуйся через одну із соціальних мереж\n- Вибери малюнок, який хочеш відтвторити\n- Малюй натхненно\n- Ділися з друзями власним шедевром у соціальних мережах\n- Приєднайся до спільноти Nescafe 3в1 в Facebook чи ВКонтакті\n- Набирай більше лайків та отримуй подарунки від нового Nescafe 3в1 Brown Sugar\nЗаряджайся для нових ідей!\nДеталі на сайті: http://brown-sugar.com.ua/ \n";
+    NSString *aboutProductText = @"Кайфуй від творчості та ділися з друзями натхненням в соціальних мережах. А додаток від \nNescafe 3in1 Brown Sugar — тобі в допомогу!\nЗаряджайся для нових ідей!";
     
-    NSString *aboutPricesText = @"Щотижня отримуй нагоду стати власником фірмовoї футболки від Sekta з власним принтом та запас Nescafe 3в1 Brown Sugar. Не втрачай шанс потішити себе!\n\n";
+    NSString *aboutPricesText = nil;//@"Щотижня отримуй нагоду стати власником фірмовoї футболки від Sekta з власним принтом та запас Nescafe 3в1 Brown Sugar. Не втрачай шанс потішити себе!\n\n";
     
-    NSString *appleText = @"*Apple Inc. не є організатором, спонсором, участником та ніяким iншим чином не пов'язана з діючою акцією, що проходить в мобільному додатку Nescafe 3в1 Brown Sugar";
+    NSString *appleText = nil;//@"*Apple Inc. не є організатором, спонсором, участником та ніяким iншим чином не пов'язана з діючою акцією, що проходить в мобільному додатку Nescafe 3в1 Brown Sugar";
     
     if (!NBS_isIPad) {
         CGFloat delta = NBS_IsDeviceScreenSize4InchOrBigger ? 0 : 2;
