@@ -10,7 +10,7 @@
 #import "NBSInstructionsContentViewController.h"
 #import "NBSDesignAdditions.h"
 
-#define kNBSInstructionsCount 5
+#define kNBSInstructionsCount 4
 #define kNBSInstructionsFirstPageIndex 0
 
 NSString *const kNBSHelpVCIdentifier = @"HelpVC";
